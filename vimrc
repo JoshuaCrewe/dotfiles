@@ -16,7 +16,7 @@ Plug 'vim-scripts/AutoClose'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-PLug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 Plug 'jiangmiao/auto-pairs'
 " GUI
 Plug 'mhinz/vim-startify'

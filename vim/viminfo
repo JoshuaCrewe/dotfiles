@@ -18,8 +18,8 @@ $\=emoji#for(submatch(1), submatch(0))
 
 # Command Line History (newest to oldest):
 :q
-:w
 :wq
+:w
 :hlsearch
 :hl
 :nhlsearch
@@ -162,18 +162,19 @@ $\=emoji#for(submatch(1), submatch(0))
 # global variables:
 
 # File marks:
-'0  1  0  ~/dotfiles/.gitignore
-'1  1  0  ~/.urlview
-'2  1  0  ~/.offlineimaprc
-'3  1  0  ~/.zsh_history
-'4  1  0  ~/.zsh_h
-'5  1  0  ~/.zsh-h
-'6  1  0  ~/.zshrc-e
-'7  1  0  ~/.viminfo
-'8  2  0  ~/.vim/ftplugin/help.vim
-'9  1  0  ~/.vim/ftplugin/help.vim
+'0  1  0  ~/dotfiles/README.md
+'1  1  0  ~/dotfiles/.gitignore
+'2  1  0  ~/.urlview
+'3  1  0  ~/.offlineimaprc
+'4  1  0  ~/.zsh_history
+'5  1  0  ~/.zsh_h
+'6  1  0  ~/.zsh-h
+'7  1  0  ~/.zshrc-e
+'8  1  0  ~/.viminfo
+'9  2  0  ~/.vim/ftplugin/help.vim
 
 # Jumplist (newest first):
+-'  1  0  ~/dotfiles/README.md
 -'  1  0  ~/dotfiles/.gitignore
 -'  1  0  ~/.urlview
 -'  1  0  ~/.offlineimaprc
@@ -270,21 +271,20 @@ $\=emoji#for(submatch(1), submatch(0))
 -'  17  67  ~/.vim/colors/cobalt2.vim
 -'  180  17  ~/.vim/colors/cobalt2.vim
 -'  1  0  ~/.vim/colors/cobalt2.vim
+-'  1  0  ~/dotfiles/.gitignore
 
 # History of marks within files (newest to oldest):
 
-> ~/dotfiles/.gitignore
+> ~/dotfiles/README.md
 	"	1	0
-	^	1	1
-	.	1	0
-	+	1	8
-	+	2	0
-	+	1	0
+	^	4	0
+	.	5	0
+	+	5	0
 
 > ~/.vimrc
 	"	227	0
-	^	19	5
-	.	19	5
+	^	19	2
+	.	19	1
 	+	39	0
 	+	271	0
 	+	84	12
@@ -381,7 +381,15 @@ $\=emoji#for(submatch(1), submatch(0))
 	+	221	19
 	+	223	19
 	+	20	0
-	+	19	5
+	+	19	1
+
+> ~/dotfiles/.gitignore
+	"	1	0
+	^	1	1
+	.	1	0
+	+	1	8
+	+	2	0
+	+	1	0
 
 > ~/dotfiles/vim/plugged/vim-startify/doc/startify.txt
 	"	167	4
