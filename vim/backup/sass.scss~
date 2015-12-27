@@ -1,0 +1,9 @@
+body {
+  background-color: red;
+}
+h1 {
+  p {
+    @include file;
+    font-size: 3rem;
+  }
+}
