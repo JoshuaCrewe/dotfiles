@@ -4,9 +4,9 @@ Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'ggreer/the_silver_searcher'
-Plug 'ervandew/supertab'
 Plug 'haya14busa/incsearch.vim'
 " Automation
+"Plug 'Valloric/YouCompleteMe'
 Plug 'mattn/emmet-vim'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
@@ -16,22 +16,27 @@ Plug 'vim-scripts/AutoClose'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-PLug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 " GUI
-Plug 'mhinz/vim-startify'
 Plug 'vim-scripts/hexHighlight.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-emoji'
+Plug 'ap/vim-css-color'
 " Syntax
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/vim-journal'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-ragtag'
+Plug 'dsawardekar/wordpress.vim'
+Plug 'mustache/vim-mustache-handlebars'
 " Testing Plugins
 Plug 'junegunn/vim-easy-align' 
 Plug 'junegunn/vim-after-object'
@@ -81,7 +86,6 @@ call plug#end()
  set scrolloff=5
  set splitright
  set splitbelow
- "hi Comment guifg=25 guibg=NONE gui=NONE
 
 " Backups
 " Save your backups to a less annoying place than the current directory.
@@ -97,16 +101,9 @@ set backupdir^=~/.vim/backup/
 set backupdir^=./.vim-backup/
 set backup
 
-" Save your swp files to a less annoying place than the current directory.
-" If you have .vim-swap in the current directory, it'll use that.
-" Otherwise it saves it to ~/.vim/swap, ~/tmp or .
-if isdirectory($HOME . '/.vim/swap') == 0
-  :silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
-endif
-set directory=./.vim-swap//
-set directory+=~/.vim/swap//
-set directory+=~/tmp//
-set directory+=.
+" Swapfiles
+" Turn them off rather than save them anywhere.
+set noswapfile
 
 " viminfo stores the the state of your previous editing session
 set viminfo+=n~/.vim/viminfo
@@ -130,20 +127,14 @@ endif
  set softtabstop=2
  set shiftwidth=2
 
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
- set wildmode=list:longest,list:full
- set complete=.,w,t
- function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-n>"
-    endif
- endfunction
- 
+" Snippets
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " CtrlP
  noremap <C-b> :CtrlPBuffer<cr>
@@ -160,7 +151,7 @@ endif
  imap <D-Enter> <C-y>,
 
 " Colon
- noremap ; :
+ "noremap ; :
 
 " Search
  set ignorecase
@@ -176,6 +167,9 @@ endif
  nnoremap <up> ddkP
  nnoremap <down> ddp
  nnoremap § %
+ nmap j gj
+ nmap k gk
+ imap jk <Esc>
 
 " VIMRC
  nnoremap <leader>vim :silent :tabedit ~/.vimrc<cr>
@@ -211,40 +205,12 @@ if executable('ag')
  nnoremap <leader>tf :silent NERDTreeFind<cr>
  nnoremap <C-t> :silent NERDTreeToggle<cr>
 
-" Startify
- "let g:startify_list_order = [ 'files' ]
- let g:startify_list_order = [
-            \ ['    MRU : '],
-            \ 'files',
-            \ ['    MRU (dir) : '],
-            \ 'dir',
-            \ ['    Sessions :'],
-            \ 'sessions',
-            \ ['    Bookmarks :'],
-            \ 'bookmarks',
-            \ ]
-
-    function! s:filter_header(lines) abort
-        let longest_line   = max(map(copy(a:lines), 'len(v:val)'))
-        let centered_lines = map(copy(a:lines),
-            \ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
-        return centered_lines
-    endfunction
-    
-    "let g:startify_custom_header = s:filter_header(['a', 'bb', 'ccc'])
-    let g:startify_custom_header = s:filter_header([
-            \ '                                 ________  __ __        ',
-            \ '            __                  /\_____  \/\ \\ \       ',
-            \ '    __  __ /\_\    ___ ___      \/___//''/''\ \ \\ \    ',
-            \ '   /\ \/\ \\/\ \ /'' __` __`\        /'' /''  \ \ \\ \_ ',
-            \ '   \ \ \_/ |\ \ \/\ \/\ \/\ \      /'' /''__  \ \__ ,__\',
-            \ '    \ \___/  \ \_\ \_\ \_\ \_\    /\_/ /\_\  \/_/\_\_/  ',
-            \ '     \/__/    \/_/\/_/\/_/\/_/    \//  \/_/     \/_/    ',
-            \ '',
-            \ '',
-            \ ])
-
 " Buffers
+nmap <silent> [b :bprevious<cr>
+nmap <silent> ]b :bnext<cr>
+nmap <silent> [B :bfirst<cr>
+nmap <silent> ]B :blast<cr>
+
 nmap ˙ :silent :tabp<cr>
 nmap ¬ :silent :tabn<cr>
 nmap <C-h> <C-w>h
@@ -252,9 +218,6 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap <silent> <C-q> :bd<cr>
-
-" Colorizer
-:let g:colorizer_auto_color = 1
 
 " Show highlighting groups for current word <space>syn
 nmap <Leader>syn :call <SID>SynStack()<CR>
@@ -294,3 +257,6 @@ set completefunc=emoji#complete
 
 " Toggle distraction free viewing with Goyo
   nmap <leader>gy :Goyo<cr>
+
+" Treat all numerals as decimal
+set nrformats=

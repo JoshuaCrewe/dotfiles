@@ -85,3 +85,6 @@ source $ZSH/oh-my-zsh.sh
 function t() {
 	tree --filelimit 15 -L 3 -C 
 }
+
+set editing-mode vi
+bindkey -v

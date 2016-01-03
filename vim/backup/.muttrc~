@@ -21,12 +21,14 @@ unset mark_old           # read/new is good enough for me
 set beep_new             # bell on new mails
 set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
+set beep = no
 
 # Sidebar Patch --------------------------------------
-set sidebar_delim   = '  │'
+set sidebar_delim   = '|'
 set sidebar_visible = yes
 set sidebar_width   = 30
-color sidebar_new color221 color233
+macro index B '<enter-command>toggle sidebar_visible<enter>'
+macro pager B '<enter-command>toggle sidebar_visible<enter>'
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
@@ -52,7 +54,7 @@ mailboxes +me-joshuacrewe.co.uk/INBOX \
 set spoolfile = +me-joshuacrewe.co.uk/INBOX
 
 # Index View Options ---------------------------------
-set date_format = "%m/%d"
+set date_format = "%d"
 set index_format = "[%Z]  %D  %-20.20F  %s"
 set sort = threads                         # like gmail
 set sort_aux = reverse-last-date-received  # like gmail
@@ -154,8 +156,11 @@ bind editor ^T    complete
 # Searching
 bind index N search-opposite
 bind pager N search-opposite
+macro index a "<limit>all\n" "show all messages (undo limit)"
 
 # Set some colours for a nice colour experience?
+color status color187 color95
 color tilde yellow default
 color markers yellow default
 color normal white default
+color index white default "[|]"

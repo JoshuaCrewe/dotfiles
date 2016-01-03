@@ -8,36 +8,104 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/startify
+~MSle0~/;
 
 # Last Substitute Search Pattern:
-~MSle0&:\([^:]\+\):
+~MSle0&vim
 
 # Last Substitute String:
-$\=emoji#for(submatch(1), submatch(0))
+$
 
 # Command Line History (newest to oldest):
 :q
-:wq
+:q!
+:setf html
 :w
+:wq
+:h inoremap
+:h insert remap
+:h imap
+:e ~/Documents/websites/nancy/assets/scss/
+:h gj
+:h zf
+:messages
+:set spell!
+:set spell
+:spell
+:sspell
+:h c-n
+:e ~/Documents/websites/nancy/assets/js/
+:setf javascript
+:e ~/Documents/websites/nancy/index.php
+:e Documents/websites/nancy/index.php
+:h syntax
+:setf txt
+:tabe README.md
+:nohl
+:cfdo %s/vim/this/gc
+:vim /vim/ ##
+:args
+:args *.md
+:ls
+:e README.md
+:qa
+:next
+:args **
+:!ls
+:args vim/*.md
+:args *
+:bp
+:bn
+:%s/vim/this/gc
+:%TOhtml
+:e ~/Documents/websites/nancy/assets/css/
+:h color
+:h vim-css-color
+:h ragtag
+:setf php
+:e new.html
+:cfdo
+:h cfdo
+:h todo
+:e .vim/plugged/seoul256.vim/
+:grep! "\b
+:vsp
+:sp
+:e ~/.muttrc
+:e ~/.vim/plugged/seoul256.vim/
+:e ~/Desktop/vim\ Test\ Files/javascript.js
+:startify
+:e .offlineimaprc
+:h surround
+:nohlsearch
+:qall
+:source ~/.vimrc
+:b7
+:e assets/scss/_lightbox.scss
+:e assets/js/lightbox.js
+:e index.php
+:w index.php
+:e index.html
+:e ../gulpfile.js
+:e footer.php
+:e header.php
+:%
+:pwd
+:w paintings.php
+:find 
 :hlsearch
 :hl
 :nhlsearch
 :h startify
-:startify
 :h statify
 :nhl
-:nohl
 :h
-:q!
 :e ~/.vim/ftplugin/help.vim
 :Xmark>
 :Xmark
 :Xmark<
 :xmark>
 :xmark
-:bp
-:bn
 :emoji#replace()
 :set fdc
 :set fdc5
@@ -49,63 +117,37 @@ $\=emoji#for(submatch(1), submatch(0))
 :wm
 :wm5
 :h margin
-:%le5
-:set number
-:rl
-:h hebrew
-:help
-:h silent
-:Goyo
-:h autocmd
-:setf html
-:qw
-:h nerdcommenter
-:Limelight!!
-:Limelight!
-:Limelight
-:sp
-:vs
-:h peekaboo
-:setf php
-:e ~/Desktop/vim\ Test\ Files/php.php
-:set cul
-:help cursorline
-:h NERDCommenter
-:Ag 
-:e ~/.vim/plugged/seoul256.vim/
-:help limelight
-:help k
-:limelight
-::RainbowParenthesesColors
-::RainbowParentheses
-:Plug
-:plug
-:e style.css
-:number
-:numer
-:e ~/Desktop/vim\ Test\ Files/colours.txt
-:setf journal
-:setf vim
-:setf
-:Goyo!
-:setf txt
-:setf vim-journal
-:setf markdown
-:Goyo 120x50%
-:emoji#list()
-:e index.html
-:emoji#available()
-:emoji#av
-:h left
-:h windows
-:colo cobalt2
-:colorscheme cobalt2
-:help startify
-:e .vim/colors/cobalt2.vim
-:e ~/Desktop/style.css
 
 # Search String History (newest to oldest):
+? \$\(cursor\|select\)\$
+?/;
+?/mapping
+?/tab
+?/map
+?/ulti
+??tab
+? vim
+? \s\+$
 ?/startify
+?/swp
+?/mail
+?/date
+?/vi
+?/:cfdo
+?/delim
+?/deli
+?/status
+?/stat
+?/side
+?/cr
+?/V
+?/<c
+? \<color234\>
+? \<65\>
+? \<22\>
+?/hith
+?/S
+?/G
 ? \<startify-faq-08\>
 ?/center
 ? \<usr_20\.txt\>
@@ -113,7 +155,6 @@ $\=emoji#for(submatch(1), submatch(0))
 ?/autocmd
 ?/hlsearch
 ?/hlsear
-? \$\(cursor\|select\)\$
 ?/set cur
 ?/set cul
 ?/comment
@@ -124,293 +165,980 @@ $\=emoji#for(submatch(1), submatch(0))
 ? \<window-resize\>
 ?/C-N
 ?/N
-?/status
 ?/color
 ?/ol
 
 # Expression History (newest to oldest):
+=6*5
 
 # Input Line History (newest to oldest):
 @y
+@a
 
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
-	startify_list_order
+"0	CHAR	0
+	esc
 "1	LINE	0
-	
+	  background-color: #gg;
 "2	LINE	0
-	__bold__
+	body {
 "3	LINE	0
-	__bold__
+	
 "4	LINE	0
-	__bold__
+	}
 "5	LINE	0
-	set completefunc=emoji#complete
+	  background-color: dd;
 "6	LINE	0
-	Plug 'junegunn/vim-emoji'
+	  http://www.duckduckgo.com	
 "7	LINE	0
-	Plug 'junegunn/vim-emoji'
+	Plug 'Valloric/YouCompleteMe'
 "8	LINE	0
-	Plug 'junegunn/vim-emoji'
+	Plug 'Valloric/YouCompleteMe'
 "9	LINE	0
-	Plug 'junegunn/vim-emoji'
-"-	CHAR	0
-	tpope/vim-unimpaired
+	"Plug 'ervandew/supertab'
+"a	CHAR	0
+	
+"w	CHAR	0
+	wwwwcitFooter;w€ýc€ýb€ýc€ýbhe
+""-	CHAR	0
+	otherjjjjjj 
 
 # global variables:
 
 # File marks:
-'0  1  0  ~/dotfiles/README.md
-'1  1  0  ~/dotfiles/.gitignore
-'2  1  0  ~/.urlview
-'3  1  0  ~/.offlineimaprc
-'4  1  0  ~/.zsh_history
-'5  1  0  ~/.zsh_h
-'6  1  0  ~/.zsh-h
-'7  1  0  ~/.zshrc-e
-'8  1  0  ~/.viminfo
-'9  2  0  ~/.vim/ftplugin/help.vim
+'0  22  5  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
+'1  1  0  ~/Documents/websites/nancy/assets/js/functions.js
+'2  14  24  ~/Documents/websites/nancy/index.php
+'3  16  33  ~/dotfiles/cheatsheet.md
+'4  5  0  ~/dotfiles/cheatsheet.md
+'5  3  57  ~/dotfiles/cheatsheet.md
+'6  50  0  ~/dotfiles/cheatsheet.md.html
+'7  1  0  ~/dotfiles/.gitignore
+'8  1  2  ~/Documents/websites/nancy/footer.php
+'9  1  0  ~/Library/Caches/Cleanup At Startup/Transmit/9F6F914E-A6CA-4E33-8273-4FC74BF40ADB/config.js
 
 # Jumplist (newest first):
+-'  22  5  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
+-'  1  0  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
+-'  1  0  ~/Documents/websites/nancy/assets/js/functions.js
+-'  2  13  ~/Documents/websites/nancy/assets/js/functions.js
+-'  6  0  ~/NERD_tree_1
+-'  10  2  ~/NERD_tree_1
+-'  1  0  ~/NERD_tree_1
+-'  14  24  ~/Documents/websites/nancy/index.php
+-'  1  0  ~/Documents/websites/nancy/index.php
+-'  16  33  ~/dotfiles/cheatsheet.md
+-'  4  1  ~/dotfiles/cheatsheet.md
+-'  1  0  ~/dotfiles/cheatsheet.md
+-'  5  0  ~/dotfiles/cheatsheet.md
+-'  3  52  ~/dotfiles/README.md
 -'  1  0  ~/dotfiles/README.md
+-'  3  57  ~/dotfiles/cheatsheet.md
+-'  50  0  ~/dotfiles/cheatsheet.md.html
+-'  1  0  ~/dotfiles/vim/*.md
+-'  5  45  ~/dotfiles/README.md
 -'  1  0  ~/dotfiles/.gitignore
--'  1  0  ~/.urlview
--'  1  0  ~/.offlineimaprc
--'  1  0  ~/.zsh_history
--'  1  0  ~/.zsh_h
--'  1  0  ~/.zsh-h
--'  1  0  ~/.zshrc-e
--'  1  0  ~/.viminfo
--'  2  0  ~/.vim/ftplugin/help.vim
--'  1  0  ~/.vim/ftplugin/help.vim
--'  5  0  ~/Desktop/vim Test Files/markdown.md
--'  1  0  ~/Desktop/vim Test Files/markdown.md
--'  6  0  ~/Desktop/vim Test Files/markdown.md
--'  12  0  ~/Desktop/vim Test Files/php.php
--'  13  3  ~/Desktop/vim Test Files/php.php
--'  12  1  ~/Desktop/vim Test Files/sass.scss
--'  11  19  ~/Desktop/vim Test Files/sass.scss
--'  1  11  ~/Desktop/vim Test Files/javascript.js
--'  148  4  ~/.vim/plugged/seoul256.vim/colors/seoul256.vim
--'  1  4  ~/.vim/plugged/seoul256.vim/colors/seoul256.vim
--'  52  0  ~/.vim/plugged/seoul256.vim/colors/seoul256.vim
--'  126  0  ~/.vim/plugged/seoul256.vim/colors/seoul256.vim
--'  7  1  ~/NERD_tree_1
--'  13  2  ~/NERD_tree_1
--'  1  3  ~/NERD_tree_1
--'  37  0  ~/.vimrc
--'  5  1  ~/Desktop/vim Test Files/javascript.js
--'  14  0  ~/Desktop/vim Test Files/javascript.js
--'  7  0  ~/Desktop/vim Test Files/javascript.js
--'  13  0  ~/Desktop/vim Test Files/javascript.js
--'  16  2  ~/Desktop/vim Test Files/javascript.js
--'  15  0  ~/Desktop/vim Test Files/sass.scss
--'  5  0  ~/Desktop/vim Test Files/sass.scss
--'  1  0  ~/Desktop/vim Test Files/sass.scss
--'  4  0  ~/.zshrc
--'  3  0  ~/Desktop/vim Test Files/markdown.md
--'  1  0  ~/index.html
--'  11  0  ~/.offlineimaprc
--'  157  60  ~/.muttrc
--'  155  0  ~/.muttrc
--'  150  0  ~/.muttrc
--'  144  0  ~/.muttrc
--'  143  0  ~/.muttrc
--'  1  0  ~/.muttrc
--'  10  0  ~/.msmtprc
--'  1  0  ~/.mutt/temp/mutt-Ethel-501-6502-5182555031808804519
--'  1  0  ~/.msmtprc
--'  1  40  ~/Desktop/vim Test Files/colours.txt
--'  12  13  ~/Desktop/vim Test Files/javascript.js
--'  15  0  ~/Desktop/vim Test Files/colours.txt
--'  16  1  ~/Desktop/vim Test Files/colours.txt
--'  14  0  ~/Desktop/vim Test Files/colours.txt
+-'  1  2  ~/Documents/websites/nancy/footer.php
+-'  6  0  ~/Documents/websites/nancy/footer.php
+-'  1  0  ~/Library/Caches/Cleanup At Startup/Transmit/9F6F914E-A6CA-4E33-8273-4FC74BF40ADB/config.js
+-'  40  0  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+-'  43  0  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+-'  38  42  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+-'  37  19  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+-'  33  77  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+-'  14  8  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+-'  11  30  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+-'  46  37  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+-'  45  37  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+-'  1  0  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+-'  1  0  ~/Documents/websites/nancy/assets/css/custom.css
+-'  14  0  ~/NERD_tree_1
+-'  18  2  ~/NERD_tree_1
 -'  1  0  ~/.vimrc
--'  147  0  ~/.muttrc
--'  8  49  ~/Desktop/vim Test Files/colours.txt
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  23  17  ~/.offlineimaprc
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  8  22  ~/.mutt/temp/mutt-Ethel-501-1249-94391575141399363
--'  1  0  ~/.mutt/temp/mutt-Ethel-501-1249-94391575141399363
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  8  22  ~/.mutt/temp/mutt-Ethel-501-1249-94391575141399363
--'  1  0  ~/.mutt/temp/mutt-Ethel-501-1249-94391575141399363
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  17  67  ~/.vim/colors/cobalt2.vim
--'  180  17  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/.vim/colors/cobalt2.vim
--'  1  0  ~/dotfiles/.gitignore
+-'  4  10  ~/dotfiles/.gitignore
+-'  3  17  ~/new.html
+-'  57  20  ~/.muttrc
+-'  41  24  ~/.muttrc
+-'  39  23  ~/.muttrc
+-'  166  28  ~/.muttrc
+-'  60  28  ~/.muttrc
+-'  1  0  ~/.muttrc
+-'  27  23  ~/.muttrc
+-'  167  18  ~/.muttrc
+-'  267  0  ~/dotfiles/vim/plugged/seoul256.vim/colors/seoul256.vim
+-'  7  4  ~/NERD_tree_2
+-'  151  0  ~/dotfiles/vim/plugged/seoul256.vim/colors/seoul256.vim
+-'  56  0  ~/dotfiles/vim/plugged/seoul256.vim/colors/seoul256.vim
+-'  13  2  ~/NERD_tree_2
+-'  1  0  ~/NERD_tree_2
+-'  28  23  ~/.muttrc
+-'  165  0  ~/.muttrc
+-'  164  0  ~/.muttrc
+-'  78  0  ~/.mutt/colors.muttrc
+-'  43  28  ~/.mutt/colors.muttrc
+-'  45  28  ~/.mutt/colors.muttrc
+-'  26  0  ~/.mutt/colors.muttrc
+-'  21  26  ~/.mutt/colors.muttrc
+-'  1  0  ~/.mutt/colors.muttrc
+-'  10  41  ~/.msmtprc
+-'  23  0  ~/.offlineimaprc
+-'  11  0  ~/.msmtprc
+-'  9  34  ~/.msmtprc
+-'  1  0  ~/.msmtprc
+-'  11  22  ~/.mutt/temp/mutt-Ethel-501-42035-14983474102073202321
+-'  1  0  ~/.mutt/temp/mutt-Ethel-501-42035-14983474102073202321
+-'  31  44  ~/.muttrc
+-'  30  38  ~/.muttrc
+-'  3  0  ~/.muttrc
+-'  4  0  ~/.muttrc
+-'  5  0  ~/.muttrc
+-'  6  0  ~/.muttrc
+-'  7  0  ~/.muttrc
+-'  8  0  ~/.muttrc
+-'  9  0  ~/.muttrc
+-'  10  0  ~/.muttrc
+-'  11  0  ~/.muttrc
+-'  12  0  ~/.muttrc
+-'  13  0  ~/.muttrc
+-'  14  0  ~/.muttrc
+-'  15  0  ~/.muttrc
+-'  14  24  ~/Documents/websites/nancy/index.php
+-'  1  0  ~/Documents/websites/nancy/index.php
+-'  3  52  ~/dotfiles/README.md
+-'  14  24  ~/Documents/websites/nancy/index.php
+-'  1  0  ~/Documents/websites/nancy/index.php
+-'  1  0  ~/Documents/websites/nancy/assets/js/functions.js
+-'  2  13  ~/Documents/websites/nancy/assets/js/functions.js
+-'  14  24  ~/Documents/websites/nancy/index.php
+-'  1  0  ~/Documents/websites/nancy/index.php
+-'  1  0  ~/Documents/websites/nancy/assets/js/functions.js
+-'  1  0  ~/Documents/websites/nancy/assets/js/functions.js
+-'  2  13  ~/Documents/websites/nancy/assets/js/functions.js
+-'  6  0  ~/NERD_tree_1
+-'  10  2  ~/NERD_tree_1
+-'  1  0  ~/NERD_tree_1
+-'  1  0  ~/Documents/websites/nancy/assets/js/functions.js
 
 # History of marks within files (newest to oldest):
 
-> ~/dotfiles/README.md
-	"	1	0
-	^	4	0
-	.	5	0
-	+	5	0
+> ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
+	"	22	5
 
 > ~/.vimrc
-	"	227	0
-	^	19	2
-	.	19	1
-	+	39	0
-	+	271	0
-	+	84	12
-	+	143	20
-	+	24	0
-	+	297	0
-	+	297	0
-	+	297	0
-	+	297	0
-	+	29	0
-	+	24	0
-	+	29	0
-	+	24	0
-	+	29	0
-	+	69	1
-	+	72	0
-	+	70	1
-	+	68	31
-	+	25	0
-	+	33	0
-	+	39	0
-	+	33	4
-	+	215	38
-	+	68	31
-	+	84	2
-	+	34	0
-	+	26	0
-	+	27	0
-	+	278	32
-	+	278	0
-	+	277	18
-	+	269	13
-	+	269	0
-	+	260	15
-	+	84	0
-	+	78	0
-	+	75	0
-	+	277	0
-	+	281	28
-	+	281	4
-	+	281	2
-	+	281	2
-	+	78	0
-	+	84	0
-	+	168	0
-	+	246	0
-	+	259	53
-	+	278	30
-	+	279	0
-	+	278	28
-	+	48	0
-	+	277	0
-	+	268	37
-	+	296	26
-	+	281	0
-	+	282	0
-	+	25	0
-	+	26	0
-	+	27	0
-	+	28	0
-	+	294	0
-	+	292	0
-	+	36	31
-	+	37	0
-	+	38	0
-	+	232	0
-	+	296	1
-	+	233	4
-	+	234	0
-	+	245	0
-	+	232	0
-	+	227	0
-	+	227	0
-	+	233	0
-	+	235	36
-	+	245	16
-	+	245	0
-	+	234	0
-	+	227	0
-	+	216	0
-	+	226	0
-	+	215	0
-	+	217	20
-	+	219	23
-	+	217	18
-	+	221	16
-	+	223	16
-	+	217	21
-	+	219	27
-	+	221	24
-	+	223	25
-	+	217	19
-	+	219	19
-	+	221	19
-	+	223	19
-	+	20	0
+	"	173	13
+	^	163	22
+	.	163	21
+	+	211	0
+	+	211	36
+	+	211	16
+	+	211	0
+	+	211	0
+	+	211	0
+	+	211	0
+	+	211	0
+	+	211	0
+	+	211	20
+	+	211	23
+	+	211	18
+	+	211	16
+	+	211	16
+	+	211	21
+	+	211	27
+	+	211	24
+	+	211	25
+	+	211	19
+	+	211	19
+	+	211	19
+	+	211	19
+	+	21	0
 	+	19	1
+	+	40	28
+	+	40	0
+	+	40	0
+	+	36	0
+	+	40	0
+	+	36	5
+	+	211	30
+	+	214	0
+	+	211	0
+	+	214	0
+	+	212	23
+	+	213	0
+	+	212	14
+	+	213	22
+	+	38	25
+	+	40	0
+	+	38	5
+	+	37	0
+	+	21	0
+	+	20	5
+	+	30	5
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	109	0
+	+	23	0
+	+	211	0
+	+	211	2
+	+	262	19
+	+	263	13
+	+	39	3
+	+	89	0
+	+	139	1
+	+	139	0
+	+	23	0
+	+	109	0
+	+	106	0
+	+	107	0
+	+	107	0
+	+	105	46
+	+	151	7
+	+	211	0
+	+	209	0
+	+	222	0
+	+	223	0
+	+	131	0
+	+	151	7
+	+	132	33
+	+	7	0
+	+	7	0
+	+	7	5
+	+	7	0
+	+	7	0
+	+	132	33
+	+	133	38
+	+	132	33
+	+	133	38
+	+	7	0
+	+	7	0
+	+	8	0
+	+	9	0
+	+	136	0
+	+	130	8
+	+	171	9
+	+	172	9
+	+	9	0
+	+	132	33
+	+	133	38
+	+	173	11
+	+	154	0
+	+	163	21
+
+> ~/ControlP
+	"	10	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	145	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	130	0
+	+	121	0
+	+	119	0
+	+	110	0
+	+	101	0
+	+	92	0
+	+	83	0
+	+	74	0
+	+	65	0
+	+	56	0
+	+	47	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	44	0
+	+	35	0
+	+	26	0
+	+	17	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+
+> ~/Documents/websites/nancy/assets/scss/custom.scss
+	"	6	26
+	.	4	0
+	+	3	0
+	+	4	0
+	+	4	0
+	+	3	0
+	+	1	0
+	+	6	26
+	+	4	0
+	+	4	0
+
+> /usr/local/Cellar/macvim/7.4-81/MacVim.app/Contents/Resources/vim/runtime/doc/map.txt
+	"	1	0
+
+> ~/dotfiles/cheatsheet.md
+	"	29	33
+	^	29	34
+	.	29	33
+	+	3	0
+	+	3	23
+	+	1	0
+	+	3	0
+	+	3	0
+	+	30	0
+	+	3	57
+	+	6	51
+	+	5	27
+	+	4	100
+	+	5	65
+	+	7	59
+	+	17	67
+	+	15	33
+	+	16	33
+	+	18	38
+	+	19	58
+	+	20	60
+	+	9	62
+	+	10	47
+	+	11	37
+	+	12	31
+	+	13	0
+	+	24	0
+	+	26	29
+	+	30	0
+	+	25	8
+	+	26	0
+	+	27	0
+	+	27	0
+	+	26	3
+	+	27	0
+	+	2	0
+	+	8	0
+	+	28	41
+	+	29	33
+
+> /usr/local/Cellar/macvim/7.4-81/MacVim.app/Contents/Resources/vim/runtime/doc/fold.txt
+	"	1	0
+
+> /usr/local/Cellar/macvim/7.4-81/MacVim.app/Contents/Resources/vim/runtime/doc/motion.txt
+	"	301	11
+
+> /usr/local/Cellar/macvim/7.4-81/MacVim.app/Contents/Resources/vim/runtime/doc/help.txt
+	"	1	0
+
+> ~/NERD_tree_1
+	"	6	1
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/dotfiles/vim/plugged/syntastic/doc/syntastic.txt
+	"	831	61
+
+> ~/Documents/websites/nancy/index.php
+	"	14	24
+	^	27	14
+	.	27	0
+	+	13	34
+	+	14	24
+	+	28	0
+	+	27	0
+
+> ~/dotfiles/ControlP
+	"	10	0
+	.	2	0
+	+	20	0
+	+	11	0
+	+	2	0
+
+> /usr/local/Cellar/macvim/7.4-81/MacVim.app/Contents/Resources/vim/runtime/doc/syntax.txt
+	"	170	0
+
+> ~/dotfiles/README.md
+	"	3	52
+	.	5	0
+	+	5	0
+	+	5	15
+	+	5	0
+	+	5	0
+	+	5	0
+
+> ~/Documents/websites/nancy/NERD_tree_1
+	"	9	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Documents/websites/nancy/NERD_tree_2
+	"	5	0
+	.	1	0
+	+	1	0
+
+> ~/dotfiles/cheatsheet.md.html
+	"	50	0
+	^	2	0
+	.	1	90
+	+	1	90
+
+> ~/dotfiles/NERD_tree_1
+	"	7	0
+	.	1	0
+	+	1	0
+
+> ~/dotfiles/vim/*.md
+	"	1	0
 
 > ~/dotfiles/.gitignore
 	"	1	0
-	^	1	1
-	.	1	0
+	^	4	11
+	.	4	10
 	+	1	8
-	+	2	0
+	+	5	0
 	+	1	0
+	+	2	12
+	+	4	10
+
+> ~/Documents/websites/nancy/footer.php
+	"	1	2
+	^	8	0
+	.	1	0
+	+	3	15
+	+	14	0
+	+	13	58
+	+	8	0
+	+	6	0
+	+	1	0
+
+> ~/Library/Caches/Cleanup At Startup/Transmit/9F6F914E-A6CA-4E33-8273-4FC74BF40ADB/config.js
+	"	1	0
+
+> ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
+	"	40	0
+	.	40	0
+	+	40	0
+
+> ~/Documents/websites/nancy/assets/css/custom.css
+	"	1	0
+
+> ~/dotfiles/vim/plugged/vim-ragtag/doc/ragtag.txt
+	"	8	48
+
+> ~/Documents/websites/nancy/ControlP
+	"	2	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	3	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+
+> ~/.muttrc
+	"	57	20
+	^	57	27
+	.	57	0
+	+	167	0
+	+	166	28
+	+	27	23
+	+	166	28
+	+	166	0
+	+	57	0
+
+> ~/new.html
+	"	3	17
+	^	3	18
+	.	3	18
+	+	1	17
+	+	3	18
+
+> /usr/local/Cellar/macvim/7.4-81/MacVim.app/Contents/Resources/vim/runtime/doc/quickfix.txt
+	"	332	7
+
+> ~/Downloads/wasavi.xpi
+	"	13	0
+	.	1	0
+	+	1	0
+
+> ~/.zshrc
+	"	90	9
+	^	90	10
+	.	90	0
+	+	1	0
+	+	89	0
+	+	90	0
+
+> /usr/local/Cellar/macvim/7.4-81/MacVim.app/Contents/Resources/vim/runtime/doc/todo.txt
+	"	686	0
+
+> ~/.mutt/colors.muttrc
+	"	26	0
+	.	79	0
+	+	78	69
+	+	78	91
+	+	78	220
+	+	78	63
+	+	78	33
+	+	78	101
+	+	78	56
+	+	78	33
+	+	78	120
+	+	78	155
+	+	78	254
+	+	78	63
+	+	78	141
+	+	78	90
+	+	78	60
+	+	78	531
+	+	78	97
+	+	78	107
+	+	78	32
+	+	78	56
+	+	78	94
+	+	78	594
+	+	78	107
+	+	78	32
+	+	78	32
+	+	78	56
+	+	78	60
+	+	78	41
+	+	79	0
+	+	79	0
+	+	18	0
+	+	18	0
+	+	17	0
+	+	1	0
+	+	2	2
+	+	3	2
+	+	4	2
+	+	5	2
+	+	6	2
+	+	7	2
+	+	8	2
+	+	9	2
+	+	10	2
+	+	11	2
+	+	12	2
+	+	13	2
+	+	14	2
+	+	15	2
+	+	19	43
+	+	20	43
+	+	21	43
+	+	22	43
+	+	24	43
+	+	25	43
+	+	28	43
+	+	38	44
+	+	39	44
+	+	40	44
+	+	41	44
+	+	42	44
+	+	43	43
+	+	44	43
+	+	45	43
+	+	46	43
+	+	47	43
+	+	48	43
+	+	49	43
+	+	50	43
+	+	51	43
+	+	52	43
+	+	53	43
+	+	54	43
+	+	55	43
+	+	56	43
+	+	57	43
+	+	58	43
+	+	59	43
+	+	60	43
+	+	61	43
+	+	63	43
+	+	64	43
+	+	65	43
+	+	74	44
+	+	75	44
+	+	76	44
+	+	27	27
+	+	19	27
+	+	20	27
+	+	27	43
+	+	23	27
+	+	21	27
+	+	25	43
+	+	26	0
+	+	28	27
+	+	22	27
+	+	43	27
+	+	46	27
+	+	45	27
+	+	32	0
+	+	79	0
+
+> ~/Desktop/vim Test Files/javascript.js
+	"	4	2
+	.	10	0
+	+	1	0
+	+	11	29
+	+	12	19
+	+	13	14
+	+	17	28
+	+	17	0
+	+	14	2
+	+	15	0
+	+	17	0
+	+	16	0
+	+	10	0
+
+> ~/dotfiles/vim/plugged/seoul256.vim/colors/seoul256.vim
+	"	267	0
+
+> ~/NERD_tree_2
+	"	7	4
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/.msmtprc
+	"	10	41
+	.	10	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	11	0
+	+	12	0
+	+	11	0
+	+	10	0
+
+> ~/.offlineimaprc
+	"	23	0
+	.	1	0
+	+	1	0
+	+	1	0
+
+> ~/.mutt/temp/mutt-Ethel-501-42157-20852513941991464308
+	"	1	0
+
+> ~/.mutt/temp/mutt-Ethel-501-42157-350063523110447155
+	"	8	18
+	^	8	19
+	.	8	18
+	+	8	18
+
+> ~/.mutt/temp/mutt-Ethel-501-42035-14983474102073202321
+	"	11	22
+	^	11	23
+	.	11	22
+	+	11	22
+
+> ~/dotfiles/vim/plugged/vim-surround/doc/surround.txt
+	"	8	48
+
+> ~/Documents/websites/nancy/header.php
+	"	1	0
+
+> ~/Documents/websites/nancy/paintings.php
+	"	1	0
+	^	35	0
+	.	35	0
+	+	27	0
+	+	27	0
+	+	26	0
+	+	27	0
+	+	26	14
+	+	27	14
+	+	27	14
+	+	35	0
+	+	26	24
+	+	27	24
+	+	26	50
+	+	35	0
+	+	27	27
+	+	26	35
+	+	35	0
+	+	27	44
+	+	28	0
+	+	29	0
+	+	30	0
+	+	31	0
+	+	32	0
+	+	33	0
+	+	34	0
+	+	36	0
+	+	35	0
+
+> ~/Documents/websites/nancy/assets/js/lightbox.js
+	"	12	0
+	.	12	0
+	+	12	0
+
+> ~/Documents/websites/nancy/assets/scss/_lightbox.scss
+	"	205	0
+	.	206	0
+	+	10	6
+	+	10	28
+	+	10	0
+	+	206	15
+	+	206	32
+	+	206	30
+	+	206	0
+	+	206	15
+	+	206	18
+	+	206	16
+	+	206	0
+	+	206	0
+	+	206	12
+	+	206	23
+	+	206	0
+
+> ~/Documents/web/nancy/app/paintings.php
+	"	42	28
+	^	42	29
+	.	42	28
+	+	2	0
+	+	1	5
+	+	43	0
+	+	42	28
+
+> ~/Documents/web/nancy/app/header.php
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/Documents/web/nancy/app/NERD_tree_1
+	"	6	0
+	.	1	0
+	+	1	0
+
+> ~/Documents/web/nancy/app/ControlP
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Documents/web/nancy/app/footer.php
+	"	3	23
+	^	3	16
+	.	3	15
+	+	1	0
+	+	3	15
+
+> ~/Documents/web/nancy/gulpfile.js
+	"	1	0
+	^	24	25
+	.	24	24
+	+	24	4
+	+	24	24
+
+> ~/Documents/web/nancy/app/index.html
+	"	1	2
+	^	57	38
+	.	57	49
+	+	45	35
+	+	55	0
+	+	56	38
+	+	56	49
+	+	57	49
+
+> ~/Documents/web/nancy/app/index.php
+	"	1	0
+	^	13	35
+	.	13	34
+	+	1	28
+	+	32	0
+	+	31	28
+	+	13	34
+
+> ~/Documents/web/nancy/NERD_tree_1
+	"	7	0
+	.	1	0
+	+	1	0
+
+> ~/Documents/web/nancy/NERD_tree_2
+	"	11	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Documents/web/nancy/package.json
+	"	18	19
+
+> ~/Documents/web/nancy/ControlP
+	"	10	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+
+> ~/Documents/web/nancy/app/paintings.html
+	"	1	0
+	^	49	44
+	.	49	43
+	+	49	43
 
 > ~/dotfiles/vim/plugged/vim-startify/doc/startify.txt
 	"	167	4
 
 > ~/.urlview
 	"	1	0
-
-> ~/.offlineimaprc
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-
-> ~/.msmtprc
-	"	1	0
-	.	10	0
-	+	1	0
-	+	1	0
-	+	10	0
-	+	10	0
-	+	10	0
 
 > ~/.zsh_history
 	"	1	0
@@ -425,9 +1153,6 @@ $\=emoji#for(submatch(1), submatch(0))
 	"	1	0
 
 > ~/.viminfo
-	"	1	0
-
-> /usr/local/Cellar/macvim/7.4-81/MacVim.app/Contents/Resources/vim/runtime/doc/help.txt
 	"	1	0
 
 > ~/.vim/ftplugin/help.vim
@@ -479,16 +1204,6 @@ $\=emoji#for(submatch(1), submatch(0))
 	+	13	0
 	+	5	0
 
-> ~/NERD_tree_1
-	"	50	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
 > ~/Desktop/vim Test Files/sass.scss
 	"	12	1
 	.	13	0
@@ -498,20 +1213,6 @@ $\=emoji#for(submatch(1), submatch(0))
 	+	12	2
 	+	11	19
 	+	13	0
-
-> ~/Desktop/vim Test Files/javascript.js
-	"	1	11
-	.	16	0
-	+	1	0
-	+	11	29
-	+	12	19
-	+	13	14
-	+	17	28
-	+	17	0
-	+	14	2
-	+	15	0
-	+	17	0
-	+	16	0
 
 > ~/.vim/plugged/seoul256.vim/colors/seoul256.vim
 	"	148	4
@@ -528,17 +1229,6 @@ $\=emoji#for(submatch(1), submatch(0))
 	+	16	0
 	+	1	40
 
-> ~/.zshrc
-	"	4	0
-	.	1	0
-	+	1	0
-
-> ~/ControlP
-	"	10	0
-	.	2	0
-	+	11	0
-	+	2	0
-
 > ~/index.html
 	"	1	0
 	^	1	1
@@ -551,20 +1241,6 @@ $\=emoji#for(submatch(1), submatch(0))
 > /usr/local/Cellar/macvim/7.4-81/MacVim.app/Contents/Resources/vim/runtime/doc/change.txt
 	"	1295	62
 
-> ~/.muttrc
-	"	157	60
-	^	157	61
-	.	157	0
-	+	1	0
-	+	158	0
-	+	145	0
-	+	139	15
-	+	143	0
-	+	144	0
-	+	150	0
-	+	155	0
-	+	157	0
-
 > ~/.notmuch-config
 	"	14	42
 	^	14	43
@@ -572,11 +1248,6 @@ $\=emoji#for(submatch(1), submatch(0))
 	+	1	0
 	+	1	0
 	+	14	5
-
-> ~/NERD_tree_2
-	"	1	0
-	.	1	0
-	+	1	0
 
 > ~/.mutt/temp/mutt-Ethel-501-6526-11997611221038532455
 	"	9	0
