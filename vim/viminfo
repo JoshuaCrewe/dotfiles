@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/;
+~MSle0~/mapping
 
 # Last Substitute Search Pattern:
 ~MSle0&vim
@@ -17,11 +17,12 @@
 $
 
 # Command Line History (newest to oldest):
-:q
 :q!
-:setf html
+:r !date
 :w
 :wq
+:q
+:setf html
 :h inoremap
 :h insert remap
 :h imap
@@ -119,9 +120,9 @@ $
 :h margin
 
 # Search String History (newest to oldest):
+?/mapping
 ? \$\(cursor\|select\)\$
 ?/;
-?/mapping
 ?/tab
 ?/map
 ?/ulti
@@ -180,46 +181,51 @@ $
 # Registers:
 "0	CHAR	0
 	esc
-"1	LINE	0
-	  background-color: #gg;
+""1	LINE	0
+	
 "2	LINE	0
-	body {
+	
 "3	LINE	0
 	
 "4	LINE	0
-	}
+	
 "5	LINE	0
-	  background-color: dd;
+	
 "6	LINE	0
-	  http://www.duckduckgo.com	
+	Sun Jan  3 20:41:38 GMT 2016
 "7	LINE	0
-	Plug 'Valloric/YouCompleteMe'
+	  background-color: #gg;
 "8	LINE	0
-	Plug 'Valloric/YouCompleteMe'
+	body {
 "9	LINE	0
-	"Plug 'ervandew/supertab'
+	
 "a	CHAR	0
 	
 "w	CHAR	0
 	wwwwcitFooter;w€ýc€ýb€ýc€ýbhe
-""-	CHAR	0
-	otherjjjjjj 
+"-	CHAR	0
+	f
 
 # global variables:
 
 # File marks:
-'0  22  5  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
-'1  1  0  ~/Documents/websites/nancy/assets/js/functions.js
-'2  14  24  ~/Documents/websites/nancy/index.php
-'3  16  33  ~/dotfiles/cheatsheet.md
-'4  5  0  ~/dotfiles/cheatsheet.md
-'5  3  57  ~/dotfiles/cheatsheet.md
-'6  50  0  ~/dotfiles/cheatsheet.md.html
-'7  1  0  ~/dotfiles/.gitignore
-'8  1  2  ~/Documents/websites/nancy/footer.php
-'9  1  0  ~/Library/Caches/Cleanup At Startup/Transmit/9F6F914E-A6CA-4E33-8273-4FC74BF40ADB/config.js
+'0  1  0  ~/.vimrc
+'1  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
+'2  5  12  ~/.gitconfig
+'3  22  5  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
+'4  1  0  ~/Documents/websites/nancy/assets/js/functions.js
+'5  14  24  ~/Documents/websites/nancy/index.php
+'6  16  33  ~/dotfiles/cheatsheet.md
+'7  5  0  ~/dotfiles/cheatsheet.md
+'8  3  57  ~/dotfiles/cheatsheet.md
+'9  50  0  ~/dotfiles/cheatsheet.md.html
 
 # Jumplist (newest first):
+-'  1  0  ~/.vimrc
+-'  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
+-'  1  0  ~/dotfiles/.git/COMMIT_EDITMSG
+-'  5  12  ~/.gitconfig
+-'  1  0  ~/.gitconfig
 -'  22  5  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
 -'  1  0  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
 -'  1  0  ~/Documents/websites/nancy/assets/js/functions.js
@@ -256,7 +262,6 @@ $
 -'  1  0  ~/Documents/websites/nancy/assets/css/custom.css
 -'  14  0  ~/NERD_tree_1
 -'  18  2  ~/NERD_tree_1
--'  1  0  ~/.vimrc
 -'  4  10  ~/dotfiles/.gitignore
 -'  3  17  ~/new.html
 -'  57  20  ~/.muttrc
@@ -313,45 +318,34 @@ $
 -'  2  13  ~/Documents/websites/nancy/assets/js/functions.js
 -'  14  24  ~/Documents/websites/nancy/index.php
 -'  1  0  ~/Documents/websites/nancy/index.php
--'  1  0  ~/Documents/websites/nancy/assets/js/functions.js
--'  1  0  ~/Documents/websites/nancy/assets/js/functions.js
--'  2  13  ~/Documents/websites/nancy/assets/js/functions.js
--'  6  0  ~/NERD_tree_1
--'  10  2  ~/NERD_tree_1
--'  1  0  ~/NERD_tree_1
--'  1  0  ~/Documents/websites/nancy/assets/js/functions.js
 
 # History of marks within files (newest to oldest):
 
-> ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
-	"	22	5
-
 > ~/.vimrc
-	"	173	13
-	^	163	22
-	.	163	21
-	+	211	0
-	+	211	36
-	+	211	16
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	0
-	+	211	20
-	+	211	23
-	+	211	18
-	+	211	16
-	+	211	16
-	+	211	21
-	+	211	27
-	+	211	24
-	+	211	25
-	+	211	19
-	+	211	19
-	+	211	19
-	+	211	19
+	"	174	21
+	^	174	22
+	.	174	21
+	+	212	36
+	+	212	16
+	+	212	0
+	+	212	0
+	+	212	0
+	+	212	0
+	+	212	0
+	+	212	0
+	+	212	20
+	+	212	23
+	+	212	18
+	+	212	16
+	+	212	16
+	+	212	21
+	+	212	27
+	+	212	24
+	+	212	25
+	+	212	19
+	+	212	19
+	+	212	19
+	+	212	19
 	+	21	0
 	+	19	1
 	+	40	28
@@ -360,14 +354,14 @@ $
 	+	36	0
 	+	40	0
 	+	36	5
-	+	211	30
+	+	212	30
+	+	215	0
+	+	212	0
+	+	215	0
+	+	213	23
 	+	214	0
-	+	211	0
-	+	214	0
-	+	212	23
-	+	213	0
-	+	212	14
-	+	213	22
+	+	213	14
+	+	214	22
 	+	38	25
 	+	40	0
 	+	38	5
@@ -385,10 +379,10 @@ $
 	+	109	0
 	+	109	0
 	+	23	0
-	+	211	0
-	+	211	2
-	+	262	19
-	+	263	13
+	+	212	0
+	+	212	2
+	+	263	19
+	+	264	13
 	+	39	3
 	+	89	0
 	+	139	1
@@ -400,10 +394,10 @@ $
 	+	107	0
 	+	105	46
 	+	151	7
-	+	211	0
-	+	209	0
-	+	222	0
+	+	212	0
+	+	210	0
 	+	223	0
+	+	224	0
 	+	131	0
 	+	151	7
 	+	132	33
@@ -430,6 +424,25 @@ $
 	+	173	11
 	+	154	0
 	+	163	21
+	+	174	21
+
+> ~/dotfiles/.git/COMMIT_EDITMSG
+	"	4	37
+	^	4	38
+	.	4	37
+	+	1	25
+	+	2	0
+	+	3	27
+	+	4	37
+
+> ~/.gitconfig
+	"	5	12
+	^	5	13
+	.	5	13
+	+	5	13
+
+> ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
+	"	22	5
 
 > ~/ControlP
 	"	10	0

@@ -171,6 +171,7 @@ let g:UltiSnipsEditSplit="vertical"
  nmap j gj
  nmap k gk
  imap jk <Esc>
+ imap <c-f> <c-x><c-f>
 
 " VIMRC
  nnoremap <leader>vim :silent :tabedit ~/.vimrc<cr>
