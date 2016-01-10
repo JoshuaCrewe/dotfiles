@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/mapping
+~MSle0~/ctr
 
 # Last Substitute Search Pattern:
 ~MSle0&vim
@@ -18,15 +18,18 @@ $
 
 # Command Line History (newest to oldest):
 :q
-:q!
 :Files
 :pwd
+:FZF
+:qa
+:qall
+:e in_a_new_term_function
+:q!
 :cd Documents/websites/nancy/
 :!cd Documents/websites/nancy/
 :cd .
 :fzf
 :files
-:qall
 :w
 :r !date
 :wq
@@ -57,7 +60,6 @@ $
 :args *.md
 :ls
 :e README.md
-:qa
 :next
 :args **
 :!ls
@@ -126,6 +128,8 @@ $
 :h margin
 
 # Search String History (newest to oldest):
+?/path
+?/ctr
 ?/mapping
 ? \$\(cursor\|select\)\$
 ?/;
@@ -186,19 +190,19 @@ $
 
 # Registers:
 ""0	LINE	0
-	Plug 'kien/ctrlp.vim'
+	qall
 "1	LINE	0
-	Plug 'kien/ctrlp.vim'
+	qall
 "2	LINE	0
-	<?php include 'footer.php' ?>Prim
+	qall
 "3	LINE	0
-	"Plug 'Valloric/YouCompleteMe'
+	qall
 "4	LINE	0
-	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	Plug 'kien/ctrlp.vim'
 "5	LINE	0
-	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	<?php include 'footer.php' ?>Prim
 "6	LINE	0
-	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	"Plug 'Valloric/YouCompleteMe'
 "7	LINE	0
 	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 "8	LINE	0
@@ -207,6 +211,8 @@ $
 	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 "a	CHAR	0
 	
+"c	CHAR	0
+	l
 "w	CHAR	0
 	wwwwcitFooter;w€ýc€ýb€ýc€ýbhe
 "-	CHAR	0
@@ -215,18 +221,26 @@ $
 # global variables:
 
 # File marks:
-'0  31  0  ~/Documents/websites/nancy/index.php
-'1  1  0  ~/Documents/websites/nancy/index.php
-'2  115  0  ~/.zshrc
-'3  100  0  ~/Dropbox/Dotfiles/zshrc-work
-'4  1  0  ~/.vimrc
-'5  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
-'6  5  12  ~/.gitconfig
-'7  22  5  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
-'8  1  0  ~/Documents/websites/nancy/assets/js/functions.js
-'9  14  24  ~/Documents/websites/nancy/index.php
+'0  1  0  ~/in_a_new_term_function
+'1  52  169  ~/.zshrc
+'2  267  47  ~/.vimrc
+'3  31  0  ~/Documents/websites/nancy/index.php
+'4  1  0  ~/Documents/websites/nancy/index.php
+'5  115  0  ~/.zshrc
+'6  100  0  ~/Dropbox/Dotfiles/zshrc-work
+'7  1  0  ~/.vimrc
+'8  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
+'9  5  12  ~/.gitconfig
 
 # Jumplist (newest first):
+-'  1  0  ~/in_a_new_term_function
+-'  52  169  ~/.zshrc
+-'  8  0  /usr/local/bin/in_a_new_term_function
+-'  1  0  /usr/local/bin/in_a_new_term_function
+-'  267  47  ~/.vimrc
+-'  145  1  ~/.vimrc
+-'  28  15  ~/in_a_new_term_function
+-'  28  0  ~/.vimrc
 -'  31  0  ~/Documents/websites/nancy/index.php
 -'  1  0  ~/Documents/websites/nancy/index.php
 -'  9  0  ~/Documents/websites/nancy/NERD_tree_1
@@ -317,96 +331,13 @@ $
 -'  6  0  ~/.muttrc
 -'  7  0  ~/.muttrc
 -'  8  0  ~/.muttrc
--'  9  0  ~/.muttrc
--'  10  0  ~/.muttrc
--'  11  0  ~/.muttrc
--'  12  0  ~/.muttrc
--'  13  0  ~/.muttrc
--'  14  0  ~/.muttrc
--'  15  0  ~/.muttrc
--'  31  0  ~/Documents/websites/nancy/index.php
 
 # History of marks within files (newest to oldest):
 
-> ~/ControlP
-	"	10	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	144	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	129	0
-	+	120	0
-	+	118	0
-	+	109	0
-	+	100	0
-	+	91	0
-	+	82	0
-	+	73	0
-	+	64	0
-	+	55	0
-	+	46	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	43	0
-	+	34	0
-	+	25	0
-	+	16	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
 > ~/.vimrc
-	"	175	21
-	^	5	5
-	.	5	5
-	+	213	0
-	+	213	20
+	"	267	47
+	^	267	48
+	.	267	0
 	+	213	23
 	+	213	18
 	+	213	16
@@ -505,6 +436,137 @@ $
 	+	6	0
 	+	7	0
 	+	5	5
+	+	145	82
+	+	267	0
+
+> ~/.zshrc
+	"	52	169
+	^	52	170
+	.	52	0
+	+	1	0
+	+	113	0
+	+	114	0
+	+	49	0
+	+	48	9
+	+	81	0
+	+	93	0
+	+	94	0
+	+	95	0
+	+	96	0
+	+	97	0
+	+	98	0
+	+	99	0
+	+	100	0
+	+	101	0
+	+	102	0
+	+	103	0
+	+	104	0
+	+	105	0
+	+	106	0
+	+	107	0
+	+	108	0
+	+	109	0
+	+	110	0
+	+	111	0
+	+	112	0
+	+	113	0
+	+	114	0
+	+	116	0
+	+	116	0
+	+	116	0
+	+	116	0
+	+	115	0
+	+	116	0
+	+	52	0
+	j	115	0
+
+> ~/in_a_new_term_function
+	"	1	0
+	^	28	16
+	.	1	0
+	+	1	0
+
+> /usr/local/bin/in_a_new_term_function
+	"	1	0
+
+> /usr/local/bin/ControlP
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/ControlP
+	"	10	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	153	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	138	0
+	+	129	0
+	+	127	0
+	+	118	0
+	+	109	0
+	+	100	0
+	+	91	0
+	+	82	0
+	+	73	0
+	+	64	0
+	+	55	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	52	0
+	+	43	0
+	+	34	0
+	+	25	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	11	0
+	+	2	0
 
 > ~/Documents/websites/nancy/NERD_tree_1
 	"	9	0
@@ -558,46 +620,6 @@ $
 	.	1	0
 	+	1	0
 	+	1	0
-
-> ~/.zshrc
-	"	115	0
-	^	115	0
-	.	116	0
-	+	1	0
-	+	113	0
-	+	114	0
-	+	49	0
-	+	48	9
-	+	81	0
-	+	93	0
-	+	94	0
-	+	95	0
-	+	96	0
-	+	97	0
-	+	98	0
-	+	99	0
-	+	100	0
-	+	101	0
-	+	102	0
-	+	103	0
-	+	104	0
-	+	105	0
-	+	106	0
-	+	107	0
-	+	108	0
-	+	109	0
-	+	110	0
-	+	111	0
-	+	112	0
-	+	113	0
-	+	114	0
-	+	116	0
-	+	116	0
-	+	116	0
-	+	116	0
-	+	115	0
-	+	116	0
-	j	115	0
 
 > ~/Dropbox/Dotfiles/zshrc-work
 	"	100	0

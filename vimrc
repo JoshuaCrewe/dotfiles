@@ -263,3 +263,5 @@ set completefunc=emoji#complete
 
 " Treat all numerals as decimal
 set nrformats=
+
+"let g:fzf_launcher = "In_a_new_term_function %s"
