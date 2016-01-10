@@ -182,7 +182,7 @@ $
 "0	CHAR	0
 	git brew brew-cask catimg git-extras github lol nyan osx sublime z zsh-syntax-highlighting
 ""1	LINE	0
-	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	"Plug 'Valloric/YouCompleteMe'
 "2	LINE	0
 	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 "3	LINE	0
@@ -209,22 +209,18 @@ $
 # global variables:
 
 # File marks:
-'0  1  0  ~/dotfiles/.gitignore
-'1  4  10  ~/dotfiles/.gitignore
-'2  1  0  ~/dotfiles/NERD_tree_1
-'3  115  0  ~/.zshrc
-'4  100  0  ~/Dropbox/Dotfiles/zshrc-work
-'5  1  0  ~/.vimrc
-'6  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
-'7  5  12  ~/.gitconfig
-'8  22  5  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
-'9  1  0  ~/Documents/websites/nancy/assets/js/functions.js
+'0  115  0  ~/.zshrc
+'1  100  0  ~/Dropbox/Dotfiles/zshrc-work
+'2  1  0  ~/.vimrc
+'3  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
+'4  5  12  ~/.gitconfig
+'5  22  5  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
+'6  1  0  ~/Documents/websites/nancy/assets/js/functions.js
+'7  14  24  ~/Documents/websites/nancy/index.php
+'8  16  33  ~/dotfiles/cheatsheet.md
+'9  5  0  ~/dotfiles/cheatsheet.md
 
 # Jumplist (newest first):
--'  1  0  ~/dotfiles/.gitignore
--'  4  10  ~/dotfiles/.gitignore
--'  1  0  ~/dotfiles/NERD_tree_1
--'  15  2  ~/dotfiles/NERD_tree_1
 -'  115  0  ~/.zshrc
 -'  1  0  ~/.zshrc
 -'  100  0  ~/Dropbox/Dotfiles/zshrc-work
@@ -254,6 +250,7 @@ $
 -'  50  0  ~/dotfiles/cheatsheet.md.html
 -'  1  0  ~/dotfiles/vim/*.md
 -'  5  45  ~/dotfiles/README.md
+-'  1  0  ~/dotfiles/.gitignore
 -'  1  2  ~/Documents/websites/nancy/footer.php
 -'  6  0  ~/Documents/websites/nancy/footer.php
 -'  1  0  ~/Library/Caches/Cleanup At Startup/Transmit/9F6F914E-A6CA-4E33-8273-4FC74BF40ADB/config.js
@@ -270,6 +267,7 @@ $
 -'  1  0  ~/Documents/websites/nancy/assets/css/custom.css
 -'  14  0  ~/NERD_tree_1
 -'  18  2  ~/NERD_tree_1
+-'  4  10  ~/dotfiles/.gitignore
 -'  3  17  ~/new.html
 -'  57  20  ~/.muttrc
 -'  41  24  ~/.muttrc
@@ -318,77 +316,16 @@ $
 -'  15  0  ~/.muttrc
 -'  14  24  ~/Documents/websites/nancy/index.php
 -'  1  0  ~/Documents/websites/nancy/index.php
--'  1  0  ~/dotfiles/NERD_tree_1
+-'  3  52  ~/dotfiles/README.md
+-'  14  24  ~/Documents/websites/nancy/index.php
+-'  1  0  ~/Documents/websites/nancy/index.php
 
 # History of marks within files (newest to oldest):
 
-> ~/dotfiles/.gitignore
-	"	1	0
-	^	5	14
-	.	5	13
-	+	1	8
-	+	6	0
-	+	1	0
-	+	2	12
-	+	4	10
-	+	5	13
-
-> ~/dotfiles/NERD_tree_1
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-
-> ~/.zshrc
-	"	115	0
-	^	115	0
-	.	116	0
-	+	1	0
-	+	113	0
-	+	114	0
-	+	49	0
-	+	48	9
-	+	81	0
-	+	93	0
-	+	94	0
-	+	95	0
-	+	96	0
-	+	97	0
-	+	98	0
-	+	99	0
-	+	100	0
-	+	101	0
-	+	102	0
-	+	103	0
-	+	104	0
-	+	105	0
-	+	106	0
-	+	107	0
-	+	108	0
-	+	109	0
-	+	110	0
-	+	111	0
-	+	112	0
-	+	113	0
-	+	114	0
-	+	116	0
-	+	116	0
-	+	116	0
-	+	116	0
-	+	115	0
-	+	116	0
-	j	115	0
-
-> ~/Dropbox/Dotfiles/zshrc-work
-	"	100	0
-
 > ~/.vimrc
 	"	174	21
-	^	174	22
-	.	174	21
-	+	212	36
-	+	212	16
-	+	212	0
+	^	8	65
+	.	8	0
 	+	212	0
 	+	212	0
 	+	212	0
@@ -473,19 +410,82 @@ $
 	+	133	38
 	+	7	0
 	+	7	0
-	+	8	0
 	+	9	0
+	+	10	0
 	+	136	0
 	+	130	8
 	+	171	9
 	+	172	9
-	+	9	0
+	+	10	0
 	+	132	33
 	+	133	38
 	+	173	11
 	+	154	0
 	+	163	21
 	+	174	21
+	+	10	0
+	+	22	0
+	+	8	0
+
+> ~/dotfiles/.gitignore
+	"	1	0
+	^	5	14
+	.	5	13
+	+	1	8
+	+	6	0
+	+	1	0
+	+	2	12
+	+	4	10
+	+	5	13
+
+> ~/dotfiles/NERD_tree_1
+	"	1	0
+	.	1	0
+	+	1	0
+	+	1	0
+
+> ~/.zshrc
+	"	115	0
+	^	115	0
+	.	116	0
+	+	1	0
+	+	113	0
+	+	114	0
+	+	49	0
+	+	48	9
+	+	81	0
+	+	93	0
+	+	94	0
+	+	95	0
+	+	96	0
+	+	97	0
+	+	98	0
+	+	99	0
+	+	100	0
+	+	101	0
+	+	102	0
+	+	103	0
+	+	104	0
+	+	105	0
+	+	106	0
+	+	107	0
+	+	108	0
+	+	109	0
+	+	110	0
+	+	111	0
+	+	112	0
+	+	113	0
+	+	114	0
+	+	116	0
+	+	116	0
+	+	116	0
+	+	116	0
+	+	115	0
+	+	116	0
+	j	115	0
+
+> ~/Dropbox/Dotfiles/zshrc-work
+	"	100	0
 
 > ~/dotfiles/.git/COMMIT_EDITMSG
 	"	4	37
