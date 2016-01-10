@@ -45,7 +45,7 @@ ZSH_THEME="cobalt2"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git brew brew-cask catimg git-extras github lol nyan osx sublime z zsh-syntax-highlighting)
 
 # User configuration
 
@@ -78,6 +78,30 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+ alias zshconfig="mate ~/.zshrc"
+ alias ohmyzsh="mate ~/.oh-my-zsh"
+ alias gs='git status '
+ alias ga='git add '
+ alias gb='git branch '
+ alias gc='git commit'
+ alias gd='git diff'
+ alias go='git checkout '
+
+ alias got='git '
+ alias get='git '
+
+NPM_PACKAGES="${HOME}/.npm-packages"
+
+PATH="$NPM_PACKAGES/bin:$PATH"
+
+# Unset manpath so we can inherit from /etc/manpath via the `manpath` command
+unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+export HISTSIZE=32768;
+export HISTFILESIZE=$HISTSIZE;
+export HISTCONTROL=ignoredumps;
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date* --help";
 
 # Include Z, yo
 . ~/z.sh
@@ -88,3 +112,4 @@ function t() {
 
 set editing-mode vi
 bindkey -v
+

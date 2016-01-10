@@ -160,6 +160,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Save
  nnoremap <C-s> :w<cr>
+ nnoremap <C-q> :q<cr>
 
 " Mappings
  let mapleader = ' '
