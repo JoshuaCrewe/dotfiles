@@ -6,6 +6,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'ggreer/the_silver_searcher'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " Automation
 Plug 'mattn/emmet-vim'
 Plug 'honza/vim-snippets'
