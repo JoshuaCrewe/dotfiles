@@ -18,8 +18,16 @@ $
 
 # Command Line History (newest to oldest):
 :q
-:w
 :q!
+:Files
+:pwd
+:cd Documents/websites/nancy/
+:!cd Documents/websites/nancy/
+:cd .
+:fzf
+:files
+:qall
+:w
 :r !date
 :wq
 :setf html
@@ -79,7 +87,6 @@ $
 :e .offlineimaprc
 :h surround
 :nohlsearch
-:qall
 :source ~/.vimrc
 :b7
 :e assets/scss/_lightbox.scss
@@ -91,7 +98,6 @@ $
 :e footer.php
 :e header.php
 :%
-:pwd
 :w paintings.php
 :find 
 :hlsearch
@@ -179,14 +185,14 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	git brew brew-cask catimg git-extras github lol nyan osx sublime z zsh-syntax-highlighting
-""1	LINE	0
-	"Plug 'Valloric/YouCompleteMe'
+""0	LINE	0
+	Plug 'kien/ctrlp.vim'
+"1	LINE	0
+	Plug 'kien/ctrlp.vim'
 "2	LINE	0
-	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	<?php include 'footer.php' ?>Prim
 "3	LINE	0
-	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	"Plug 'Valloric/YouCompleteMe'
 "4	LINE	0
 	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 "5	LINE	0
@@ -200,27 +206,32 @@ $
 "9	LINE	0
 	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 "a	CHAR	0
-	
+	
 "w	CHAR	0
 	wwwwcitFooter;w€ýc€ýb€ýc€ýbhe
 "-	CHAR	0
-	type somehting else
+	ctrlpvim/ctrlp.vim
 
 # global variables:
 
 # File marks:
-'0  115  0  ~/.zshrc
-'1  100  0  ~/Dropbox/Dotfiles/zshrc-work
-'2  1  0  ~/.vimrc
-'3  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
-'4  5  12  ~/.gitconfig
-'5  22  5  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
-'6  1  0  ~/Documents/websites/nancy/assets/js/functions.js
-'7  14  24  ~/Documents/websites/nancy/index.php
-'8  16  33  ~/dotfiles/cheatsheet.md
-'9  5  0  ~/dotfiles/cheatsheet.md
+'0  31  0  ~/Documents/websites/nancy/index.php
+'1  1  0  ~/Documents/websites/nancy/index.php
+'2  115  0  ~/.zshrc
+'3  100  0  ~/Dropbox/Dotfiles/zshrc-work
+'4  1  0  ~/.vimrc
+'5  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
+'6  5  12  ~/.gitconfig
+'7  22  5  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
+'8  1  0  ~/Documents/websites/nancy/assets/js/functions.js
+'9  14  24  ~/Documents/websites/nancy/index.php
 
 # Jumplist (newest first):
+-'  31  0  ~/Documents/websites/nancy/index.php
+-'  1  0  ~/Documents/websites/nancy/index.php
+-'  9  0  ~/Documents/websites/nancy/NERD_tree_1
+-'  1  0  ~/Documents/websites/nancy/NERD_tree_1
+-'  11  2  ~/Documents/websites/nancy/NERD_tree_1
 -'  115  0  ~/.zshrc
 -'  1  0  ~/.zshrc
 -'  100  0  ~/Dropbox/Dotfiles/zshrc-work
@@ -235,11 +246,10 @@ $
 -'  1  0  ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
 -'  1  0  ~/Documents/websites/nancy/assets/js/functions.js
 -'  2  13  ~/Documents/websites/nancy/assets/js/functions.js
--'  6  0  ~/NERD_tree_1
--'  10  2  ~/NERD_tree_1
+-'  13  0  ~/NERD_tree_1
+-'  17  2  ~/NERD_tree_1
 -'  1  0  ~/NERD_tree_1
 -'  14  24  ~/Documents/websites/nancy/index.php
--'  1  0  ~/Documents/websites/nancy/index.php
 -'  16  33  ~/dotfiles/cheatsheet.md
 -'  4  1  ~/dotfiles/cheatsheet.md
 -'  1  0  ~/dotfiles/cheatsheet.md
@@ -265,8 +275,8 @@ $
 -'  45  37  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
 -'  1  0  ~/Library/Caches/Cleanup At Startup/Transmit/1E74009F-2AE5-42FD-B4A9-6902112B762C/config.js
 -'  1  0  ~/Documents/websites/nancy/assets/css/custom.css
--'  14  0  ~/NERD_tree_1
--'  18  2  ~/NERD_tree_1
+-'  21  0  ~/NERD_tree_1
+-'  25  2  ~/NERD_tree_1
 -'  4  10  ~/dotfiles/.gitignore
 -'  3  17  ~/new.html
 -'  57  20  ~/.muttrc
@@ -314,118 +324,223 @@ $
 -'  13  0  ~/.muttrc
 -'  14  0  ~/.muttrc
 -'  15  0  ~/.muttrc
--'  14  24  ~/Documents/websites/nancy/index.php
--'  1  0  ~/Documents/websites/nancy/index.php
--'  3  52  ~/dotfiles/README.md
--'  14  24  ~/Documents/websites/nancy/index.php
--'  1  0  ~/Documents/websites/nancy/index.php
+-'  31  0  ~/Documents/websites/nancy/index.php
 
 # History of marks within files (newest to oldest):
 
+> ~/ControlP
+	"	10	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	144	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	129	0
+	+	120	0
+	+	118	0
+	+	109	0
+	+	100	0
+	+	91	0
+	+	82	0
+	+	73	0
+	+	64	0
+	+	55	0
+	+	46	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	43	0
+	+	34	0
+	+	25	0
+	+	16	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+
 > ~/.vimrc
-	"	174	21
-	^	8	65
-	.	8	0
-	+	212	0
-	+	212	0
-	+	212	0
-	+	212	0
-	+	212	0
-	+	212	20
-	+	212	23
-	+	212	18
-	+	212	16
-	+	212	16
-	+	212	21
-	+	212	27
-	+	212	24
-	+	212	25
-	+	212	19
-	+	212	19
-	+	212	19
-	+	212	19
-	+	21	0
-	+	19	1
-	+	40	28
-	+	40	0
-	+	40	0
-	+	36	0
-	+	40	0
-	+	36	5
-	+	212	30
-	+	215	0
-	+	212	0
-	+	215	0
+	"	175	21
+	^	5	5
+	.	5	5
+	+	213	0
+	+	213	20
 	+	213	23
-	+	214	0
-	+	213	14
-	+	214	22
-	+	38	25
-	+	40	0
-	+	38	5
+	+	213	18
+	+	213	16
+	+	213	16
+	+	213	21
+	+	213	27
+	+	213	24
+	+	213	25
+	+	213	19
+	+	213	19
+	+	213	19
+	+	213	19
+	+	22	0
+	+	20	1
+	+	41	28
+	+	41	0
+	+	41	0
 	+	37	0
-	+	21	0
-	+	20	5
-	+	30	5
-	+	109	0
-	+	109	0
-	+	109	0
-	+	109	0
-	+	109	0
-	+	109	0
-	+	109	0
-	+	109	0
-	+	109	0
-	+	23	0
-	+	212	0
-	+	212	2
-	+	263	19
-	+	264	13
-	+	39	3
-	+	89	0
-	+	139	1
-	+	139	0
-	+	23	0
-	+	109	0
-	+	106	0
+	+	41	0
+	+	37	5
+	+	213	30
+	+	216	0
+	+	213	0
+	+	216	0
+	+	214	23
+	+	215	0
+	+	214	14
+	+	215	22
+	+	39	25
+	+	41	0
+	+	39	5
+	+	38	0
+	+	22	0
+	+	21	5
+	+	31	5
+	+	110	0
+	+	110	0
+	+	110	0
+	+	110	0
+	+	110	0
+	+	110	0
+	+	110	0
+	+	110	0
+	+	110	0
+	+	24	0
+	+	213	0
+	+	213	2
+	+	264	19
+	+	265	13
+	+	40	3
+	+	90	0
+	+	140	1
+	+	140	0
+	+	24	0
+	+	110	0
 	+	107	0
-	+	107	0
-	+	105	46
-	+	151	7
-	+	212	0
-	+	210	0
-	+	223	0
+	+	108	0
+	+	108	0
+	+	106	46
+	+	152	7
+	+	213	0
+	+	211	0
 	+	224	0
-	+	131	0
-	+	151	7
-	+	132	33
+	+	225	0
+	+	132	0
+	+	152	7
+	+	133	33
 	+	7	0
 	+	7	0
 	+	7	5
 	+	7	0
 	+	7	0
-	+	132	33
-	+	133	38
-	+	132	33
-	+	133	38
+	+	133	33
+	+	134	38
+	+	133	33
+	+	134	38
 	+	7	0
 	+	7	0
-	+	9	0
 	+	10	0
-	+	136	0
-	+	130	8
-	+	171	9
+	+	11	0
+	+	137	0
+	+	131	8
 	+	172	9
-	+	10	0
-	+	132	33
-	+	133	38
-	+	173	11
-	+	154	0
-	+	163	21
-	+	174	21
-	+	10	0
-	+	22	0
+	+	173	9
+	+	11	0
+	+	133	33
+	+	134	38
+	+	174	11
+	+	155	0
+	+	164	21
+	+	175	21
+	+	11	0
+	+	23	0
 	+	8	0
+	+	9	0
+	+	6	0
+	+	7	0
+	+	5	5
+
+> ~/Documents/websites/nancy/NERD_tree_1
+	"	9	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+
+> ~/Documents/websites/nancy/index.php
+	"	31	0
+	.	32	0
+	+	13	34
+	+	14	24
+	+	28	0
+	+	27	0
+	+	32	0
+
+> ~/NERD_tree_1
+	"	4	0
+	.	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
 
 > ~/dotfiles/.gitignore
 	"	1	0
@@ -505,68 +620,6 @@ $
 > ~/dotfiles/vim/undo/%Users%Bing%.msmtprc
 	"	22	5
 
-> ~/ControlP
-	"	10	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	145	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	130	0
-	+	121	0
-	+	119	0
-	+	110	0
-	+	101	0
-	+	92	0
-	+	83	0
-	+	74	0
-	+	65	0
-	+	56	0
-	+	47	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	44	0
-	+	35	0
-	+	26	0
-	+	17	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
 > ~/Documents/websites/nancy/assets/scss/custom.scss
 	"	6	26
 	.	4	0
@@ -632,32 +685,8 @@ $
 > /usr/local/Cellar/macvim/7.4-81/MacVim.app/Contents/Resources/vim/runtime/doc/help.txt
 	"	1	0
 
-> ~/NERD_tree_1
-	"	6	1
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
 > ~/dotfiles/vim/plugged/syntastic/doc/syntastic.txt
 	"	831	61
-
-> ~/Documents/websites/nancy/index.php
-	"	14	24
-	^	27	14
-	.	27	0
-	+	13	34
-	+	14	24
-	+	28	0
-	+	27	0
 
 > ~/dotfiles/ControlP
 	"	10	0
@@ -677,13 +706,6 @@ $
 	+	5	0
 	+	5	0
 	+	5	0
-
-> ~/Documents/websites/nancy/NERD_tree_1
-	"	9	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
 
 > ~/Documents/websites/nancy/NERD_tree_2
 	"	5	0

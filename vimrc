@@ -2,7 +2,7 @@ call plug#begin('~/.vim/plugged')
 " Base
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ggreer/the_silver_searcher'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -142,7 +142,7 @@ let g:UltiSnipsEditSplit="vertical"
  noremap <C-m> :CtrlPMRU<cr>
  set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
  set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
- let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'
+ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|plugins\|languages'
  let g:ctrlp_prompt_mappings = {
             \ 'AcceptSelection("e")': [],
             \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
