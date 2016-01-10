@@ -7,6 +7,8 @@ Plug 'ggreer/the_silver_searcher'
 Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-oblique'
 " Automation
 Plug 'mattn/emmet-vim'
 Plug 'honza/vim-snippets'

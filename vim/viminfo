@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/ctr
+~MSle0~/\V\<slide\>
 
 # Last Substitute Search Pattern:
 ~MSle0&vim
@@ -17,6 +17,8 @@
 $
 
 # Command Line History (newest to oldest):
+:qall!
+:e ../Documents/websites/nancy/index.php
 :q
 :Files
 :pwd
@@ -128,6 +130,8 @@ $
 :h margin
 
 # Search String History (newest to oldest):
+?/\V\<slide\>
+?/slide
 ?/path
 ?/ctr
 ?/mapping
@@ -221,18 +225,23 @@ $
 # global variables:
 
 # File marks:
-'0  1  0  ~/in_a_new_term_function
-'1  52  169  ~/.zshrc
-'2  267  47  ~/.vimrc
-'3  31  0  ~/Documents/websites/nancy/index.php
-'4  1  0  ~/Documents/websites/nancy/index.php
-'5  115  0  ~/.zshrc
-'6  100  0  ~/Dropbox/Dotfiles/zshrc-work
-'7  1  0  ~/.vimrc
-'8  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
-'9  5  12  ~/.gitconfig
+'0  24  38  ~/Documents/websites/nancy/index.php
+'1  1  0  ~/in_a_new_term_function
+'2  52  169  ~/.zshrc
+'3  269  47  ~/.vimrc
+'4  31  0  ~/Documents/websites/nancy/index.php
+'5  1  0  ~/Documents/websites/nancy/index.php
+'6  115  0  ~/.zshrc
+'7  100  0  ~/Dropbox/Dotfiles/zshrc-work
+'8  1  0  ~/.vimrc
+'9  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
 
 # Jumplist (newest first):
+-'  24  38  ~/Documents/websites/nancy/index.php
+-'  25  26  ~/Documents/websites/nancy/index.php
+-'  23  38  ~/Documents/websites/nancy/index.php
+-'  22  30  ~/Documents/websites/nancy/index.php
+-'  1  0  ~/Documents/websites/nancy/index.php
 -'  1  0  ~/in_a_new_term_function
 -'  52  169  ~/.zshrc
 -'  8  0  /usr/local/bin/in_a_new_term_function
@@ -242,7 +251,6 @@ $
 -'  28  15  ~/in_a_new_term_function
 -'  28  0  ~/.vimrc
 -'  31  0  ~/Documents/websites/nancy/index.php
--'  1  0  ~/Documents/websites/nancy/index.php
 -'  9  0  ~/Documents/websites/nancy/NERD_tree_1
 -'  1  0  ~/Documents/websites/nancy/NERD_tree_1
 -'  11  2  ~/Documents/websites/nancy/NERD_tree_1
@@ -318,126 +326,122 @@ $
 -'  1  0  ~/.mutt/colors.muttrc
 -'  10  41  ~/.msmtprc
 -'  23  0  ~/.offlineimaprc
--'  11  0  ~/.msmtprc
--'  9  34  ~/.msmtprc
--'  1  0  ~/.msmtprc
--'  11  22  ~/.mutt/temp/mutt-Ethel-501-42035-14983474102073202321
--'  1  0  ~/.mutt/temp/mutt-Ethel-501-42035-14983474102073202321
--'  31  44  ~/.muttrc
--'  30  38  ~/.muttrc
--'  3  0  ~/.muttrc
--'  4  0  ~/.muttrc
--'  5  0  ~/.muttrc
--'  6  0  ~/.muttrc
--'  7  0  ~/.muttrc
--'  8  0  ~/.muttrc
 
 # History of marks within files (newest to oldest):
 
+> ~/Documents/websites/nancy/index.php
+	"	24	38
+	.	32	0
+	+	13	34
+	+	14	24
+	+	28	0
+	+	27	0
+	+	32	0
+
 > ~/.vimrc
-	"	267	47
-	^	267	48
-	.	267	0
-	+	213	23
-	+	213	18
-	+	213	16
-	+	213	16
-	+	213	21
-	+	213	27
-	+	213	24
-	+	213	25
-	+	213	19
-	+	213	19
-	+	213	19
-	+	213	19
-	+	22	0
-	+	20	1
-	+	41	28
-	+	41	0
-	+	41	0
-	+	37	0
-	+	41	0
-	+	37	5
-	+	213	30
-	+	216	0
-	+	213	0
-	+	216	0
-	+	214	23
-	+	215	0
-	+	214	14
-	+	215	22
-	+	39	25
-	+	41	0
+	"	269	47
+	^	11	27
+	.	10	0
+	+	215	18
+	+	215	16
+	+	215	16
+	+	215	21
+	+	215	27
+	+	215	24
+	+	215	25
+	+	215	19
+	+	215	19
+	+	215	19
+	+	215	19
+	+	24	0
+	+	22	1
+	+	43	28
+	+	43	0
+	+	43	0
+	+	39	0
+	+	43	0
 	+	39	5
-	+	38	0
-	+	22	0
-	+	21	5
-	+	31	5
-	+	110	0
-	+	110	0
-	+	110	0
-	+	110	0
-	+	110	0
-	+	110	0
-	+	110	0
-	+	110	0
-	+	110	0
+	+	215	30
+	+	218	0
+	+	215	0
+	+	218	0
+	+	216	23
+	+	217	0
+	+	216	14
+	+	217	22
+	+	41	25
+	+	43	0
+	+	41	5
+	+	40	0
 	+	24	0
-	+	213	0
-	+	213	2
-	+	264	19
-	+	265	13
-	+	40	3
-	+	90	0
-	+	140	1
-	+	140	0
-	+	24	0
+	+	23	5
+	+	33	5
+	+	112	0
+	+	112	0
+	+	112	0
+	+	112	0
+	+	112	0
+	+	112	0
+	+	112	0
+	+	112	0
+	+	112	0
+	+	26	0
+	+	215	0
+	+	215	2
+	+	266	19
+	+	267	13
+	+	42	3
+	+	92	0
+	+	142	1
+	+	142	0
+	+	26	0
+	+	112	0
+	+	109	0
 	+	110	0
-	+	107	0
-	+	108	0
-	+	108	0
-	+	106	46
-	+	152	7
+	+	110	0
+	+	108	46
+	+	154	7
+	+	215	0
 	+	213	0
-	+	211	0
-	+	224	0
-	+	225	0
-	+	132	0
-	+	152	7
-	+	133	33
+	+	226	0
+	+	227	0
+	+	134	0
+	+	154	7
+	+	135	33
 	+	7	0
 	+	7	0
 	+	7	5
 	+	7	0
 	+	7	0
-	+	133	33
-	+	134	38
-	+	133	33
-	+	134	38
+	+	135	33
+	+	136	38
+	+	135	33
+	+	136	38
 	+	7	0
 	+	7	0
-	+	10	0
-	+	11	0
-	+	137	0
-	+	131	8
-	+	172	9
-	+	173	9
-	+	11	0
-	+	133	33
-	+	134	38
-	+	174	11
-	+	155	0
-	+	164	21
-	+	175	21
-	+	11	0
-	+	23	0
+	+	12	0
+	+	13	0
+	+	139	0
+	+	133	8
+	+	174	9
+	+	175	9
+	+	13	0
+	+	135	33
+	+	136	38
+	+	176	11
+	+	157	0
+	+	166	21
+	+	177	21
+	+	13	0
+	+	25	0
 	+	8	0
 	+	9	0
 	+	6	0
 	+	7	0
 	+	5	5
-	+	145	82
-	+	267	0
+	+	147	82
+	+	269	0
+	+	10	0
 
 > ~/.zshrc
 	"	52	169
@@ -575,15 +579,6 @@ $
 	+	1	0
 	+	1	0
 	+	1	0
-
-> ~/Documents/websites/nancy/index.php
-	"	31	0
-	.	32	0
-	+	13	34
-	+	14	24
-	+	28	0
-	+	27	0
-	+	32	0
 
 > ~/NERD_tree_1
 	"	4	0
