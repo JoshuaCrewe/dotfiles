@@ -17,16 +17,21 @@
 $
 
 # Command Line History (newest to oldest):
+:q
+:ls
+:source ~/.vimrc
+:source .vimrc
+:Ag index
+:pwd
+:cd ../Documents/websites/nancy/
+:q!
 :qall!
 :e ../Documents/websites/nancy/index.php
-:q
 :Files
-:pwd
 :FZF
 :qa
 :qall
 :e in_a_new_term_function
-:q!
 :cd Documents/websites/nancy/
 :!cd Documents/websites/nancy/
 :cd .
@@ -60,74 +65,8 @@ $
 :vim /vim/ ##
 :args
 :args *.md
-:ls
 :e README.md
 :next
-:args **
-:!ls
-:args vim/*.md
-:args *
-:bp
-:bn
-:%s/vim/this/gc
-:%TOhtml
-:e ~/Documents/websites/nancy/assets/css/
-:h color
-:h vim-css-color
-:h ragtag
-:setf php
-:e new.html
-:cfdo
-:h cfdo
-:h todo
-:e .vim/plugged/seoul256.vim/
-:grep! "\b
-:vsp
-:sp
-:e ~/.muttrc
-:e ~/.vim/plugged/seoul256.vim/
-:e ~/Desktop/vim\ Test\ Files/javascript.js
-:startify
-:e .offlineimaprc
-:h surround
-:nohlsearch
-:source ~/.vimrc
-:b7
-:e assets/scss/_lightbox.scss
-:e assets/js/lightbox.js
-:e index.php
-:w index.php
-:e index.html
-:e ../gulpfile.js
-:e footer.php
-:e header.php
-:%
-:w paintings.php
-:find 
-:hlsearch
-:hl
-:nhlsearch
-:h startify
-:h statify
-:nhl
-:h
-:e ~/.vim/ftplugin/help.vim
-:Xmark>
-:Xmark
-:Xmark<
-:xmark>
-:xmark
-:emoji#replace()
-:set fdc
-:set fdc5
-:h foldcolumn
-:h margin left
-:se
-:set wm 5
-:set wm5
-:wm
-:wm5
-:h margin
 
 # Search String History (newest to oldest):
 ?/\V\<slide\>
@@ -180,8 +119,6 @@ $
 ? \<window-resize\>
 ?/C-N
 ?/N
-?/color
-?/ol
 
 # Expression History (newest to oldest):
 =6*5
@@ -193,22 +130,38 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	LINE	0
-	qall
-"1	LINE	0
-	qall
+""0	CHAR	0
+	" bind K to grep word under cursor
+	 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+	
+	" bind \ (backward slash) to grep shortcut
+	 "command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+	
+	 nnoremap \ :Ag<SPACE>
+	
+	
+"1	CHAR	0
+	" bind K to grep word under cursor
+	 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+	
+	" bind \ (backward slash) to grep shortcut
+	 "command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+	
+	 nnoremap \ :Ag<SPACE>
+	
+	
 "2	LINE	0
 	qall
 "3	LINE	0
 	qall
 "4	LINE	0
-	Plug 'kien/ctrlp.vim'
+	qall
 "5	LINE	0
-	<?php include 'footer.php' ?>Prim
+	Plug 'kien/ctrlp.vim'
 "6	LINE	0
-	"Plug 'Valloric/YouCompleteMe'
+	<?php include 'footer.php' ?>Prim
 "7	LINE	0
-	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	"Plug 'Valloric/YouCompleteMe'
 "8	LINE	0
 	source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 "9	LINE	0
@@ -220,33 +173,36 @@ $
 "w	CHAR	0
 	wwwwcitFooter;w€ýc€ýb€ýc€ýbhe
 "-	CHAR	0
-	ctrlpvim/ctrlp.vim
+	>
 
 # global variables:
 
 # File marks:
-'0  24  38  ~/Documents/websites/nancy/index.php
-'1  1  0  ~/in_a_new_term_function
-'2  52  169  ~/.zshrc
-'3  269  47  ~/.vimrc
-'4  31  0  ~/Documents/websites/nancy/index.php
-'5  1  0  ~/Documents/websites/nancy/index.php
-'6  115  0  ~/.zshrc
-'7  100  0  ~/Dropbox/Dotfiles/zshrc-work
-'8  1  0  ~/.vimrc
-'9  4  37  ~/dotfiles/.git/COMMIT_EDITMSG
+'0  1  0  ~/Documents/websites/nancy/index.php
+'1  215  0  ~/.vimrc
+'2  24  38  ~/Documents/websites/nancy/index.php
+'3  1  0  ~/in_a_new_term_function
+'4  52  169  ~/.zshrc
+'5  264  47  ~/.vimrc
+'6  31  0  ~/Documents/websites/nancy/index.php
+'7  115  0  ~/.zshrc
+'8  100  0  ~/Dropbox/Dotfiles/zshrc-work
+'9  1  0  ~/.vimrc
 
 # Jumplist (newest first):
+-'  1  0  ~/Documents/websites/nancy/index.php
+-'  215  0  ~/.vimrc
+-'  209  29  ~/.vimrc
+-'  157  0  ~/.vimrc
 -'  24  38  ~/Documents/websites/nancy/index.php
 -'  25  26  ~/Documents/websites/nancy/index.php
 -'  23  38  ~/Documents/websites/nancy/index.php
 -'  22  30  ~/Documents/websites/nancy/index.php
--'  1  0  ~/Documents/websites/nancy/index.php
 -'  1  0  ~/in_a_new_term_function
 -'  52  169  ~/.zshrc
 -'  8  0  /usr/local/bin/in_a_new_term_function
 -'  1  0  /usr/local/bin/in_a_new_term_function
--'  267  47  ~/.vimrc
+-'  262  47  ~/.vimrc
 -'  145  1  ~/.vimrc
 -'  28  15  ~/in_a_new_term_function
 -'  28  0  ~/.vimrc
@@ -326,11 +282,17 @@ $
 -'  1  0  ~/.mutt/colors.muttrc
 -'  10  41  ~/.msmtprc
 -'  23  0  ~/.offlineimaprc
+-'  16  64  /usr/local/bin/in_a_new_term_function
+-'  1  0  /usr/local/bin/in_a_new_term_function
+-'  52  169  ~/.zshrc
+-'  8  0  /usr/local/bin/in_a_new_term_function
+-'  267  47  ~/.vimrc
+-'  215  0  ~/.vimrc
 
 # History of marks within files (newest to oldest):
 
 > ~/Documents/websites/nancy/index.php
-	"	24	38
+	"	1	0
 	.	32	0
 	+	13	34
 	+	14	24
@@ -338,21 +300,142 @@ $
 	+	27	0
 	+	32	0
 
+> ~/Documents/websites/nancy/ControlP
+	"	2	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	6	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+
+> ~/Documents/websites/nancy/header.php
+	"	1	0
+
+> ~/Documents/websites/nancy/paintings.php
+	"	1	0
+	^	35	0
+	.	35	0
+	+	27	0
+	+	27	0
+	+	26	0
+	+	27	0
+	+	26	14
+	+	27	14
+	+	27	14
+	+	35	0
+	+	26	24
+	+	27	24
+	+	26	50
+	+	35	0
+	+	27	27
+	+	26	35
+	+	35	0
+	+	27	44
+	+	28	0
+	+	29	0
+	+	30	0
+	+	31	0
+	+	32	0
+	+	33	0
+	+	34	0
+	+	36	0
+	+	35	0
+
 > ~/.vimrc
-	"	269	47
-	^	11	27
-	.	10	0
-	+	215	18
-	+	215	16
-	+	215	16
-	+	215	21
-	+	215	27
-	+	215	24
-	+	215	25
-	+	215	19
-	+	215	19
-	+	215	19
-	+	215	19
+	"	215	0
+	^	209	30
+	.	215	0
+	+	210	19
+	+	210	19
+	+	210	19
+	+	210	19
 	+	24	0
 	+	22	1
 	+	43	28
@@ -361,14 +444,14 @@ $
 	+	39	0
 	+	43	0
 	+	39	5
-	+	215	30
-	+	218	0
-	+	215	0
-	+	218	0
-	+	216	23
-	+	217	0
-	+	216	14
-	+	217	22
+	+	210	30
+	+	213	0
+	+	210	0
+	+	213	0
+	+	211	23
+	+	212	0
+	+	211	14
+	+	212	22
 	+	41	25
 	+	43	0
 	+	41	5
@@ -386,10 +469,10 @@ $
 	+	112	0
 	+	112	0
 	+	26	0
-	+	215	0
-	+	215	2
-	+	266	19
-	+	267	13
+	+	210	0
+	+	210	2
+	+	261	19
+	+	262	13
 	+	42	3
 	+	92	0
 	+	142	1
@@ -401,10 +484,10 @@ $
 	+	110	0
 	+	108	46
 	+	154	7
-	+	215	0
-	+	213	0
-	+	226	0
-	+	227	0
+	+	210	0
+	+	208	0
+	+	221	0
+	+	222	0
 	+	134	0
 	+	154	7
 	+	135	33
@@ -423,15 +506,15 @@ $
 	+	13	0
 	+	139	0
 	+	133	8
-	+	174	9
-	+	175	9
+	+	177	9
+	+	178	9
 	+	13	0
 	+	135	33
 	+	136	38
-	+	176	11
-	+	157	0
-	+	166	21
-	+	177	21
+	+	179	11
+	+	160	0
+	+	169	21
+	+	180	21
 	+	13	0
 	+	25	0
 	+	8	0
@@ -440,8 +523,22 @@ $
 	+	7	0
 	+	5	5
 	+	147	82
-	+	269	0
+	+	264	0
 	+	10	0
+	+	156	25
+	+	157	0
+	+	204	0
+	+	209	0
+	+	205	0
+	+	214	0
+	+	215	0
+
+> /usr/local/bin/in_a_new_term_function
+	"	16	64
+	^	16	65
+	.	16	64
+	+	1	1
+	+	16	64
 
 > ~/.zshrc
 	"	52	169
@@ -489,9 +586,6 @@ $
 	^	28	16
 	.	1	0
 	+	1	0
-
-> /usr/local/bin/in_a_new_term_function
-	"	1	0
 
 > /usr/local/bin/ControlP
 	"	1	0
@@ -763,84 +857,6 @@ $
 > ~/dotfiles/vim/plugged/vim-ragtag/doc/ragtag.txt
 	"	8	48
 
-> ~/Documents/websites/nancy/ControlP
-	"	2	0
-	.	2	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	0
-
 > ~/.muttrc
 	"	57	20
 	^	57	27
@@ -1034,39 +1050,6 @@ $
 
 > ~/dotfiles/vim/plugged/vim-surround/doc/surround.txt
 	"	8	48
-
-> ~/Documents/websites/nancy/header.php
-	"	1	0
-
-> ~/Documents/websites/nancy/paintings.php
-	"	1	0
-	^	35	0
-	.	35	0
-	+	27	0
-	+	27	0
-	+	26	0
-	+	27	0
-	+	26	14
-	+	27	14
-	+	27	14
-	+	35	0
-	+	26	24
-	+	27	24
-	+	26	50
-	+	35	0
-	+	27	27
-	+	26	35
-	+	35	0
-	+	27	44
-	+	28	0
-	+	29	0
-	+	30	0
-	+	31	0
-	+	32	0
-	+	33	0
-	+	34	0
-	+	36	0
-	+	35	0
 
 > ~/Documents/websites/nancy/assets/js/lightbox.js
 	"	12	0

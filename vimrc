@@ -153,6 +153,9 @@ let g:UltiSnipsEditSplit="vertical"
 " Emmet
  imap <D-Enter> <C-y>,
 
+" Better Clipboard pasting
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+
 " Colon
  "noremap ; :
 
@@ -198,14 +201,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
  endif
 
-" bind K to grep word under cursor
- nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
-" bind \ (backward slash) to grep shortcut
- command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-
- nnoremap \ :Ag<SPACE>
-
 " NerdTree
  nnoremap <leader>tf :silent NERDTreeFind<cr>
  nnoremap <C-t> :silent NERDTreeToggle<cr>
@@ -216,8 +211,8 @@ nmap <silent> ]b :bnext<cr>
 nmap <silent> [B :bfirst<cr>
 nmap <silent> ]B :blast<cr>
 
-nmap ˙ :silent :tabp<cr>
-nmap ¬ :silent :tabn<cr>
+"nmap ˙ :silent :tabp<cr>
+"nmap ¬ :silent :tabn<cr>
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
