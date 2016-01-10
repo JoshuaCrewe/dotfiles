@@ -113,3 +113,5 @@ function t() {
 set editing-mode vi
 bindkey -v
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
