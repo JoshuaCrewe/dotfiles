@@ -3,4 +3,4 @@ vim/backup/**
 vim/undo/**
 vim/swap/**
 vim/plugged/**
-vim/viminfo
+viminfo
