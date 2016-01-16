@@ -15,7 +15,7 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'vim-scripts/AutoClose'
+"Plug 'vim-scripts/AutoClose'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -45,6 +45,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/vim-after-object'
 Plug 'junegunn/vim-xmark', { 'do': 'make' }
 Plug 'ervandew/supertab'
+Plug 'shime/vim-livedown'
 call plug#end()
 
    "   _   ________  ______  _____
@@ -79,7 +80,7 @@ call plug#end()
  set background=dark
 
  set guifont=Menlo:h12
- set linespace=2
+ set linespace=5
  set number
  set guioptions-=r  "remove right-hand scroll bar
  set guioptions-=L  "remove left-hand scroll bar
