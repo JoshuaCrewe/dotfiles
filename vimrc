@@ -44,6 +44,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'junegunn/vim-easy-align' 
 Plug 'junegunn/vim-after-object'
 Plug 'junegunn/vim-xmark', { 'do': 'make' }
+Plug 'ervandew/supertab'
 call plug#end()
 
    "   _   ________  ______  _____
