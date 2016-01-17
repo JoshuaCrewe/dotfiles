@@ -51,8 +51,6 @@ Plug '2072/PHP-Indenting-for-VIm'
 Plug 'vim-scripts/SyntaxRange'
 call plug#end()
 
-
-
    "   _   ________  ______  _____
    "  | | / /  _/  |/  / _ \/ ___/
    "  | |/ // // /|_/ / , _/ /__  
@@ -269,4 +267,4 @@ set completefunc=emoji#complete
 " Treat all numerals as decimal
 set nrformats=
 
-"let g:fzf_launcher = "In_a_new_term_function %s"
+nmap <leader>so :source<space>~/.vimrc<cr>
