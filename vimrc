@@ -46,7 +46,12 @@ Plug 'junegunn/vim-after-object'
 Plug 'junegunn/vim-xmark', { 'do': 'make' }
 Plug 'ervandew/supertab'
 Plug 'shime/vim-livedown'
+" Trying to fix php indentation issues
+Plug '2072/PHP-Indenting-for-VIm'
+Plug 'vim-scripts/SyntaxRange'
 call plug#end()
+
+
 
    "   _   ________  ______  _____
    "  | | / /  _/  |/  / _ \/ ___/
@@ -141,6 +146,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" Will include HTML Snippets in php files
+au BufRead,BufNewFile *.php set ft=php.html
+
 " CtrlP
  noremap <C-b> :CtrlPBuffer<cr>
  noremap <C-m> :CtrlPMRU<cr>
@@ -158,8 +166,6 @@ let g:UltiSnipsEditSplit="vertical"
 " Better Clipboard pasting
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
-" Colon
- "noremap ; :
 
 " Search
  set ignorecase
