@@ -43,6 +43,7 @@ Plug 'junegunn/vim-after-object'
 " Trying to fix php indentation issues
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'vim-scripts/SyntaxRange'
+Plug 'StanAngeloff/php.vim'
 call plug#end()
 
    "   _   ________  ______  _____
@@ -235,3 +236,15 @@ set completefunc=emoji#complete
 set nrformats=
 
 nmap <leader>so :source<space>~/.vimrc<cr>
+
+" Put at the very end of your .vimrc file.
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
