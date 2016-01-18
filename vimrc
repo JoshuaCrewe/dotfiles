@@ -73,6 +73,8 @@ call plug#end()
  set laststatus=2
  set undofile
 
+ :au FocusLost * silent! wa
+
 " GUI
  let g:seoul256_background = 236
  colo seoul256
@@ -151,14 +153,12 @@ let g:UltiSnipsEditSplit="vertical"
             \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
             \ }
 
+ let g:ctrlp_working_path_mode = 'wc'
 " Emmet
  imap <D-Enter> <C-y>,
 
 " Better Clipboard pasting
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
-
-" Colon
- "noremap ; :
+nmap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 " Search
  set ignorecase
