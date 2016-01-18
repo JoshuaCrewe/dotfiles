@@ -3,8 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ggreer/the_silver_searcher'
-Plug 'haya14busa/incsearch.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-pseudocl'
@@ -15,7 +13,6 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
-"Plug 'vim-scripts/AutoClose'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -43,8 +40,10 @@ Plug 'mustache/vim-mustache-handlebars'
 " Testing Plugins
 Plug 'junegunn/vim-easy-align' 
 Plug 'junegunn/vim-after-object'
-Plug 'junegunn/vim-xmark', { 'do': 'make' }
-Plug 'shime/vim-livedown'
+" Trying to fix php indentation issues
+Plug '2072/PHP-Indenting-for-VIm'
+Plug 'vim-scripts/SyntaxRange'
+Plug 'StanAngeloff/php.vim'
 call plug#end()
 
    "   _   ________  ______  _____
@@ -71,7 +70,6 @@ call plug#end()
  set ruler
  set backspace=indent,eol,start
  set laststatus=2
- set undofile
 
  :au FocusLost * silent! wa
 
@@ -142,6 +140,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" Will include HTML Snippets in php files
+au BufRead,BufNewFile *.php set ft=php.html
+
 " CtrlP
  noremap <C-b> :CtrlPBuffer<cr>
  noremap <C-m> :CtrlPMRU<cr>
@@ -190,30 +191,10 @@ nmap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 " Plug
  nnoremap <leader>plug :silent PlugClean \| PlugUpdate \| PlugInstall \| q<cr>
 
- " The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
- endif
-
 " NerdTree
  nnoremap <leader>tf :silent NERDTreeFind<cr>
  nnoremap <C-t> :silent NERDTreeToggle<cr>
 
-" Buffers
-nmap <silent> [b :bprevious<cr>
-nmap <silent> ]b :bnext<cr>
-nmap <silent> [B :bfirst<cr>
-nmap <silent> ]B :blast<cr>
-
-"nmap ˙ :silent :tabp<cr>
-"nmap ¬ :silent :tabn<cr>
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
@@ -231,12 +212,6 @@ endfunc
 
 " Toggle the color highlighting visual
 nmap <Leader>h :call HexHighlight()<Return>
-
-" Php
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
 
 " Limelight toggles
 nmap <leader>ll :Limelight!!<cr>
@@ -262,4 +237,16 @@ set completefunc=emoji#complete
 " Treat all numerals as decimal
 set nrformats=
 
-"let g:fzf_launcher = "In_a_new_term_function %s"
+nmap <leader>so :source<space>~/.vimrc<cr>
+
+" Put at the very end of your .vimrc file.
+
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
