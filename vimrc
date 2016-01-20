@@ -154,7 +154,7 @@ au BufRead,BufNewFile *.php set ft=php.html
             \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
             \ }
 
- let g:ctrlp_working_path_mode = 'wc'
+ let g:ctrlp_working_path_mode = 'ra'
 " Emmet
  imap <D-Enter> <C-y>,
 
