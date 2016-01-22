@@ -74,6 +74,9 @@ call plug#end()
  set laststatus=2
 
  :au FocusLost * silent! wa
+ filetype plugin on 
+" Enable built-in matchit plugin
+ runtime macros/matchit.vim
 
 " GUI
  let g:seoul256_background = 236
@@ -85,7 +88,7 @@ call plug#end()
  set number
  set guioptions-=r  "remove right-hand scroll bar
  set guioptions-=L  "remove left-hand scroll bar
- set iskeyword+=\-  "autocomplete does not break at dashes
+ "set iskeyword+=\-  "autocomplete does not break at dashes
  set guioptions-=e
  set wrap
  set showtabline=0
@@ -168,9 +171,11 @@ nmap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
  set incsearch
  set hlsearch
 
-" Save
- nnoremap <C-s> :w<cr>
- nnoremap <C-q> :q<cr>
+" Note that remapping C-s requires flow control to be disabled
+" " (e.g. in .bashrc or .zshrc)
+  map <C-s> <esc>:w<CR>
+  imap <C-s> <esc>:w<CR>
+  map <C-x> <C-w>c
 
 " Mappings
  let mapleader = ' '
