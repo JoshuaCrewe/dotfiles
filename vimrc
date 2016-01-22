@@ -9,8 +9,9 @@ Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-oblique'
 " Automation
 Plug 'mattn/emmet-vim'
-Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'sudar/vim-wordpress-snippets'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
@@ -44,6 +45,7 @@ Plug 'junegunn/vim-after-object'
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'vim-scripts/SyntaxRange'
 Plug 'StanAngeloff/php.vim'
+Plug 'shawncplus/phpcomplete.vim'
 call plug#end()
 
    "   _   ________  ______  _____
