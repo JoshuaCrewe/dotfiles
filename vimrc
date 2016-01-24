@@ -41,11 +41,6 @@ Plug 'mustache/vim-mustache-handlebars'
 " Testing Plugins
 Plug 'junegunn/vim-easy-align' 
 Plug 'junegunn/vim-after-object'
-" Trying to fix php indentation issues
-Plug '2072/PHP-Indenting-for-VIm'
-Plug 'vim-scripts/SyntaxRange'
-Plug 'StanAngeloff/php.vim'
-Plug 'shawncplus/phpcomplete.vim'
 call plug#end()
 
    "   _   ________  ______  _____
@@ -55,6 +50,9 @@ call plug#end()
    "                              
 
 " Defaults
+ filetype plugin on 
+ filetype indent on
+
  set nocompatible
  set modelines=0
  set encoding=utf-8
@@ -74,7 +72,7 @@ call plug#end()
  set laststatus=2
 
  :au FocusLost * silent! wa
- filetype plugin on 
+
 " Enable built-in matchit plugin
  runtime macros/matchit.vim
 
@@ -88,7 +86,6 @@ call plug#end()
  set number
  set guioptions-=r  "remove right-hand scroll bar
  set guioptions-=L  "remove left-hand scroll bar
- "set iskeyword+=\-  "autocomplete does not break at dashes
  set guioptions-=e
  set wrap
  set showtabline=0
@@ -132,6 +129,7 @@ endif
 
 " TABS
  set expandtab
+ set smarttab
  set tabstop=2
  set softtabstop=2
  set shiftwidth=2
@@ -146,7 +144,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Will include HTML Snippets in php files
-au BufRead,BufNewFile *.php set ft=php.html
+au BufRead,BufNewFile *.php set ft=phtml
 
 " CtrlP
  noremap <C-b> :CtrlPBuffer<cr>
