@@ -159,7 +159,7 @@ au BufRead,BufNewFile *.php set ft=phtml
 
  let g:ctrlp_working_path_mode = 'ra'
 " Emmet
- imap <D-Enter> <C-y>,
+ imap <C-k> <C-y>,
 
 " Better Clipboard pasting
 nmap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
