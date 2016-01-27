@@ -185,6 +185,7 @@ nmap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
  nmap k gk
  imap jk <Esc>
  imap <c-f> <c-x><c-f>
+ nmap <leader><leader> <c-^>
 
 " VIMRC
  nnoremap <leader>vim :silent :tabedit ~/.vimrc<cr>
