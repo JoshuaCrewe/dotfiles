@@ -76,10 +76,6 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
- alias zshconfig="mate ~/.zshrc"
- alias ohmyzsh="mate ~/.oh-my-zsh"
  alias gs='git status '
  alias ga='git add '
  alias gb='git branch '
@@ -89,6 +85,13 @@ source $ZSH/oh-my-zsh.sh
 
  alias got='git '
  alias get='git '
+
+alias ez='vim ~/.zshrc'
+alias sz='source ~/.zshrc'
+
+ alias cs='clear screen'
+
+ bindkey '\^?' backward-word
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 

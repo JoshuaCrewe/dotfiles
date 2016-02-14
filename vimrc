@@ -7,6 +7,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-oblique'
+Plug 'christoomey/vim-tmux-navigator'
 " Automation
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
@@ -20,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
+Plug 'chip/vim-fat-finger'
 " GUI
 Plug 'vim-scripts/hexHighlight.vim'
 Plug 'junegunn/seoul256.vim'
@@ -41,57 +43,58 @@ Plug 'mustache/vim-mustache-handlebars'
 " Testing Plugins
 Plug 'junegunn/vim-easy-align' 
 Plug 'junegunn/vim-after-object'
+Plug 'phongvcao/vim-stardict'
 call plug#end()
 
-   "   _   ________  ______  _____
-   "  | | / /  _/  |/  / _ \/ ___/
-   "  | |/ // // /|_/ / , _/ /__  
-   "  |___/___/_/  /_/_/|_|\___/  
-   "                              
+"   _   ________  ______  _____
+"  | | / /  _/  |/  / _ \/ ___/
+"  | |/ // // /|_/ / , _/ /__  
+"  |___/___/_/  /_/_/|_|\___/  
+"                              
 
 " Defaults
- filetype plugin on 
- filetype indent on
+filetype plugin on 
+filetype indent on
 
- set nocompatible
- set modelines=0
- set encoding=utf-8
- set scrolloff=3
- set autoindent
- set smartindent
- set showmode
- set showcmd
- set hidden
- set wildmenu
- set wildmode=list:longest
- set visualbell
- set cursorline
- set ttyfast
- set ruler
- set backspace=indent,eol,start
- set laststatus=2
+set nocompatible
+set modelines=0
+set encoding=utf-8
+set scrolloff=3
+set autoindent
+set smartindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+set ruler
+set backspace=indent,eol,start
+set laststatus=2
 
- :au FocusLost * silent! wa
+:au FocusLost * silent! wa
 
 " Enable built-in matchit plugin
- runtime macros/matchit.vim
+runtime macros/matchit.vim
 
 " GUI
- let g:seoul256_background = 236
- colo seoul256
- set background=dark
+let g:seoul256_background = 236
+colo seoul256
+set background=dark
 
- set guifont=Menlo:h12
- set linespace=5
- set number
- set guioptions-=r  "remove right-hand scroll bar
- set guioptions-=L  "remove left-hand scroll bar
- set guioptions-=e
- set wrap
- set showtabline=0
- set scrolloff=5
- set splitright
- set splitbelow
+set guifont=Menlo:h12
+set linespace=5
+set number
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+set guioptions-=e
+set wrap
+set showtabline=0
+set scrolloff=5
+set splitright
+set splitbelow
 
 " Backups
 " Save your backups to a less annoying place than the current directory.
@@ -128,11 +131,11 @@ if exists("+undofile")
 endif
 
 " TABS
- set expandtab
- set smarttab
- set tabstop=2
- set softtabstop=2
- set shiftwidth=2
+set expandtab
+set smarttab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -147,64 +150,90 @@ let g:UltiSnipsEditSplit="vertical"
 au BufRead,BufNewFile *.php set ft=phtml
 
 " CtrlP
- noremap <C-b> :CtrlPBuffer<cr>
- noremap <C-m> :CtrlPMRU<cr>
- set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
- set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
- let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|plugins\|languages'
- let g:ctrlp_prompt_mappings = {
-            \ 'AcceptSelection("e")': [],
-            \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-            \ }
+noremap <C-b> :CtrlPBuffer<cr>
+noremap <C-m> :CtrlPMRU<cr>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|plugins\|languages'
+let g:ctrlp_prompt_mappings = {
+      \ 'AcceptSelection("e")': [],
+      \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+      \ }
 
- let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_working_path_mode = 'ra'
 " Emmet
- imap <C-k> <C-y>,
+imap <C-k> <C-y>,
 
 " Better Clipboard pasting
 nmap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 " Search
- set ignorecase
- set incsearch
- set hlsearch
+set ignorecase
+set incsearch
+set hlsearch
 
 " Note that remapping C-s requires flow control to be disabled
 " " (e.g. in .bashrc or .zshrc)
-  map <C-s> <esc>:w<CR>
-  imap <C-s> <esc>:w<CR>
-  map <C-x> <C-w>c
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+map <C-x> <C-w>c
 
 " Mappings
- let mapleader = ' '
- nnoremap <leader>zsh :silent :tabedit ~/.zshrc<cr>
- nnoremap <up> ddkP
- nnoremap <down> ddp
- nnoremap § %
- nmap j gj
- nmap k gk
- imap jk <Esc>
- imap <c-f> <c-x><c-f>
- nmap <leader><leader> <c-^>
+let mapleader = ' '
+nnoremap <leader>zsh :silent :tabedit ~/.zshrc<cr>
+nnoremap <up> ddkP
+nnoremap <down> ddp
+nmap <right> :cnext<cr>
+nmap <left> :cprev<cr>
+nnoremap § %
+nmap j gj
+nmap k gk
+imap jk <Esc>
+imap <c-f> <c-x><c-f>
+nmap <leader><leader> <c-^>
 
 " VIMRC
- nnoremap <leader>vim :silent :tabedit ~/.vimrc<cr>
- autocmd! bufwritepost .virmc source %
+nnoremap <leader>vim :silent :edit ~/.vimrc<cr>
+autocmd! bufwritepost .virmc source %
+
+" TMUX conf
+nmap <leader>tmux :silent :edit ~/.tmux.conf<cr>
+
+if exists('$TMUX')
+  function! TmuxOrSplitSwitch(wincmd, tmuxdir)
+    let previous_winnr = winnr()
+    silent! execute "wincmd " . a:wincmd
+    if previous_winnr == winnr()
+      call system("tmux select-pane -" . a:tmuxdir)
+      redraw!
+    endif
+  endfunction
+
+  let previous_title = substitute(system("tmux display-message -p '#{pane_title}'"), '\n', '', '')
+  let &t_ti = "\<Esc>]2;vim\<Esc>\\" . &t_ti
+  let &t_te = "\<Esc>]2;". previous_title . "\<Esc>\\" . &t_te
+
+  nnoremap <silent> <C-h> :call TmuxOrSplitSwitch('h', 'L')<cr>
+  nnoremap <silent> <C-j> :call TmuxOrSplitSwitch('j', 'D')<cr>
+  nnoremap <silent> <C-k> :call TmuxOrSplitSwitch('k', 'U')<cr>
+  nnoremap <silent> <C-l> :call TmuxOrSplitSwitch('l', 'R')<cr>
+else
+  map <C-h> <C-w>h
+  map <C-j> <C-w>j
+  map <C-k> <C-w>k
+  map <C-l> <C-w>l
+endif
 
 " Treat <li> and <p> tags like the block tags they are
- let g:html_indent_tags = 'li\|p'
+let g:html_indent_tags = 'li\|p'
 
 " Plug
- nnoremap <leader>plug :silent PlugClean \| PlugUpdate \| PlugInstall \| q<cr>
+nnoremap <leader>plug :silent PlugClean \| PlugUpdate \| PlugInstall \| q<cr>
 
 " NerdTree
- nnoremap <leader>tf :silent NERDTreeFind<cr>
- nnoremap <C-t> :silent NERDTreeToggle<cr>
+nnoremap <leader>tf :silent NERDTreeFind<cr>
+nnoremap <C-t> :silent NERDTreeToggle<cr>
 
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
 nmap <silent> <C-q> :bd<cr>
 
 " Show highlighting groups for current word <space>syn
@@ -238,12 +267,12 @@ set completefunc=emoji#complete
 
 
 " Toggle distraction free viewing with Goyo
-  nmap <leader>gy :Goyo<cr>
+nmap <leader>gy :Goyo<cr>
 
 " Treat all numerals as decimal
 set nrformats=
 
-nmap <leader>so :source<space>~/.vimrc<cr>
+nmap <leader>r :source %<cr>
 
 " Put at the very end of your .vimrc file.
 
@@ -256,3 +285,21 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+
+" FZF mappings
+imap <c-x><c-l> <plug>(fzf-complete-line)
+nmap <leader>f :Files<cr>
+
+" Make vim-stardict split open in a :split (default value)
+let g:stardict_split_horizontal = 1
+
+" Set vim-stardict split width (or height) to 20 based on whether
+" vim-stardict split is a :vsplit (or :split)
+let g:stardict_split_size = 20
+
+" Map vim-stardict's commands
+" Ready for typing the word in
+nnoremap <leader>sw :StarDict<Space>
+" Lookup the word under cursor
+nnoremap <leader>sc :StarDictCursor<CR>
