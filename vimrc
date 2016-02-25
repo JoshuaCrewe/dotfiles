@@ -38,10 +38,13 @@ Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-ragtag'
 Plug 'dsawardekar/wordpress.vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'othree/html5.vim'
 " Testing Plugins
 Plug 'junegunn/vim-easy-align' 
 Plug 'junegunn/vim-after-object'
 Plug 'phongvcao/vim-stardict'
+Plug 'vim-scripts/loremipsum'
+Plug 'blindFS/vim-taskwarrior'
 call plug#end()
 
 "   _   ________  ______  _____
