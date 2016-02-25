@@ -80,6 +80,8 @@ set laststatus=2
 " Enable built-in matchit plugin
 runtime macros/matchit.vim
 
+" Syntax highlighting man pages
+runtime! ftplugin/man.vim
 " GUI
 let g:seoul256_background = 236
 colo seoul256
