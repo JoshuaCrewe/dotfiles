@@ -196,6 +196,9 @@ imap jk <Esc>
 imap <c-f> <c-x><c-f>
 nmap <leader><leader> <c-^>
 
+"reindent
+nmap <leader>= mqggvG$=`q
+
 " VIMRC
 nnoremap <leader>vim :silent :edit ~/.vimrc<cr>
 autocmd! bufwritepost .virmc source %
