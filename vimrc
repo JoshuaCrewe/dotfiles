@@ -154,17 +154,17 @@ let g:UltiSnipsEditSplit="vertical"
 au BufRead,BufNewFile *.php set ft=phtml
 
 " CtrlP
-noremap <C-b> :CtrlPBuffer<cr>
 noremap <C-m> :CtrlPMRU<cr>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|plugins\|languages'
-let g:ctrlp_prompt_mappings = {
-      \ 'AcceptSelection("e")': [],
-      \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-      \ }
+"let g:ctrlp_prompt_mappings = {
+      "\ 'AcceptSelection("e")': [],
+      "\ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+      "\ }
 
 let g:ctrlp_working_path_mode = 'ra'
+
 " Emmet
 imap <C-k> <C-y>,
 
@@ -291,6 +291,8 @@ augroup END
 " FZF mappings
 imap <c-x><c-l> <plug>(fzf-complete-line)
 nmap <leader>f :Files<cr>
+nmap <cr> :Files<cr>
+noremap <C-b> :Buffers<cr>
 
 " Make vim-stardict split open in a :split (default value)
 let g:stardict_split_horizontal = 1
