@@ -309,3 +309,14 @@ let g:stardict_split_size = 20
 nnoremap <leader>sw :StarDict<Space>
 " Lookup the word under cursor
 nnoremap <leader>sc :StarDictCursor<CR>
+"Fugitive
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>ga :Gadd<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gco :Gcheckout<cr>
+nnoremap <leader>gci :Gcommit<cr>
+nnoremap <leader>gm :Gmove<cr>
+nnoremap <leader>gr :Gremove<cr>
+nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
