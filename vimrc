@@ -309,6 +309,10 @@ let g:stardict_split_size = 20
 nnoremap <leader>sw :StarDict<Space>
 " Lookup the word under cursor
 nnoremap <leader>sc :StarDictCursor<CR>
+
+
+imap lorem <esc>:Loremipsum 
+
 " Seen in Steve Losh's .vimrc for sorting css/sass alphabetically
 au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
