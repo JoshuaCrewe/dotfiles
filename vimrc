@@ -82,18 +82,19 @@ runtime macros/matchit.vim
 
 " Syntax highlighting man pages
 runtime! ftplugin/man.vim
+
 " GUI
 let g:seoul256_background = 236
 colo seoul256
 set background=dark
 
-set guifont=Menlo:h12
+set guifont=Inout:h13
 set linespace=5
 set number
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=e
-set wrap
+set nowrap
 set showtabline=0
 set scrolloff=5
 set splitright
