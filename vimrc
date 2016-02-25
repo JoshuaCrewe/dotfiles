@@ -14,7 +14,6 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'sudar/vim-wordpress-snippets'
 Plug 'scrooloose/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -23,7 +22,6 @@ Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chip/vim-fat-finger'
 " GUI
-Plug 'vim-scripts/hexHighlight.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -244,9 +242,6 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
-" Toggle the color highlighting visual
-nmap <Leader>h :call HexHighlight()<Return>
 
 " Limelight toggles
 nmap <leader>ll :Limelight!!<cr>
