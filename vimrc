@@ -14,7 +14,6 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'sudar/vim-wordpress-snippets'
 Plug 'scrooloose/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -23,7 +22,6 @@ Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chip/vim-fat-finger'
 " GUI
-Plug 'vim-scripts/hexHighlight.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -40,10 +38,13 @@ Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-ragtag'
 Plug 'dsawardekar/wordpress.vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'othree/html5.vim'
 " Testing Plugins
 Plug 'junegunn/vim-easy-align' 
 Plug 'junegunn/vim-after-object'
 Plug 'phongvcao/vim-stardict'
+Plug 'vim-scripts/loremipsum'
+Plug 'blindFS/vim-taskwarrior'
 call plug#end()
 
 "   _   ________  ______  _____
@@ -79,18 +80,21 @@ set laststatus=2
 " Enable built-in matchit plugin
 runtime macros/matchit.vim
 
+" Syntax highlighting man pages
+runtime! ftplugin/man.vim
+
 " GUI
 let g:seoul256_background = 236
 colo seoul256
 set background=dark
 
-set guifont=Menlo:h12
+set guifont=Inout:h13
 set linespace=5
 set number
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=e
-set wrap
+set nowrap
 set showtabline=0
 set scrolloff=5
 set splitright
@@ -150,17 +154,17 @@ let g:UltiSnipsEditSplit="vertical"
 au BufRead,BufNewFile *.php set ft=phtml
 
 " CtrlP
-noremap <C-b> :CtrlPBuffer<cr>
 noremap <C-m> :CtrlPMRU<cr>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|plugins\|languages'
-let g:ctrlp_prompt_mappings = {
-      \ 'AcceptSelection("e")': [],
-      \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-      \ }
+"let g:ctrlp_prompt_mappings = {
+      "\ 'AcceptSelection("e")': [],
+      "\ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+      "\ }
 
 let g:ctrlp_working_path_mode = 'ra'
+
 " Emmet
 imap <C-k> <C-y>,
 
@@ -191,6 +195,9 @@ nmap k gk
 imap jk <Esc>
 imap <c-f> <c-x><c-f>
 nmap <leader><leader> <c-^>
+
+"reindent
+nmap <leader>= mqggvG$=`q
 
 " VIMRC
 nnoremap <leader>vim :silent :edit ~/.vimrc<cr>
@@ -245,9 +252,6 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-" Toggle the color highlighting visual
-nmap <Leader>h :call HexHighlight()<Return>
-
 " Limelight toggles
 nmap <leader>ll :Limelight!!<cr>
 
@@ -290,6 +294,8 @@ augroup END
 " FZF mappings
 imap <c-x><c-l> <plug>(fzf-complete-line)
 nmap <leader>f :Files<cr>
+nmap <cr> :Files<cr>
+noremap <C-b> :Buffers<cr>
 
 " Make vim-stardict split open in a :split (default value)
 let g:stardict_split_horizontal = 1
@@ -303,3 +309,21 @@ let g:stardict_split_size = 20
 nnoremap <leader>sw :StarDict<Space>
 " Lookup the word under cursor
 nnoremap <leader>sc :StarDictCursor<CR>
+
+
+imap lorem <esc>:Loremipsum 
+
+" Seen in Steve Losh's .vimrc for sorting css/sass alphabetically
+au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
+
+"Fugitive
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gw :Gwrite<cr>
+nnoremap <leader>ga :Gadd<cr>
+nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gco :Gcheckout<cr>
+nnoremap <leader>gci :Gcommit<cr>
+nnoremap <leader>gm :Gmove<cr>
+nnoremap <leader>gr :Gremove<cr>
+nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
