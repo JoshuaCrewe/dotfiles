@@ -45,6 +45,7 @@ Plug 'junegunn/vim-after-object'
 Plug 'phongvcao/vim-stardict'
 Plug 'vim-scripts/loremipsum'
 Plug 'blindFS/vim-taskwarrior'
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-vinegar'
 call plug#end()
 

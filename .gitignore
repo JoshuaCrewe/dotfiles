@@ -4,3 +4,4 @@ vim/undo/**
 vim/swap/**
 vim/plugged/**
 viminfo
+.netrwhist
