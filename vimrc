@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 " Base
 Plug 'tpope/vim-sensible'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -45,6 +45,7 @@ Plug 'junegunn/vim-after-object'
 Plug 'phongvcao/vim-stardict'
 Plug 'vim-scripts/loremipsum'
 Plug 'blindFS/vim-taskwarrior'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 "   _   ________  ______  _____
@@ -252,6 +253,11 @@ nnoremap <leader>plug :silent PlugClean \| PlugUpdate \| PlugInstall \| q<cr>
 " NerdTree
 nnoremap <leader>tf :silent NERDTreeFind<cr>
 nnoremap <C-t> :silent NERDTreeToggle<cr>
+
+" Choose the tree view when using netrw
+let g:netrw_liststyle=3
+" pressing q in netrw will close the file explorer
+autocmd FileType netrw nnoremap q :bp\|bd #<CR>
 
 nmap <silent> <C-q> :bd<cr>
 
