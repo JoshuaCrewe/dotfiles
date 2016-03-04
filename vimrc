@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 " Base
 Plug 'tpope/vim-sensible'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -45,6 +45,8 @@ Plug 'junegunn/vim-after-object'
 Plug 'phongvcao/vim-stardict'
 Plug 'vim-scripts/loremipsum'
 Plug 'blindFS/vim-taskwarrior'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-vinegar'
 call plug#end()
 
 "   _   ________  ______  _____
@@ -121,6 +123,18 @@ set noswapfile
 " viminfo stores the the state of your previous editing session
 set viminfo+=n~/.vim/viminfo
 
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+
 if exists("+undofile")
   " undofile - This allows you to use undos after exiting and restarting
   " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
@@ -152,6 +166,9 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Will include HTML Snippets in php files
 au BufRead,BufNewFile *.php set ft=phtml
+
+" make markdown more readable
+au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100
 
 " CtrlP
 noremap <C-m> :CtrlPMRU<cr>
@@ -241,6 +258,11 @@ nnoremap <leader>plug :silent PlugClean \| PlugUpdate \| PlugInstall \| q<cr>
 nnoremap <leader>tf :silent NERDTreeFind<cr>
 nnoremap <C-t> :silent NERDTreeToggle<cr>
 
+" Choose the tree view when using netrw
+let g:netrw_liststyle=3
+" pressing q in netrw will close the file explorer
+autocmd FileType netrw nnoremap q :bp\|bd #<CR>
+
 nmap <silent> <C-q> :bd<cr>
 
 " Show highlighting groups for current word <space>syn
@@ -327,3 +349,5 @@ nnoremap <leader>gci :Gcommit<cr>
 nnoremap <leader>gm :Gmove<cr>
 nnoremap <leader>gr :Gremove<cr>
 nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
+
+nmap <leader>/ :Ag 
