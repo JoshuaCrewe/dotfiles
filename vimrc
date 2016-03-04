@@ -167,6 +167,9 @@ let g:UltiSnipsEditSplit="vertical"
 " Will include HTML Snippets in php files
 au BufRead,BufNewFile *.php set ft=phtml
 
+" make markdown more readable
+au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100
+
 " CtrlP
 noremap <C-m> :CtrlPMRU<cr>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
