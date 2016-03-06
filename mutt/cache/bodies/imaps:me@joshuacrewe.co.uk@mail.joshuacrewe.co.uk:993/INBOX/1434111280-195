@@ -1,0 +1,45 @@
+Return-Path: <returns@cacert.org>
+Delivered-To: <me@joshuacrewe.co.uk>
+Received: from joshuacrewe.co.uk
+	by raspberrypi (Dovecot) with LMTP id Rq8eCR9ebFY8XQAAKv1cSg
+	for <me@joshuacrewe.co.uk>; Sat, 12 Dec 2015 17:49:19 +0000
+Received: by joshuacrewe.co.uk (Postfix, from userid 112)
+	id DFEBDA04EC; Sat, 12 Dec 2015 17:49:18 +0000 (GMT)
+X-Spam-Checker-Version: SpamAssassin 3.3.2 (2011-06-06) on raspberrypi
+X-Spam-Level: 
+X-Spam-Status: No, score=0.0 required=2.0 tests=none autolearn=ham
+	version=3.3.2
+Received: from www.cacert.org (www.cacert.org [213.154.225.245])
+	by joshuacrewe.co.uk (Postfix) with ESMTPS id D1A1AA04E0
+	for <me@joshuacrewe.co.uk>; Sat, 12 Dec 2015 17:49:13 +0000 (GMT)
+Received: from hlin.cacert.org (localhost [127.0.0.1])
+	by www.cacert.org (Postfix) with SMTP id 4A399361085
+	for <me@joshuacrewe.co.uk>; Sat, 12 Dec 2015 18:49:13 +0100 (CET)
+X-Mailer: CAcert.org Website
+X-OriginatingIP: 
+Sender: returns@cacert.org
+Errors-To: returns@cacert.org
+Reply-To: support@cacert.org
+From: support@cacert.org (CAcert Support)
+To: me@joshuacrewe.co.uk
+Subject: [CAcert.org] Your certificate
+Mime-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+Message-Id: <20151212174913.4A399361085@www.cacert.org>
+Date: Sat, 12 Dec 2015 18:49:13 +0100 (CET)
+
+Hi Joshua,
+
+You can collect your certificate for *.joshuacrewe.co.uk by going to the following location:
+
+https://www.cacert.org/account.php?id=15&cert=699533
+
+If you have not imported CAcert's root certificate, please go to:
+https://www.cacert.org/index.php?id=3
+Root cert fingerprint = A6:1B:37:5E:39:0D:9C:36:54:EE:BD:20:31:46:1F:6B
+Root cert fingerprint = 135C EC36 F49C B8E9 3B1A B270 CD80 8846 76CE 8F33
+
+Best regards
+CAcert.org Support!
+
