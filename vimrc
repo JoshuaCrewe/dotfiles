@@ -48,6 +48,7 @@ Plug 'blindFS/vim-taskwarrior'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/camelcasemotion'
+Plug 'duff/vim-scratch'
 call plug#end()
 
 "   _   ________  ______  _____
