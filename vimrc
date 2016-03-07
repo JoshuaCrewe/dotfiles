@@ -47,6 +47,7 @@ Plug 'vim-scripts/loremipsum'
 Plug 'blindFS/vim-taskwarrior'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-vinegar'
+Plug 'vim-scripts/camelcasemotion'
 call plug#end()
 
 "   _   ________  ______  _____
@@ -212,6 +213,13 @@ nmap k gk
 imap jk <Esc>
 imap <c-f> <c-x><c-f>
 nmap <leader><leader> <c-^>
+
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
 
 "reindent
 nmap <leader>= mqggvG$=`q
