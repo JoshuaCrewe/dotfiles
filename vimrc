@@ -108,6 +108,7 @@ set showtabline=0
 set scrolloff=5
 set splitright
 set splitbelow
+set formatoptions-=or " Prevent automatic comment prefixing"
 
 " Backups
 " Save your backups to a less annoying place than the current directory.
