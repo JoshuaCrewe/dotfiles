@@ -202,7 +202,6 @@ set hlsearch
 " " (e.g. in .bashrc or .zshrc)
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
-map <C-x> <C-w>c
 
 " Mappings
 let mapleader = ' '
@@ -326,11 +325,6 @@ augroup END
 
 
 " FZF mappings
-imap <c-x><c-l> <plug>(fzf-complete-line)
-nmap <leader>f :Files<cr>
-nmap <cr> :Files<cr>
-noremap <C-b> :Buffers<cr>
-
 " Make vim-stardict split open in a :split (default value)
 let g:stardict_split_horizontal = 1
 
@@ -362,4 +356,3 @@ nnoremap <leader>gm :Gmove<cr>
 nnoremap <leader>gr :Gremove<cr>
 nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
 
-nmap <leader>/ :Ag 
