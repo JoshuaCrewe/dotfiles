@@ -8,6 +8,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/vim-oblique'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-vinegar'
 " Automation
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
@@ -21,6 +22,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chip/vim-fat-finger'
+Plug 'vim-scripts/camelcasemotion'
 " GUI
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
@@ -28,6 +30,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/vim-emoji'
 Plug 'ap/vim-css-color'
+Plug 'airblade/vim-gitgutter'
 " Syntax
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
@@ -45,10 +48,12 @@ Plug 'junegunn/vim-after-object'
 Plug 'phongvcao/vim-stardict'
 Plug 'vim-scripts/loremipsum'
 Plug 'blindFS/vim-taskwarrior'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-vinegar'
-Plug 'vim-scripts/camelcasemotion'
 Plug 'duff/vim-scratch'
+Plug 'wellle/targets.vim'
+Plug 'justinmk/vim-sneak'
+Plug 'kana/vim-textobj-user'
+Plug 'jasonlong/vim-textobj-css'
+Plug 'mbbill/undotree'
 call plug#end()
 
 "   _   ________  ______  _____
@@ -88,13 +93,13 @@ runtime macros/matchit.vim
 runtime! ftplugin/man.vim
 
 " GUI
-let g:seoul256_background = 236
+let g:seoul256_background = 237
 colo seoul256
 set background=dark
 
-set guifont=Inout:h13
 set linespace=5
 set number
+set rnu
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=e
@@ -103,6 +108,7 @@ set showtabline=0
 set scrolloff=5
 set splitright
 set splitbelow
+set formatoptions-=or " Prevent automatic comment prefixing"
 
 " Backups
 " Save your backups to a less annoying place than the current directory.
@@ -125,16 +131,13 @@ set noswapfile
 " viminfo stores the the state of your previous editing session
 set viminfo+=n~/.vim/viminfo
 
-function! ResCur()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
-endfunction
-
-augroup resCur
+" Remember last cursor position
+augroup vimrcEx
   autocmd!
-  autocmd BufWinEnter * call ResCur()
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
 augroup END
 
 if exists("+undofile")
@@ -199,7 +202,6 @@ set hlsearch
 " " (e.g. in .bashrc or .zshrc)
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
-map <C-x> <C-w>c
 
 " Mappings
 let mapleader = ' '
@@ -304,6 +306,26 @@ set completefunc=emoji#complete
 " Toggle distraction free viewing with Goyo
 nmap <leader>gy :Goyo<cr>
 
+function! GoyoBefore()
+    let b:quitting = 0
+      let b:quitting_bang = 0
+        autocmd QuitPre <buffer> let b:quitting = 1
+          cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+        endfunction
+
+        function! GoyoAfter()
+            " Quit Vim if this is the only remaining buffer
+            if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+              if b:quitting_bang
+                qa!
+              else
+                qa
+              endif
+            endif
+          endfunction
+
+  let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
+
 " Treat all numerals as decimal
 set nrformats=
 
@@ -323,11 +345,6 @@ augroup END
 
 
 " FZF mappings
-imap <c-x><c-l> <plug>(fzf-complete-line)
-nmap <leader>f :Files<cr>
-nmap <cr> :Files<cr>
-noremap <C-b> :Buffers<cr>
-
 " Make vim-stardict split open in a :split (default value)
 let g:stardict_split_horizontal = 1
 
@@ -359,4 +376,34 @@ nnoremap <leader>gm :Gmove<cr>
 nnoremap <leader>gr :Gremove<cr>
 nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
 
-nmap <leader>/ :Ag 
+" FZF
+nnoremap <cr> :Files<cr>
+nnoremap <silent> <Leader>C        :Colors<CR>
+nnoremap <silent> <Leader><Enter>  :Buffers<CR>
+nnoremap <silent> <Leader>ag       :Ag <C-R><C-W><CR>
+nnoremap <silent> <Leader>`        :Marks<CR>
+
+inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 500 --min 5')
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+command! Plugs call fzf#run({
+  \ 'source':  map(sort(keys(g:plugs)), 'g:plug_home."/".v:val'),
+  \ 'options': '--delimiter / --nth -1',
+  \ 'down':    '~20%',
+  \ 'sink':    'Explore'})
+
+" Syntastic linters
+let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_javascript_checkers = ['jshint']
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
