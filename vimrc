@@ -93,11 +93,10 @@ runtime macros/matchit.vim
 runtime! ftplugin/man.vim
 
 " GUI
-let g:seoul256_background = 236
+let g:seoul256_background = 237
 colo seoul256
 set background=dark
 
-set guifont=Inout:h13
 set linespace=5
 set number
 set guioptions-=r  "remove right-hand scroll bar
