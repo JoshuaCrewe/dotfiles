@@ -131,16 +131,13 @@ set noswapfile
 " viminfo stores the the state of your previous editing session
 set viminfo+=n~/.vim/viminfo
 
-function! ResCur()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
-endfunction
-
-augroup resCur
+" Remember last cursor position
+augroup vimrcEx
   autocmd!
-  autocmd BufWinEnter * call ResCur()
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
 augroup END
 
 if exists("+undofile")
