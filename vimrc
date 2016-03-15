@@ -306,6 +306,26 @@ set completefunc=emoji#complete
 " Toggle distraction free viewing with Goyo
 nmap <leader>gy :Goyo<cr>
 
+function! GoyoBefore()
+    let b:quitting = 0
+      let b:quitting_bang = 0
+        autocmd QuitPre <buffer> let b:quitting = 1
+          cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+        endfunction
+
+        function! GoyoAfter()
+            " Quit Vim if this is the only remaining buffer
+            if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+              if b:quitting_bang
+                qa!
+              else
+                qa
+              endif
+            endif
+          endfunction
+
+  let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
+
 " Treat all numerals as decimal
 set nrformats=
 
