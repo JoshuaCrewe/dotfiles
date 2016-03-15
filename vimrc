@@ -398,3 +398,12 @@ command! Plugs call fzf#run({
   \ 'options': '--delimiter / --nth -1',
   \ 'down':    '~20%',
   \ 'sink':    'Explore'})
+
+" Syntastic linters
+let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_javascript_checkers = ['jshint']
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
