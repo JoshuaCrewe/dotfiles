@@ -99,6 +99,7 @@ set background=dark
 
 set linespace=5
 set number
+set rnu
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 set guioptions-=e
