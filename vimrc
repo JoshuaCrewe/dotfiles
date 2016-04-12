@@ -272,7 +272,7 @@ nnoremap <C-t> :silent NERDTreeToggle<cr>
 " Choose the tree view when using netrw
 let g:netrw_liststyle=3
 " pressing q in netrw will close the file explorer
-autocmd FileType netrw nnoremap q :bp\|bd #<CR>
+autocmd FileType netrw noremap q :bp\|bd #<CR>
 
 nmap <silent> <C-q> :bd<cr>
 

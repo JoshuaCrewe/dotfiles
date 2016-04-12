@@ -3,8 +3,8 @@ export ZSH=~/.oh-my-zsh
 
 # Theme
 ZSH_THEME="pure"
-autoload -U promptinit && promptinit
-prompt pure
+#autoload -U promptinit && promptinit
+#prompt pure
 
 # Red dots for completing process'
  COMPLETION_WAITING_DOTS="true"
