@@ -18,6 +18,7 @@ stty -ixon
 stty stop undef
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:"/Applications/MAMP/Library/bin/"
 
 source $ZSH/oh-my-zsh.sh
 

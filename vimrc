@@ -1,8 +1,6 @@
 call plug#begin('~/.vim/plugged')
 " Base
 Plug 'tpope/vim-sensible'
-"Plug 'scrooloose/nerdtree'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-pseudocl'
@@ -23,19 +21,19 @@ Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'chip/vim-fat-finger'
 Plug 'vim-scripts/camelcasemotion'
+Plug 'justinmk/vim-sneak'
+Plug 'vim-scripts/loremipsum'
 " GUI
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/limelight.vim'
-Plug 'junegunn/vim-emoji'
 Plug 'ap/vim-css-color'
 Plug 'airblade/vim-gitgutter'
 " Syntax
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
-Plug 'junegunn/vim-journal'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-ragtag'
@@ -43,17 +41,16 @@ Plug 'dsawardekar/wordpress.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'othree/html5.vim'
 " Testing Plugins
-Plug 'junegunn/vim-easy-align' 
 Plug 'junegunn/vim-after-object'
 Plug 'phongvcao/vim-stardict'
-Plug 'vim-scripts/loremipsum'
-Plug 'blindFS/vim-taskwarrior'
 Plug 'duff/vim-scratch'
 Plug 'wellle/targets.vim'
-Plug 'justinmk/vim-sneak'
 Plug 'kana/vim-textobj-user'
 Plug 'jasonlong/vim-textobj-css'
 Plug 'mbbill/undotree'
+Plug 'blindFS/vim-taskwarrior'
+Plug 'aaronbieber/vim-quicktask'
+Plug 'simeji/winresizer'
 call plug#end()
 
 "   _   ________  ______  _____
@@ -175,23 +172,34 @@ au BufRead,BufNewFile *.php set ft=phtml
 " make markdown more readable
 au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100
 
-" CtrlP
-noremap <C-m> :CtrlPMRU<cr>
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|plugins\|languages'
-"let g:ctrlp_prompt_mappings = {
-      "\ 'AcceptSelection("e")': [],
-      "\ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-      "\ }
-
-let g:ctrlp_working_path_mode = 'ra'
-
 " Emmet
 imap <C-k> <C-y>,
 
 " Better Clipboard pasting
-nmap <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+nmap <Leader>P :set paste<CR>o<esc>"+]p:set nopaste<cr>
+
+" https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode?utm_content=buffer73792&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 " Search
 set ignorecase
@@ -265,10 +273,6 @@ let g:html_indent_tags = 'li\|p'
 " Plug
 nnoremap <leader>plug :silent PlugClean \| PlugUpdate \| PlugInstall \| q<cr>
 
-" NerdTree
-nnoremap <leader>tf :silent NERDTreeFind<cr>
-nnoremap <C-t> :silent NERDTreeToggle<cr>
-
 " Choose the tree view when using netrw
 let g:netrw_liststyle=3
 " pressing q in netrw will close the file explorer
@@ -287,20 +291,6 @@ endfunc
 
 " Limelight toggles
 nmap <leader>ll :Limelight!!<cr>
-
-" Emoji
-function! s:replace_emojis() range
-  for lnum in range(a:firstline, a:lastline)
-    let line = getline(lnum)
-    let subs = substitute(line,
-          \ ':\([^:]\+\):', '\=emoji#for(submatch(1), submatch(0))', 'g')
-    if line != subs
-      call setline(lnum, subs)
-    endif
-  endfor
-endfunction
-command! -range EmojiReplace <line1>,<line2>call s:replace_emojis()
-set completefunc=emoji#complete
 
 
 " Toggle distraction free viewing with Goyo
@@ -407,3 +397,4 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
