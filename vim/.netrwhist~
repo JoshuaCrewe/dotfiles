@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/Joshua/localhost/dontwakethefish/assets/src/sass'
+let g:netrw_dirhist_2='/Users/Joshua/localhost/dontwakethefish'
+let g:netrw_dirhist_3='/Users/Joshua/localhost/dontwakethefish/assets/src/sass'
+let g:netrw_dirhist_4='/Users/Joshua/localhost/dontwakethefish/assets'
+let g:netrw_dirhist_5='/Users/Joshua/localhost/dontwakethefish/assets/src'
+let g:netrw_dirhist_6='/Users/Joshua/localhost/mydd/wp-content/themes/mydd'
