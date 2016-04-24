@@ -13,9 +13,12 @@ highlight CompItem   font: normal 13px 'Fira Mono' !important;
 highlight Find background: #d6c149; color: #000;
 
 set editor='/usr/local/bin/mvim -f +<line> <file>'
-" "set followhints=1
+"set followhints=1
 set showtabline=never
 set showstatuslinks=command
+
+nmap -builtin -silent <space>nt :set showtabline=never<cr>:set guioptions-=mT<cr>
+nmap -builtin -silent <space>t :set showtabline=always<cr>:set guioptions+=mT<cr>
 
 " FASTER PLEASE
 nmap -builtin -silent j 4j
@@ -82,8 +85,8 @@ nmap -builtin gp :pin!<cr>
 style -name ublick * #nav-bar * { visibility: visible; }
 
 "use the home row for hints
-set hintkeys=hjkl;asdfg
+"set hintkeys=hjkl;asdfg
 
 "Hide some stuff
-set guioptions=Csn
+set guioptions=Cs
 

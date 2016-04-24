@@ -1,4 +1,5 @@
 .DS_Store
+
 vim/backup/**
 vim/undo/**
 vim/swap/**
@@ -6,5 +7,8 @@ vim/plugged/**
 viminfo
 .netrwhist
 .un~
+
 mutt/temp/**
 mutt/cache/**
+
+/pentadactyl/info/**
