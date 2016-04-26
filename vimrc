@@ -11,7 +11,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'sudar/vim-wordpress-snippets'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
@@ -37,9 +36,13 @@ Plug 'pangloss/vim-javascript'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-ragtag'
-Plug 'dsawardekar/wordpress.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'othree/html5.vim'
+" Wordpress
+Plug 'sudar/vim-wordpress-snippets'
+Plug 'dsawardekar/wordpress.vim'
+" Sessions
+Plug 'tpope/vim-obsession'
 " Testing Plugins
 Plug 'junegunn/vim-after-object'
 Plug 'phongvcao/vim-stardict'
@@ -51,6 +54,8 @@ Plug 'mbbill/undotree'
 Plug 'blindFS/vim-taskwarrior'
 Plug 'aaronbieber/vim-quicktask'
 Plug 'simeji/winresizer'
+" Documentation look up
+Plug 'rhysd/devdocs.vim'
 call plug#end()
 
 "   _   ________  ______  _____
@@ -233,7 +238,7 @@ sunmap b
 sunmap e
 
 "reindent
-nmap <leader>= mqggvG$=`q
+nmap <leader>= gg=G``
 
 " VIMRC
 nnoremap <leader>vim :silent :edit ~/.vimrc<cr>
@@ -297,24 +302,24 @@ nmap <leader>ll :Limelight!!<cr>
 nmap <leader>gy :Goyo<cr>
 
 function! GoyoBefore()
-    let b:quitting = 0
-      let b:quitting_bang = 0
-        autocmd QuitPre <buffer> let b:quitting = 1
-          cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-        endfunction
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+endfunction
 
-        function! GoyoAfter()
-            " Quit Vim if this is the only remaining buffer
-            if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-              if b:quitting_bang
-                qa!
-              else
-                qa
-              endif
-            endif
-          endfunction
+function! GoyoAfter()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+endfunction
 
-  let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
+let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
 
 " Treat all numerals as decimal
 set nrformats=
@@ -384,10 +389,10 @@ xmap <leader><tab> <plug>(fzf-maps-x)
 omap <leader><tab> <plug>(fzf-maps-o)
 
 command! Plugs call fzf#run({
-  \ 'source':  map(sort(keys(g:plugs)), 'g:plug_home."/".v:val'),
-  \ 'options': '--delimiter / --nth -1',
-  \ 'down':    '~20%',
-  \ 'sink':    'Explore'})
+      \ 'source':  map(sort(keys(g:plugs)), 'g:plug_home."/".v:val'),
+      \ 'options': '--delimiter / --nth -1',
+      \ 'down':    '~20%',
+      \ 'sink':    'Explore'})
 
 " Syntastic linters
 let g:syntastic_scss_checkers = ['scss_lint']
@@ -398,3 +403,7 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+nnoremap <leader>syn :SyntasticToggleMode<cr>
+
+"highlight ColorColumn ctermbg=blue
+"call matchadd('ColorColumn', '\%81v', 100)
