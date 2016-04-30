@@ -47,7 +47,8 @@ Plug 'duff/vim-scratch'
 Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'jasonlong/vim-textobj-css'
-Plug 'mbbill/undotree'
+"plug 'mbbill/undotree'
+Plug 'sjl/gundo.vim'
 Plug 'blindFS/vim-taskwarrior'
 Plug 'aaronbieber/vim-quicktask'
 Plug 'simeji/winresizer'
@@ -398,3 +399,15 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+
+function! ToggleHomeZero()
+  let pos = getpos('.')
+  execute "normal! ^"
+  if pos == getpos('.')
+    execute "normal! 0"
+  endif
+endfunction
+
+nnoremap 0 :call ToggleHomeZero()<CR>
+
+nmap <leader>gu :GundoToggle<cr>

@@ -38,6 +38,8 @@ source $ZSH/oh-my-zsh.sh
  alias ez='vim ~/.zshrc'
  alias sz='source ~/.zshrc'
 
+ alias gsd='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
+
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 
