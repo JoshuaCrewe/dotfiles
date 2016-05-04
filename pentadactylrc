@@ -90,3 +90,6 @@ style -name ublick * #nav-bar * { visibility: visible; }
 "Hide some stuff
 set guioptions=Cs
 
+" Use C-f and C-b to re-order tabs
+map gJ :tabmove! -1<CR>
+map gK :tabmove! +1<CR>
