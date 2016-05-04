@@ -11,22 +11,21 @@ Plug 'tpope/vim-vinegar'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter' " This is th next one to go
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
-Plug 'jiangmiao/auto-pairs'
 Plug 'chip/vim-fat-finger'
 Plug 'vim-scripts/camelcasemotion'
-Plug 'justinmk/vim-sneak'
 Plug 'vim-scripts/loremipsum'
+Plug 'simeji/winresizer'
 " GUI
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/limelight.vim'
+Plug 'junegunn/limelight.vim' " Possibly this one also
 Plug 'ap/vim-css-color'
 Plug 'airblade/vim-gitgutter'
 " Syntax
@@ -36,7 +35,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-ragtag'
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'othree/html5.vim'
 " Wordpress
 Plug 'sudar/vim-wordpress-snippets'
@@ -50,10 +48,8 @@ Plug 'duff/vim-scratch'
 Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'jasonlong/vim-textobj-css'
-Plug 'mbbill/undotree'
-Plug 'blindFS/vim-taskwarrior'
+Plug 'sjl/gundo.vim'
 Plug 'aaronbieber/vim-quicktask'
-Plug 'simeji/winresizer'
 " Documentation look up
 Plug 'rhysd/devdocs.vim'
 call plug#end()
@@ -403,7 +399,29 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+function! ToggleHomeZero()
+  let pos = getpos('.')
+  execute "normal! ^"
+  if pos == getpos('.')
+    execute "normal! 0"
+  endif
+endfunction
+
+nnoremap 0 :call ToggleHomeZero()<CR>
+
+nmap <leader>gu :GundoToggle<cr>
 nnoremap <leader>syn :SyntasticToggleMode<cr>
 
 "highlight ColorColumn ctermbg=blue
 "call matchadd('ColorColumn', '\%81v', 100)
+
+
+inoremap (<CR> (<CR>)<Esc>O
+inoremap {<CR> {<CR>}<Esc>O
+inoremap {; {<CR>};<Esc>O
+inoremap {, {<CR>},<Esc>O
+inoremap [<CR> [<CR>]<Esc>O
+inoremap [; [<CR>];<Esc>O
+inoremap [, [<CR>],<Esc>O
+"
+"command! SC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
