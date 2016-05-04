@@ -48,7 +48,7 @@ Plug 'duff/vim-scratch'
 Plug 'wellle/targets.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'jasonlong/vim-textobj-css'
-Plug 'mbbill/undotree' " possibly replace with Gundo
+Plug 'sjl/gundo.vim'
 Plug 'aaronbieber/vim-quicktask'
 " Documentation look up
 Plug 'rhysd/devdocs.vim'
@@ -399,6 +399,17 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+function! ToggleHomeZero()
+  let pos = getpos('.')
+  execute "normal! ^"
+  if pos == getpos('.')
+    execute "normal! 0"
+  endif
+endfunction
+
+nnoremap 0 :call ToggleHomeZero()<CR>
+
+nmap <leader>gu :GundoToggle<cr>
 nnoremap <leader>syn :SyntasticToggleMode<cr>
 
 "highlight ColorColumn ctermbg=blue
