@@ -1,0 +1,5 @@
+div[data-component-term="trends"],
+.promoted-tweet,
+.fullname {
+  display: none !important;
+}
