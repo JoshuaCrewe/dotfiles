@@ -14,7 +14,7 @@ highlight Find background: #d6c149; color: #000;
 
 set editor='/usr/local/bin/mvim -f +<line> <file>'
 "set followhints=1
-set showtabline=never
+set showtabline=multitab
 set showstatuslinks=command
 
 nmap -builtin -silent <space>nt :set showtabline=never<cr>:set guioptions-=mT<cr>
@@ -36,10 +36,6 @@ nmap -builtin '"' gn
 nmap -builtin ) :tn<CR>
 nmap -builtin ( :tp<CR>
 
-" Finally I can overwrite the stupid fucking Firebug toggling correctly.
-" nmap -builtin <c-f> <f12>
-" nmap -builtin <c-g> <s-f12>
-
 " Console toggle
 nmap -builtin <c-g> <m-a-k><esc>
 imap -builtin <c-g> <esc><m-a-k><esc>
@@ -52,18 +48,18 @@ imap -builtin <c-s> <esc><m-a-i>
 nmap -builtin ; :
 
 " YES YES YES REMOVE THE IDIOCY
-"nmap -builtin <bs> <nop>
+nmap -builtin <bs> <nop>
 
 " Highlight all search matches, not just the first.
 set hlfind
 
 " Clear search highlighting and normal highlighting.
-nmap -builtin ,<space> <esc>:noh<CR>
+nmap -builtin <space>, <esc>:noh<CR>
 
-" Shut up.
+" No beeping
 javascript dactyl.beep = function() { return false; }
 
-" Okay DDG let's see if I can stand you.
+" Use DDG as search engine.
 set defsearch=duckduckgo
 
 " Train myself to use t instead of cmd-t
@@ -84,12 +80,9 @@ nmap -builtin gp :pin!<cr>
 " Kill me
 style -name ublick * #nav-bar * { visibility: visible; }
 
-"use the home row for hints
-"set hintkeys=hjkl;asdfg
-
 "Hide some stuff
-set guioptions=Cs
+set guioptions=CsmT
 
-" Use C-f and C-b to re-order tabs
+" Use gJ and gK to re-order tabs
 map gJ :tabmove! -1<CR>
 map gK :tabmove! +1<CR>
