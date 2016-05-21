@@ -1,139 +1,130 @@
-call plug#begin('~/.vim/plugged')
-" Base
-Plug 'tpope/vim-sensible'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-pseudocl'
-Plug 'junegunn/vim-oblique'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-vinegar'
-" Automation
-Plug 'mattn/emmet-vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'tomtom/tcomment_vim'
-Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
-Plug 'junegunn/gv.vim' " Requires fugitive - commit viewer
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-repeat'
-Plug 'chip/vim-fat-finger'
-Plug 'vim-scripts/camelcasemotion'
-Plug 'vim-scripts/loremipsum'
-Plug 'simeji/winresizer'
-" GUI
-Plug 'junegunn/seoul256.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/vim-peekaboo'
-Plug 'junegunn/limelight.vim' " Possibly this one also
-Plug 'ap/vim-css-color'
-Plug 'airblade/vim-gitgutter'
-" Syntax
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'pangloss/vim-javascript'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'tpope/vim-characterize'
-Plug 'tpope/vim-ragtag'
-Plug 'othree/html5.vim'
-" Wordpress
-Plug 'sudar/vim-wordpress-snippets'
-Plug 'dsawardekar/wordpress.vim'
-" Sessions
-Plug 'tpope/vim-obsession'
-" Testing Plugins
-Plug 'phongvcao/vim-stardict'
-Plug 'duff/vim-scratch'
-Plug 'wellle/targets.vim'
-Plug 'sjl/gundo.vim'
-Plug 'takac/vim-hardtime'
-Plug 'chriskempson/base16-vim'
-Plug 'tommcdo/vim-lion'
-" Documentation look up
-Plug 'rhysd/devdocs.vim'
-Plug 'chriskempson/base16-vim'
-call plug#end()
-
 "   _   ________  ______  _____
 "  | | / /  _/  |/  / _ \/ ___/
 "  | |/ // // /|_/ / , _/ /__  
 "  |___/___/_/  /_/_/|_|\___/  
 "                              
 
-" Defaults
-filetype plugin on 
-filetype indent on
+" PLUGINS
 
-set nocompatible
-set modelines=0
-set encoding=utf-8
-set scrolloff=3
-set autoindent
-set smartindent
-set showmode
-set showcmd
-set hidden
+call plug#begin('~/.vim/plugged')
+" Base
+Plug 'tpope/vim-sensible'             " Some sensible deafaults
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'               " A fuzzyfinder
+Plug 'christoomey/vim-tmux-navigator' " Better tmux and vim integration
+" Automation
+Plug 'tpope/vim-vinegar'              " Make Netrw easier to use
+Plug 'tpope/vim-surround'             " Surrounding text motion
+Plug 'tpope/vim-fugitive'             " A Git wrapper
+Plug 'tpope/vim-unimpaired'           " Some extra shortcuts for useful tasks
+Plug 'tpope/vim-ragtag'               " Some extra mappings
+Plug 'tpope/vim-repeat'               " Dot command with plugins
+Plug 'junegunn/vim-pseudocl'          " Pseudo command line
+Plug 'junegunn/vim-oblique'           " For hiding highlights after searching
+Plug 'mattn/emmet-vim'                " Code writing shorthand
+Plug 'SirVer/ultisnips'               " Snippet expansion
+Plug 'honza/vim-snippets'             " Snippets!
+Plug 'tomtom/tcomment_vim'            " Commenting out stuff
+Plug 'scrooloose/syntastic'           " Syntax checking
+Plug 'junegunn/gv.vim'                " Requires fugitive - commit viewer
+Plug 'chip/vim-fat-finger'            " Corrects some easily made typing mistakes
+Plug 'vim-scripts/camelcasemotion'    " Treat cammel case as words
+Plug 'vim-scripts/loremipsum'         " Lorem Ipsum generator
+Plug 'simeji/winresizer'              " Easily resize windows with <c-e>
+Plug 'phongvcao/vim-stardict'         " Lok up words in the dictionary
+Plug 'tommcdo/vim-lion'               " align stuff according to marks
+" Colour Schemes
+Plug 'junegunn/seoul256.vim'          " A colour scheme which works
+Plug 'chriskempson/base16-vim'        " Some colour schemes which don't always work
+" GUI
+Plug 'junegunn/goyo.vim'              " Distraction free coding
+Plug 'junegunn/vim-peekaboo'          " Show the registers
+Plug 'ap/vim-css-color'               " show colors in a highlight
+Plug 'airblade/vim-gitgutter'         " Git marks in the gutter
+Plug 'sjl/gundo.vim'                  " Undo tree visualisation
+" Syntax
+Plug 'cakebaker/scss-syntax.vim' 
+Plug 'hail2u/vim-css3-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'othree/html5.vim'
+" Wordpress
+Plug 'sudar/vim-wordpress-snippets'   " Wordpress snippets which I dont know
+Plug 'dsawardekar/wordpress.vim'      " ??
+" Sessions
+Plug 'tpope/vim-obsession'            " For saving sessions
+" Documentation look up
+Plug 'rhysd/devdocs.vim'              " Look up things in DevDocs
+call plug#end()
+
+filetype plugin on 
+filetype indent on                " Turn on indentation by filetype
+runtime macros/matchit.vim        " Enable built-in matchit plugin
+runtime! ftplugin/man.vim         " Syntax highlighting man pages
+
+set nocompatible                  " Disable Vi compatibility
+set nomodeline                    " Modelines have been a source of vulnerabilities.
+set encoding=utf-8                " utf-8 for character encoding
+set scrolloff=5                   " Keep a context (rows) when scrolling vertically
+set autoindent                    " Indent a new line according to the previous one
+set smartindent                   " Use smart indenting when starting a new line
+set showmode                      " Show the current mode
+set showcmd                       " Show (partial) command in the status line.
+set hidden                        " Allow switching edited buffers without saving
+set noerrorbells visualbell t_vb= " No error bells
+set cursorline                    " Show which line the cursor is on
+set ttyfast                       " Improves redrawing for new computers
+set ruler                         " Show line and column number
+set backspace=indent,eol,start    " Allow backspacing over everything in insert mode 
+set laststatus=2                  " Always show the status line
+
+" Enhance command-line completion
+
 set wildmenu
 set wildmode=list:longest
-set visualbell
-set cursorline
-set ttyfast
-set ruler
-set backspace=indent,eol,start
-set laststatus=2
 
-:au FocusLost * silent! wa
+" Colour Scheme
 
-" Enable built-in matchit plugin
-runtime macros/matchit.vim
+"set termguicolors                " Use all the colours! New for vim 7.4 + tmux 2.2 and iTerm
+set t_Co=256                      " Set colours to 256
+set background=dark               " Use a dark background
 
-" Syntax highlighting man pages
-runtime! ftplugin/man.vim
+let g:seoul256_background = 237   " Seoul can tweak the background a bit
+colo seoul256                     " Set the colour scheme
 
-" GUI
-<<<<<<< HEAD
-set t_Co=256
-"set termguicolors
-let g:seoul256_background = 237
-set background=dark
-colo seoul256
+" Numbering
 
-set linespace=5
-set number
-set rnu
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-set guioptions-=e
-set nowrap
-set showtabline=0
-set scrolloff=5
-set splitright
-set splitbelow
-set formatoptions-=or " Prevent automatic comment prefixing"
+set number                        " Show line number
+set rnu                           " Use relative line numbering
+set nowrap                        " Long lines will keep going off screen
+set showtabline=0                 " Never show tabline
 
-" Backups
-" Save your backups to a less annoying place than the current directory.
-" If you have .vim-backup in the current directory, it'll use that.
-" Otherwise it saves it to ~/.vim/backup or . if all else fails.
-if isdirectory($HOME . '/.vim/backup') == 0
-  :silent !mkdir -p ~/.vim/backup >/dev/null 2>&1
-endif
-set backupdir-=.
-set backupdir+=.
-set backupdir-=~/
-set backupdir^=~/.vim/backup/
-set backupdir^=./.vim-backup/
-set backup
+" Macvim
 
-" Swapfiles
-" Turn them off rather than save them anywhere.
-set noswapfile
+set guioptions-=r                 " Remove right-hand scroll bar
+set guioptions-=L                 " Remove left-hand scroll bar
 
-" viminfo stores the the state of your previous editing session
-set viminfo+=n~/.vim/viminfo
+" Formatting
+
+set fo+=q                         " Allow formatting of comments with "gq".
+set fo-=r fo-=o                   " Turn off automatic insertion of comment characters.
+set fo+=j                         " Remove a comment leader when joining comment lines.
+
+" Splitting.
+
+set splitright                    " Open new vertical panes in the right rather than left.
+set splitbelow                    " Open new horizontal panes in the bottom rather than top.
+
+
+" Meta
+
+set nobackup                      " Disable backup files.
+set noswapfile                    " Disable swap files.
+set nowritebackup                 " Disable auto backup before overwriting a file.
+set viminfo+=n~/.vim/viminfo      " viminfo stores the the state of your previous editing session
 
 " Remember last cursor position
+
 augroup vimrcEx
   autocmd!
   autocmd BufReadPost *
@@ -142,8 +133,9 @@ augroup vimrcEx
         \ endif
 augroup END
 
+" undofile - This allows you to use undos after exiting and restarting
+
 if exists("+undofile")
-  " undofile - This allows you to use undos after exiting and restarting
   " This, like swap and backups, uses .vim-undo first, then ~/.vim/undo
   " :help undo-persistence
   " This is only present in 7.3+
@@ -167,21 +159,19 @@ set shiftwidth=2
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
 
-" Will include HTML Snippets in php files
-au BufRead,BufNewFile *.php set ft=phtml
-
-" make markdown more readable
-au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100
+au BufRead,BufNewFile *.php set ft=phtml " Will include HTML Snippets in php files
+au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more readable
 
 " Emmet
 imap <C-k> <C-y>,
 
-" Better Clipboard pasting
-nmap <Leader>P :set paste<CR>o<esc>"+]p:set nopaste<cr>
+" Insert the contents of the clipboard.
+nnoremap <silent> <Leader>P :set paste<CR>"+]P:set nopaste<CR>
+nnoremap <silent> <Leader>p :set paste<CR>"+]p:set nopaste<CR>
+vnoremap          <Leader>p "+p
 
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode?utm_content=buffer73792&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
 function! WrapForTmux(s)
@@ -206,10 +196,13 @@ endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
-" Search
+" Searching.
+set hlsearch            " Highlight search matches.
+set incsearch           " Incremental search.
+" Case-smart searching (make /-style searches case-sensitive only if there is
+" a capital letter in the search expression).
 set ignorecase
-set incsearch
-set hlsearch
+set smartcase
 
 " Note that remapping C-s requires flow control to be disabled
 " " (e.g. in .bashrc or .zshrc)
@@ -217,17 +210,26 @@ map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 
 " Mappings
-let mapleader = ' '
-nnoremap <leader>zsh :silent :tabedit ~/.zshrc<cr>
+let mapleader = ' ' " Set space to be the leader
+
+" Move lines up and down with arrow keys
 nnoremap <up> ddkP
 nnoremap <down> ddp
+
+" Move between helpgrep search results with arrows 
 nmap <right> :cnext<cr>
 nmap <left> :cprev<cr>
-nnoremap § %
+
+" Another way to exit insert mode
 imap jk <Esc>
+
+" Easier file completion
 imap <c-f> <c-x><c-f>
+
+" A double space to switch alternate file
 nmap <leader><leader> <c-^>
 
+" Recognice camel case with Vim motions
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
 map <silent> e <Plug>CamelCaseMotion_e
@@ -235,16 +237,23 @@ sunmap w
 sunmap b
 sunmap e
 
-"reindent
+" A text object for the entire file ("a file").
+onoremap af :<C-u>normal! ggVG<CR>
+
+" reindent the whole file
 nmap <leader>= gg=G``
 
-" VIMRC
+" Load Vimrc for editing
 nnoremap <leader>vim :silent :edit ~/.vimrc<cr>
 autocmd! bufwritepost .virmc source %
 
-" TMUX conf
+" Load the Tmux conf file for editing
 nmap <leader>tmux :silent :edit ~/.tmux.conf<cr>
 
+" Load zshrc for editing
+nnoremap <leader>zsh :silent :tabedit ~/.zshrc<cr>
+
+" Seamless tmux and vim split integration
 if exists('$TMUX')
   function! TmuxOrSplitSwitch(wincmd, tmuxdir)
     let previous_winnr = winnr()
@@ -273,32 +282,19 @@ endif
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" Plug
+" Call the Plug updater
 nnoremap <leader>plug :silent PlugClean \| PlugUpdate \| PlugInstall \| q<cr>
 
 " Choose the tree view when using netrw
 let g:netrw_liststyle=3
-" pressing q in netrw will close the file explorer
-autocmd FileType netrw noremap q :bp\|bd #<CR>
 
+" Delete the buffer
 nmap <silent> <C-q> :bd<cr>
-
-" Show highlighting groups for current word <space>syn
-nmap <Leader>syn :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-" Limelight toggles
-nmap <leader>ll :Limelight!!<cr>
-
 
 " Toggle distraction free viewing with Goyo
 nmap <leader>gy :Goyo<cr>
 
+" The next two functions make Goyo behave in a more sane way
 function! GoyoBefore()
   let b:quitting = 0
   let b:quitting_bang = 0
@@ -320,24 +316,12 @@ endfunction
 let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
 
 " Treat all numerals as decimal
+" I think this was taken from Drew Neils book
 set nrformats=
 
+" Source the current file
 nmap <leader>r :source %<cr>
 
-" Put at the very end of your .vimrc file.
-
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
-
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
-augroup END
-
-
-" FZF mappings
 " Make vim-stardict split open in a :split (default value)
 let g:stardict_split_horizontal = 1
 
@@ -351,13 +335,14 @@ nnoremap <leader>sw :StarDict<Space>
 " Lookup the word under cursor
 nnoremap <leader>sc :StarDictCursor<CR>
 
-
+" Make some Lorem when in insert mode
 imap lorem <esc>:Loremipsum 
 
 " Seen in Steve Losh's .vimrc for sorting css/sass alphabetically
 au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
-"Fugitive
+"Fugitive 
+" Shamelessly stolen shortcuts taken from the authors dotfiles
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gw :Gwrite<cr>
@@ -368,8 +353,11 @@ nnoremap <leader>gci :Gcommit<cr>
 nnoremap <leader>gm :Gmove<cr>
 nnoremap <leader>gr :Gremove<cr>
 nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
+" A special one for gv plugin
+nnoremap <leader>gh :GV<cr>
 
 " FZF
+" Also shamelessly stolen shortcuts taken from the authors dotfiles
 nnoremap <cr> :Files<cr>
 nnoremap <silent> <Leader>C        :Colors<CR>
 nnoremap <silent> <Leader><Enter>  :Buffers<CR>
@@ -392,16 +380,19 @@ command! Plugs call fzf#run({
       \ 'down':    '~20%',
       \ 'sink':    'Explore'})
 
+" Search for a word in the project
 nmap <leader>/ :Ag 
+
 " Syntastic linters
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['jshint']
-
+" some Syntastic defaults
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Zero will go to the start of the content first and then the very start
 function! ToggleHomeZero()
   let pos = getpos('.')
   execute "normal! ^"
@@ -409,15 +400,19 @@ function! ToggleHomeZero()
     execute "normal! 0"
   endif
 endfunction
-
 nnoremap 0 :call ToggleHomeZero()<CR>
 
+" Toggle the undo tree
 nmap <leader>gu :GundoToggle<cr>
+
+" Toggle syntax checking (large files with lots of errors make things slow)
 nnoremap <leader>syn :SyntasticToggleMode<cr>
 
+" Give an indication when a line is more than 80 coumns long
 highlight ColorColumn ctermbg=blue
 call matchadd('ColorColumn', '\%81v', 100)
 
+" A list of mappings to auto close brackets sometimes
 inoremap (<CR> (<CR>)<Esc>O
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {; {<CR>};<Esc>O
@@ -425,14 +420,9 @@ inoremap {, {<CR>},<Esc>O
 inoremap [<CR> [<CR>]<Esc>O
 inoremap [; [<CR>];<Esc>O
 inoremap [, [<CR>],<Esc>O
-"
-"command! SC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 
-"this is supposed to be for vim hardtime
-let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+" ]
-let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:list_of_disabled_keys = []
+" Make a scratch buffer
+command! SC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 
 " Make j and k move by virtual lines instead of physical lines, but only when
 " not used in the count mode (e.g. 3j). This is great when 'wrap' and
@@ -444,3 +434,14 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 " Close the opened HTML tag with Ctrl+_ (I do not use vim-closetag because it
 " often fails with an error).
 inoremap <silent> <C-_> </<C-x><C-o><C-x>
+
+" Put at the very end of your .vimrc file.
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
