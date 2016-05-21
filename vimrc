@@ -11,7 +11,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'mattn/emmet-vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'scrooloose/nerdcommenter' " This is th next one to go
+Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
@@ -43,14 +43,13 @@ Plug 'dsawardekar/wordpress.vim'
 " Sessions
 Plug 'tpope/vim-obsession'
 " Testing Plugins
-Plug 'junegunn/vim-after-object'
 Plug 'phongvcao/vim-stardict'
 Plug 'duff/vim-scratch'
 Plug 'wellle/targets.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'jasonlong/vim-textobj-css'
 Plug 'sjl/gundo.vim'
-Plug 'aaronbieber/vim-quicktask'
+Plug 'takac/vim-hardtime'
+Plug 'chriskempson/base16-vim'
+Plug 'tommcdo/vim-lion'
 " Documentation look up
 Plug 'rhysd/devdocs.vim'
 Plug 'chriskempson/base16-vim'
@@ -93,6 +92,7 @@ runtime macros/matchit.vim
 runtime! ftplugin/man.vim
 
 " GUI
+<<<<<<< HEAD
 set t_Co=256
 "set termguicolors
 let g:seoul256_background = 237
@@ -224,8 +224,6 @@ nnoremap <down> ddp
 nmap <right> :cnext<cr>
 nmap <left> :cprev<cr>
 nnoremap § %
-nmap j gj
-nmap k gk
 imap jk <Esc>
 imap <c-f> <c-x><c-f>
 nmap <leader><leader> <c-^>
@@ -394,6 +392,7 @@ command! Plugs call fzf#run({
       \ 'down':    '~20%',
       \ 'sink':    'Explore'})
 
+nmap <leader>/ :Ag 
 " Syntastic linters
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['jshint']
@@ -416,9 +415,8 @@ nnoremap 0 :call ToggleHomeZero()<CR>
 nmap <leader>gu :GundoToggle<cr>
 nnoremap <leader>syn :SyntasticToggleMode<cr>
 
-"highlight ColorColumn ctermbg=blue
-"call matchadd('ColorColumn', '\%81v', 100)
-
+highlight ColorColumn ctermbg=blue
+call matchadd('ColorColumn', '\%81v', 100)
 
 inoremap (<CR> (<CR>)<Esc>O
 inoremap {<CR> {<CR>}<Esc>O
@@ -429,3 +427,20 @@ inoremap [; [<CR>];<Esc>O
 inoremap [, [<CR>],<Esc>O
 "
 "command! SC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
+
+"this is supposed to be for vim hardtime
+let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+" ]
+let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_insert_keys = ["<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+let g:list_of_disabled_keys = []
+
+" Make j and k move by virtual lines instead of physical lines, but only when
+" not used in the count mode (e.g. 3j). This is great when 'wrap' and
+" 'relativenumber' are used.
+" Based on http://stackoverflow.com/a/21000307/2580955
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+" Close the opened HTML tag with Ctrl+_ (I do not use vim-closetag because it
+" often fails with an error).
+inoremap <silent> <C-_> </<C-x><C-o><C-x>

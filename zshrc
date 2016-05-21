@@ -12,6 +12,11 @@ ZSH_THEME="pure"
 # Plugins to use
 plugins=(git brew brew-cask catimg git-extras github lol nyan osx sublime z zsh-syntax-highlighting)
 
+# Base16 Shell
+ BASE16_SHELL="$HOME/.config/base16-shell/ocean.dark.sh"
+ [[ -s $BASE17_SHELL ]] && source $BASE16_SHELL
+
+
 # Turn off flow control
 setopt noflowcontrol
 stty -ixon
@@ -39,6 +44,8 @@ source $ZSH/oh-my-zsh.sh
  alias sz='source ~/.zshrc'
 
  alias gsd='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
+
+ alias t='python ~/localhost/sjl-t/t.py --task-dir ~/.tasks --list tasks'
 
 
 NPM_PACKAGES="${HOME}/.npm-packages"
