@@ -52,6 +52,7 @@ Plug 'sjl/gundo.vim'
 Plug 'aaronbieber/vim-quicktask'
 " Documentation look up
 Plug 'rhysd/devdocs.vim'
+Plug 'chriskempson/base16-vim'
 call plug#end()
 
 "   _   ________  ______  _____
@@ -91,9 +92,11 @@ runtime macros/matchit.vim
 runtime! ftplugin/man.vim
 
 " GUI
+set t_Co=256
+"set termguicolors
 let g:seoul256_background = 237
-colo seoul256
 set background=dark
+colo seoul256
 
 set linespace=5
 set number
