@@ -15,6 +15,7 @@ Plug 'scrooloose/nerdcommenter' " This is th next one to go
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim' " Requires fugitive - commit viewer
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'chip/vim-fat-finger'
