@@ -441,6 +441,9 @@ set omnifunc=syntaxcomplete#Complete
 " often fails with an error).
 inoremap <silent> <C-_> </<C-x><C-o><C-x>
 
+" Treat phtml files like php for comments
+let g:tcomment#filetype_map['phtml'] = 'php'
+
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
