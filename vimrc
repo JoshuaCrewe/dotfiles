@@ -448,6 +448,22 @@ inoremap <silent> <C-_> </<C-x><C-o><C-x>
 " Treat phtml files like php for comments
 " let g:tcomment#filetype_map['phtml'] = 'php'
 
+" Make Ctrl-e jump to the end of the line in the insert mode.
+inoremap <C-e> <C-o>$
+
+" Stay in visual mode when indenting.
+vnoremap < <gv
+vnoremap > >gv
+
+" Quickly select the text I just pasted.
+noremap gV `[v`]
+
+" Copy the selected text into the clipboard.
+noremap <Leader>y "+y
+
+" Cut the selected text into the clipboard.
+noremap <Leader>d "+d
+
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
