@@ -56,6 +56,7 @@ Plug 'dsawardekar/wordpress.vim'      " ??
 Plug 'tpope/vim-obsession'            " For saving sessions
 " Documentation look up
 Plug 'rhysd/devdocs.vim'              " Look up things in DevDocs
+Plug 'keith/investigate.vim'          " An alternative documentation lookup
 call plug#end()
 
 filetype plugin on 
@@ -344,6 +345,9 @@ au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}
 " K will search vim help in vimfiles
 au FileType vim setlocal keywordprg=:help
 
+" Use a colourful man viewer in vim split
+" noremap K :Man <C-r><C-W><cr>
+
 "Fugitive 
 " Shamelessly stolen shortcuts taken from the authors dotfiles
 nnoremap <leader>gd :Gdiff<cr>
@@ -442,7 +446,7 @@ set omnifunc=syntaxcomplete#Complete
 inoremap <silent> <C-_> </<C-x><C-o><C-x>
 
 " Treat phtml files like php for comments
-let g:tcomment#filetype_map['phtml'] = 'php'
+" let g:tcomment#filetype_map['phtml'] = 'php'
 
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
