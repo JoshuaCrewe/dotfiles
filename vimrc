@@ -249,7 +249,9 @@ nmap <leader>= gg=G``
 
 " Load Vimrc for editing
 nnoremap <leader>vim :silent :edit ~/.vimrc<cr>
-autocmd! bufwritepost .virmc source %
+
+" Source vimrc
+nmap <leader>r :source ~/.vimrc<cr>
 
 " Load the Tmux conf file for editing
 nmap <leader>tmux :silent :edit ~/.tmux.conf<cr>
@@ -320,8 +322,6 @@ endfunction
 let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
 
 
-" Source the current file
-nmap <leader>r :source %<cr>
 
 " Make vim-stardict split open in a :split (default value)
 let g:stardict_split_horizontal = 1
