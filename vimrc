@@ -21,7 +21,6 @@ Plug 'tpope/vim-ragtag'               " Some extra mappings
 Plug 'tpope/vim-repeat'               " Dot command with plugins
 Plug 'junegunn/vim-pseudocl'          " Pseudo command line
 Plug 'junegunn/vim-oblique'           " For hiding highlights after searching
-Plug 'junegunn/vim-after-object'
 Plug 'mattn/emmet-vim'                " Code writing shorthand
 Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'honza/vim-snippets'             " Snippets!
