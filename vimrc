@@ -241,8 +241,11 @@ sunmap e
 
 " Text Objects
 
-onoremap af :<C-u>normal! ggVG<CR> " A text object for the entire file ("a file")
-onoremap av :<C-u>normal! 0f:lvt;<CR> " A text object for a css value ("a value")
+" A text object for the entire file ("a file")
+onoremap af :<C-u>normal! ggVG<CR>
+
+" A text object for a css value ("a value")
+onoremap av :<C-u>normal! 0f:lvt;<CR><space>
 
 " reindent the whole file
 nmap <leader>= gg=G``
