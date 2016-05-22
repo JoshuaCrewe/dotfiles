@@ -333,7 +333,7 @@ let g:stardict_split_size = 20
 " Ready for typing the word in
 nnoremap <leader>sw :StarDict<Space>
 " Lookup the word under cursor
-nnoremap <leader>sc :StarDictCursor<CR>
+nnoremap <leader>sc :StarDict <c-R><c-W><CR>
 
 " Make some Lorem when in insert mode
 imap lorem <esc>:Loremipsum 
