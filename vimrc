@@ -21,6 +21,7 @@ Plug 'tpope/vim-ragtag'               " Some extra mappings
 Plug 'tpope/vim-repeat'               " Dot command with plugins
 Plug 'junegunn/vim-pseudocl'          " Pseudo command line
 Plug 'junegunn/vim-oblique'           " For hiding highlights after searching
+Plug 'junegunn/vim-after-object'
 Plug 'mattn/emmet-vim'                " Code writing shorthand
 Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'honza/vim-snippets'             " Snippets!
@@ -145,6 +146,7 @@ if exists("+undofile")
 endif
 
 " TABS
+
 set expandtab
 set smarttab
 set tabstop=2
@@ -159,10 +161,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
 
+" File Specific
+
 au BufRead,BufNewFile *.php set ft=phtml " Will include HTML Snippets in php files
 au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more readable
 
 " Emmet
+
 imap <C-k> <C-y>,
 
 " Insert the contents of the clipboard.
@@ -234,8 +239,10 @@ sunmap w
 sunmap b
 sunmap e
 
-" A text object for the entire file ("a file").
-onoremap af :<C-u>normal! ggVG<CR>
+" Text Objects
+
+onoremap af :<C-u>normal! ggVG<CR> " A text object for the entire file ("a file")
+onoremap av :<C-u>normal! 0f:lvt;<CR> " A text object for a css value ("a value")
 
 " reindent the whole file
 nmap <leader>= gg=G``
