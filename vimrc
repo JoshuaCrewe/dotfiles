@@ -446,5 +446,5 @@ endfunction
 
 augroup phpSyntaxOverride
   autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
+  autocmd FileType phtml call PhpSyntaxOverride()
 augroup END
