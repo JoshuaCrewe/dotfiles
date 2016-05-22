@@ -341,6 +341,9 @@ imap lorem <esc>:Loremipsum
 " Seen in Steve Losh's .vimrc for sorting css/sass alphabetically
 au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
+" K will search vim help in vimfiles
+au FileType vim setlocal keywordprg=:help
+
 "Fugitive 
 " Shamelessly stolen shortcuts taken from the authors dotfiles
 nnoremap <leader>gd :Gdiff<cr>
