@@ -62,6 +62,8 @@ filetype indent on                " Turn on indentation by filetype
 runtime macros/matchit.vim        " Enable built-in matchit plugin
 runtime! ftplugin/man.vim         " Syntax highlighting man pages
 
+" General
+
 set nocompatible                  " Disable Vi compatibility
 set nomodeline                    " Modelines have been a source of vulnerabilities.
 set encoding=utf-8                " utf-8 for character encoding
@@ -77,11 +79,9 @@ set ttyfast                       " Improves redrawing for new computers
 set ruler                         " Show line and column number
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode 
 set laststatus=2                  " Always show the status line
-
-" Enhance command-line completion
-
-set wildmenu
-set wildmode=list:longest
+set nrformats-=octal              " Make incrementing 007 result into 008 rather than 010.
+set wildmenu                     " Make use of tab completion in vim command line
+set wildmode=list:full           " Complete longest common string, then each full match
 
 " Colour Scheme
 
@@ -315,9 +315,6 @@ endfunction
 
 let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
 
-" Treat all numerals as decimal
-" I think this was taken from Drew Neils book
-set nrformats=
 
 " Source the current file
 nmap <leader>r :source %<cr>
