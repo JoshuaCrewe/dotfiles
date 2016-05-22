@@ -69,7 +69,6 @@ set nomodeline                    " Modelines have been a source of vulnerabilit
 set encoding=utf-8                " utf-8 for character encoding
 set scrolloff=5                   " Keep a context (rows) when scrolling vertically
 set autoindent                    " Indent a new line according to the previous one
-set smartindent                   " Use smart indenting when starting a new line
 set showmode                      " Show the current mode
 set showcmd                       " Show (partial) command in the status line.
 set hidden                        " Allow switching edited buffers without saving
@@ -288,7 +287,7 @@ endif
 let g:html_indent_tags = 'li\|p'
 
 " Call the Plug updater
-nnoremap <leader>plug :silent PlugClean \| PlugUpdate \| PlugInstall \| q<cr>
+nnoremap <leader>load :silent PlugClean \| PlugUpdate \| PlugInstall \| q<cr>
 
 " Choose the tree view when using netrw
 let g:netrw_liststyle=3
@@ -433,6 +432,9 @@ command! SC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
 " Based on http://stackoverflow.com/a/21000307/2580955
 noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+
+" Enable omni completion.
+set omnifunc=syntaxcomplete#Complete
 
 " Close the opened HTML tag with Ctrl+_ (I do not use vim-closetag because it
 " often fails with an error).
