@@ -10,5 +10,8 @@ viminfo
 
 mutt/temp/**
 mutt/cache/**
+mutt/offlineimap.py
+mutt/offlineimap.pyc
+offlineimaprc
 
 pentadactyl/info
