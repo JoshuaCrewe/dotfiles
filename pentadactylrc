@@ -77,6 +77,8 @@ nmap -builtin <space><cr> b
 " set g-p to pin and un-pin tabs
 nmap -builtin gp :pin!<cr>
 
+nmap -builtin <c-e> g$
+
 " Kill me
 style -name ublick * #nav-bar * { visibility: visible; }
 
