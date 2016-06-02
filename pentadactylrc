@@ -88,3 +88,7 @@ set guioptions=CsmT
 " Use gJ and gK to re-order tabs
 map gJ :tabmove! -1<CR>
 map gK :tabmove! +1<CR>
+
+" Toggle the bookmarks bar
+map <space>b :toolbartoggle Bookmarks Toolbar<cr>
+
