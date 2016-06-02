@@ -92,3 +92,7 @@ map gK :tabmove! +1<CR>
 " Toggle the bookmarks bar
 map <space>b :toolbartoggle Bookmarks Toolbar<cr>
 
+" Print out the width of the current window
+" this does not exclude the inpector unfortunately
+map <space>ww :echo window.innerWidth<cr>
+
