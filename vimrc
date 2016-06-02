@@ -57,6 +57,8 @@ Plug 'tpope/vim-obsession'            " For saving sessions
 " Documentation look up
 Plug 'rhysd/devdocs.vim'              " Look up things in DevDocs
 Plug 'keith/investigate.vim'          " An alternative documentation lookup
+" Wiki
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 filetype plugin on 
@@ -165,6 +167,7 @@ let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your w
 
 au BufRead,BufNewFile *.php set ft=phtml " Will include HTML Snippets in php files
 au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more readable
+au BufRead,BufNewFile *.wiki set wrap linebreak | :Goyo 100 " make markdown more readable
 
 " Emmet
 
@@ -472,6 +475,11 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 au BufNewFile,BufRead *pentadactylrc*,*.penta set filetype=vim
+
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
