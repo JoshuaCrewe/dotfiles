@@ -349,7 +349,7 @@ au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}
 au FileType vim setlocal keywordprg=:help
 
 " Use a colourful man viewer in vim split
-" noremap K :Man <C-r><C-W><cr>
+noremap K :Man <c-r><c-w><cr> 
 
 "Fugitive 
 " Shamelessly stolen shortcuts taken from the authors dotfiles
@@ -450,6 +450,10 @@ inoremap <silent> <C-_> </<C-x><C-o><C-x>
 
 " Treat phtml files like php for comments
 " let g:tcomment#filetype_map['phtml'] = 'php'
+
+" Tell Vim which characters to show for expanded tabs, trailing whitespace,
+" ends of lines, and non-breakable space.
+set listchars=tab:>-,trail:#,eol:$,nbsp:~,extends:>,precedes:<
 
 " Make Ctrl-e jump to the end of the line in the insert mode.
 inoremap <C-e> <C-o>$
