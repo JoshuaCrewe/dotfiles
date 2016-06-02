@@ -45,7 +45,7 @@ nmap -builtin <c-s> <m-a-i>
 imap -builtin <c-s> <esc><m-a-i>
 
 " Shift is hard.
-nmap -builtin ; :
+" nmap -builtin ; :
 
 " YES YES YES REMOVE THE IDIOCY
 nmap -builtin <bs> <nop>
