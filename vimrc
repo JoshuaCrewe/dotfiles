@@ -467,6 +467,10 @@ noremap <Leader>y "+y
 " Cut the selected text into the clipboard.
 noremap <Leader>d "+d
 
+" Move visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 au BufNewFile,BufRead *pentadactylrc*,*.penta set filetype=vim
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
