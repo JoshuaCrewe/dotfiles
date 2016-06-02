@@ -467,6 +467,7 @@ noremap <Leader>y "+y
 " Cut the selected text into the clipboard.
 noremap <Leader>d "+d
 
+au BufNewFile,BufRead *pentadactylrc*,*.penta set filetype=vim
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
