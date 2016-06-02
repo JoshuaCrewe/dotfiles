@@ -96,3 +96,6 @@ map <space>b :toolbartoggle Bookmarks Toolbar<cr>
 " this does not exclude the inpector unfortunately
 map <space>ww :echo window.innerWidth<cr>
 
+" Resource the settings for Penta
+map <space>src :source ~/.pentadactylrc<cr>:echo 'sourced!'<cr>
+
