@@ -481,8 +481,8 @@ vnoremap K :m '<-2<CR>gv=gv
 
 au BufNewFile,BufRead *pentadactylrc*,*.penta set filetype=vim
 
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                       \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/.vimwiki/',
+                       \ 'syntax': 'default', 'ext': '.wiki'}]
 
 
 " Put at the very end of your .vimrc file.
