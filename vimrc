@@ -353,7 +353,7 @@ au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}
 au FileType vim setlocal keywordprg=:help
 
 " Use a colourful man viewer in vim split
-noremap K :Man <c-r><c-w><cr> 
+" noremap K :Man <c-r><c-w><cr> 
 
 "Fugitive 
 " Shamelessly stolen shortcuts taken from the authors dotfiles
