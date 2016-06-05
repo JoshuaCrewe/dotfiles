@@ -42,6 +42,7 @@ Plug 'junegunn/vim-peekaboo'          " Show the registers
 Plug 'ap/vim-css-color'               " show colors in a highlight
 Plug 'airblade/vim-gitgutter'         " Git marks in the gutter
 Plug 'sjl/gundo.vim'                  " Undo tree visualisation
+Plug 'wincent/terminus'
 " Syntax
 Plug 'cakebaker/scss-syntax.vim' 
 Plug 'hail2u/vim-css3-syntax'
