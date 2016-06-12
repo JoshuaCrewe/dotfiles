@@ -49,7 +49,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'othree/html5.vim'
-Plug 'captbaritone/better-indent-support-for-php-with-html'
 " Wordpress
 Plug 'sudar/vim-wordpress-snippets'   " Wordpress snippets which I dont know
 Plug 'dsawardekar/wordpress.vim'      " ??
@@ -481,9 +480,10 @@ vnoremap K :m '<-2<CR>gv=gv
 
 au BufNewFile,BufRead *pentadactylrc*,*.penta set filetype=vim
 
-let g:vimwiki_list = [{'path': '~/.vimwiki/',
+let g:vimwiki_list = [{'path': '~/Dropbox/.vimwiki/',
                        \ 'syntax': 'default', 'ext': '.wiki'}]
 
+set tags+=tags;$HOME
 
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
