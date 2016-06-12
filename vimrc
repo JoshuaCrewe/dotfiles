@@ -422,7 +422,7 @@ nmap <leader>gu :GundoToggle<cr>
 nnoremap <leader>syn :SyntasticToggleMode<cr>
 
 " Give an indication when a line is more than 80 coumns long
-highlight ColorColumn ctermbg=blue
+highlight ColorColumn ctermbg=74 ctermfg=24
 call matchadd('ColorColumn', '\%81v', 100)
 
 " A list of mappings to auto close brackets sometimes
