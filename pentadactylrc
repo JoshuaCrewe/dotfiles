@@ -128,3 +128,6 @@ map <c-j> )
 map <c-l> (
 map <c-k> (
 
+
+map <c-n> <down>
+map <c-p> <up>
