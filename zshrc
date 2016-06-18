@@ -26,26 +26,7 @@ export PATH=$PATH:"/Applications/MAMP/Library/bin/"
 
 source $ZSH/oh-my-zsh.sh
 
-# Alias'
- alias zshconfig="mate ~/.zshrc"
- alias ohmyzsh="mate ~/.oh-my-zsh"
- alias gs='git status '
- alias ga='git add '
- alias gb='git branch '
- alias gc='git commit'
- alias gd='git diff'
- alias go='git checkout '
-
- alias got='git '
- alias get='git '
-
- alias ez='vim ~/.zshrc'
- alias sz='source ~/.zshrc'
-
- alias gsd='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
-
- alias t='python ~/localhost/sjl-t/t.py --task-dir ~/.tasks --list tasks'
-
+source ~/.aliases
 
 NPM_PACKAGES="${HOME}/.npm-packages"
 
