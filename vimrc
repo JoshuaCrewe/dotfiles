@@ -327,8 +327,6 @@ endfunction
 
 let g:goyo_callbacks = [function('GoyoBefore'), function('GoyoAfter')]
 
-
-
 " Make vim-stardict split open in a :split (default value)
 let g:stardict_split_horizontal = 1
 
