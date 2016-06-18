@@ -7,15 +7,14 @@ ZSH_THEME="pure"
 #prompt pure
 
 # Red dots for completing process'
- COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Plugins to use
-plugins=(git brew brew-cask catimg git-extras github lol nyan osx sublime z zsh-syntax-highlighting)
+plugins=(git brew brew-cask catimg git-extras github lol nyan osx sublime z tmux zsh-syntax-highlighting)
 
 # Base16 Shell
  BASE16_SHELL="$HOME/.config/base16-shell/ocean.dark.sh"
  [[ -s $BASE17_SHELL ]] && source $BASE16_SHELL
-
 
 # Turn off flow control
 setopt noflowcontrol
@@ -68,7 +67,8 @@ function t() {
 set editing-mode vi
 bindkey -v
 
-
+ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOCONNECT=true
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
