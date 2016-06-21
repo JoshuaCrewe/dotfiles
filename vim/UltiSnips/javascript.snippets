@@ -1,0 +1,22 @@
+snippet js "jQuery Non conflict"
+(function($) {
+	${1}
+})(jQuery);
+endsnippet
+
+snippet dr "jQuery Document Ready"
+$(document).ready(function() {
+	${1}
+};
+})(jQuery);
+endsnippet
+
+snippet $ "jQuery Get Element"
+$('${1}')
+endsnippet
+
+snippet fn "jQuery Function"
+$('${1:this}').${2:click}(function(){
+	$0
+});
+endsnippet
