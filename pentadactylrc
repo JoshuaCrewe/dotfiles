@@ -128,6 +128,9 @@ map <c-j> )
 map <c-l> (
 map <c-k> (
 
-
+" Potentail for navigating dropdowns
 map <c-n> <down>
 map <c-p> <up>
+
+" TAB GROUPS
+" Tab Group setting uses command + control + <function key> to do things
