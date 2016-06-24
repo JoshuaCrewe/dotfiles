@@ -62,9 +62,6 @@ javascript dactyl.beep = function() { return false; }
 " Use DDG as search engine.
 set defsearch=duckduckgo
 
-" Train myself to use t instead of cmd-t
-nmap -builtin <m-t> <nop>
-
 " Apparently the d key broke at some point.
 nmap -builtin d :tabclose<cr>
 
