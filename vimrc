@@ -50,8 +50,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'othree/html5.vim'
 " Wordpress
-Plug 'sudar/vim-wordpress-snippets'   " Wordpress snippets which I dont know
-Plug 'dsawardekar/wordpress.vim'      " ??
+Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
 " Sessions
 Plug 'tpope/vim-obsession'            " For saving sessions
 " Documentation look up
@@ -85,6 +84,7 @@ set laststatus=2                  " Always show the status line
 set nrformats-=octal              " Make incrementing 007 result into 008 rather than 010.
 set wildmenu                     " Make use of tab completion in vim command line
 set wildmode=list:full           " Complete longest common string, then each full match
+set autoread                      " Automatically update file if edited elsewhere
 
 " Colour Scheme
 
@@ -162,10 +162,9 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
-
 " File Specific
 
-au BufRead,BufNewFile *.php set ft=phtml " Will include HTML Snippets in php files
+" au BufRead,BufNewFile *.php set ft=phtml " Will include HTML Snippets in php files
 au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.wiki set wrap linebreak | :Goyo 100 " make markdown more readable
 

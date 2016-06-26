@@ -62,9 +62,6 @@ javascript dactyl.beep = function() { return false; }
 " Use DDG as search engine.
 set defsearch=duckduckgo
 
-" Train myself to use t instead of cmd-t
-nmap -builtin <m-t> <nop>
-
 " Apparently the d key broke at some point.
 nmap -builtin d :tabclose<cr>
 
@@ -128,6 +125,9 @@ map <c-j> )
 map <c-l> (
 map <c-k> (
 
-
+" Potentail for navigating dropdowns
 map <c-n> <down>
 map <c-p> <up>
+
+" TAB GROUPS
+" Tab Group setting uses command + control + <function key> to do things
