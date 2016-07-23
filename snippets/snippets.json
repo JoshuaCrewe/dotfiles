@@ -1,0 +1,21 @@
+{
+	"variables": {
+		"lang": "en",
+		"locale": "en-GB",
+		"charset": "UTF-8",
+		"indentation": "\t",
+		"newline": "\n"
+	},
+	
+	"javascript": {
+		"filters": "javascript",
+		"profile": "javascript",
+		"snippets": {
+			"cl": "console.log(|)",
+			"js": "(function(\\$) {\n\t ${1} \n})(jQuery);",
+			"dr": "\\$(document).ready(function() {\n\t ${1} \n}; ",
+      "$": "\\$('|')",
+      "fn": "\\$('\\${1:this}').\\${2:click}(function(){\n\t \\$0 \n});"
+    }
+  }
+}
