@@ -4,6 +4,8 @@
 alias wiki='vim -c VimwikiIndex'
 alias journal='vim -c VimwikiDiaryIndex'
 alias new-day='vim -c VimwikiMakeDiaryNote'
+alias vimrc='vim -c e ~/dotfiles/vimrc'
+alias zshrc='vim -c e ~/dotfiles/zshrc'
 
 # Git
 alias gs='git status '

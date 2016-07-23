@@ -21,8 +21,9 @@ Plug 'tpope/vim-ragtag'               " Some extra mappings
 Plug 'tpope/vim-repeat'               " Dot command with plugins
 Plug 'junegunn/vim-pseudocl'          " Pseudo command line
 Plug 'junegunn/vim-oblique'           " For hiding highlights after searching
+Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim'                " Code writing shorthand
-Plug 'SirVer/ultisnips'               " Snippet expansion
+" Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'honza/vim-snippets'             " Snippets!
 Plug 'tomtom/tcomment_vim'            " Commenting out stuff
 Plug 'scrooloose/syntastic'           " Syntax checking
@@ -157,10 +158,18 @@ set shiftwidth=2
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
+let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/dotfiles/snippets/snippets.json')), "\n"))
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+let g:user_emmet_settings = {
+  \  'php' : {
+  \    'extends' : 'html',
+  \    'filters' : 'c',
+  \  }
+  \}
 
 " File Specific
 
