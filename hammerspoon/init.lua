@@ -1,6 +1,9 @@
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
-  hs.notify.new({title="Hammerspoon", informativeText="Hello Luke"}):send()
+  -- hs.notify.new({title="Hammerspoon", informativeText="Hello Luke"}):send()
 end)
+
+-- Capture the hostname, so we can make this config behave differently across my Macs
+hostname = hs.host.localizedName()
 
 -- hotkey mash
 local mash   = {"ctrl", "cmd"}
@@ -16,8 +19,8 @@ end
 
 positions = {
   maximized ={x=0, y=0, w=1, h=1},
-  centered = {x=0.15, y=0.15, w=0.7, h=0.7},
-  center = {x=0.1, y=0.1, w=0.8, h=0.8},
+  centered = {x=0.17, y=0.08, w=0.66, h=0.85},
+  center = {x=0.1, y=0.05, w=0.77, h=0.88},
 
   left34 = {x=0, y=0, w=0.34, h=1},
   left50 = hs.layout.left50,
@@ -91,6 +94,9 @@ hs.hotkey.bind(mash_app, 'S', function () hs.application.launchOrFocus("Slack") 
 hs.hotkey.bind(mash_app, 'T', function () hs.application.launchOrFocus("Transmit") end)
 hs.hotkey.bind(mash_app, 'L', function () hs.application.launchOrFocus("Messages") end)
 hs.hotkey.bind(mash_app, 'M', function () hs.application.launchOrFocus("Mail") end)
+hs.hotkey.bind(mash_app, 'I', function () hs.application.launchOrFocus("Adobe Illustrator") end)
+hs.hotkey.bind(mash_app, 'G', function () hs.application.launchOrFocus("Tower") end)
+hs.hotkey.bind(mash_app, 'P', function () hs.application.launchOrFocus("Spotify") end)
 
 --Layouts
 hs.hotkey.bind(mash_shift, 'j', function()
@@ -101,9 +107,9 @@ hs.hotkey.bind(mash_shift, 'j', function()
 end)
 
 -- Reload config
-hs.hotkey.bind(mash, "R", function()
-  hs.reload()
-end)
+-- hs.hotkey.bind(mash, "R", function()
+--   hs.reload()
+-- end)
 
 -- watch config for changes and reload when they occur
 function reloadConfig(files)  
@@ -118,5 +124,5 @@ function reloadConfig(files)
     end
 end
 
-hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()  
-hs.alert.show("Config reloaded")  
+hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+hs.notify.new({title="hammerspoon", informativeText="Config reloaded"}):send()
