@@ -453,13 +453,6 @@ noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
 " Enable omni completion.
 set omnifunc=syntaxcomplete#Complete
 
-" Close the opened HTML tag with Ctrl+_ (I do not use vim-closetag because it
-" often fails with an error).
-inoremap <silent> <C-_> </<C-x><C-o><C-x>
-
-" Treat phtml files like php for comments
-" let g:tcomment#filetype_map['phtml'] = 'php'
-
 " Tell Vim which characters to show for expanded tabs, trailing whitespace,
 " ends of lines, and non-breakable space.
 set listchars=tab:>-,trail:#,eol:$,nbsp:~,extends:>,precedes:<
@@ -501,3 +494,4 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType phtml call PhpSyntaxOverride()
 augroup END
+
