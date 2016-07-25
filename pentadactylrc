@@ -77,7 +77,7 @@ nmap -builtin gp :pin!<cr>
 nmap -builtin <c-e> g$
 
 " Kill me
-style -name ublick * #nav-bar * { visibility: visible; }
+" style -name ublick * #nav-bar * { visibility: visible; }
 
 "Hide some stuff
 set guioptions=CsmT
