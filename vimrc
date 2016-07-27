@@ -496,4 +496,3 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType phtml call PhpSyntaxOverride()
 augroup END
-
