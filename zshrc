@@ -45,8 +45,7 @@ function t() {
 	tree --filelimit 15 -L 3 -C 
 }
 
-set editing-mode vi
-bindkey -v
+set editing-mode emacs
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOCONNECT=true
