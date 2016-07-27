@@ -43,3 +43,45 @@ endsnippet
 snippet loop-end "WP end of the loop"
 endwhile; else : get_404_template(); endif;
 endsnippet
+
+# ACF Snippets
+snippet acf-repeater "an ACF repeater loop"
+<?php
+
+// check if the repeater field has rows of data
+if( have_rows('${1:repeater_field_name}') ):
+
+	// loop through the rows of data
+	while ( have_rows('${1/.*/$0/}') ) : the_row();
+
+		// display a sub field value
+		the_sub_field('${2:sub_field_name}');
+
+	endwhile;
+
+else :
+
+	// no rows found
+
+endif;
+
+?>
+endsnippet
+
+snippet acf-relationship "an ACF relationship loop"
+<?php 
+
+$posts = get_field('${1:relationship_field_name}');
+
+if( $posts ): ?>
+
+		<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+		<?php setup_postdata($post); ?>
+
+			${2:// Content goes here}
+
+		<?php endforeach; ?>
+
+<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+<?php endif; ?>
+endsnippet
