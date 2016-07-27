@@ -174,7 +174,7 @@ au BufRead,BufNewFile *.wiki set wrap linebreak | :Goyo 100 " make markdown more
 
 imap <C-k> <C-y>,
 
-let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/dotfiles/snippets/snippets.json')), "\n"))
+" let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/dotfiles/snippets/snippets.json')), "\n"))
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 let g:user_emmet_settings = {
   \  'php' : {
