@@ -176,12 +176,12 @@ imap <C-k> <C-y>,
 
 " let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/dotfiles/snippets/snippets.json')), "\n"))
 " imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-let g:user_emmet_settings = {
-  \  'php' : {
-  \    'extends' : 'html',
-  \    'filters' : 'c',
-  \  }
-  \}
+" let g:user_emmet_settings = {
+"   \  'php' : {
+"   \    'extends' : 'html',
+"   \    'filters' : 'c',
+"   \  }
+"   \}
 
 " Insert the contents of the clipboard.
 nnoremap <silent> <Leader>P :set paste<CR>"+]P:set nopaste<CR>
@@ -496,4 +496,3 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType phtml call PhpSyntaxOverride()
 augroup END
-
