@@ -50,6 +50,7 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'othree/html5.vim'
+Plug 'StanAngeloff/php.vim'
 " Wordpress
 Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
 " Sessions
@@ -261,7 +262,9 @@ onoremap af :<C-u>normal! ggVG<CR>
 onoremap av :<C-u>normal! 0f:lvt;<CR><space>
 
 " reindent the whole file
-nmap <leader>= gg=G``
+" nmap <leader>= gg=G``
+
+au BufNewFile,BufRead *.scss,*.css,*.js nnoremap <buffer> <leader>= gg=G``
 
 " Load Vimrc for editing
 nnoremap <leader>vim :silent :edit ~/.vimrc<cr>
@@ -407,6 +410,7 @@ nmap <leader>/ :Ag
 " Syntastic linters
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_php_checkers = ['php', 'phpcs']
 " some Syntastic defaults
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
