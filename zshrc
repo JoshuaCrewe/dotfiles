@@ -9,6 +9,26 @@ ZSH_THEME="pure"
 # Red dots for completing process'
 COMPLETION_WAITING_DOTS="true"
 
+# c - browse chrome history
+fox() {
+  local cols sep
+  cols=$(( COLUMNS / 3 ))
+  sep='{::}'
+
+  cp -f ~/Library/Application\ Support/Firefox/Profiles/129gnhjg.Joshua/places.sqlite /tmp/h
+
+  sqlite3 -separator $sep /tmp/h \
+    "select substr(title, 1, $cols), url
+     from moz_places order by last_visit_date desc" |
+  awk -F $sep '{printf "%-'$cols's  \x1b[36m%s\x1b[m\n", $1, $2}' |
+  fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
+}
+
+# Use FZF to search though the command line history
+fh() {
+eval $(history | fzf +s | sed 's/ *[0-9]* *//')
+}
+
 # Plugins to use
 plugins=(git brew brew-cask catimg git-extras github lol nyan osx sublime z tmux zsh-syntax-highlighting)
 
