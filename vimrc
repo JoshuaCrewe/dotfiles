@@ -485,7 +485,7 @@ vnoremap K :m '<-2<CR>gv=gv
 
 au BufNewFile,BufRead *pentadactylrc*,*.penta set filetype=vim
 
-let g:vimwiki_list = [{'path': '~/Dropbox/.vimwiki/',
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
                        \ 'syntax': 'default', 'ext': '.wiki'}]
 
 set tags+=tags;$HOME
