@@ -97,6 +97,7 @@ hs.hotkey.bind(mash_app, 'M', function () hs.application.launchOrFocus("Mail") e
 hs.hotkey.bind(mash_app, 'I', function () hs.application.launchOrFocus("Adobe Illustrator") end)
 hs.hotkey.bind(mash_app, 'G', function () hs.application.launchOrFocus("Tower") end)
 hs.hotkey.bind(mash_app, 'P', function () hs.application.launchOrFocus("Spotify") end)
+hs.hotkey.bind(mash_app, 'H', function () hs.application.launchOrFocus("Harvest") end)
 
 --Layouts
 hs.hotkey.bind(mash_shift, 'j', function()
