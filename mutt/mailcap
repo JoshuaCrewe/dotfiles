@@ -13,6 +13,8 @@ application/pdf; ~/.mutt/view_attachment.sh %s pdf
 
 # HTML
 text/html; ~/.mutt/view_attachment.sh %s html
+text/html;                      links %s; nametemplate=%s.html
+text/html;                      links -dump %s; nametemplate=%s.html; copiousoutput
 
 # Markdown
 text/x-markdown; ~/.mutt/view_attachment.sh %s md
