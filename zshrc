@@ -33,8 +33,8 @@ eval $(history | fzf +s | sed 's/ *[0-9]* *//')
 plugins=(git brew brew-cask catimg git-extras github lol nyan osx sublime z tmux zsh-syntax-highlighting)
 
 # Base16 Shell
- BASE16_SHELL="$HOME/.config/base16-shell/ocean.dark.sh"
- [[ -s $BASE17_SHELL ]] && source $BASE16_SHELL
+BASE16_SHELL="$HOME/.config/base16-shell/ocean.dark.sh"
+[[ -s $BASE17_SHELL ]] && source $BASE16_SHELL
 
 # Turn off flow control
 setopt noflowcontrol
@@ -62,7 +62,7 @@ export HISTCONTROL=ignoredumps;
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date* --help";
 
 function t() {
-	tree --filelimit 15 -L 3 -C 
+  tree --filelimit 15 -L 3 -C 
 }
 
 set editing-mode emacs
@@ -73,4 +73,4 @@ ZSH_TMUX_AUTOCONNECT=true
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
- source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
