@@ -46,4 +46,4 @@ zplug "b4b4r07/zsh-gomi", if:"which fzf"           # Move things to system trash
 # fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load # --verbose
