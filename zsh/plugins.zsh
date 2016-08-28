@@ -11,6 +11,11 @@ zplug "supercrabtree/k"
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
 
+zplug "witt3rd/894c9e0b9ca4e24e5574", \
+    from:gist, \
+    as:command, \
+    use:brew-sync.sh
+
 zplug "b4b4r07/zsh-gomi", if:"which fzf" # Install zsh-gomi(If fzf is already installed)
 
 # Install plugins if there are plugins that have not been installed

@@ -23,3 +23,16 @@ eval $(history | fzf +s | sed 's/ *[0-9]* *//')
 function tree() {
   tree --filelimit 15 -L 3 -C 
 }
+
+# Use <c-z> to restore a suspended vim
+foreground-vi() {
+  fg %vi
+}
+zle -N foreground-vi
+bindkey '^Z' foreground-vi
+
+# A function to search through zsh man pages
+# Although I am not sure that this works
+zman() {
+  PAGER="less -g -s '+/^       "$1"'" man zshall
+}
