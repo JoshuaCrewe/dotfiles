@@ -8,6 +8,10 @@ alias vimrc='vim -c e ~/dotfiles/vimrc'
 alias zshrc='vim -c e ~/dotfiles/zshrc'
 alias tmuxconf='vim -c e ~/dotfiles/tmux.conf'
 
+# Gomi
+alias gomi='gomi -s'
+alias trash='gomi -s'
+
 # Git
 alias gs='git status '
 alias ga='git add '

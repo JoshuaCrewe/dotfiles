@@ -1,6 +1,13 @@
-
 # Red dots for completing process'
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
+# http://stackoverflow.com/a/844299
+expand-or-complete-with-dots() {
+  echo -n "\e[31m...\e[0m"
+  zle expand-or-complete
+  zle redisplay
+}
+zle -N expand-or-complete-with-dots
+bindkey "^I" expand-or-complete-with-dots
 
 # Turn off flow control so <c-s> can save in vim
 setopt noflowcontrol
@@ -28,9 +35,6 @@ export HISTCONTROL=ignoredumps;
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date* --help";
 
 set editing-mode emacs
-
-ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_AUTOCONNECT=true
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
