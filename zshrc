@@ -21,3 +21,4 @@ source $ZHOME/plugins.zsh
 # Theme
 autoload -U promptinit && promptinit
 prompt pure
+clear
