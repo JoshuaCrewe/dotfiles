@@ -6,10 +6,10 @@
 #                           
 
 # Path to your oh-my-zsh installation.
-# export ZSH=~/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 export ZHOME=~/dotfiles/zsh
 
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 source $ZHOME/options.zsh
 source $ZHOME/aliases.zsh
 source $ZHOME/functions.zsh
