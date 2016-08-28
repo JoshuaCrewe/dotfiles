@@ -3,10 +3,14 @@ source ~/.zplug/init.zsh
 # Supports oh-my-zsh plugins and the like
 # zplug "plugins/lol",   from:oh-my-zsh
 zplug "plugins/git",   from:oh-my-zsh
+zplug "plugins/git-extras",   from:oh-my-zsh
 zplug "plugins/colored-man-pages",   from:oh-my-zsh
-zplug "b4b4r07/enhancd", use:init.sh
+zplug "plugins/z",   from:oh-my-zsh
+zplug "andrewferrier/fzf-z"
+# zplug "b4b4r07/enhancd", use:init.sh
 zplug "zsh-users/zsh-syntax-highlighting", nice:10
 zplug "supercrabtree/k"
+zplug "urbainvaes/fzf-marks"
 
 zplug "mafredri/zsh-async"
 zplug "sindresorhus/pure"
