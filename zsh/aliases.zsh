@@ -12,6 +12,13 @@ alias tmuxconf='vim -c e ~/dotfiles/tmux.conf'
 alias gomi='gomi -s'
 alias trash='gomi -s'
 
+# FZF
+alias j='jump'
+alias m='mark'
+
+#dasht
+alias dt='dasht'
+
 # Git
 alias gs='git status '
 alias ga='git add '
