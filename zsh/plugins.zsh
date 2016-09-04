@@ -38,12 +38,12 @@ zplug "witt3rd/894c9e0b9ca4e24e5574", \
 zplug "b4b4r07/zsh-gomi", if:"which fzf"           # Move things to system trash
 
 # Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-#     printf "Install? [y/N]: "
-#     if read -q; then
-#         echo; zplug install
-#     fi
-# fi
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
 # Then, source plugins and add commands to $PATH
 zplug load # --verbose
