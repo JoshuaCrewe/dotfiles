@@ -1,5 +1,9 @@
 # Alias'
 
+# I am giving up
+alias :wq="exit"
+alias :q="exit"
+
 # Vim
 alias wiki='vim -c VimwikiIndex'
 alias journal='vim -c VimwikiDiaryIndex'
