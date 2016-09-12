@@ -494,6 +494,13 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
 
 set tags+=tags;$HOME
 
+" Use ag for vimgrep
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
