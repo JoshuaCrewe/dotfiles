@@ -36,5 +36,8 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date* --help";
 
 set editing-mode emacs
 
+# automatically change directory without cd
+setopt AUTO_CD
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag -g ""'
