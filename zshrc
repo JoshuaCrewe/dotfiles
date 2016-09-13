@@ -21,3 +21,6 @@ source $ZHOME/plugins.zsh
 # Theme
 autoload -U promptinit && promptinit
 prompt pure
+
+# Added by zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

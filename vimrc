@@ -60,10 +60,6 @@ Plug 'rhysd/devdocs.vim'              " Look up things in DevDocs
 Plug 'keith/investigate.vim'          " An alternative documentation lookup
 " Wiki
 Plug 'vimwiki/vimwiki'
-" things I got for ember
-Plug 'dsawardekar/ember.vim'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'jelera/vim-javascript-syntax'
 call plug#end()
 
 filetype plugin on 
@@ -171,22 +167,12 @@ let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your w
 
 " File Specific
 
-" au BufRead,BufNewFile *.php set ft=phtml " Will include HTML Snippets in php files
 au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.wiki set wrap linebreak | :Goyo 100 " make markdown more readable
 
 " Emmet
 
 imap <C-k> <C-y>,
-
-" let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/dotfiles/snippets/snippets.json')), "\n"))
-" imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
-" let g:user_emmet_settings = {
-"   \  'php' : {
-"   \    'extends' : 'html',
-"   \    'filters' : 'c',
-"   \  }
-"   \}
 
 " Insert the contents of the clipboard.
 nnoremap <silent> <Leader>P :set paste<CR>"+]P:set nopaste<CR>
@@ -500,6 +486,11 @@ if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
 endif
+
+" Create some space around parens
+noremap g(<space> T(i<space><esc>t)a<space><esc> 
+noremap g{<space> T{i<space><esc>t}a<space><esc> 
+noremap g[<space> T[i<space><esc>t]a<space><esc> 
 
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
