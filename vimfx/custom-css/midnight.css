@@ -3,7 +3,7 @@
 
 /* Browser Background */
 browser[type="content-primary"] {
-background-color: #141414 !important;
+background-color: #192633 !important;
 }
  
 @-moz-document url-prefix(http://), url-prefix(https://), url-prefix(ftp://), url-prefix(file://) {
@@ -18,7 +18,7 @@ background-image: none !important;
 /* Basic Bodies */
 html,
 body {
-background: none #141414 !important;
+background: none #192633 !important;
 }
 
 /* Make descendents of the body element transparent.  Formerly "DIV + SPAN" rules. */
@@ -40,7 +40,7 @@ border-color: #000 !important;
 
 /* Try to contrast containers */
 html:root > body > * > * > * > *:not(input):not([onclick]) > div:not(:empty):not([id]) {
-background: none #1c1c1c !important
+background: none #192633 !important
 }
 
 /* :::::::: Text Presentation :::::::: */
@@ -55,7 +55,7 @@ progress,
 time,
 label,
 .date {
-color: #CDEFC2 !important;
+color: #0084ff !important;
 }
 
 mark,
@@ -64,7 +64,7 @@ pre,
 blockquote,
 [class*="quote"],
 td[style*="inset"][class="alt2"] {
-background-color: #00090F !important;
+background-color: #192633 !important;
 }
 
 
@@ -74,7 +74,7 @@ background-color: #00090F !important;
 
 header, 
 #header {
-background: -moz-linear-gradient(#333,#141414) transparent !important;
+background: -moz-linear-gradient(#333,#192633) transparent !important;
 }
 
 #header h1 {
@@ -417,7 +417,7 @@ border: none !important;
 
 @-moz-document url(about:newtab) {
 
-* {background: #141414 !important;}
+* {background: #192633 !important;}
 
 #newtab-scrollbox {
 background-color: transparent !important;
@@ -436,7 +436,7 @@ color: #eee !important;
 @-moz-document url(about:blank) {
 
 html, html * {
-  background: none #141414 !important;
+  background: none #192633 !important;
   color: #CCC !important;
   }
 
