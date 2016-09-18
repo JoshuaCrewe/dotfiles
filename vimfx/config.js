@@ -31,6 +31,40 @@ vimfx.addCommand({
   setWindowAttribute(window, 'tabbar-visibility', isFloating ? 'hidden' : 'floating')
 })
 
+vimfx.addCommand({
+  name: 'search_bookmarks',
+  description: 'Search bookmarks',
+  category: 'location',
+  order: commands.focus_location_bar.order + 1,
+}, (args) => {
+  commands.focus_location_bar.run(args)
+  args.vim.window.gURLBar.value = '* '
+})
+
+vimfx.addCommand({
+  name: 'search_tabs',
+  description: 'Search Tabs',
+  category: 'location',
+  order: commands.focus_location_bar.order + 1,
+}, (args) => {
+  commands.focus_location_bar.run(args)
+  args.vim.window.gURLBar.value = '% '
+})
+
+vimfx.addCommand({
+  name: 'web_console',
+  description: 'Web console',
+}, ({vim}) => {
+  vim.window.gDevToolsBrowser.selectToolCommand(vim.window.gBrowser, 'webconsole')
+})
+
+vimfx.addCommand({
+  name: 'web_inspector',
+  description: 'Web inspector',
+}, ({vim}) => {
+  vim.window.gDevToolsBrowser.toggleToolboxCommand(vim.window.gBrowser)
+})
+
 // Mappings
 
 let map = (shortcuts, command, custom=false) => {
@@ -64,6 +98,13 @@ map('/', 'find_highlight_all')
 map('a/', 'find')
 map('n', 'find_next')
 map('N', 'find_previous')
+
+// User the Awesome bar to search for useful things
+map('<space><s-CR>', 'search_bookmarks', true)
+map('<space><CR>', 'search_tabs', true)
+
+// This could be a better mapping?
+map('<c-s>', 'web_inspector', true)
 
 // Other ?
 map('y', 'copy_current_url')
