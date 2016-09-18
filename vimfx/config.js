@@ -1,7 +1,9 @@
-const {classes: Cc, interfaces: Ci, utils: Cu} = Components
+// Settings
 
+const {classes: Cc, interfaces: Ci, utils: Cu} = Components
 let {commands} = vimfx.modes.normal
 
+// Custom Commands
  vimfx.addCommand({
   name: 'tab_move_to_index',
   description: 'Move tab to index',
@@ -29,35 +31,44 @@ vimfx.addCommand({
   setWindowAttribute(window, 'tabbar-visibility', isFloating ? 'hidden' : 'floating')
 })
 
+// Mappings
+
 let map = (shortcuts, command, custom=false) => {
   vimfx.set(`${custom ? 'custom.' : ''}mode.normal.${command}`, shortcuts)
 }
 
+// Remove some mappings
 map(' ', 'scroll_page_down')
 
+// Tabs
 map('gt', 'tab_move_to_index', true)
 map('gT', 'toggle_floating_tab_bar', true)
-
 map('(',  'tab_select_previous')
 map(')',  'tab_select_next')
-map('gf', 'click_browser_element')
 map('d',  'tab_close')
 map('u',  'tab_restore')
 map('<space><space>', 'tab_select_most_recent')
 map('<c-e>', 'tab_select_last')
 map('<c-a>', 'tab_select_first_non_pinned')
-map('`', 'scroll_to_mark')
 
+// Scrolling
+map('`', 'scroll_to_mark')
 map('<c-d>', 'scroll_half_page_down')
 map('<c-u>', 'scroll_half_page_up')
 
+// Hints
+map('gf', 'click_browser_element')
+
+// Searching
 map('/', 'find_highlight_all')
 map('a/', 'find')
-
 map('n', 'find_next')
 map('N', 'find_previous')
+
+// Other ?
 map('y', 'copy_current_url')
 
+// Preferences
 let set = (pref, valueOrFunction) => {
   let value = typeof valueOrFunction === 'function'
     ? valueOrFunction(vimfx.getDefault(pref))
@@ -71,6 +82,7 @@ set('prev_patterns', v => `föregående  ${v}`)
 set('next_patterns', v => `nästa  ${v}`)
 set('counts_enabled', true)
 
+// Some preferences are used to edit Built in firefox things
 let {Preferences} = Cu.import('resource://gre/modules/Preferences.jsm', {})
 
 Preferences.set({
@@ -89,7 +101,7 @@ Preferences.set({
   'devtools.selfxss.count': 0,
   'privacy.donottrackheader.enabled': true,
   'toolkit.scrollbox.verticalScrollDistance' : 4,
-  'extensions.VimFx.smoothscroll.lines.spring-constant' : 2000,
+  'extensions.VimFx.smoothscroll.lines.spring-constant' : 1000,
 })
 
 // This is the javascript which runs what the font
