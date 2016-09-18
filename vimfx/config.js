@@ -130,6 +130,17 @@ vimfx.addCommand({
 map('<space><s-CR>', 'search_bookmarks', true)
 
 vimfx.addCommand({
+  name: 'search_history',
+  description: 'Search history',
+  category: 'location',
+  order: commands.focus_location_bar.order + 1,
+}, (args) => {
+  commands.focus_location_bar.run(args)
+  args.vim.window.gURLBar.value = '^ '
+})
+map('<space>h', 'search_history', true)
+
+vimfx.addCommand({
   name: 'search_tabs',
   description: 'Search Tabs',
   category: 'location',
@@ -200,6 +211,14 @@ vimfx.addCommand({
     toggleCss(`${__dirname}/custom-css/midnight.css`)
 })
 map('<space>n', 'midnight', true)
+
+vimfx.addCommand({
+    name: 'pocket',
+    description: 'Save to Pocket',
+}, ({vim}) => {
+    vim.window.document.getElementById('pocket-button').click();
+});
+map('s', 'pocket', true)
 
 // This is the javascript which runs what the font
 // javascript:(function(){var%20d=document,s=d.createElement('scr'+'ipt'),b=d.body,l=d.location;s.setAttribute('src','http://chengyinliu.com/wf.js?o='+encodeURIComponent(l.href)+'&t='+(new%20Date().getTime()));b.appendChild(s)})();
