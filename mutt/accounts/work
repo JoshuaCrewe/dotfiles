@@ -1,0 +1,3 @@
+color status  green red
+set from     = "joshua@venncreative.co.uk"
+set sendmail = "/usr/local/bin/msmtp -a work"
