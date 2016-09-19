@@ -51,6 +51,7 @@ mailboxes +me-joshuacrewe.co.uk/INBOX \
           +me-joshuacrewe.co.uk/Sent \
           +me-joshuacrewe.co.uk/Drafts \
           +me-joshuacrewe.co.uk/Spam \
+          +work/INBOX \
 # Default inbox.
 set spoolfile = +me-joshuacrewe.co.uk/INBOX
 
@@ -140,8 +141,6 @@ set include                          # include message in replies
 set forward_quote                    # include message in forwards
 
 # Sending emails
-set from     = "me@joshuacrewe.co.uk"
-set sendmail = "/usr/local/bin/msmtp -a joshuacrewe"
 set sendmail_wait = 0
 bind compose p postpone-message
 bind index p recall-message
@@ -244,3 +243,8 @@ macro index a "<limit>all\n" "show all messages (undo limit)"
  # Misc
  color body      brightblack     black   "^[-_=*]{3,}\n"
  color body      yellow          black   "^SPAM:"
+
+
+source ~/.mutt/accounts/personal
+folder-hook me-joshuacrewe.co.uk/* source ~/.mutt/accounts/personal
+folder-hook work/*     source ~/.mutt/accounts/work
