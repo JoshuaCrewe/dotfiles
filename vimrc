@@ -34,6 +34,7 @@ Plug 'vim-scripts/loremipsum'         " Lorem Ipsum generator
 Plug 'simeji/winresizer'              " Easily resize windows with <c-e>
 Plug 'phongvcao/vim-stardict'         " Lok up words in the dictionary
 Plug 'tommcdo/vim-lion'               " align stuff according to marks
+Plug 'henrik/vim-reveal-in-finder'    " Show the current file in Macos Finder
 " Colour Schemes
 Plug 'junegunn/seoul256.vim'          " A colour scheme which works
 Plug 'chriskempson/base16-vim'        " Some colour schemes which don't always work

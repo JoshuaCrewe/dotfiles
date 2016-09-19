@@ -85,3 +85,25 @@ if( $posts ): ?>
 <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 <?php endif; ?>
 endsnippet
+
+snippet acf-flexible "an ACF flexible loop"
+<?php // check if the flexible content field has rows of data ?>
+<?php if( have_rows('${1:felexible_content_field_name}') ): ?>
+
+	<?php // loop through the rows of data ?>
+	<?php while ( have_rows('${1/.*/$0/}') ) : the_row(); ?>
+
+		<?php if( get_row_layout() == '${2:paragraph}' ): ?>
+
+			<?php the_sub_field('text'); ?>
+
+		<?php elseif( get_row_layout() == '${3:download'} ):  ?>
+
+			<?php $file = get_sub_field('file'); ?>
+
+		<?php endif; ?>
+
+	<?php	endwhile; ?>
+
+<?php endif; ?>
+endsnippet
