@@ -248,3 +248,6 @@ macro index a "<limit>all\n" "show all messages (undo limit)"
 source ~/.mutt/accounts/personal
 folder-hook me-joshuacrewe.co.uk/* source ~/.mutt/accounts/personal
 folder-hook work/*     source ~/.mutt/accounts/work
+
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html     # save html for last
