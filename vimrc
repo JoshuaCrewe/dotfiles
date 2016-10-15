@@ -26,7 +26,8 @@ Plug 'mattn/emmet-vim'                " Code writing shorthand
 Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'honza/vim-snippets'             " Snippets!
 Plug 'tomtom/tcomment_vim'            " Commenting out stuff
-Plug 'scrooloose/syntastic'           " Syntax checking
+" Plug 'scrooloose/syntastic'           " Syntax checking
+Plug 'w0rp/ale'
 Plug 'junegunn/gv.vim'                " Requires fugitive - commit viewer
 Plug 'chip/vim-fat-finger'            " Corrects some easily made typing mistakes
 Plug 'vim-scripts/camelcasemotion'    " Treat cammel case as words
@@ -154,9 +155,9 @@ endif
 
 set expandtab
 set smarttab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -397,16 +398,6 @@ command! Plugs call fzf#run({
 
 " Search for a word in the project
 nmap <leader>/ :Ag 
-
-" Syntastic linters
-let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_php_checkers = ['php', 'phpcs']
-" some Syntastic defaults
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Zero will go to the start of the content first and then the very start
 function! ToggleHomeZero()
