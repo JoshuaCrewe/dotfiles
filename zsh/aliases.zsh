@@ -6,19 +6,21 @@ alias :q="exit"
 
 # Vim
 alias wiki='vim -c VimwikiIndex'
+alias wiki-linux='vim -c VimwikiUISelect'
 alias journal='vim -c VimwikiDiaryIndex'
 alias new-day='vim -c VimwikiMakeDiaryNote'
 alias vimrc='vim -c e ~/dotfiles/vimrc'
 alias zshrc='vim -c e ~/dotfiles/zshrc'
 alias tmuxconf='vim -c e ~/dotfiles/tmux.conf'
 alias aliases='vim -c e ~/dotfiles/zsh/aliases.zsh'
+alias plugins='vim -c e ~/dotfiles/zsh/plugins.zsh'
 
 # Server
 # alias server='browser-sync start -p $1 --no-ghost-mode --no-notify'
 
 # Gomi
-alias gomi='gomi -s'
-alias trash='gomi -s'
+# alias gomi='gomi -s'
+# alias trash='gomi -s'
 
 # FZF
 alias j='jump'
