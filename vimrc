@@ -484,6 +484,10 @@ noremap g(<space> T(i<space><esc>t)a<space><esc>
 noremap g{<space> T{i<space><esc>t}a<space><esc> 
 noremap g[<space> T[i<space><esc>t]a<space><esc> 
 
+let g:ale_linters = {
+\   'scss': ['scsslint'],
+\}
+
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
