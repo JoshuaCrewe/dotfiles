@@ -17,7 +17,6 @@ Plug genpasswd
 
 Plug oh-my-zsh-wrapper 
 
-plugins=( emoji-clock git-extras )
+plugins=( git-extras colored-man-pages )
 
 Plug zsh-users/zsh-syntax-highlighting
-
