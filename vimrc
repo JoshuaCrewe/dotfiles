@@ -92,11 +92,11 @@ set autoread                      " Automatically update file if edited elsewher
 
 " Colour Scheme
 
-"set termguicolors                " Use all the colours! New for vim 7.4 + tmux 2.2 and iTerm
+" set termguicolors                " Use all the colours! New for vim 7.4 + tmux 2.2 and iTerm
 set t_Co=256                      " Set colours to 256
 set background=dark               " Use a dark background
 
-let g:seoul256_background = 237   " Seoul can tweak the background a bit
+let g:seoul256_background = 236   " Seoul can tweak the background a bit
 colo seoul256                     " Set the colour scheme
 
 " Numbering
