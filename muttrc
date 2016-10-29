@@ -251,3 +251,5 @@ folder-hook work/*     source ~/.mutt/accounts/work
 
 auto_view text/html                                      # view html automatically
 alternative_order text/plain text/enriched text/html     # save html for last
+
+# source ~/.mutt/colors.muttrc
