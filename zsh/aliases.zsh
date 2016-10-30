@@ -29,6 +29,20 @@ alias m='mark'
 #dasht
 alias dt='dasht'
 
+# cd
+alias -- -='cd -'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
+
+# ls
+alias lsa='ls -lah'
+alias l='ls -lah'
+alias ll='ls -lh'
+alias la='ls -lAh'
+alias ls='ls -G'
+
 # Git
 alias gs='git status '
 alias ga='git add '
@@ -40,7 +54,6 @@ alias go='git checkout '
 alias got='git ' # Fix some fat fingers
 alias get='git '
 
-alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
 alias gsd='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
@@ -49,6 +62,25 @@ alias t='python ~/localhost/sjl-t/t.py --task-dir ~/.tasks --list tasks'
 
 alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'  # see the hidden thoughts!
 alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'  # keep hidden things hidden!
+
+# Mac OS X Everywhere
+if [[ "$OSTYPE" == darwin* ]]; then
+  alias o='open'
+elif [[ "$OSTYPE" == cygwin* ]]; then
+  alias o='cygstart'
+  alias pbcopy='tee > /dev/clipboard'
+  alias pbpaste='cat /dev/clipboard'
+else
+  alias o='xdg-open'
+
+  if (( $+commands[xclip] )); then
+    alias pbcopy='xclip -selection clipboard -in'
+    alias pbpaste='xclip -selection clipboard -out'
+  elif (( $+commands[xsel] )); then
+    alias pbcopy='xsel --clipboard --input'
+    alias pbpaste='xsel --clipboard --output'
+  fi
+fi
 
 # Harry Potter Fun Times
 alias accio=wget
@@ -79,8 +111,9 @@ alias untergeo='defaults write com.apple.finder CreateDesktop -bool true && kill
 alias expectoPatronum='open ~/Pictures/turtleBasking.jpg'  # summon your spirit animal!  (replace with a picture of your own spirit animal)
 
 function bodyBindCurse() {
-  alias cd='echo "you are immobilized!  you cannot get to"'
+    alias cd='echo "you are immobilized!  you cannot get to"'
 }
+
 function blindingCurse() {
-  alias ls='echo "you have been blinded!"'
+    alias ls='echo "you have been blinded!"'
 }

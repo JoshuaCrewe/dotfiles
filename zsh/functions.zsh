@@ -1,3 +1,13 @@
+# Makes a directory and changes to it.
+function take {
+  [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
+}
+
+# Changes to a directory and lists its contents.
+function cdls {
+  builtin cd "$argv[-1]" && ls "${(@)argv[1,-2]}"
+}
+
 tmux-neww-in-cwd() {
     SIP=$(tmux display-message -p "#S:#I:#P")
 
@@ -152,4 +162,20 @@ c() {
   fzf --ansi --multi --no-hscroll --tiebreak=index |
   sed 's#.*\(https*://\)#\1#' | xargs open
 
+}
+
+# Get some colour in Man pages
+man() {
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+		PAGER="${commands[less]:-$PAGER}" \
+		_NROFF_U=1 \
+		PATH="$HOME/bin:$PATH" \
+			man "$@"
 }
