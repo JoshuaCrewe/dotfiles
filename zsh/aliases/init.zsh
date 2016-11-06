@@ -18,8 +18,9 @@ alias zsh-plugins='vim -c e ~/dotfiles/zsh/plugins/init.zsh'
 alias zsh-functions='vim -c e ~/dotfiles/zsh/functions/init.zsh'
 alias zsh-options='vim -c e ~/dotfiles/zsh/options/init.zsh'
 
-# Dont look too close at this one
-alias mutt='TERM=screen-256color && mutt'
+# Force tmux to start in 256 colours,
+# this is actually an insane problem
+alias tmux='tmux -2'
 
 # Server
 # alias server='browser-sync start -p $1 --no-ghost-mode --no-notify'
