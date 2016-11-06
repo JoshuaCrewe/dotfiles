@@ -8,26 +8,6 @@ function cdls {
   builtin cd "$argv[-1]" && ls "${(@)argv[1,-2]}"
 }
 
-function tmux-neww-in-cwd() {
-    SIP=$(tmux display-message -p "#S:#I:#P")
-
-    PTY=$(tmux server-info |
-    egrep flags=\|bytes |
-    awk '/windows/ { s = $2 }
-    /references/ { i = $1 }
-    /bytes/ { print s i $1 $2 } ' |
-    grep "$SIP" |
-    cut -d: -f4)
-
-    PTS=${PTY#/dev/}
-
-    PID=$(ps -eao pid,tty,command --forest | awk '$2 == "'$PTS'" {print $1; exit}')
-
-    DIR=$(readlink /proc/$PID/cwd)
-
-    tmux neww "cd '$DIR'; $SHELL"
-}
-
 # Search through Firefox history ( work only at the moment )
 function fox() {
   local cols sep
@@ -77,13 +57,6 @@ function fd() {
 # fda - including hidden directories
 function fda() {
   DIR=`find ${1:-.} -type d 2> /dev/null | fzf-tmux` && cd "$DIR"
-}
-
-# Figlet font selector
-function fgl() {
-  cd /usr/local/Cellar/figlet/*/share/figlet/fonts
-  BASE=`pwd`
-  figlet -f `ls *.flf | sort | fzf` $*
 }
 
 # fbr - checkout git branch
