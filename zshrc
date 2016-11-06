@@ -7,13 +7,20 @@
 
 # Path to your oh-my-zsh installation.
 # export ZSH=~/.oh-my-zsh
-export ZHOME=~/dotfiles/zsh
 
 # source $ZSH/oh-my-zsh.sh
-source $ZHOME/options.zsh
-source $ZHOME/aliases.zsh
-source $ZHOME/functions.zsh
-source $ZHOME/plugins.zsh
+
+# source ~/dotfiles/zsh/options.zsh
+source ~/dotfiles/zsh/options/init.zsh
+
+# source ~/dotfiles/zsh/aliases.zsh
+source ~/dotfiles/zsh/aliases/init.zsh
+
+# source ~/dotfiles/zsh/functions.zsh
+source ~/dotfiles/zsh/functions/init.zsh
+
+# source ~/dotfiles/zsh/plugins.zsh
+source ~/dotfiles/zsh/plugins/init.zsh
 
 # Added by zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
