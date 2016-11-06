@@ -21,13 +21,11 @@ Plug 'tpope/vim-ragtag'               " Some extra mappings
 Plug 'tpope/vim-repeat'               " Dot command with plugins
 Plug 'junegunn/vim-pseudocl'          " Pseudo command line
 Plug 'junegunn/vim-oblique'           " For hiding highlights after searching
-Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim'                " Code writing shorthand
 Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'honza/vim-snippets'             " Snippets!
 Plug 'tomtom/tcomment_vim'            " Commenting out stuff
-" Plug 'scrooloose/syntastic'           " Syntax checking
-Plug 'w0rp/ale'
+Plug 'w0rp/ale'                       " Async syntax checking
 Plug 'junegunn/gv.vim'                " Requires fugitive - commit viewer
 Plug 'chip/vim-fat-finger'            " Corrects some easily made typing mistakes
 Plug 'vim-scripts/camelcasemotion'    " Treat cammel case as words
@@ -45,7 +43,7 @@ Plug 'junegunn/vim-peekaboo'          " Show the registers
 Plug 'ap/vim-css-color'               " show colors in a highlight
 Plug 'airblade/vim-gitgutter'         " Git marks in the gutter
 Plug 'sjl/gundo.vim'                  " Undo tree visualisation
-Plug 'wincent/terminus'
+Plug 'wincent/terminus'               " Get a better terminal experience
 " Syntax
 Plug 'cakebaker/scss-syntax.vim' 
 Plug 'hail2u/vim-css3-syntax'
@@ -61,7 +59,7 @@ Plug 'tpope/vim-obsession'            " For saving sessions
 Plug 'rhysd/devdocs.vim'              " Look up things in DevDocs
 Plug 'keith/investigate.vim'          " An alternative documentation lookup
 " Wiki
-Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'                " Fancy keeping some notes somewhere?
 call plug#end()
 
 filetype plugin on 
@@ -259,7 +257,7 @@ onoremap av :<C-u>normal! 0f:lvt;<CR><space>
 au BufNewFile,BufRead *.scss,*.css,*.js nnoremap <buffer> <leader>= gg=G``
 
 " Load Vimrc for editing
-nnoremap <leader>vim :silent :edit ~/.vimrc<cr>
+nnoremap <leader>vim :silent :edit ~/dotfiles/vimrc<cr>
 
 " Source vimrc
 nmap <leader>r :source ~/.vimrc<cr>
