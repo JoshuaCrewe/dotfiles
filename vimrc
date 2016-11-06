@@ -60,6 +60,8 @@ Plug 'rhysd/devdocs.vim'              " Look up things in DevDocs
 Plug 'keith/investigate.vim'          " An alternative documentation lookup
 " Wiki
 Plug 'vimwiki/vimwiki'                " Fancy keeping some notes somewhere?
+
+Plug 'tpope/vim-dispatch'
 call plug#end()
 
 filetype plugin on 
