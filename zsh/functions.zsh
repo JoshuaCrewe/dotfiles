@@ -8,7 +8,7 @@ function cdls {
   builtin cd "$argv[-1]" && ls "${(@)argv[1,-2]}"
 }
 
-tmux-neww-in-cwd() {
+function tmux-neww-in-cwd() {
     SIP=$(tmux display-message -p "#S:#I:#P")
 
     PTY=$(tmux server-info |
@@ -29,7 +29,7 @@ tmux-neww-in-cwd() {
 }
 
 # Search through Firefox history ( work only at the moment )
-fox() {
+function fox() {
   local cols sep
   cols=$(( COLUMNS / 3 ))
   sep='{::}'
@@ -45,7 +45,7 @@ fox() {
 }
 
 # Use FZF to search though the command line history
-fh() {
+function fh() {
 eval $(history | fzf +s | sed 's/ *[0-9]* *//')
 }
 
@@ -55,7 +55,7 @@ function tree() {
 }
 
 # Use <c-z> to restore a suspended vim
-foreground-vi() {
+function foreground-vi() {
   fg %vi
 }
 zle -N foreground-vi
@@ -63,31 +63,31 @@ bindkey '^Z' foreground-vi
 
 # A function to search through zsh man pages
 # Although I am not sure that this works
-zman() {
+function zman() {
   PAGER="less -g -s '+/^       "$1"'" man zshall
 }
 
 # FZF
 # fd - cd to selected directory
-fd() {
+function fd() {
   DIR=`find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf-tmux` \
     && cd "$DIR"
 }
 
 # fda - including hidden directories
-fda() {
+function fda() {
   DIR=`find ${1:-.} -type d 2> /dev/null | fzf-tmux` && cd "$DIR"
 }
 
 # Figlet font selector
-fgl() {
+function fgl() {
   cd /usr/local/Cellar/figlet/*/share/figlet/fonts
   BASE=`pwd`
   figlet -f `ls *.flf | sort | fzf` $*
 }
 
 # fbr - checkout git branch
-fbr() {
+function fbr() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" |
@@ -96,7 +96,7 @@ fbr() {
 }
 
 # fco - checkout git branch/tag
-fco() {
+function fco() {
   local tags branches target
   tags=$(
     git tag | awk '{print "\x1b[31;1mtag\x1b[m\t" $1}') || return
@@ -111,7 +111,7 @@ fco() {
 }
 
 # fshow - git commit browser
-fshow() {
+function fshow() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
@@ -123,7 +123,7 @@ fshow() {
 }
 
 # ftags - search ctags
-ftags() {
+function ftags() {
   local line
   [ -e tags ] &&
   line=$(
@@ -134,7 +134,7 @@ ftags() {
 }
 
 # Switch tmux-sessions
-fs() {
+function fs() {
   local session
   session=$(tmux list-sessions -F "#{session_name}" | \
     fzf-tmux --query="$1" --select-1 --exit-0) &&
@@ -142,7 +142,7 @@ fs() {
 }
 
 # c - browse chrome history
-c() {
+function c() {
   local cols sep
   export cols=$(( COLUMNS / 3 ))
   export sep='{::}'
@@ -165,7 +165,7 @@ c() {
 }
 
 # Get some colour in Man pages
-man() {
+function man() {
 	env \
 		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
 		LESS_TERMCAP_md=$(printf "\e[1;31m") \
