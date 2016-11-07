@@ -1,0 +1,39 @@
+#! /bin/sh
+# This script was adapted from https://gist.github.com/febrianrendak/9578240
+
+function tmux_web {
+    SESSION_NAME=$1
+
+    # Start a new session with the name as the project and cal the window 'CODE'
+    tmux new-session -s $SESSION_NAME -n CODE -d
+
+    # Start a new window and call it 'BUILD'
+    tmux new-window -n BUILD -t $SESSION_NAME;
+
+    # Start the Gulp build process
+    tmux send-keys "gulp" C-m
+
+    # Split the window vertically
+    tmux split-window -v -t $SESSION_NAME:2
+
+    # get the git status for the project
+    tmux send-keys "gs" C-m
+
+    # Attach to the new project
+    tmux attach -t $SESSION_NAME
+}
+
+#new session base name is current directory name
+DIR_NAME=${PWD##*/}
+
+echo "Trying to create new Tmux session with name '$DIR_NAME'."
+tmux has-session -t $DIR_NAME 2>/dev/null
+if [ $? -eq 1 ]
+then
+    echo "Session not found. Create Session '$DIR_NAME'."
+    tmux_web $DIR_NAME
+else
+    tmux attach -t $DIR_NAME
+fi
+
+echo "Start tmux session $DIR_NAME."
