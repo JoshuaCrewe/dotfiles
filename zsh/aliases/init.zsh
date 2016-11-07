@@ -29,6 +29,9 @@ alias tmux='tmux -2'
 # alias gomi='gomi -s'
 # alias trash='gomi -s'
 
+# Ctags
+alias ctags='ctags -R -f .tags .'
+
 # FZF
 alias j='jump'
 alias m='mark'
