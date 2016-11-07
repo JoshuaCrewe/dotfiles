@@ -19,8 +19,10 @@ Plug 'tpope/vim-fugitive'             " A Git wrapper
 Plug 'tpope/vim-unimpaired'           " Some extra shortcuts for useful tasks
 Plug 'tpope/vim-ragtag'               " Some extra mappings
 Plug 'tpope/vim-repeat'               " Dot command with plugins
-Plug 'junegunn/vim-pseudocl'          " Pseudo command line
-Plug 'junegunn/vim-oblique'           " For hiding highlights after searching
+" Plug 'junegunn/vim-pseudocl'          " Pseudo command line
+" Plug 'junegunn/vim-oblique'           " For hiding highlights after searching
+Plug 'junegunn/vim-slash'
+" Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim'                " Code writing shorthand
 Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'honza/vim-snippets'             " Snippets!
@@ -29,7 +31,7 @@ Plug 'w0rp/ale'                       " Async syntax checking
 Plug 'junegunn/gv.vim'                " Requires fugitive - commit viewer
 Plug 'chip/vim-fat-finger'            " Corrects some easily made typing mistakes
 Plug 'vim-scripts/camelcasemotion'    " Treat cammel case as words
-Plug 'vim-scripts/loremipsum'         " Lorem Ipsum generator
+" Plug 'vim-scripts/loremipsum'         " Lorem Ipsum generator
 Plug 'simeji/winresizer'              " Easily resize windows with <c-e>
 Plug 'phongvcao/vim-stardict'         " Lok up words in the dictionary
 Plug 'tommcdo/vim-lion'               " align stuff according to marks
@@ -472,7 +474,7 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
                        \ {'path': '~/Dropbox/linuxwiki/',
                        \ 'syntax': 'markdown', 'ext': '.md'}]
 
-set tags+=tags;$HOME
+set tags+=.tags;$HOME
 
 " Use ag for vimgrep
 " The Silver Searcher
