@@ -107,6 +107,13 @@ hs.hotkey.bind(mash_shift, 'j', function()
   })
 end)
 
+hs.hotkey.bind(mash_shift, 'k', function()
+  hs.layout.apply({
+    {"Firefox", nil, screen, positions.center, nil, nil},
+    {"iTerm2",   nil, screen, positions.center, nil, nil}
+  })
+end)
+
 -- Reload config
 -- hs.hotkey.bind(mash, "R", function()
 --   hs.reload()
