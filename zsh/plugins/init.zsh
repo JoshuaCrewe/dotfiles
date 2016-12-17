@@ -16,3 +16,11 @@ Plug git
 Plug genpasswd
 
 Plug zsh-users/zsh-syntax-highlighting
+
+# I was goint to try notes but I am not so sure.
+if [[ -f /usr/local/bin/notes ]]; then
+    
+else
+    # curl https://cdn.rawgit.com/pimterry/notes/v0.2.0/notes > /usr/local/bin/notes && chmod +x /usr/local/bin/notes
+fi
+
