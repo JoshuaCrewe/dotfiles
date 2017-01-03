@@ -176,6 +176,9 @@ au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more r
 au BufRead,BufNewFile *.wiki set wrap linebreak | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
 
+au BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['css', 'scss', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
+
 " Emmet
 
 imap <C-k> <C-y>,
