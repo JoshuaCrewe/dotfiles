@@ -179,6 +179,22 @@ au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make li
 au BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['css', 'scss', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 
+" If the file is a php or html file then search for the class
+" or if looking at the class find where it is used
+autocmd FileType *php,*html call ScssGrep()
+autocmd FileType *scss call PhpGrep()
+
+function! ScssGrep()
+    nnoremap <silent> <leader>] :vimgrep <c-r><c-w> **/*.scss<cr>
+    " vnoremap <silent> <leader>] "xy:vimgrep <c-r>" **/*.scss<cr>
+endfunction
+
+function! PhpGrep()
+    nnoremap <silent> <leader>] :vimgrep <c-r><c-w> **/*.php<cr>
+    " vnoremap <silent> <leader>] "xy:vimgrep <c-r>" **/*.php<cr>
+endfunction
+
+
 " Emmet
 
 imap <C-k> <C-y>,
