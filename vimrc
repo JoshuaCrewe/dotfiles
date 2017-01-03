@@ -15,14 +15,12 @@ Plug 'christoomey/vim-tmux-navigator' " Better tmux and vim integration
 " Automation
 Plug 'tpope/vim-vinegar'              " Make Netrw easier to use
 Plug 'tpope/vim-surround'             " Surrounding text motion
-Plug 'tpope/vim-fugitive'             " A Git wrapper
 Plug 'tpope/vim-unimpaired'           " Some extra shortcuts for useful tasks
 Plug 'tpope/vim-ragtag'               " Some extra mappings
 Plug 'tpope/vim-repeat'               " Dot command with plugins
-" Plug 'junegunn/vim-pseudocl'          " Pseudo command line
-" Plug 'junegunn/vim-oblique'           " For hiding highlights after searching
-Plug 'junegunn/vim-slash'
-" Plug 'mattn/webapi-vim'
+Plug 'tpope/vim-fugitive'             " A Git wrapper
+Plug 'jreybert/vimagit'
+Plug 'junegunn/vim-slash'             " For hiding highlights after searching
 Plug 'mattn/emmet-vim'                " Code writing shorthand
 Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'honza/vim-snippets'             " Snippets!
@@ -31,14 +29,12 @@ Plug 'w0rp/ale'                       " Async syntax checking
 Plug 'junegunn/gv.vim'                " Requires fugitive - commit viewer
 Plug 'chip/vim-fat-finger'            " Corrects some easily made typing mistakes
 Plug 'vim-scripts/camelcasemotion'    " Treat cammel case as words
-" Plug 'vim-scripts/loremipsum'         " Lorem Ipsum generator
 Plug 'simeji/winresizer'              " Easily resize windows with <c-e>
 Plug 'phongvcao/vim-stardict'         " Lok up words in the dictionary
 Plug 'tommcdo/vim-lion'               " align stuff according to marks
 Plug 'henrik/vim-reveal-in-finder'    " Show the current file in Macos Finder
 " Colour Schemes
 Plug 'junegunn/seoul256.vim'          " A colour scheme which works
-Plug 'chriskempson/base16-vim'        " Some colour schemes which don't always work
 " GUI
 Plug 'junegunn/goyo.vim'              " Distraction free coding
 Plug 'junegunn/vim-peekaboo'          " Show the registers
@@ -63,11 +59,12 @@ Plug 'keith/investigate.vim'          " An alternative documentation lookup
 " Wiki
 Plug 'vimwiki/vimwiki'                " Fancy keeping some notes somewhere?
 
-Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dispatch'             " Async building
+Plug 'junegunn/vim-journal'           " Nice colours for things like lists
 call plug#end()
 
 filetype plugin on 
-filetype indent on                " Turn on indentation by filetype
+" filetype indent on                " Turn on indentation by filetype
 runtime macros/matchit.vim        " Enable built-in matchit plugin
 runtime! ftplugin/man.vim         " Syntax highlighting man pages
 
@@ -88,13 +85,13 @@ set ruler                         " Show line and column number
 set backspace=indent,eol,start    " Allow backspacing over everything in insert mode 
 set laststatus=2                  " Always show the status line
 set nrformats-=octal              " Make incrementing 007 result into 008 rather than 010.
-set wildmenu                     " Make use of tab completion in vim command line
-set wildmode=list:full           " Complete longest common string, then each full match
+set wildmenu                      " Make use of tab completion in vim command line
+set wildmode=list:full            " Complete longest common string, then each full match
 set autoread                      " Automatically update file if edited elsewhere
 
 " Colour Scheme
 
-" set termguicolors                " Use all the colours! New for vim 7.4 + tmux 2.2 and iTerm
+" set termguicolors               " Use all the colours! New for vim 7.4 + tmux 2.2 and iTerm
 set t_Co=256                      " Set colours to 256
 set background=dark               " Use a dark background
 
@@ -118,12 +115,16 @@ set guioptions-=L                 " Remove left-hand scroll bar
 set fo+=q                         " Allow formatting of comments with "gq".
 set fo-=r fo-=o                   " Turn off automatic insertion of comment characters.
 set fo+=j                         " Remove a comment leader when joining comment lines.
+set fo+=n                         " Use numbers in list items
+
+" This extends the number of patterns which vim views as a list item
+" https://www.reddit.com/r/vim/comments/4jhjhu/weekly_vim_tips_and_tricks_thread_10/d379rly/
+set formatlistpat=^\\s*[\\[({]\\\?\\([0-9]\\+\\\|[iIvVxXlLcCdDmM]\\+\\\|[a-zA-Z]\\)[\\]:.)}]\\s\\+\\\|^\\s*[-+o*]\\s\\+
 
 " Splitting.
 
 set splitright                    " Open new vertical panes in the right rather than left.
 set splitbelow                    " Open new horizontal panes in the bottom rather than top.
-
 
 " Meta
 
@@ -173,6 +174,26 @@ nnoremap <leader>snip :UltiSnipsEdit<CR>
 
 au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.wiki set wrap linebreak | :Goyo 100 " make markdown more readable
+au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
+
+au BufNewFile,BufReadPost *.md set filetype=markdown
+let g:markdown_fenced_languages = ['css', 'scss', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
+
+" If the file is a php or html file then search for the class
+" or if looking at the class find where it is used
+autocmd FileType *php,*html call ScssGrep()
+autocmd FileType *scss call PhpGrep()
+
+function! ScssGrep()
+    nnoremap <silent> <leader>] :vimgrep <c-r><c-w> **/*.scss<cr>
+    " vnoremap <silent> <leader>] "xy:vimgrep <c-r>" **/*.scss<cr>
+endfunction
+
+function! PhpGrep()
+    nnoremap <silent> <leader>] :vimgrep <c-r><c-w> **/*.php<cr>
+    " vnoremap <silent> <leader>] "xy:vimgrep <c-r>" **/*.php<cr>
+endfunction
+
 
 " Emmet
 
@@ -413,9 +434,6 @@ nnoremap 0 :call ToggleHomeZero()<CR>
 
 " Toggle the undo tree
 nmap <leader>gu :GundoToggle<cr>
-
-" Toggle syntax checking (large files with lots of errors make things slow)
-nnoremap <leader>syn :SyntasticToggleMode<cr>
 
 " Give an indication when a line is more than 80 coumns long
 highlight ColorColumn ctermbg=74 ctermfg=24
