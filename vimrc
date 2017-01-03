@@ -15,14 +15,12 @@ Plug 'christoomey/vim-tmux-navigator' " Better tmux and vim integration
 " Automation
 Plug 'tpope/vim-vinegar'              " Make Netrw easier to use
 Plug 'tpope/vim-surround'             " Surrounding text motion
-Plug 'tpope/vim-fugitive'             " A Git wrapper
 Plug 'tpope/vim-unimpaired'           " Some extra shortcuts for useful tasks
 Plug 'tpope/vim-ragtag'               " Some extra mappings
 Plug 'tpope/vim-repeat'               " Dot command with plugins
-" Plug 'junegunn/vim-pseudocl'          " Pseudo command line
-" Plug 'junegunn/vim-oblique'           " For hiding highlights after searching
-Plug 'junegunn/vim-slash'
-" Plug 'mattn/webapi-vim'
+Plug 'tpope/vim-fugitive'             " A Git wrapper
+Plug 'jreybert/vimagit'
+Plug 'junegunn/vim-slash'             " For hiding highlights after searching
 Plug 'mattn/emmet-vim'                " Code writing shorthand
 Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'honza/vim-snippets'             " Snippets!
