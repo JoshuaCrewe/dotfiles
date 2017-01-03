@@ -174,6 +174,7 @@ nnoremap <leader>snip :UltiSnipsEdit<CR>
 
 au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.wiki set wrap linebreak | :Goyo 100 " make markdown more readable
+au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
 
 " Emmet
 
