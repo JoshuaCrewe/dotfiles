@@ -115,6 +115,11 @@ set guioptions-=L                 " Remove left-hand scroll bar
 set fo+=q                         " Allow formatting of comments with "gq".
 set fo-=r fo-=o                   " Turn off automatic insertion of comment characters.
 set fo+=j                         " Remove a comment leader when joining comment lines.
+set fo+=n                         " Use numbers in list items
+
+" This extends the number of patterns which vim views as a list item
+" https://www.reddit.com/r/vim/comments/4jhjhu/weekly_vim_tips_and_tricks_thread_10/d379rly/
+set formatlistpat=^\\s*[\\[({]\\\?\\([0-9]\\+\\\|[iIvVxXlLcCdDmM]\\+\\\|[a-zA-Z]\\)[\\]:.)}]\\s\\+\\\|^\\s*[-+o*]\\s\\+
 
 " Splitting.
 
