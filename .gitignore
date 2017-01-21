@@ -4,6 +4,7 @@ vim/backup/**
 vim/undo/**
 vim/swap/**
 vim/plugged/**
+vim/*.tmp
 viminfo
 .netrwhist
 .un~
