@@ -52,6 +52,8 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias ls='ls -G'
+# I would like to check if the OS is linux first
+alias ls='ls --color'
 
 # Git
 alias gs='git status '
