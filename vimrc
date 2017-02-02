@@ -506,9 +506,34 @@ noremap g(<space> T(i<space><esc>t)a<space><esc>
 noremap g{<space> T{i<space><esc>t}a<space><esc> 
 noremap g[<space> T[i<space><esc>t]a<space><esc> 
 
+" Set ALE linters
 let g:ale_linters = {
 \   'scss': ['scsslint'],
 \}
+
+" A vim implementation of Sublime Texts Multiple Cursors
+" http://www.kevinli.co/posts/2017-01-19-multiple-cursors-in-500-bytes-of-vimscript/
+let g:mc = "y/\\V\<C-r>=escape(@\", '/')\<CR>\<CR>"
+
+" Cursor on word and use cn to change and the dot command to repeat.
+nnoremap cn *``cgn
+nnoremap cN *``cgN
+
+" Visually select, cn to change and dot to repeat.
+vnoremap <expr> cn g:mc . "``cgn"
+vnoremap <expr> cN g:mc . "``cgN"
+
+" Make a macro for a section and use enter to repeat
+" Enter is already used to navigate files though.
+" function! SetupCR()
+"   nnoremap <Enter> :nnoremap <lt>Enter> n@z<CR>q:<C-u>let @z=strpart(@z,0,strlen(@z)-1)<CR>n@z
+" endfunction
+"
+" nnoremap cq :call SetupCR()<CR>*``qz
+" nnoremap cQ :call SetupCR()<CR>#``qz
+"
+" vnoremap <expr> cq ":\<C-u>call SetupCR()\<CR>" . "gv" . g:mc . "``qz"
+" vnoremap <expr> cQ ":\<C-u>call SetupCR()\<CR>" . "gv" . substitute(g:mc, '/', '?', 'g') . "``qz"
 
 " Put at the very end of your .vimrc file.
 function! PhpSyntaxOverride()
