@@ -24,11 +24,13 @@ set thorough_search      # strip headers and eval mimes before searching
 set beep = no
 
 # Sidebar Patch --------------------------------------
-set sidebar_delim   = '|'
+set sidebar_delim_chars   = './'
 set sidebar_visible = yes
 set sidebar_width   = 30
-macro index B '<enter-command>toggle sidebar_visible<enter>'
-macro pager B '<enter-command>toggle sidebar_visible<enter>'
+set sidebar_short_path = yes
+# https://www.neomutt.org/guide/gettingstarted.html#intro-sidebar-format
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
@@ -93,9 +95,17 @@ macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
 # Sidebar Navigation ---------------------------------
-bind index,pager J   sidebar-next
-bind index,pager K     sidebar-prev
-bind index,pager L  sidebar-open
+# bind index,pager J   sidebar-next
+# bind index,pager K     sidebar-prev
+# bind index,pager L  sidebar-open
+
+# This doesn't work anymore for some reason
+# Ctrl-n, Ctrl-p to select next, previous folder.
+# Ctrl-o to open selected folder.
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+bind pager,index B sidebar-toggle-visible
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
