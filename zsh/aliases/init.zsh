@@ -101,6 +101,9 @@ else
   fi
 fi
 
+# Homebrew
+alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
+
 # for use with notes https://github.com/pimterry/notes
 alias note="notes"
 
