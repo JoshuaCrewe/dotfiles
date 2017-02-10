@@ -21,6 +21,6 @@ Plug zsh-users/zsh-syntax-highlighting
 if [[ -f /usr/local/bin/notes ]]; then
     
 else
-    # curl https://cdn.rawgit.com/pimterry/notes/v0.2.0/notes > /usr/local/bin/notes && chmod +x /usr/local/bin/notes
+    curl https://raw.githubusercontent.com/JoshuaCrewe/notes/master/notes > /usr/local/bin/notes && chmod +x /usr/local/bin/notes
 fi
 
