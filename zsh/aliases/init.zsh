@@ -101,6 +101,9 @@ else
   fi
 fi
 
+# for use with notes https://github.com/pimterry/notes
+alias note="notes"
+
 # Harry Potter Fun Times
 alias accio=wget
 alias avadaKedavra='rm -f'
