@@ -1,0 +1,3 @@
+EDITOR=vim
+NOTES_DIRECTORY=~/Dropbox/notes/
+QUICKNOTE_FORMAT="%Y-%m-%d"

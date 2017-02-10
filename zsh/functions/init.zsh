@@ -31,7 +31,7 @@ eval $(history | fzf +s | sed 's/ *[0-9]* *//')
 
 # List directories as a tree
 function tree() {
-  tree --filelimit 15 -L 3 -C 
+  Tree -C --noreport -L 5 
 }
 
 # Use <c-z> to restore a suspended vim

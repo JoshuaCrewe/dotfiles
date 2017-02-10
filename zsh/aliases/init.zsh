@@ -53,7 +53,14 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 alias ls='ls -G'
 # I would like to check if the OS is linux first
-alias ls='ls --color'
+if [[ $platform == 'linux' ]]; then
+    alias ls='ls --color'
+fi
+
+# PS
+alias psa='ps aux'
+alias psg='ps aux | grep '
+alias psgg='ps aux | grep gulp'
 
 # Git
 alias gs='git status '
@@ -93,6 +100,12 @@ else
     alias pbpaste='xsel --clipboard --output'
   fi
 fi
+
+# Homebrew
+alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
+
+# for use with notes https://github.com/pimterry/notes
+alias note="notes"
 
 # Harry Potter Fun Times
 alias accio=wget

@@ -57,7 +57,7 @@ Plug 'tpope/vim-obsession'            " For saving sessions
 Plug 'rhysd/devdocs.vim'              " Look up things in DevDocs
 Plug 'keith/investigate.vim'          " An alternative documentation lookup
 " Wiki
-Plug 'vimwiki/vimwiki'                " Fancy keeping some notes somewhere?
+" Plug 'vimwiki/vimwiki'                " Fancy keeping some notes somewhere?
 
 Plug 'tpope/vim-dispatch'             " Async building
 Plug 'junegunn/vim-journal'           " Nice colours for things like lists
@@ -173,10 +173,9 @@ nnoremap <leader>snip :UltiSnipsEdit<CR>
 " File Specific
 
 au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more readable
-au BufRead,BufNewFile *.wiki set wrap linebreak | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
 
-au BufNewFile,BufReadPost *.md set filetype=markdown
+" au BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['css', 'scss', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 
 " If the file is a php or html file then search for the class
