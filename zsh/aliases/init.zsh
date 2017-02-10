@@ -57,6 +57,11 @@ if [[ $platform == 'linux' ]]; then
     alias ls='ls --color'
 fi
 
+# PS
+alias psa='ps aux'
+alias psg='ps aux | grep '
+alias psgg='ps aux | grep gulp'
+
 # Git
 alias gs='git status '
 alias ga='git add '
