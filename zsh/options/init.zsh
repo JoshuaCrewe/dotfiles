@@ -1,3 +1,12 @@
+# Get operating system
+platform='unknown'
+unamestr=$(uname)
+if [[ $unamestr == 'Linux' ]]; then
+  platform='linux'
+elif [[ $unamestr == 'Darwin' ]]; then
+  platform='darwin'
+fi
+
 # Red dots for completing process'
 # COMPLETION_WAITING_DOTS="true"
 # http://stackoverflow.com/a/844299
@@ -16,10 +25,10 @@ stty -ixon
 # stty stop undef
 
 # set what gets put in PATH
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
 
 # Added by MAMP
-export PATH=$PATH:"/Applications/MAMP/Library/bin/"
+# export PATH=$PATH:"/Applications/MAMP/Library/bin"
 
 # Be able to npm install without sudo
 NPM_PACKAGES="${HOME}/.npm-packages"

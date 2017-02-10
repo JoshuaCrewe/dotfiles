@@ -53,7 +53,9 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 alias ls='ls -G'
 # I would like to check if the OS is linux first
-alias ls='ls --color'
+if [[ $platform == 'linux' ]]; then
+    alias ls='ls --color'
+fi
 
 # Git
 alias gs='git status '
