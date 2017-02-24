@@ -11,6 +11,7 @@ Plug sindresorhus/pure                          # A minimalist prompt
 
 Plug urbainvaes/fzf-marks                       # Bookmarking with fzf filtering
 Plug b4b4r07/zsh-gomi                           # Move things to system trash
+Plug zsh-users/zsh-completions
 
 Plug git
 Plug genpasswd

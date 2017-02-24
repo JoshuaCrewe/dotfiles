@@ -45,14 +45,14 @@ hdr_order from: to: cc: date: subject:  # and in this order
 # Account Settings -----------------------------------
 # Mailboxes to show in the sidebar.
 mailboxes +me-joshuacrewe.co.uk/INBOX \
-          +me-joshuacrewe.co.uk/apple \
-          +me-joshuacrewe.co.uk/git \
-          +me-joshuacrewe.co.uk/irc \
-          +me-joshuacrewe.co.uk/news \
-          +me-joshuacrewe.co.uk/slack \
-          +me-joshuacrewe.co.uk/Sent \
-          +me-joshuacrewe.co.uk/Drafts \
-          +me-joshuacrewe.co.uk/Spam \
+          +me-joshuacrewe.co.uk/INBOX.apple \
+          +me-joshuacrewe.co.uk/INBOX.git \
+          +me-joshuacrewe.co.uk/INBOX.irc \
+          +me-joshuacrewe.co.uk/INBOX.news \
+          +me-joshuacrewe.co.uk/INBOX.slack \
+          +me-joshuacrewe.co.uk/INBOX.Sent \
+          +me-joshuacrewe.co.uk/INBOX.Drafts \
+          +me-joshuacrewe.co.uk/INBOX.Spam \
           +work/INBOX \
 # Default inbox.
 set spoolfile = +me-joshuacrewe.co.uk/INBOX

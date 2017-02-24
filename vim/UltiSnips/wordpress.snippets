@@ -46,26 +46,15 @@ endsnippet
 
 # ACF Snippets
 snippet acf-repeater "an ACF repeater loop"
-<?php
+<?php if( have_rows('${1:repeater_field_name}') ): ?>
 
-// check if the repeater field has rows of data
-if( have_rows('${1:repeater_field_name}') ):
+	<?php while ( have_rows('${1/.*/$0/}') ) : the_row(); ?>
 
-	// loop through the rows of data
-	while ( have_rows('${1/.*/$0/}') ) : the_row();
+		<?php the_sub_field('${2:sub_field_name}'); ?>
 
-		// display a sub field value
-		the_sub_field('${2:sub_field_name}');
+	<?php endwhile; ?>
 
-	endwhile;
-
-else :
-
-	// no rows found
-
-endif;
-
-?>
+<?php endif; ?>
 endsnippet
 
 snippet acf-relationship "an ACF relationship loop"
