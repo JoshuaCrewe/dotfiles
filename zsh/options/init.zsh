@@ -27,9 +27,6 @@ stty -ixon
 # set what gets put in PATH
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin"
 
-# Added by MAMP
-# export PATH=$PATH:"/Applications/MAMP/Library/bin"
-
 # Be able to npm install without sudo
 NPM_PACKAGES="${HOME}/.npm-packages"
 PATH="$NPM_PACKAGES/bin:$PATH"
