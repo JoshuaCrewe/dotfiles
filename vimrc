@@ -22,8 +22,6 @@ Plug 'tpope/vim-fugitive'             " A Git wrapper
 Plug 'jreybert/vimagit'
 Plug 'junegunn/vim-slash'             " For hiding highlights after searching
 Plug 'mattn/emmet-vim'                " Code writing shorthand
-Plug 'SirVer/ultisnips'               " Snippet expansion
-Plug 'honza/vim-snippets'             " Snippets!
 Plug 'tomtom/tcomment_vim'            " Commenting out stuff
 Plug 'w0rp/ale'                       " Async syntax checking
 Plug 'junegunn/gv.vim'                " Requires fugitive - commit viewer
@@ -33,6 +31,9 @@ Plug 'simeji/winresizer'              " Easily resize windows with <c-e>
 Plug 'phongvcao/vim-stardict'         " Lok up words in the dictionary
 Plug 'tommcdo/vim-lion'               " align stuff according to marks
 Plug 'henrik/vim-reveal-in-finder'    " Show the current file in Macos Finder
+" Snippets
+Plug 'SirVer/ultisnips'               " Snippet expansion
+Plug 'honza/vim-snippets'             " Snippets!
 " Colour Schemes
 Plug 'junegunn/seoul256.vim'          " A colour scheme which works
 " GUI
