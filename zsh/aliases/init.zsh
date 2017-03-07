@@ -5,10 +5,6 @@ alias :wq="exit"
 alias :q="exit"
 
 # Vim
-alias wiki='vim -c VimwikiIndex'
-alias wiki-linux='vim -c VimwikiUISelect'
-alias journal='vim -c VimwikiDiaryIndex'
-alias new-day='vim -c VimwikiMakeDiaryNote'
 alias vimrc='vim -c e ~/dotfiles/vimrc'
 alias zshrc='vim -c e ~/dotfiles/zshrc'
 alias tmuxconf='vim -c e ~/dotfiles/tmux.conf'
