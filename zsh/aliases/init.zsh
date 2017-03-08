@@ -48,9 +48,15 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
 alias ls='ls -G'
+
 # I would like to check if the OS is linux first
-if [[ $platform == 'linux' ]]; then
-    alias ls='ls --color'
+### Colored ls
+if [ -x /usr/bin/dircolors ]; then
+  eval "`dircolors -b`"
+  alias ls='ls --color=auto'
+  alias grep='grep --color=auto'
+elif [ "$PLATFORM" = Darwin ]; then
+  alias ls='ls -G'
 fi
 
 # PS
