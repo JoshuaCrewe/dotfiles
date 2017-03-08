@@ -147,6 +147,14 @@ function c() {
 
 }
 
+# This does not get the commit hash yet
+fcs() {
+    local commits commit
+    commits=$(  git log --graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" ) &&
+    commit=$(echo "$commits" | fzf --tiebreak=index --ansi --no-sort --reverse) &&
+    echo -n $(echo "$commit" | sed "s/ .*//")
+}
+
 # Get some colour in Man pages
 function man() {
 	env \
