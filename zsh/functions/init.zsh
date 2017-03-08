@@ -1,3 +1,13 @@
+# fkill - kill process
+fkill() {
+    pid=$(ps -o command,pid | fzf -m --height 10% --reverse | awk '{print $NF}')
+
+    if [ "x$pid" != "x" ]
+    then
+        kill -${1:-9} $pid
+    fi
+}
+
 # Makes a directory and changes to it.
 function take {
   [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
