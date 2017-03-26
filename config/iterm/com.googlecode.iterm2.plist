@@ -566,9 +566,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 139 606 456 0 0 1280 800 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>259 144 918 495 0 0 1280 800 </string>
+	<string>259 122 918 495 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 4 1274 796 0 0 1280 800 </string>
+	<string>0 4 1280 796 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>2 10 1277 784 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1284,7 +1284,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -2167,7 +2167,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-03-20T18:06:00Z</date>
+	<date>2017-03-24T18:56:20Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>ShowBookmarkName</key>
