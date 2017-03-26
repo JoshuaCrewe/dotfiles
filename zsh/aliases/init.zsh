@@ -1,4 +1,5 @@
 # Alias'
+alias lyn='learnyounode'
 
 # I am giving up
 alias :wq="exit"

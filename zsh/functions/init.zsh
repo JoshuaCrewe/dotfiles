@@ -8,6 +8,19 @@ fkill() {
     fi
 }
 
+# use fzf to open a note
+function notes-fzf {
+    # find the file name with fzf
+    file=$(notes find | fzf --height 40% --reverse )
+
+    # If a note was found
+    if [ ! -z $file ];
+    then
+        # then open it
+        notes open $file
+    fi
+}
+
 # Makes a directory and changes to it.
 function take {
   [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
