@@ -74,6 +74,9 @@ unset CASE_SENSITIVE HYPHEN_INSENSITIVE
 # Everything below here is trying to make sense of the oh-my-zsh settings
 # #######################################################################
 
+# (use shift+tab to go back in autocomplete menu
+bindkey -M menuselect '^[[Z' reverse-menu-complete
+
 # Set the colours for ls command
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
