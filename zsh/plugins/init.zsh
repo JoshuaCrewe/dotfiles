@@ -1,9 +1,3 @@
-# if [[ -f /usr/local/bin/notes ]]; then
-#     
-# else
-#     curl https://cdn.rawgit.com/pimterry/notes/v0.2.0/notes > /usr/local/bin/notes && chmod +x /usr/local/bin/notes
-# fi
-
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
     brew install zplug
@@ -26,19 +20,20 @@ zplug "pimterry/notes", \
     as:command, \
     use:notes
 
+zplug "paulirish/git-open"
+
 zplug "witt3rd/894c9e0b9ca4e24e5574", \
     from:gist, \
     as:command, \
     use:brew-sync.sh                               # Keep homebrew in sync with dropbox
 
 # Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-#     printf "Install? [y/N]: "
-#     if read -q; then
-#         echo; zplug install
-#     fi
-# fi
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
 
 # Then, source plugins and add commands to $PATH
 zplug load # --verbose
-
