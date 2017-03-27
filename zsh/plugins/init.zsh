@@ -1,7 +1,6 @@
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
-    brew install zplug
-    source ~/.zplug/init.zsh && zplug update --self
+    curl -sL zplug.sh/installer | zsh
   fi
 
 source ~/.zplug/init.zsh
