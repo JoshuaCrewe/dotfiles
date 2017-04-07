@@ -75,7 +75,8 @@ unset CASE_SENSITIVE HYPHEN_INSENSITIVE
 # #######################################################################
 
 # (use shift+tab to go back in autocomplete menu
-bindkey -M menuselect '^[[Z' reverse-menu-complete
+# This doesn't actually work after a full reload ?
+# bindkey -M menuselect '^[[Z' reverse-menu-complete
 
 # Set the colours for ls command
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
