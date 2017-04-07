@@ -80,6 +80,8 @@ alias sz='source ~/.zshrc'
 
 alias gsd='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
 
+alias git-clean='git branch --merged master | grep -v 'master$' | xargs git branch -d'
+
 alias t='python ~/localhost/sjl-t/t.py --task-dir ~/.tasks --list tasks'
 
 alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'  # see the hidden thoughts!
