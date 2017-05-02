@@ -23,8 +23,10 @@ alias tmux='tmux -2'
 # alias server='browser-sync start -p $1 --no-ghost-mode --no-notify'
 
 # Gomi
-# alias gomi='gomi -s'
-# alias trash='gomi -s'
+if [ "$PLATFORM" = Darwin ]; then
+    alias gomi='gomi -s'
+    alias trash='gomi -s'
+fi
 
 # Ctags
 alias ctags='ctags -R -f .tags .'

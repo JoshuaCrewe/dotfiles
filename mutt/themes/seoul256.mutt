@@ -1,0 +1,106 @@
+# URxvt*background: #3a3a3a 
+# URxvt*foreground: #d0d0d0 
+# URxvt*color0: #4e4e4e
+# URxvt*color1: #d68787 
+# URxvt*color2: #5f865f
+# URxvt*color3: #d8af5f
+# URxvt*color4: #85add4
+# URxvt*color5: #d7afaf
+# URxvt*color6: #87afaf
+# URxvt*color7: #d0d0d0
+# URxvt*color8: #626262
+# URxvt*color9: #d75f87
+# URxvt*color10: #87af87
+# URxvt*color11: #ffd787 
+# URxvt*color12: #add4fb
+# URxvt*color13: #ffafaf
+# URxvt*color14: #87d7d7
+# URxvt*color15: #e4e4e4
+# URxvt*cursorColor: #d0d0d0
+# URxvt*cursorColor2: #3a3a3a
+# URxvt*colorBD: #e4e4e4
+
+# Section: Colors {{{1
+# # --------------------
+# #`mutt -v|grep +HAVE_COLOR >/dev/null && [ -f ~/.muttrc.color ] && echo source ~/.muttrc.color || echo set`
+    color normal  white black
+    color attachment brightwhite black
+    color hdrdefault cyan black
+    color indicator black cyan
+    color markers brightblack black
+    color quoted  green black
+    color signature cyan black
+    color status  green blue
+    color tilde blue black
+    color tree  red black
+
+# Headers
+    color header    red      black   ^(Delivered-|X-Original-|Envelope-)?To:
+    color header    red      black   ^Bcc:
+    color header    red      black   ^Cc:
+    color header    red     black   ^From
+    color header    red     black   From:|-from:
+    color header    red     black   Return-[Pp]ath:
+    color header    red     black   ^(X-)?Sender:
+    color header    red     black   ^Reply-To:
+    color header    red     black   ^Mail-Followup-To:
+    color header    red     black   ^X-Disposition-Notification-To:
+    color header    red     black   ^X-URL:
+    color header    red         black   ^Date:
+    color header    red         black   ^Delivery-date:
+    color header    red         black   ^Posted:
+    color header    red         black   ^NNTP-Posting-Date:
+    color header    red      black   ^Subject:
+    color header    red     black   ^X-All-Your-Base-Are-Belong-To:
+    color header    red           black   ^Received:
+    color header    red           black   ^Message-ID:
+    color header    red           black   ^References:
+    color header    red           black   ^In-Reply-To:
+    color header    red           black   ^Organi[sz]ation:
+    color header    red           black   ^X-Trace:
+    color header    red           black   ^Injection-Info:
+    color header    red          black   ^X-Spam-
+    color header    red             black   ^Status:
+    color header    red             black   ^Content-Length:
+    color header    red             black   ^Lines:
+    color header    red    black   ^(X-)?Mime
+    color header    red    black   ^(Old-)?Content-(Type|Disposition|Transfer-Encoding):
+    color header    red    black   ^User-Agent:
+    color header    red    black   ^X-Mailer[A-Za-z-]*:
+    color header    red    black   ^X-Editor:
+    color header    red    black   ^X-Operating-System:
+    color header    red    black   ^X-Newsreader:
+    color header    brightyellow    black   ^X-Accept-Language:
+    color header    red    black   ^X-MSMail-
+    color header    red    black   ^(X-)?Priority:
+    color header    red    black   ^(X-)?Priority:
+    color header    red    black   ^X-HTTP-UserAgent:
+    color header    red     black   ^X-HotPOP-Delivered-To:
+    color header    red     black   ^X-Face:
+    mono  header    bold                    ^From:
+    mono  header    bold                    ^To:
+    mono  header    bold                    ^Cc:
+    mono  header    bold                    ^Subject:
+    mono  header    bold                    ^X-All-Your-Base-Are-Belong-To:
+
+# URL highlighting
+#color body      brightred       black   `cat "$HOME/.urlview"|sed -ne 's/^REGEXP //;ta' -e b -e :a -e 's/\([ ";.?]\)/\\\1/g;p'|tee /tmp/url.log`
+#mono  body      bold                    `cat "$HOME/.urlview"|sed -ne 's/^REGEXP //;ta' -e b -e :a -e 's/\([ ";.?]\)/\\\1/g;p'|tee /tmp/url.log`
+
+# Email highlighting
+        color body      brightmagenta   black   "[-a-z_0-9%.]+@[-a-z_0-9.]*[-a-z_0-9]"
+        mono  body      bold                    "[-a-z_0-9%.]+@[-a-z_0-9.]*[-a-z_0-9]"
+
+# Bad PGP signature
+        color body      brightwhite     red     "Bad signature from.*"
+        mono  body      bold                    "Bad signature from.*"
+
+# Formatting
+        color body      brightwhite     black   "(^| |\t)\\*[a-z0-9]([a-z0-9-]* ){,3}[a-z0-9,.!?-]*\\*"
+        color body      brightyellow    black "(^| |\t)_[a-z0-9]([a-z0-9-]* ){,6}[a-z0-9,.!?-]+_"
+        color body      brightyellow    black "(^| |\t)_[a-z0-9][a-z0-9,.!?_-]*_"
+
+# Misc
+        color body      brightblack     black   "^[-_=*]{3,}\n"
+        color body      yellow          black   "^SPAM:"
+
