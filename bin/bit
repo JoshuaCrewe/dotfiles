@@ -1,0 +1,96 @@
+#!/bin/bash
+
+function clone() {
+    git clone git@bitbucket.org:$1.git $2
+}
+
+function remote() {
+    git remote add $1 git@bitbucket.org:$2.git
+    echo "add remote $1 at git@bitbucket.org:$2.git";
+}
+
+function open() {
+    open https://bitbucket.org/$1
+}
+
+function see() {
+    echo https://bitbucket.org/$1
+    # open https://bitbucket.org/$1
+}
+
+function new() {
+    open https://bitbucket.org/repo/create
+}
+
+function help() {
+    echo "Simple Bitbucket tricks in the terminal\n";
+    echo "usage: bit <command> [<args>]\n";
+    echo "clone    clone a bitbucket repo using username/repo";
+    echo "remote   add a bitbucket repo as a remote branch using <origin> username/repo";
+    echo "see      open a bitbucket repo in default browser using username/repo";
+    echo "new      open a bitbucket create repo in default browser";
+    echo "";
+}
+
+function create() {
+    echo 'Lets create a git repository on Bitbucket...';
+
+    REPO=$1
+
+    # echo -n 'Bitbucket Repo: (team/name) '
+    # read REPO
+
+    printf 'Bitbucket username: '
+    read USER
+
+    printf 'Bitbucket password: '
+    read -s PASS
+    echo ''
+
+    # TODO: Add option for project name
+    # TODO: Add default for team in prompt
+
+    res=$(curl -s --user $USER:$PASS -X POST -H "Content-Type: application/json" -d '{"scm": "git", "is_private": true }' https://api.bitbucket.org/2.0/repositories/venncreative/$REPO)
+
+    if [[ $res =~ '"type": "error"' ]]; then
+        echo 'Unable to create repository on Bitbucket :('
+        echo $res
+        exit;
+    else
+        echo "New repository at http://bitbucket.org/$REPO"
+        # printf 'Connect your existing repository to Bitbucket?'
+        # read SYNC
+    fi
+
+    # if [[ $SYNC ]]; then
+    #     read -p "Connect your existing repository to Bitbucket? (Y/n)" choice
+    #     case "$choice" in 
+    #         y|Y ) echo "yes";;
+    #         n|N ) echo "no";;
+    #         * ) echo "invalid";;
+    #     esac
+    # fi
+
+}
+
+
+case $1 in
+    clone|c)
+        clone $2 $3
+        ;;
+    see|s|v)
+        see $2
+        ;;
+    remote|r)
+        remote $2 $3
+        ;;
+    new|n)
+        new
+        ;;
+    create)
+        create $2
+        ;;
+    *)
+        help
+        ;;
+esac
