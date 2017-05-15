@@ -1,0 +1,18 @@
+[user]
+    name = Joshua Crewe
+    email = joshua@venncreative.co.uk
+[color]
+    ui = true
+[push]
+    default = simple
+[merge]
+    ff = false
+[pull]
+    ff= true
+[include]
+    path = ~/dotfiles/git/git-aliases
+[core]
+    editor = /usr/local/bin/vim
+    excludesfile = ~/.gitignore
+[help]
+    autocorrect = -1

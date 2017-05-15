@@ -1,0 +1,26 @@
+[alias]
+    o = checkout
+    s = status
+    b = branch
+    c = commit
+    a = add
+    df = diff
+    sd = difftool -y -x "colordiff -y -W $COLUMNS" | less -R
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    wow = log --all --graph --decorate --oneline --simplify-by-decoration
+    type = cat-file -t
+    dump = cat-file -p
+    deploy = !git push && git ftp push
+    cleanup = !git branch --merged master | grep -v 'master$' | xargs git branch -d
+
+    stsh = stash --keep-index
+    staash = stash --include-untracked
+    staaash = stash --all
+
+    standup = !git log \
+          --author=$USER \
+          --since='9am yesterday' \
+          --all \
+          --format=%s
+    which = !git branch | grep -i
+
