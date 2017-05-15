@@ -69,16 +69,17 @@ fi
     alias g='git'
     alias got='git ' # Fix some fat fingers
     alias get='git '
+
+    alias gs='git status '
+    alias ga='git add '
+    alias gb='git branch '
+    alias gc='git commit'
+    alias gd='git diff'
+    alias go='git checkout '
 # }}
 
 # The aim is to use gits own aliases from now on
 
-# alias gs='git status '
-# alias ga='git add '
-# alias gb='git branch '
-# alias gc='git commit'
-# alias gd='git diff'
-# alias go='git checkout '
 
 # alias gsd='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
 # alias git-clean='git branch --merged master | grep -v 'master$' | xargs git branch -d'
