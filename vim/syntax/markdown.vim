@@ -6,5 +6,5 @@
 " syn match   myTodo   contained   "\<\(TODO\|FIXME\):"
 " hi def link myTodo Todo
 
-syn keyword TodoKeywords TODO NOTE 
+syn keyword TodoKeywords TODO NOTE EDIT
 hi def link TodoKeywords Todo
