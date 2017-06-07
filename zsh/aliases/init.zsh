@@ -20,9 +20,6 @@ alias :q="exit"
 # this is actually an insane problem
 alias tmux='tmux -2'
 
-# Server
-# alias server='browser-sync start -p $1 --no-ghost-mode --no-notify'
-
 # Ctags
 alias ctags='ctags -R -f .tags .'
 
@@ -55,7 +52,7 @@ if [ -x /usr/bin/dircolors ]; then
   eval "`dircolors -b`"
   alias ls='ls --color=auto'
   alias grep='grep --color=auto'
-elif [ "$PLATFORM" = Darwin ]; then
+elif [ $IS_MAC ]; then
   alias ls='ls -G'
 fi
 
@@ -78,22 +75,16 @@ fi
     alias go='git checkout '
 # }}
 
-# The aim is to use gits own aliases from now on
-
-
-# alias gsd='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
-# alias git-clean='git branch --merged master | grep -v 'master$' | xargs git branch -d'
-
 alias sz='source ~/.zshrc'
 
 # system {{
-    if [[ "$OSTYPE" == darwin* ]]; then
+    if [[ $IS_MAC -eq 1 ]]; then
         alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'  # see the hidden thoughts!
         alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'  # keep hidden things hidden!
     fi
 
     # Mac OS X Everywhere
-    if [[ "$OSTYPE" == darwin* ]]; then
+    if [[ $IS_MAC -eq 1 ]]; then
       alias o='open'
     elif [[ "$OSTYPE" == cygwin* ]]; then
       alias o='cygstart'
@@ -115,7 +106,7 @@ alias sz='source ~/.zshrc'
     alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
 
     # Gomi
-    if [ "$PLATFORM" = Darwin ]; then
+    if [ $IS_MAC -eq 1 ]; then
         alias gomi='gomi -s'
         alias trash='gomi -s'
     fi

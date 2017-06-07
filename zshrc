@@ -17,5 +17,10 @@ source ~/dotfiles/zsh/plugins/init.zsh
 # and cmus. If any one knows howto fix this another way then I am all ears
 TERM=screen-256color
 
+
+# Turn off flow control so <c-s> can save in vim
+# Dont know why this works
+stty -ixon
+
 # Added by fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
