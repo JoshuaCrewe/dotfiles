@@ -52,7 +52,7 @@ if [ -x /usr/bin/dircolors ]; then
   eval "`dircolors -b`"
   alias ls='ls --color=auto'
   alias grep='grep --color=auto'
-elif [ $IS_MAC ]; then
+elif [ $IS_MAC == 1 ]; then
   alias ls='ls -G'
 fi
 
@@ -78,13 +78,13 @@ fi
 alias sz='source ~/.zshrc'
 
 # system {{
-    if [[ $IS_MAC -eq 1 ]]; then
+    if [[ $IS_MAC == 1 ]]; then
         alias show='defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder'  # see the hidden thoughts!
         alias hide='defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder'  # keep hidden things hidden!
     fi
 
     # Mac OS X Everywhere
-    if [[ $IS_MAC -eq 1 ]]; then
+    if [[ $IS_MAC == 1 ]]; then
       alias o='open'
     elif [[ "$OSTYPE" == cygwin* ]]; then
       alias o='cygstart'
@@ -106,7 +106,7 @@ alias sz='source ~/.zshrc'
     alias brewu='brew update && brew upgrade && brew cleanup && brew prune && brew doctor'
 
     # Gomi
-    if [ $IS_MAC -eq 1 ]; then
+    if [[ $IS_MAC == 1 ]]; then
         alias gomi='gomi -s'
         alias trash='gomi -s'
     fi
