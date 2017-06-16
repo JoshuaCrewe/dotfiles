@@ -8,6 +8,7 @@
 
 call plug#begin('~/.vim/plugged')
 " Base
+Plug 'jwalton512/vim-blade'
 Plug 'tpope/vim-sensible'             " Some sensible deafaults
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'               " A fuzzyfinder
@@ -50,6 +51,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'othree/html5.vim'
 Plug 'StanAngeloff/php.vim'
+Plug 'lumiliet/vim-twig'
 " Wordpress
 Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
 " Sessions
