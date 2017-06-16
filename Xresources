@@ -1,34 +1,121 @@
-URxvt.font: xft:FiraMono:pixelsize=13
-! seoul256 (dark) theme adapted for URxvt
-! append the content of this file to your .Xresources
-URxvt*background: #3a3a3a 
-URxvt*foreground: #d0d0d0 
-URxvt*color0: #4e4e4e
-URxvt*color1: #d68787 
-URxvt*color2: #5f865f
-URxvt*color3: #d8af5f
-URxvt*color4: #85add4
-URxvt*color5: #d7afaf
-URxvt*color6: #87afaf
-URxvt*color7: #d0d0d0
-URxvt*color8: #626262
-URxvt*color9: #d75f87
-URxvt*color10: #87af87
-URxvt*color11: #ffd787 
-URxvt*color12: #add4fb
-URxvt*color13: #ffafaf
-URxvt*color14: #87d7d7
-URxvt*color15: #e4e4e4
-URxvt*cursorColor: #d0d0d0
-URxvt*cursorColor2: #3a3a3a
-URxvt*colorBD: #e4e4e4
+!-------------------------------------------------------------------------------
+! Xft settings
+!-------------------------------------------------------------------------------
 
-URxvt.scrollBar : false
+Xft.dpi:                    96
+Xft.antialias:              false
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+
+!-------------------------------------------------------------------------------
+! URxvt settings
+! Colours lifted from Solarized (http://ethanschoonover.com/solarized)
+! More info at:
+! http://pod.tst.eu/http://cvs.schmorp.de/rxvt-unicode/doc/rxvt.1.pod
+!-------------------------------------------------------------------------------
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            50
+! URxvt.internalBorder:       3
+URxvt.lineSpace:            0
 URxvt.internalBorder: 1
 URxvt.externalBorder: 0
-! URxvt.letterSpace: -1
-URxvt.perl-ext-common: resize-font,foo
-URxvt.perl-ext: default,url-select
-URxvt.keysym.Mod1-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/xdg-open
+
+! Fonts
+URxvt.allow_bold:           false
+URxvt.font:                 xft:FiraMono:pixelsize=13
+URxvt*boldFont:             xft:FiraMono:pixelsize=14
+
+! Fix font space
+! URxvt*letterSpace: -1
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,matcher
+URxvt.perl-ext:             default,url-select
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          firefox
+URxvt.url-select.launcher:  /usr/bin/xdg-open
 URxvt.url-select.underline: true
+URxvt.keysym.Mod1-u:        perl:url-select:select_next
+
+! Cursor
+URxvt.cursorBlink:          true
+! URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank: true
+
+! Colours
+! special
+*.foreground:   #d0d0d0
+*.background:   #3a3a3a
+*.cursorColor:  #d0d0d0
+*.cursorColor2: #3a3a3a
+
+! black
+*.color0:       #4e4e4e
+*.color8:       #626262
+
+! red
+*.color1:       #d68787
+*.color9:       #d75f87
+
+! green
+*.color2:       #5f865f
+*.color10:      #87af87
+
+! yellow
+*.color3:       #d8af5f
+*.color11:      #ffd787
+
+! blue
+*.color4:       #85add4
+*.color12:      #add4fb
+
+! magenta
+*.color5:       #d7afaf
+*.color13:      #ffafaf
+
+! cyan
+*.color6:       #87afaf
+*.color14:      #87d7d7
+
+! white
+*.color7:       #d0d0d0
+*.color15:      #e4e4e4
+
+! seoul256 (dark) theme adapted for URxvt
+! append the content of this file to your .Xresources
+! URxvt*background: #3a3a3a 
+! URxvt*foreground: #d0d0d0 
+! URxvt*color0: #4e4e4e
+! URxvt*color1: #d68787 
+! URxvt*color2: #5f865f
+! URxvt*color3: #d8af5f
+! URxvt*color4: #85add4
+! URxvt*color5: #d7afaf
+! URxvt*color6: #87afaf
+! URxvt*color7: #d0d0d0
+! URxvt*color8: #626262
+! URxvt*color9: #d75f87
+! URxvt*color10: #87af87
+! URxvt*color11: #ffd787 
+! URxvt*color12: #add4fb
+! URxvt*color13: #ffafaf
+! URxvt*color14: #87d7d7
+! URxvt*color15: #e4e4e4
+! URxvt*cursorColor: #d0d0d0
+! URxvt*cursorColor2: #3a3a3a
+! URxvt*colorBD: #e4e4e4
