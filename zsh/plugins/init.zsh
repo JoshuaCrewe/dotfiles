@@ -12,8 +12,8 @@ zplug "urbainvaes/fzf-marks"                       # Bookmarking with fzf filter
 zplug "b4b4r07/zsh-gomi"                           # Move things to system trash
 zplug "zsh-users/zsh-completions"
 
-zplug "mafredri/zsh-async"                         # For the pure promt to work
-zplug "sindresorhus/pure"                          # A minimalist prompt
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 zplug "pimterry/notes", \
     as:command, \
