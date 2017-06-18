@@ -37,6 +37,7 @@ Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'honza/vim-snippets'             " Snippets!
 " Colour Schemes
 Plug 'junegunn/seoul256.vim'          " A colour scheme which works
+Plug 'altercation/vim-colors-solarized'
 " GUI
 Plug 'junegunn/goyo.vim'              " Distraction free coding
 Plug 'junegunn/vim-peekaboo'          " Show the registers
@@ -100,6 +101,10 @@ set background=dark               " Use a dark background
 
 let g:seoul256_background = 236   " Seoul can tweak the background a bit
 colo seoul256                     " Set the colour scheme
+
+if has("unix")
+    hi VertSplit ctermfg=237
+endif
 
 " Numbering
 
