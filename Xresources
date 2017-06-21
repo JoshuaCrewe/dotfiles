@@ -3,7 +3,7 @@
 !-------------------------------------------------------------------------------
 
 Xft.dpi:                    96
-Xft.antialias:              false
+! Xft.antialias:              false
 Xft.rgba:                   rgb
 Xft.hinting:                true
 Xft.hintstyle:              hintslight
@@ -23,7 +23,6 @@ URxvt.fading:               0
 ! URxvt.visualBell:           true
 URxvt.loginShell:           true
 URxvt.saveLines:            50
-! URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 URxvt.internalBorder: 1
 URxvt.externalBorder: 0
