@@ -103,7 +103,7 @@ let g:seoul256_background = 236   " Seoul can tweak the background a bit
 colo seoul256                     " Set the colour scheme
 
 if has("unix")
-    hi VertSplit ctermfg=237
+    hi VertSplit ctermbg=236
 endif
 
 " Numbering
