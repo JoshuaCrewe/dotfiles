@@ -56,7 +56,7 @@ if [ -x /usr/bin/dircolors ]; then
   eval "`dircolors -b`"
   alias ls='ls --color=auto'
   alias grep='grep --color=auto'
-elif [ $IS_MAC == 1 ]; then
+elif [[ $IS_MAC == 1 ]]; then
   alias ls='ls -G'
 fi
 
