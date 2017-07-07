@@ -65,4 +65,5 @@ alias sz='source ~/.zshrc'
 
 # for use with notes https://github.com/pimterry/notes
 alias note="notes"
+alias fnotes="notes-fzf"
 
