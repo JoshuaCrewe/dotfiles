@@ -4,8 +4,8 @@
 # Mod1 = Alt / Meta
 
 # Rofi
-Mod4 d :Exec rofi show run
-Mod4 Tab :Exec rofi show window
+Mod4 d :Exec rofi -show run
+Mod4 Tab :Exec rofi -show window
 
 Control Mod4 f :MacroCmd {Maximize} {Restore}
 Control Mod4 k :MacroCmd {ResizeTo 75% 75%} {MoveTo 00 00 Center}
@@ -20,7 +20,7 @@ Mod4 space :RootMenu
 Mod4 w :Close
 Mod4 q :kill
 
-Mod4 k :Minimize
+Mod4 h :Minimize
 Mod4 H :ShowDesktop
 
 Mod4 m :WindowMenu
