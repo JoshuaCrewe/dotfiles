@@ -55,6 +55,8 @@ Plug 'StanAngeloff/php.vim'
 Plug 'lumiliet/vim-twig'
 " Wordpress
 Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
+"Ruby
+Plug 'vim-ruby/vim-ruby'
 " Sessions
 Plug 'tpope/vim-obsession'            " For saving sessions
 " Documentation look up
