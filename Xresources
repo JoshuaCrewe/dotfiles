@@ -95,3 +95,22 @@ URxvt.pointerBlank: true
 ! white
 *.color7:       #d0d0d0
 *.color15:      #e4e4e4
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+! Use extended color scheme
+rofi.color-enabled:                  true
+! Color scheme for normal row
+rofi.color-normal:                   #ffffff,#525d76,#f5f5f5,#5294e2,#ffffff
+! Color scheme for urgent row
+rofi.color-urgent:                   #ffffff,#dc322f,#f5f5f5,#5294e2,#dc322f
+! Color scheme for active row
+rofi.color-active:                   #ffffff,#c2cad0,#f5f5f5,#5294e2,#c2cad0
+! Color scheme window
+rofi.color-window:                   #ffffff,#f5f5f5
+! Separator style (none, dash, solid)
+rofi.separator-style:                solid
+
+rofi.hide-scrollbar: true
+ofi.font: Fira Sans 14
