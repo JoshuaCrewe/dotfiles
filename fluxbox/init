@@ -1,0 +1,34 @@
+session.styleFile               :	~/.fluxbox/styles/Nela
+session.slitlistFile            :	~/.fluxbox/slitlist
+session.keyFile                 :	~/.fluxbox/keys
+session.appsFile                :	~/.fluxbox/apps
+session.styleOverlay            :	~/.fluxbox/overlay
+session.windowMenu              :	~/.fluxbox/windowmenu
+
+session.toolbar.alpha           :	200
+session.toolbar.height          :	0
+session.toolbar.placement       :	TopLeft
+session.toolbar.onhead          :	0
+session.toolbar.layer           :	Normal
+session.toolbar.visible         :	true
+session.toolbar.tools           :	workspacename, iconbar, systemtray, clock
+session.toolbar.widthPercent    :	100
+session.toolbar.autoHide        :	false
+session.toolbar.maxOver         :	false
+
+session.defaultDeco             :	NONE
+
+session.workspaces              :	3
+session.workspaceNames          :	ONE, TWO, THREE,
+
+session.strftimeFormat          :	%a, %02k:%M
+
+session.opaqueMove              :	true
+
+session.autoRaise               :	true
+session.autoRaiseDelay          :	250
+session.forcePseudoTransparency :	false
+session.doubleClickInterval     :	250
+session.tabsAttachArea          :	Window
+session.tabPadding              :	0
+session.ignoreBorder            :	false
