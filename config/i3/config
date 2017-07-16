@@ -18,8 +18,16 @@
 # Mod4 = Command / Super
 # Mod5
 
+# Load the custom keyboard mappings
+# exec --no-startup-id /usr/bin/xmodmap ~/.Xmodmap
 
-set $mod Mod1
+# Making a modifier act like something else when it is tapped.
+# exec --no-startup-id /usr/bin/xcape -t 350 -e 'Control_L=Escape;Shift_L=Shift_L|9;Shift_R=Shift_L|0;Hyper_L=Tab'
+
+# exec_always --no-startup-id /usr/bin/xrdb ~/.Xresources
+
+
+set $mod Mod4
 
 set $base00 #101218
 set $base01 #1f222d
@@ -68,9 +76,8 @@ bindsym $mod+d exec dmenu_run
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-exec --no-startup-id /usr/bin/dropbox
-exec_always --no-startup-id /usr/bin/xrdb ~/.Xresources
-exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
+# exec --no-startup-id /usr/bin/dropbox
+# exec_always --no-startup-id feh --bg-scale ~/.wallpaper.jpg
 
 # change focus
 bindsym $mod+h focus left
@@ -157,7 +164,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -196,9 +204,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command i3blocks
         position top
         mode hide
+        modifier Mod1
         tray_output none
         colors {
               separator $base03
@@ -233,8 +242,3 @@ bindsym $hyper+j exec $run urxvt urxvt
 # http://i3wm.org/docs/userguide.html#_jumping_to_specific_windows
 bindsym $mod+ctrl+l [class="urxvt" title="vim"] focus
 
-# Load the custom keyboard mappings
-exec --no-startup-id /usr/bin/xmodmap ~/.Xmodmap
-
-# Making a modifier act like something else when it is tapped.
-exec --no-startup-id /usr/bin/xcape -t 350 -e 'Control_L=Escape;Shift_L=Shift_L|9;Shift_R=Shift_L|0;Hyper_L=Tab'
