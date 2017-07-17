@@ -1,10 +1,4 @@
 [alias]
-    o = checkout
-    s = status
-    b = branch
-    c = commit
-    a = add
-    df = diff
     sd = difftool -y -x "colordiff -y -W $COLUMNS" | less -R
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     wow = log --all --graph --decorate --oneline --simplify-by-decoration
@@ -23,4 +17,3 @@
           --all \
           --format=%s
     which = !git branch | grep -i
-

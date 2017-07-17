@@ -12,7 +12,7 @@ zplug "urbainvaes/fzf-marks"                       # Bookmarking with fzf filter
 zplug "b4b4r07/zsh-gomi"                           # Move things to system trash
 zplug "zsh-users/zsh-completions"
 
-# zplug "MichaelAquilina/zsh-you-should-use"
+zplug "MichaelAquilina/zsh-you-should-use"
 
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
@@ -22,7 +22,7 @@ zplug "pimterry/notes", \
     use:notes
 
 zplug "paulirish/git-open"
-#
+
 zplug "witt3rd/894c9e0b9ca4e24e5574", \
     from:gist, \
     as:command, \
