@@ -1,0 +1,59 @@
+#!/bin/bash
+
+SCREEN_WIDTH=$(xwininfo -root | awk '$1=="Width:" {print $2}')
+SCREEN_HEIGHT=$(xwininfo -root | awk '$1=="Height:" {print $2}')
+
+function center-50() {
+    WIDTH_50=$(($SCREEN_WIDTH / 2))
+    HEIGHT_50=$(($SCREEN_HEIGHT / 2))
+
+    OFFSET_X_50=$(($SCREEN_WIDTH / 4))
+    OFFSET_Y_50=$(($SCREEN_HEIGHT / 4))
+
+    wmctrl -r :ACTIVE: -e 0,$OFFSET_X_50,$OFFSET_Y_50,$WIDTH_50,$HEIGHT_50
+}
+
+function center-75() {
+    WIDTH_75=$((($SCREEN_WIDTH / 4) * 3))
+    HEIGHT_75=$((($SCREEN_HEIGHT / 4) * 3))
+
+    OFFSET_X_50=$(($SCREEN_WIDTH / 8))
+    OFFSET_Y_50=$(($SCREEN_HEIGHT / 8))
+
+    wmctrl -r :ACTIVE: -e 0,$OFFSET_X_50,$OFFSET_Y_50,$WIDTH_75,$HEIGHT_75
+}
+
+function left-50() {
+    WIDTH_50=$(($SCREEN_WIDTH / 2))
+
+    wmctrl -r :ACTIVE: -e 0,0,0,$WIDTH_50,$SCREEN_HEIGHT
+}
+
+function right-50() {
+    WIDTH_50=$(($SCREEN_WIDTH / 2))
+    OFFSET_X_50=$(($SCREEN_WIDTH / 2))
+
+    wmctrl -r :ACTIVE: -e 0,$OFFSET_X_50,0,$WIDTH_50,$SCREEN_HEIGHT
+}
+
+function full-screen() {
+    wmctrl -r :ACTIVE: -e 0,0,0,$SCREEN_WIDTH,$SCREEN_HEIGHT
+}
+
+case $1 in
+    center-50)
+        center-50
+        ;;
+    center-75)
+        center-75
+        ;;
+    left-50)
+        left-50
+        ;;
+    right-50)
+        right-50
+        ;;
+    full-screen)
+        full-screen
+        ;;
+esac
