@@ -7,11 +7,6 @@
 Mod4 d :Exec rofi -show run
 Mod4 Tab :Exec rofi -show window
 
-Control Mod4 f :MacroCmd {Maximize} {Restore}
-Control Mod4 k :MacroCmd {ResizeTo 75% 75%} {MoveTo 00 00 Center}
-
-# Control Mod4 j :MacroCmd {ResizeTo 100% 50%} {MoveTo 00 00 Left}
-
 Mod3 k :Exec /usr/local/bin/run-or-raise Firefox firefox
 Mod3 j :Exec /usr/local/bin/run-or-raise urxvt urxvt
 
@@ -19,6 +14,7 @@ Mod4 space :RootMenu
 
 Mod4 w :Close
 Mod4 q :kill
+Mod4 Shift e :Exit
 
 Mod4 h :Minimize
 Mod4 H :ShowDesktop
