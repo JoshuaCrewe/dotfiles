@@ -4,13 +4,17 @@
 # Mod1 = Alt / Meta
 
 # Rofi
-Mod4 d :Exec rofi -show run
+Mod4 space :Exec rofi -show run
 Mod4 Tab :Exec rofi -show window
 
 Mod3 k :Exec /usr/local/bin/run-or-raise Firefox firefox
 Mod3 j :Exec /usr/local/bin/run-or-raise urxvt urxvt
 
-Mod4 space :RootMenu
+Mod4 d :RootMenu
+Mod4 j :commanddialog
+Mod4 Shift r :reconfig
+
+Mod4 l :ToggleCmd { MacroCmd {SetResourceValue session.screen0.toolbar.visible true} {reconfig}} {MacroCmd {SetResourceValue session.screen0.toolbar.visible false} {reconfig} }
 
 Mod4 w :Close
 Mod4 q :kill
