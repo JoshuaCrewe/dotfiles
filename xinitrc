@@ -1,6 +1,7 @@
 #! /bin/bash
 /usr/bin/xmodmap ~/.Xmodmap &
 sleep .1
+/usr/bin/xbindkeys &
 /usr/bin/feh --bg-scale ~/.wallpaper.jpg &
 /usr/bin/dropbox &
 /usr/bin/xrdb ~/.Xresources &
