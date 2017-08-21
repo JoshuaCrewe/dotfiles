@@ -1,0 +1,11 @@
+snippet new-font "Importing fonts"
+    @font-face {
+        font-family: '${1:fontname}';
+        src:
+            url('../fonts/${2:font-file-name}.woff2') format('woff2'),
+            url('../fonts/${2/.*/$0/}.woff') format('woff'),
+            url('../fonts/${2/.*/$0/}.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+endsnippet

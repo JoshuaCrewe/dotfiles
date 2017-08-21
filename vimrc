@@ -33,7 +33,10 @@ Plug 'phongvcao/vim-stardict'         " Lok up words in the dictionary
 Plug 'tommcdo/vim-lion'               " align stuff according to marks
 Plug 'henrik/vim-reveal-in-finder'    " Show the current file in Macos Finder
 " Snippets
-Plug 'SirVer/ultisnips'               " Snippet expansion
+" Plug 'SirVer/ultisnips'               " Snippet expansion
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'             " Snippets!
 " Colour Schemes
 Plug 'junegunn/seoul256.vim'          " A colour scheme which works
@@ -174,11 +177,13 @@ set shiftwidth=4
 
 " Snippets
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
-nnoremap <leader>snip :UltiSnipsEdit<CR>
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
+" nnoremap <leader>snip :UltiSnipsEdit<CR>
+let g:snipMate = {}
+let g:snipMate.snippet_version = 1
 
 " File Specific
 
