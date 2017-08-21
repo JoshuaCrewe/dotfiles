@@ -8,7 +8,6 @@
 
 call plug#begin('~/.vim/plugged')
 " Base
-Plug 'jwalton512/vim-blade'
 Plug 'tpope/vim-sensible'             " Some sensible deafaults
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'               " A fuzzyfinder
@@ -40,10 +39,10 @@ Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'             " Snippets!
 " Colour Schemes
 Plug 'junegunn/seoul256.vim'          " A colour scheme which works
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
 " GUI
 Plug 'junegunn/goyo.vim'              " Distraction free coding
-Plug 'junegunn/vim-peekaboo'          " Show the registers
+" Plug 'junegunn/vim-peekaboo'          " Show the registers
 Plug 'ap/vim-css-color'               " show colors in a highlight
 Plug 'airblade/vim-gitgutter'         " Git marks in the gutter
 Plug 'sjl/gundo.vim'                  " Undo tree visualisation
@@ -56,6 +55,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'othree/html5.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'lumiliet/vim-twig'
+Plug 'jwalton512/vim-blade'
 " Wordpress
 Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
 "Ruby
@@ -65,8 +65,6 @@ Plug 'tpope/vim-obsession'            " For saving sessions
 " Documentation look up
 Plug 'rhysd/devdocs.vim'              " Look up things in DevDocs
 Plug 'keith/investigate.vim'          " An alternative documentation lookup
-" Wiki
-" Plug 'vimwiki/vimwiki'                " Fancy keeping some notes somewhere?
 
 Plug 'tpope/vim-dispatch'             " Async building
 Plug 'junegunn/vim-journal'           " Nice colours for things like lists
@@ -176,12 +174,6 @@ set softtabstop=4
 set shiftwidth=4
 
 " Snippets
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-" let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
-" nnoremap <leader>snip :UltiSnipsEdit<CR>
 let g:snipMate = {}
 let g:snipMate.snippet_version = 1
 
