@@ -1,0 +1,12 @@
+# Insert your preferred key mappings here.
+map ( previousTab
+map ) nextTab
+map <c-d> scrollPageDown
+map <c-u> scrollPageUp
+map y copyCurrentUrl
+map <c-e> lastTab
+map <c-a> firstTab
+map j scrollDown count=4
+map k scrollUp count=4
+map d removeTab
+map u restoreTab
