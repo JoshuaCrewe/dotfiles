@@ -1,27 +1,27 @@
 snippet js "jQuery Non conflict"
-	(function($) {
+	(function(\$) {
 		${1}
 	})(jQuery);
 endsnippet
 
 snippet dr "jQuery Document Ready"
-	$(document).ready(function() {
+	\$(document).ready(function() {
 		${1}
 	});
 endsnippet
 
 snippet $ "jQuery Get Element"
-	$('${1}')
+	\$('${1}')
 endsnippet
 
 snippet fn "jQuery Function"
-	$('${1:this}').on('${2:click}', function(){
+	\$('${1:this}').on('${2:click}', function(){
 		$0
 	});
 endsnippet
 
 snippet js-cycle "cycle call"
-	$('.slides').cycle({
+	\$('.slides').cycle({
 		'slides' : '.slide',
 		'pager' : '.pager',
 		'pagerTemplate' : "<span class='pager-item'></span>",

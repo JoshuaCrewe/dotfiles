@@ -176,6 +176,7 @@ set shiftwidth=4
 " Snippets
 let g:snipMate = {}
 let g:snipMate.snippet_version = 1
+let g:snipMate.no_default_aliases = 1
 
 " File Specific
 
