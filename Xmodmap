@@ -251,3 +251,10 @@ remove mod4 = Hyper_L
 add mod3 = Hyper_L
 keycode 23 = Hyper_L
 keycode any = Tab
+
+clear Lock
+add Lock = Control_L
+
+! clear lock
+! add control = Caps_Lock Control_L Control_R
+! keycode 66 = Control_L Caps_Lock NoSymbol NoSymbol
