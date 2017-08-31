@@ -20,3 +20,5 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"
 # Enable color in grep
 # export GREP_OPTIONS='--color=auto'
 # export GREP_COLOR='3;33'
+
+export NOTES_DIRECTORY=~/Dropbox/notes/
