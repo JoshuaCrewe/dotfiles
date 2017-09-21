@@ -6,8 +6,11 @@ vim/swap/**
 vim/plugged/**
 vim/*.tmp
 viminfo
+viminfo.*
 .netrwhist
 .un~
+
+emacs.d/elpa
 
 mutt/temp/**
 mutt/cache/**
