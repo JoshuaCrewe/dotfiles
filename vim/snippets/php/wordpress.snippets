@@ -30,15 +30,11 @@ snippet wp-q "WP custom query"
 endsnippet
 
 snippet the-loop "WP the whole loop"
-	<?php 
-	if ( have_posts() ) :
-		while ( have_posts() ) : the_post(); 
-			${1://
-			// Post Content here
-			//}
-		endwhile;
-	endif;
-	?>
+	<?php if ( have_posts() ) :  ?>
+		<?php while ( have_posts() ) : the_post();  ?>
+			${1:// Post Content here }
+		<?php endwhile; ?>
+	<?php endif; ?>
 endsnippet
 
 snippet loop-start "WP start of the loop"
