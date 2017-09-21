@@ -57,7 +57,7 @@ Plug 'StanAngeloff/php.vim'
 Plug 'lumiliet/vim-twig'
 Plug 'jwalton512/vim-blade'
 " Wordpress
-Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
+" Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
 "Ruby
 Plug 'vim-ruby/vim-ruby'
 " Sessions
