@@ -46,7 +46,7 @@ Plug 'junegunn/goyo.vim'              " Distraction free coding
 Plug 'ap/vim-css-color'               " show colors in a highlight
 Plug 'airblade/vim-gitgutter'         " Git marks in the gutter
 Plug 'sjl/gundo.vim'                  " Undo tree visualisation
-Plug 'wincent/terminus'               " Get a better terminal experience
+" Plug 'wincent/terminus'               " Get a better terminal experience
 " Syntax
 Plug 'cakebaker/scss-syntax.vim' 
 Plug 'hail2u/vim-css3-syntax'
@@ -56,8 +56,9 @@ Plug 'othree/html5.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'lumiliet/vim-twig'
 Plug 'jwalton512/vim-blade'
+Plug 'mustache/vim-mustache-handlebars'
 " Wordpress
-Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
+" Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
 "Ruby
 Plug 'vim-ruby/vim-ruby'
 " Sessions
@@ -70,8 +71,9 @@ Plug 'tpope/vim-dispatch'             " Async building
 Plug 'junegunn/vim-journal'           " Nice colours for things like lists
 call plug#end()
 
+
 filetype plugin on 
-" filetype indent on                " Turn on indentation by filetype
+filetype indent off                " Turn on indentation by filetype
 runtime macros/matchit.vim        " Enable built-in matchit plugin
 runtime! ftplugin/man.vim         " Syntax highlighting man pages
 
@@ -81,7 +83,6 @@ set nocompatible                  " Disable Vi compatibility
 set nomodeline                    " Modelines have been a source of vulnerabilities.
 set encoding=utf-8                " utf-8 for character encoding
 set scrolloff=5                   " Keep a context (rows) when scrolling vertically
-set autoindent                    " Indent a new line according to the previous one
 set showmode                      " Show the current mode
 set showcmd                       " Show (partial) command in the status line.
 set hidden                        " Allow switching edited buffers without saving
@@ -95,6 +96,12 @@ set nrformats-=octal              " Make incrementing 007 result into 008 rather
 set wildmenu                      " Make use of tab completion in vim command line
 set wildmode=list:full            " Complete longest common string, then each full match
 set autoread                      " Automatically update file if edited elsewhere
+
+" Indentation
+set autoindent                    " Indent a new line according to the previous one
+set cindent
+set smartindent
+autocmd FileType,BufNewFile,BufRead *.php set nocindent nosmartindent inde= " Why does this work ?
 
 " Colour Scheme
 
@@ -375,9 +382,6 @@ nnoremap <leader>sw :StarDict<Space>
 " Lookup the word under cursor
 nnoremap <leader>sc :StarDict <c-R><c-W><CR>
 
-" Make some Lorem when in insert mode
-imap lorem <esc>:Loremipsum 
-
 " Seen in Steve Losh's .vimrc for sorting css/sass alphabetically
 au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
@@ -494,11 +498,6 @@ vnoremap K :m '<-2<CR>gv=gv
 
 au BufNewFile,BufRead *pentadactylrc*,*.penta set filetype=vim
 
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
-                       \ 'syntax': 'markdown', 'ext': '.md'},
-                       \ {'path': '~/Dropbox/linuxwiki/',
-                       \ 'syntax': 'markdown', 'ext': '.md'}]
-
 set tags+=.tags;$HOME
 
 " Use ag for vimgrep
@@ -516,6 +515,8 @@ noremap g[<space> T[i<space><esc>t]a<space><esc>
 " Set ALE linters
 let g:ale_linters = {
 \   'scss': ['scsslint'],
+\   'javascript': ['eslint'],
+\   'html': [],
 \}
 
 " A vim implementation of Sublime Texts Multiple Cursors
@@ -541,14 +542,3 @@ vnoremap <expr> cN g:mc . "``cgN"
 "
 " vnoremap <expr> cq ":\<C-u>call SetupCR()\<CR>" . "gv" . g:mc . "``qz"
 " vnoremap <expr> cQ ":\<C-u>call SetupCR()\<CR>" . "gv" . substitute(g:mc, '/', '?', 'g') . "``qz"
-
-" Put at the very end of your .vimrc file.
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
-
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType phtml call PhpSyntaxOverride()
-augroup END

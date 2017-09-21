@@ -1,5 +1,5 @@
 # set what gets put in PATH
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:${HOME}/dotfiles/bin:$PATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:${HOME}/.local/bin:${HOME}/dotfiles/bin:$PATH"
 
 # Use The Silver Searcher for fzf
 export FZF_DEFAULT_COMMAND='ag -g ""'

@@ -12,7 +12,7 @@
 [include]
     path = ~/dotfiles/git/git-aliases
 [core]
-    editor = /usr/local/bin/vim
+    editor = $(which nvim)
     excludesfile = ~/.gitignore
 [help]
     autocorrect = -1
