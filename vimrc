@@ -515,6 +515,8 @@ noremap g[<space> T[i<space><esc>t]a<space><esc>
 " Set ALE linters
 let g:ale_linters = {
 \   'scss': ['scsslint'],
+\   'javascript': ['eslint'],
+\   'html': [],
 \}
 
 " A vim implementation of Sublime Texts Multiple Cursors
