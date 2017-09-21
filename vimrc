@@ -56,6 +56,7 @@ Plug 'othree/html5.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'lumiliet/vim-twig'
 Plug 'jwalton512/vim-blade'
+Plug 'mustache/vim-mustache-handlebars'
 " Wordpress
 " Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
 "Ruby
