@@ -25,11 +25,6 @@
 (setq-default indicate-empty-lines t)
 (setq-default indent-tabs-mode nil)
 
-(setq ns-auto-hide-menu-bar t)
-(set-frame-position nil 0 -24)
-(tool-bar-mode 0)
-(set-frame-size nil 150 80)
-
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -55,7 +50,9 @@
     :config
     (global-evil-surround-mode)))
 
-(setq backup-directory-alist `(("." . "~/.emacs.d/backup/")))
+(defvar backup-dir "~/.emacs.d/backups/")
+(setq backup-directory-alist (list (cons "." backup-dir)))
+(setq make-backup-files nil)
 
 ;; PACKAGES
 
@@ -89,6 +86,8 @@
 ;; SETTINGS
 
 ;; Relative numbers
+
+;; Highlight search results
 
 ;; BINDINGS
 
