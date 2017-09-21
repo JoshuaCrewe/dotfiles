@@ -149,7 +149,13 @@ set splitbelow                    " Open new horizontal panes in the bottom rath
 set nobackup                      " Disable backup files.
 set noswapfile                    " Disable swap files.
 set nowritebackup                 " Disable auto backup before overwriting a file.
-set viminfo+=n~/.vim/viminfo      " viminfo stores the the state of your previous editing session
+if has('nvim')
+    set viminfo+=n~/.vim/viminfo.nvim      " viminfo stores the the state of your previous editing session
+else
+    set viminfo+=n~/.vim/viminfo      " viminfo stores the the state of your previous editing session
+endif
+
+
 
 " Remember last cursor position
 
