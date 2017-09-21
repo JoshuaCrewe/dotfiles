@@ -70,8 +70,9 @@ Plug 'tpope/vim-dispatch'             " Async building
 Plug 'junegunn/vim-journal'           " Nice colours for things like lists
 call plug#end()
 
+
 filetype plugin on 
-" filetype indent on                " Turn on indentation by filetype
+filetype indent off                " Turn on indentation by filetype
 runtime macros/matchit.vim        " Enable built-in matchit plugin
 runtime! ftplugin/man.vim         " Syntax highlighting man pages
 
@@ -81,7 +82,6 @@ set nocompatible                  " Disable Vi compatibility
 set nomodeline                    " Modelines have been a source of vulnerabilities.
 set encoding=utf-8                " utf-8 for character encoding
 set scrolloff=5                   " Keep a context (rows) when scrolling vertically
-set autoindent                    " Indent a new line according to the previous one
 set showmode                      " Show the current mode
 set showcmd                       " Show (partial) command in the status line.
 set hidden                        " Allow switching edited buffers without saving
@@ -95,6 +95,12 @@ set nrformats-=octal              " Make incrementing 007 result into 008 rather
 set wildmenu                      " Make use of tab completion in vim command line
 set wildmode=list:full            " Complete longest common string, then each full match
 set autoread                      " Automatically update file if edited elsewhere
+
+" Indentation
+set autoindent                    " Indent a new line according to the previous one
+set cindent
+set smartindent
+autocmd FileType,BufNewFile,BufRead *.php set nocindent nosmartindent inde= " Why does this work ?
 
 " Colour Scheme
 
