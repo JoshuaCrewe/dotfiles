@@ -381,9 +381,6 @@ nnoremap <leader>sw :StarDict<Space>
 " Lookup the word under cursor
 nnoremap <leader>sc :StarDict <c-R><c-W><CR>
 
-" Make some Lorem when in insert mode
-imap lorem <esc>:Loremipsum 
-
 " Seen in Steve Losh's .vimrc for sorting css/sass alphabetically
 au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
 
@@ -500,11 +497,6 @@ vnoremap K :m '<-2<CR>gv=gv
 
 au BufNewFile,BufRead *pentadactylrc*,*.penta set filetype=vim
 
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
-                       \ 'syntax': 'markdown', 'ext': '.md'},
-                       \ {'path': '~/Dropbox/linuxwiki/',
-                       \ 'syntax': 'markdown', 'ext': '.md'}]
-
 set tags+=.tags;$HOME
 
 " Use ag for vimgrep
@@ -547,14 +539,3 @@ vnoremap <expr> cN g:mc . "``cgN"
 "
 " vnoremap <expr> cq ":\<C-u>call SetupCR()\<CR>" . "gv" . g:mc . "``qz"
 " vnoremap <expr> cQ ":\<C-u>call SetupCR()\<CR>" . "gv" . substitute(g:mc, '/', '?', 'g') . "``qz"
-
-" Put at the very end of your .vimrc file.
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
-
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType phtml call PhpSyntaxOverride()
-augroup END
