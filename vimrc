@@ -190,6 +190,8 @@ set shiftwidth=4
 let g:snipMate = {}
 let g:snipMate.snippet_version = 1
 let g:snipMate.no_default_aliases = 1
+" I dont want the folds on plz
+au FileType snippets setl foldlevel=99
 
 " File Specific
 
