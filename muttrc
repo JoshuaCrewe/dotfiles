@@ -54,6 +54,9 @@ mailboxes +me-joshuacrewe.co.uk/INBOX \
           +me-joshuacrewe.co.uk/INBOX.Drafts \
           +me-joshuacrewe.co.uk/INBOX.Spam \
           +joshua-venncreative.co.uk/INBOX \
+          +joshua-venncreative.co.uk/INBOX.Sent \
+          +joshua-venncreative.co.uk/INBOX.Drafts \
+          +joshua-venncreative.co.uk/INBOX.Spam \
 # Default inbox.
 set spoolfile = +me-joshuacrewe.co.uk/INBOX
 
@@ -76,6 +79,7 @@ set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
  set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
  # Index Key Bindings ---------------------------------
+bind index g noop
 bind index gg       first-entry
 bind index G        last-entry
 
@@ -118,6 +122,7 @@ alternative_order text/plain text/enriched text/html
 # Pager Key Bindings ---------------------------------
 bind pager k  previous-line
 bind pager j  next-line
+bind pager g noop
 bind pager gg top
 bind pager G  bottom
 
@@ -152,9 +157,6 @@ set sendmail_wait = 0
 bind compose p postpone-message
 bind index p recall-message
 
-# This is where the sent mail is stored
-set record = '~/.mail/me-joshuacrewe.co.uk/Sent'
-
 # Contacts
 set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"
 bind editor <Tab> complete-query
@@ -171,7 +173,7 @@ source ~/.mutt/themes/seoul256.mutt
 
 source ~/.mutt/accounts/personal
 folder-hook me-joshuacrewe.co.uk/* source ~/.mutt/accounts/personal
-folder-hook work/*     source ~/.mutt/accounts/work
+folder-hook joshua-venncreative.co.uk/*     source ~/.mutt/accounts/work
 
 auto_view text/html                                      # view html automatically
 alternative_order text/plain text/enriched text/html     # save html for last
