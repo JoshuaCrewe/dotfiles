@@ -165,6 +165,16 @@
 
 ;; Cursor on word and use cn to change and the dot command to repeat. `cn
 ;; Visually select, cn to change and dot to repeat.
+
+(font-lock-add-keywords 'javascript-mode
+  '(("console" . font-lock-comment-face)))
+(add-hook 'c-mode-hook
+               (lambda ()
+                (font-lock-add-keywords nil
+                 '(("\\<\\(FIXME\\)." 1
+                    font-lock-warning-face t)))))
+
+
 (defun windmove-emacs-or-tmux(dir tmux-cmd)
   (interactive)
   (if (ignore-errors (funcall (intern (concat "windmove-" dir))))
