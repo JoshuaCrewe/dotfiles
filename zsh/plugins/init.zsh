@@ -1,1 +1,1 @@
-source ~/dotfiles/zsh/plugins/zplug.zsh
+source ~/dotfiles/zsh/plugins/zplugin.zsh

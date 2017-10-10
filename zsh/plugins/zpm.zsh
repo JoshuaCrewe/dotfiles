@@ -18,4 +18,5 @@ zpm load paulirish/git-open
 zpm load mafredri/zsh-async                         # For the pure promt to work
 zpm load sindresorhus/pure                          # A minimalist prompt
 
-zpm load zsh-users/zsh-syntax-highlighting
+# zpm load zsh-users/zsh-syntax-highlighting
+zpm load zdharma/fast-syntax-highlighting

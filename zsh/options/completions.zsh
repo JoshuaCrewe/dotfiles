@@ -1,4 +1,5 @@
-autoload -U compinit && compinit                                                                                       
+# This suddenly started to crash things
+
 zmodload -i zsh/complist
 
 # Enable completion caching, use rehash to clear
