@@ -195,7 +195,7 @@ au FileType snippets setl foldlevel=99
 
 " File Specific
 
-au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more readable
+au BufRead,BufNewFile *.md set wrap linebreak breakindent  | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
 
 " au BufNewFile,BufReadPost *.md set filetype=markdown
