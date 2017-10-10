@@ -179,3 +179,4 @@ auto_view text/html                                      # view html automatical
 alternative_order text/plain text/enriched text/html     # save html for last
 
 # source ~/.mutt/colors.muttrc
+source ~/.mutt/themes/seoul256.mutt
