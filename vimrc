@@ -195,7 +195,7 @@ au FileType snippets setl foldlevel=99
 
 " File Specific
 
-au BufRead,BufNewFile *.md set wrap linebreak | :Goyo 100 " make markdown more readable
+au BufRead,BufNewFile *.md set wrap linebreak breakindent  | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
 
 " au BufNewFile,BufReadPost *.md set filetype=markdown
@@ -526,6 +526,11 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'html': [],
 \}
+
+" Get highlight group with F10
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " A vim implementation of Sublime Texts Multiple Cursors
 " http://www.kevinli.co/posts/2017-01-19-multiple-cursors-in-500-bytes-of-vimscript/

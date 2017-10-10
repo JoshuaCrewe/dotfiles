@@ -6,7 +6,10 @@ map <c-u> scrollPageUp
 map y copyCurrentUrl
 map <c-e> lastTab
 map <c-a> firstTab
-map j scrollDown count=4
-map k scrollUp count=4
+map j scrollDown count=2
+map k scrollUp count=2
 map d removeTab
 map u restoreTab
+map t Vomnibar.activateInNewTab
+map gp togglePinTab
+map <space><space> visitPreviousTab

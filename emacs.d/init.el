@@ -50,6 +50,35 @@
     :config
     (global-evil-surround-mode)))
 
+(use-package emmet-mode
+  :ensure t
+  :commands emmet-mode)
+
+(use-package org-mode
+  :ensure t
+  :config
+  (setq org-agenda-files '("~/Downloads/org/"))
+)
+  (setq org-todo-keywords
+        '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
+
+(use-package evil-org-mode
+  :ensure t)
+(local-set-key (kbd "C-c C-f") 'org-table-calc-current-TBLFM)
+
+(defun air-pop-to-org-agenda (split)
+  "Visit the org agenda, in the current window or a SPLIT."
+  (interactive "P")
+  (org-agenda-list)
+  (when (not split)
+    (delete-other-windows)))
+
+(define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
+
+
+;; (use-package seoul256-theme
+ ;; :ensure t)
+
 (defvar backup-dir "~/.emacs.d/backups/")
 (setq backup-directory-alist (list (cons "." backup-dir)))
 (setq make-backup-files nil)
@@ -76,6 +105,10 @@
 ;; vim-lion - formatting text ?
 
 ;; Snippets
+;; yasnippet -  https://github.com/joaotavora/yasnippet
+
+;; Relative line numbers ?
+;; https://github.com/coldnew/linum-relative
 
 ;; Rainbow mode
 
@@ -132,3 +165,30 @@
 
 ;; Cursor on word and use cn to change and the dot command to repeat. `cn
 ;; Visually select, cn to change and dot to repeat.
+
+(font-lock-add-keywords 'javascript-mode
+  '(("console" . font-lock-comment-face)))
+(add-hook 'c-mode-hook
+               (lambda ()
+                (font-lock-add-keywords nil
+                 '(("\\<\\(FIXME\\)." 1
+                    font-lock-warning-face t)))))
+
+
+(defun windmove-emacs-or-tmux(dir tmux-cmd)
+  (interactive)
+  (if (ignore-errors (funcall (intern (concat "windmove-" dir))))
+     nil                       ;; Moving within emacs
+     (shell-command tmux-cmd)) ;; At edges, send command to tmux
+)
+
+; Move between windows with custom keybindings
+; https://gist.github.com/nathanlippi/5923326
+(global-set-key (kbd "C-k") 
+  '(lambda () (interactive) (windmove-emacs-or-tmux "up"  "tmux select-pane -U")))
+(global-set-key (kbd "C-j") 
+  '(lambda () (interactive) (windmove-emacs-or-tmux "down"  "tmux select-pane -D")))
+(global-set-key (kbd "C-l") 
+  '(lambda () (interactive) (windmove-emacs-or-tmux "right" "tmux next-window")))
+(global-set-key (kbd "C-h") 
+'(lambda () (interactive) (windmove-emacs-or-tmux "left" "tmux previous-window")))
