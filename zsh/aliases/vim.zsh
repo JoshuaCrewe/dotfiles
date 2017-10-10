@@ -1,6 +1,8 @@
 # Vim {{
-    alias vim='nvim'
-    alias vi='nvim'
+    if hash nvim 2>/dev/null; then
+        alias vim='nvim'
+    fi
+    alias vi='vim'
     alias vimrc='vim -c e ~/dotfiles/vimrc'
     alias zshrc='vim -c e ~/dotfiles/zshrc'
     alias tmuxconf='vim -c e ~/dotfiles/tmux.conf'
