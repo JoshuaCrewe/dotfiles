@@ -1,3 +1,7 @@
-color status  green red
+color status  color1 color236
 set from     = "joshua@venncreative.co.uk"
 set sendmail = "/usr/local/bin/msmtp -a work"
+
+# This is where the sent mail is stored
+unset record
+set record = '~/.mail/joshua-venncreative.co.uk/INBOX.Sent'
