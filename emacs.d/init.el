@@ -165,3 +165,20 @@
 
 ;; Cursor on word and use cn to change and the dot command to repeat. `cn
 ;; Visually select, cn to change and dot to repeat.
+(defun windmove-emacs-or-tmux(dir tmux-cmd)
+  (interactive)
+  (if (ignore-errors (funcall (intern (concat "windmove-" dir))))
+     nil                       ;; Moving within emacs
+     (shell-command tmux-cmd)) ;; At edges, send command to tmux
+)
+
+; Move between windows with custom keybindings
+; https://gist.github.com/nathanlippi/5923326
+(global-set-key (kbd "C-k") 
+  '(lambda () (interactive) (windmove-emacs-or-tmux "up"  "tmux select-pane -U")))
+(global-set-key (kbd "C-j") 
+  '(lambda () (interactive) (windmove-emacs-or-tmux "down"  "tmux select-pane -D")))
+(global-set-key (kbd "C-l") 
+  '(lambda () (interactive) (windmove-emacs-or-tmux "right" "tmux next-window")))
+(global-set-key (kbd "C-h") 
+'(lambda () (interactive) (windmove-emacs-or-tmux "left" "tmux previous-window")))
