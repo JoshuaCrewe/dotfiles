@@ -1,3 +1,4 @@
+;; For reference https://github.com/aaronbieber/dotfiles/blob/master/configs/emacs.d/init.el
 (require 'package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
