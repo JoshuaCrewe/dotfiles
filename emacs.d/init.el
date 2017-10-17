@@ -7,6 +7,18 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
+;; Also add all directories within "lisp"
+;; I use this for packages I'm actively working on, mostly.
+(let ((files (directory-files-and-attributes "~/.emacs.d/lisp" t)))
+  (dolist (file files)
+    (let ((filename (car file))
+          (dir (nth 1 file)))
+      (when (and dir
+                 (not (string-suffix-p "." filename)))
+(add-to-list 'load-path (car file))))))
+
 ;; Don't litter my init file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (load custom-file 'noerror)
@@ -25,12 +37,13 @@
 (setq-default indicate-empty-lines t)
 (setq-default indent-tabs-mode nil)
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+ (unless (package-installed-p 'use-package)
+   (package-refresh-contents)
+   (package-install 'use-package))
+
 
 (eval-when-compile
-  (require 'use-package))
+   (require 'use-package))
 
 (use-package helm
   :ensure t)
@@ -54,16 +67,29 @@
   :ensure t
   :commands emmet-mode)
 
-(use-package org-mode
+ (use-package org
+   :ensure t
+   :config
+   (setq org-agenda-files '("~/Downloads/org/"))
+   (setq org-todo-keywords
+        '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED"))))
+
+(use-package evil-org
+  :ensure t
+  :after org
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme))))
+(use-package doom-themes
   :ensure t
   :config
-  (setq org-agenda-files '("~/Downloads/org/"))
-)
-  (setq org-todo-keywords
-        '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
-
-(use-package evil-org-mode
+  (load-theme 'doom-one t)
+  )
+(use-package php-mode
   :ensure t)
+
 (local-set-key (kbd "C-c C-f") 'org-table-calc-current-TBLFM)
 
 (defun air-pop-to-org-agenda (split)
@@ -75,13 +101,16 @@
 
 (define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
 
-
 ;; (use-package seoul256-theme
  ;; :ensure t)
 
 (defvar backup-dir "~/.emacs.d/backups/")
 (setq backup-directory-alist (list (cons "." backup-dir)))
 (setq make-backup-files nil)
+
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
+;; (require 'evil-unimpaired.el)
 
 ;; PACKAGES
 
