@@ -22,7 +22,7 @@ exit
 # [X] Bootstrap dotfiles ( home folder, .config ) - back up existing if exist
 # [X] Set up zsh as default shell
 # [X] Install zsh plugins
-# [ ] set up yarn and install packages
+# [X] set up yarn and install packages
 # [ ] Clean up ?
 
 #   ___         _                                                   
@@ -83,6 +83,8 @@ done
 #  / __| |_  ___| | |
 #  \__ \ ' \/ -_) | |
 #  |___/_||_\___|_|_|
+
+# TODO: This needs testing
                   
 # Set zsh as default shell
 chsh -s $(which zsh)
@@ -95,6 +97,8 @@ source $(HOME)/.zshrc
 #  | .` / _ \/ _` / -_) |  _/ _` / _| / / _` / _` / -_|_-<
 #  |_|\_\___/\__,_\___| |_| \__,_\__|_\_\__,_\__, \___/__/
 #                                            |___/       
+
+# TODO: This needs testing
 
 if ! which yarn > /dev/null; then
     while read in; do yarn global add "$in"; done < node-packages.txt
