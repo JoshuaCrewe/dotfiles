@@ -71,6 +71,8 @@ Plug 'keith/investigate.vim'          " An alternative documentation lookup
 Plug 'tpope/vim-dispatch'             " Async building
 Plug 'junegunn/vim-journal'           " Nice colours for things like lists
 Plug 'metakirby5/codi.vim'
+Plug 'dhruvasagar/vim-table-mode'
+
 if has('nvim')
     Plug 'dylanaraps/taskrunner.nvim'
     let g:taskrunner#unlisted = 0
