@@ -1,3 +1,4 @@
+;; For reference https://github.com/aaronbieber/dotfiles/blob/master/configs/emacs.d/init.el
 (require 'package)
 
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
@@ -6,6 +7,8 @@
 
 (setq package-enable-at-startup nil)
 (package-initialize)
+
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; Don't litter my init file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -25,15 +28,25 @@
 (setq-default indicate-empty-lines t)
 (setq-default indent-tabs-mode nil)
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+ (unless (package-installed-p 'use-package)
+   (package-refresh-contents)
+   (package-install 'use-package))
 
 (eval-when-compile
-  (require 'use-package))
+   (require 'use-package))
+
+(use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-one t)
+  )
+
+;; (use-package seoul256-theme
+ ;; :ensure t)
 
 (use-package helm
   :ensure t)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
 
 (use-package evil
   :ensure t
@@ -48,22 +61,30 @@
   (use-package evil-surround
     :ensure t
     :config
-    (global-evil-surround-mode)))
+    (global-evil-surround-mode))
 
-(use-package emmet-mode
-  :ensure t
-  :commands emmet-mode)
+    (require 'evil-unimpaired)
+  )
 
-(use-package org-mode
+
+ (use-package org
+   :ensure t
+   :config
+   (setq org-agenda-files '("~/Downloads/org/"))
+   (setq org-todo-keywords
+        '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED"))))
+
+(use-package evil-org
   :ensure t
+  :after org
   :config
-  (setq org-agenda-files '("~/Downloads/org/"))
-)
-  (setq org-todo-keywords
-        '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
-
-(use-package evil-org-mode
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme))))
+(use-package php-mode
   :ensure t)
+
 (local-set-key (kbd "C-c C-f") 'org-table-calc-current-TBLFM)
 
 (defun air-pop-to-org-agenda (split)
@@ -75,32 +96,54 @@
 
 (define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
 
-
-;; (use-package seoul256-theme
- ;; :ensure t)
-
 (defvar backup-dir "~/.emacs.d/backups/")
 (setq backup-directory-alist (list (cons "." backup-dir)))
 (setq make-backup-files nil)
+
+(define-key evil-normal-state-map (kbd "C-s") 'save-buffer)
+(define-key evil-insert-state-map (kbd "C-s") 'save-buffer)
 
 ;; PACKAGES
 
 ;; Distraction Free Writing in emacs
 ;; https://github.com/joostkremers/writeroom-mode
 
+(use-package writeroom-mode
+  :ensure t
+  :defer t
+  )
+
 ;; Magit ?
+(use-package magit
+  :ensure t
+  :defer t
+  )
+(use-package evil-magit
+  :ensure t
+  )
 
 ;; Emmet
+(use-package emmet-mode
+  :ensure t
+  :commands emmet-mode)
 
 ;; Asyncrounous Linting
 
 ;; Surround
+(use-package evil-surround
+  :ensure t
+  )
 
 ;; ragtag
 
 ;; Hide highlights after search
 
 ;; Auto add comments to start of line
+;; (use-package evil-nerd-commenter
+  ;; :ensure t
+  ;; :config
+  ;; (evilnc-default-hotkeys)
+  ;; )
 
 ;; vim-lion - formatting text ?
 
