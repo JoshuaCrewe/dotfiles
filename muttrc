@@ -156,6 +156,7 @@ set forward_quote                    # include message in forwards
 set sendmail_wait = 0
 bind compose p postpone-message
 bind index p recall-message
+set editor = "vim"
 
 # Contacts
 set query_command = "contacts -Sf '%eTOKEN%n' '%s' | sed -e 's/TOKEN/\t/g'"

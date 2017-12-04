@@ -303,6 +303,8 @@ onoremap av :<C-u>normal! 0f:lvt;<CR><space>
 
 au BufNewFile,BufRead *.scss,*.css,*.js nnoremap <buffer> <leader>= gg=G``
 
+autocmd BufNewFile,BufRead ~/dotfiles/mutt/temp/neomutt* set filetype=mail
+
 " Load Vimrc for editing
 nnoremap <leader>vim :silent :edit ~/dotfiles/vimrc<cr>
 

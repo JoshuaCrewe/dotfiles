@@ -1,5 +1,13 @@
 # d: mutt.color,v 1.2 2003/09/17 13:06:10 dope Exp dope $
 #
+# TODO:
+#   * Links in email body copy
+#   * Remove a bunch of regexes which are not needed
+#   * Work status line should not be red - maybe make the active message highlight something else
+#   * Colour emails headers as something other than green
+#   * Change message response tree soemthing other than red
+#   * Change colour of in body email addresses
+#
 # If your terminal supports color, you can spice up Mutt by creating your own
 # color scheme. To define the color of an object (type of information), you
 # must specify both a foreground color and a background color (it is not
