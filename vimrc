@@ -47,7 +47,7 @@ Plug 'junegunn/goyo.vim'              " Distraction free coding
 Plug 'ap/vim-css-color'               " show colors in a highlight
 Plug 'airblade/vim-gitgutter'         " Git marks in the gutter
 Plug 'sjl/gundo.vim'                  " Undo tree visualisation
-" Plug 'wincent/terminus'               " Get a better terminal experience
+Plug 'wincent/terminus'               " Get a better terminal experience
 " Syntax
 Plug 'cakebaker/scss-syntax.vim' 
 Plug 'hail2u/vim-css3-syntax'
