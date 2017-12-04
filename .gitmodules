@@ -1,6 +1,0 @@
-[submodule "zsh/plugins/k"]
-	path = zsh/plugins/k
-	url = https://github.com/supercrabtree/k.git
-[submodule "zsh/plugins/gomi"]
-	path = zsh/plugins/gomi
-	url = https://github.com/b4b4r07/zsh-gomi.git
