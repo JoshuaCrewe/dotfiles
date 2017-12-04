@@ -29,7 +29,7 @@
 ;;; Code:
 
 (require 'dash)
-(require 'f)
+;; (require 'f)
 
 (defun evil-unimpaired//find-relative-filename (offset)
   (when buffer-file-name

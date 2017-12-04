@@ -18,6 +18,7 @@ emacs.d/*
 !emacs.d/init.el
 !emacs.d/custom.el
 !emacs.d/themes
+!emacs.d/lisp
 
 mutt/temp/**
 mutt/cache/**

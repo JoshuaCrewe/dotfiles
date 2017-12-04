@@ -8,17 +8,7 @@
 (setq package-enable-at-startup nil)
 (package-initialize)
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-
-;; Also add all directories within "lisp"
-;; I use this for packages I'm actively working on, mostly.
-(let ((files (directory-files-and-attributes "~/.emacs.d/lisp" t)))
-  (dolist (file files)
-    (let ((filename (car file))
-          (dir (nth 1 file)))
-      (when (and dir
-                 (not (string-suffix-p "." filename)))
-(add-to-list 'load-path (car file))))))
+(add-to-list 'load-path "~/.emacs.d/lisp/")
 
 ;; Don't litter my init file
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
@@ -42,12 +32,21 @@
    (package-refresh-contents)
    (package-install 'use-package))
 
-
 (eval-when-compile
    (require 'use-package))
 
+(use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-one t)
+  )
+
+;; (use-package seoul256-theme
+ ;; :ensure t)
+
 (use-package helm
   :ensure t)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
 
 (use-package evil
   :ensure t
@@ -62,11 +61,11 @@
   (use-package evil-surround
     :ensure t
     :config
-    (global-evil-surround-mode)))
+    (global-evil-surround-mode))
 
-(use-package emmet-mode
-  :ensure t
-  :commands emmet-mode)
+    (require 'evil-unimpaired)
+  )
+
 
  (use-package org
    :ensure t
@@ -83,11 +82,6 @@
   (add-hook 'evil-org-mode-hook
             (lambda ()
               (evil-org-set-key-theme))))
-(use-package doom-themes
-  :ensure t
-  :config
-  (load-theme 'doom-one t)
-  )
 (use-package php-mode
   :ensure t)
 
@@ -102,35 +96,54 @@
 
 (define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
 
-;; (use-package seoul256-theme
- ;; :ensure t)
-
 (defvar backup-dir "~/.emacs.d/backups/")
 (setq backup-directory-alist (list (cons "." backup-dir)))
 (setq make-backup-files nil)
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-
-;; (require 'evil-unimpaired.el)
+(define-key evil-normal-state-map (kbd "C-s") 'save-buffer)
+(define-key evil-insert-state-map (kbd "C-s") 'save-buffer)
 
 ;; PACKAGES
 
 ;; Distraction Free Writing in emacs
 ;; https://github.com/joostkremers/writeroom-mode
 
+(use-package writeroom-mode
+  :ensure t
+  :defer t
+  )
+
 ;; Magit ?
+(use-package magit
+  :ensure t
+  :defer t
+  )
+(use-package evil-magit
+  :ensure t
+  )
 
 ;; Emmet
+(use-package emmet-mode
+  :ensure t
+  :commands emmet-mode)
 
 ;; Asyncrounous Linting
 
 ;; Surround
+(use-package evil-surround
+  :ensure t
+  )
 
 ;; ragtag
 
 ;; Hide highlights after search
 
 ;; Auto add comments to start of line
+;; (use-package evil-nerd-commenter
+  ;; :ensure t
+  ;; :config
+  ;; (evilnc-default-hotkeys)
+  ;; )
 
 ;; vim-lion - formatting text ?
 
