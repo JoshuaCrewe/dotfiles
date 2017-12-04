@@ -12,3 +12,5 @@ alias vu="cd ~/vagrant && vagrant up && cd -"
 alias vh="cd ~/vagrant && vagrant halt && cd -"
 alias vp="cd ~/vagrant && vagrant provision && cd -"
 alias vn="sudo vim -O ~/vagrant/Sites.yaml /etc/hosts"
+
+alias mutt='neomutt'

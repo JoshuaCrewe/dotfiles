@@ -39,6 +39,9 @@ setopt auto_menu
 # Allow multiple terminal sessions to all append to one zsh command history
 setopt APPEND_HISTORY 
 
+# To retrieve the history file everytime history is called upon
+setopt SHARE_HISTORY
+
 # Add comamnds as they are typed, don't wait until shell exit
 setopt INC_APPEND_HISTORY 
 

@@ -31,6 +31,7 @@ Plug 'simeji/winresizer'              " Easily resize windows with <c-e>
 Plug 'phongvcao/vim-stardict'         " Lok up words in the dictionary
 Plug 'tommcdo/vim-lion'               " align stuff according to marks
 Plug 'henrik/vim-reveal-in-finder'    " Show the current file in Macos Finder
+Plug 'mileszs/ack.vim'                " Search a codebase using Ag ( saved in quick fix window )
 " Snippets
 " Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -46,7 +47,7 @@ Plug 'junegunn/goyo.vim'              " Distraction free coding
 Plug 'ap/vim-css-color'               " show colors in a highlight
 Plug 'airblade/vim-gitgutter'         " Git marks in the gutter
 Plug 'sjl/gundo.vim'                  " Undo tree visualisation
-" Plug 'wincent/terminus'               " Get a better terminal experience
+Plug 'wincent/terminus'               " Get a better terminal experience
 " Syntax
 Plug 'cakebaker/scss-syntax.vim' 
 Plug 'hail2u/vim-css3-syntax'
@@ -69,6 +70,14 @@ Plug 'keith/investigate.vim'          " An alternative documentation lookup
 
 Plug 'tpope/vim-dispatch'             " Async building
 Plug 'junegunn/vim-journal'           " Nice colours for things like lists
+Plug 'metakirby5/codi.vim'
+Plug 'dhruvasagar/vim-table-mode'
+
+if has('nvim')
+    Plug 'dylanaraps/taskrunner.nvim'
+    let g:taskrunner#unlisted = 0
+endif
+
 call plug#end()
 
 
@@ -302,6 +311,8 @@ onoremap av :<C-u>normal! 0f:lvt;<CR><space>
 " nmap <leader>= gg=G``
 
 au BufNewFile,BufRead *.scss,*.css,*.js nnoremap <buffer> <leader>= gg=G``
+
+autocmd BufNewFile,BufRead ~/dotfiles/mutt/temp/neomutt* set filetype=mail
 
 " Load Vimrc for editing
 nnoremap <leader>vim :silent :edit ~/dotfiles/vimrc<cr>
@@ -555,3 +566,24 @@ vnoremap <expr> cN g:mc . "``cgN"
 "
 " vnoremap <expr> cq ":\<C-u>call SetupCR()\<CR>" . "gv" . g:mc . "``qz"
 " vnoremap <expr> cQ ":\<C-u>call SetupCR()\<CR>" . "gv" . substitute(g:mc, '/', '?', 'g') . "``qz"
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" A command for running quick commands in the terminal and looking for them
+" later
+"
+" 1. Open a scratch buffer
+"   - Smaller height
+"   - Not hidden
+"   - Not the same buffer as origin page
+" 2. Call termopen() for that buffer with the command
+" 3. Dont loose focus from current working window
+
+" command! Run vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
+" help jobstart
+" help termopen
+" help new
+
+" tnoremap <Esc> <C-\><C-n>
