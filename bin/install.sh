@@ -24,6 +24,13 @@ exit
 # [X] Install zsh plugins
 # [X] set up yarn and install packages
 # [ ] Clean up ?
+# [ ] Add a todo list when finishing install
+    # - Sign in to Firefox
+    # - Add vimium settings
+    # - Generate ssh keys for git management ( add to github / bitbucket )
+    # - import pgp key ?
+    # - Update settings for Karabiner and MacOs ( Caps to Control )
+# [ ] - Add option to set up vagrant box too
 
 #   ___         _                                                   
 #  | _ \__ _ __| |____ _ __ _ ___ _ __  __ _ _ _  __ _ __ _ ___ _ _ 
@@ -43,6 +50,7 @@ fi;
 brew update
 
 # Install everything in Brewfile
+# TODO: Check if Brewfile exists
 brew bundle
 
 #   ___           _      _                   ___      _    __ _ _        
@@ -90,6 +98,7 @@ done
 chsh -s $(which zsh)
 
 # Kick it into action ?
+# This should take care of plugins too :)
 source $(HOME)/.zshrc
 
 #   _  _         _       ___         _                    
