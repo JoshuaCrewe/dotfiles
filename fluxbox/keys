@@ -14,7 +14,7 @@ Mod4 d :RootMenu
 Mod4 j :commanddialog
 Mod4 Shift r :reconfig
 
-Mod4 l :ToggleCmd { MacroCmd {SetResourceValue session.screen0.toolbar.visible true} {reconfig}} {MacroCmd {SetResourceValue session.screen0.toolbar.visible false} {reconfig} }
+Mod3 b :ToggleCmd { MacroCmd {SetResourceValue session.screen0.toolbar.visible true} {reconfig}} {MacroCmd {SetResourceValue session.screen0.toolbar.visible false} {reconfig} }
 
 Mod4 w :Close
 Mod4 q :kill
