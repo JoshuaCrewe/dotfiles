@@ -38,7 +38,7 @@ exit
 #  |_| \__,_\__|_\_\__,_\__, \___|_|_|_\__,_|_||_\__,_\__, \___|_|  
 #                       |___/                         |___/        
 
-# TODO: Make a Brewfile with the much needed packages in it
+DOTS = "${HOME}/dotfiles"
 
 # If Homebrew is not installed
 if ! which brew > /dev/null; then
@@ -50,8 +50,10 @@ fi;
 brew update
 
 # Install everything in Brewfile
-# TODO: Check if Brewfile exists
-brew bundle
+# TODO: Check if Brewfile exists. EDIT: I dont know if this works
+if [[ -f $DOTS/packages/Brewfile ]]; then
+    brew bundle $DOTS/packages/Brewfile
+fi
 
 #   ___           _      _                   ___      _    __ _ _        
 #  | _ ) ___  ___| |_ __| |_ _ _ __ _ _ __  |   \ ___| |_ / _(_) |___ ___
@@ -61,7 +63,7 @@ brew bundle
 
 # TODO: Check if any of the files already exist. If they do then make a backup of them.
 
-ignore="Brewfile.work Brewfile.home Brewfile README.md .git .gitignore bin config vimfx vimium.txt .DS_Store";
+ignore="README.md .git .gitignore bin config vimfx vimium.txt .DS_Store packages";
 
 if [[ $IS_MAC == 1 ]]; then
     ignore="${ignore} fluxbox Xresources Xmodmap xbindkeysrc xinitrc"
@@ -71,7 +73,7 @@ if [[ $IS_LINUX == 1 ]]; then
     ignore="${ignore} hammerspoon"
 fi
 
-for filename in *; do
+for filename in $DOTS/*; do
     if [[ ! $ignore =~ $filename ]]; then
         mv "$filename" "$(HOME)/.$filename"
     fi
