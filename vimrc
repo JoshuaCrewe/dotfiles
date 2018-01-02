@@ -207,6 +207,8 @@ au FileType snippets setl foldlevel=99
 au BufRead,BufNewFile *.md set wrap linebreak breakindent  | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
 
+au BufRead,BufNewFile jrnl*.txt set wrap linebreak breakindent  | :Goyo 100 " make juornaling more readable
+
 " au BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['css', 'scss', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 
