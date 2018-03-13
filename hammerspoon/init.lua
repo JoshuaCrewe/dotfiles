@@ -2,6 +2,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
   -- hs.notify.new({title="Hammerspoon", informativeText="Hello Luke"}):send()
 end)
 
+
 -- Capture the hostname, so we can make this config behave differently across my Macs
 hostname = hs.host.localizedName()
 
@@ -90,7 +91,7 @@ hs.hotkey.bind(mash_shift, '/', hs.hints.windowHints)
 -- App Launching
 hs.hotkey.bind(mash_app, 'J', function () hs.application.launchOrFocus("iTerm") end)
 hs.hotkey.bind(mash_app, 'K', function () hs.application.launchOrFocus("Firefox") end)
-hs.hotkey.bind(mash_app, 'S', function () hs.application.launchOrFocus("Slack") end)
+hs.hotkey.bind(mash_app, 'S', function () hs.application.launchOrFocus("Firefox") end) -- Using browser slack at work
 hs.hotkey.bind(mash_app, 'T', function () hs.application.launchOrFocus("Transmit") end)
 hs.hotkey.bind(mash_app, 'L', function () hs.application.launchOrFocus("Messages") end)
 hs.hotkey.bind(mash_app, 'M', function () hs.application.launchOrFocus("Mail") end)

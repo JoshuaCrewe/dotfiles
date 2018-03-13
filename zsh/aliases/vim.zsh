@@ -12,6 +12,8 @@
     alias zsh-functions='vim -c e ~/dotfiles/zsh/functions/init.zsh'
     alias zsh-options='vim -c e ~/dotfiles/zsh/options/init.zsh'
 
+    alias vimagit='vim -c Magit -c only'
+
     # Shhh dont tell anyone
     alias ed='emacs'
 # }}

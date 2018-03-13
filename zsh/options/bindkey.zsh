@@ -7,6 +7,7 @@ bindkey "^D"      delete-char                          # ctrl-d
 bindkey "^F"      forward-char                         # ctrl-f
 bindkey "^B"      backward-char                        # ctrl-b
 bindkey -e # Default to standard emacs bindings, regardless of editor string
+# bindkey -v # Default to standard vim bindings, made possible by status
 
 # Red dots for completing process'
 # http://stackoverflow.com/a/844299

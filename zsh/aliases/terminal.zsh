@@ -56,3 +56,6 @@ alias sz='source ~/.zshrc'
 alias note="notes"
 alias fnotes="notes-fzf"
 
+# https://github.com/FraGag/feeds-to-pocket
+alias pocket="feeds-to-pocket ~/.gitshare/docs/config/feeds-to-pocket.yaml"
+alias getpocket="o https://getpocket.com"
