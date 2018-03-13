@@ -537,13 +537,6 @@ au BufNewFile,BufRead *pentadactylrc*,*.penta set filetype=vim
 
 set tags+=.tags;$HOME
 
-" Use ag for vimgrep
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
-
 " Create some space around parens
 noremap g(<space> T(i<space><esc>t)a<space><esc> 
 noremap g{<space> T{i<space><esc>t}a<space><esc> 
@@ -584,6 +577,14 @@ vnoremap <expr> cN g:mc . "``cgN"
 "
 " vnoremap <expr> cq ":\<C-u>call SetupCR()\<CR>" . "gv" . g:mc . "``qz"
 " vnoremap <expr> cQ ":\<C-u>call SetupCR()\<CR>" . "gv" . substitute(g:mc, '/', '?', 'g') . "``qz"
+
+
+" Use ag for vimgrep
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
 
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
