@@ -22,3 +22,7 @@ bindkey "^I" expand-or-complete-with-dots
 # Use ^o in completion menu to use selection and show next completion options
 # Useful for moving around folders.
 bindkey -M menuselect '^o' accept-and-infer-next-history
+
+
+bindkey "^X^G" open-tig-status
+bindkey "^X^B" fzf-checkout-branch
