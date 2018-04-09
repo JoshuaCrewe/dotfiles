@@ -5,6 +5,8 @@
 #  /____|___/_| |_|_|  \___|
 #                           
 
+source ~/dotfiles/zsh/widgets/init.zsh
+
 source ~/dotfiles/zsh/options/init.zsh
 
 source ~/dotfiles/zsh/aliases/init.zsh
