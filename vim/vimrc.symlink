@@ -318,7 +318,7 @@ au BufNewFile,BufRead *.scss,*.css,*.js nnoremap <buffer> <leader>= gg=G``
 autocmd BufNewFile,BufRead ~/dotfiles/mutt/temp/neomutt* set filetype=mail
 
 " Load Vimrc for editing
-nnoremap <leader>vim :silent :edit ~/dotfiles/vimrc<cr>
+nnoremap <leader>vim :silent :edit ~/.vimrc<cr>
 
 " Source vimrc
 nmap <leader>r :source ~/.vimrc<cr>
@@ -406,6 +406,22 @@ nnoremap <leader>sc :StarDict <c-R><c-W><CR>
 
 " Seen in Steve Losh's .vimrc for sorting css/sass alphabetically
 au BufNewFile,BufRead *.scss,*.css nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
+
+
+" Better terminal experience in Vim
+if has('nvim')
+    " Remove all numbers
+    au TermOpen * setlocal nonu nornu
+
+    " Be able to start typing immediately
+    au TermOpen * startinsert
+else
+    " Never have numbers in vim terminal mode
+    au BufWinEnter,InsertLeave * if &buftype == 'terminal' | setlocal nonu nornu | endif
+endif
+
+" Do not show numbers when writing commit messages
+au FileType gitcommit setlocal nonu nornu
 
 " K will search vim help in vimfiles
 au FileType vim setlocal keywordprg=:help
@@ -608,6 +624,7 @@ augroup plugin-devdocs
   autocmd!
   autocmd FileType php,html,javascript,scss,python nmap <buffer>K <Plug>(devdocs-under-cursor)
 augroup END
+
 
 " A command for running quick commands in the terminal and looking for them
 " later
