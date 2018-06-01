@@ -17,3 +17,10 @@
           --all \
           --format=%s
     which = !git branch | grep -i
+
+    s = status
+    a = add
+    b = branch
+    c = commit
+    d = diff
+    o = checkout

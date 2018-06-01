@@ -3,9 +3,9 @@
         alias vim='nvim'
     fi
     alias vi='vim'
-    alias vimrc='vim -c e ~/dotfiles/vimrc'
-    alias zshrc='vim -c e ~/dotfiles/zshrc'
-    alias tmuxconf='vim -c e ~/dotfiles/tmux.conf'
+    alias vimrc='vim -c e ~/dotfiles/vim/vimrc'
+    alias zshrc='vim -c e ~/dotfiles/zsh/zshrc'
+    alias tmuxconf='vim -c e ~/dotfiles/tmux/tmux.conf'
 
     alias zsh-aliases='vim -c e ~/dotfiles/zsh/aliases/init.zsh'
     alias zsh-plugins='vim -c e ~/dotfiles/zsh/plugins/init.zsh'

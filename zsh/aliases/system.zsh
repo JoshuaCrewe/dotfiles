@@ -28,7 +28,6 @@
 
     # Gomi
     if [[ $IS_MAC == 1 ]]; then
-        alias gomi='gomi -s'
         alias trash='gomi -s'
     fi
 # }}

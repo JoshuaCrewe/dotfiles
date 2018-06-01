@@ -5,12 +5,11 @@ function open-tig-status {
 }
 zle -N open-tig-status
 
-function fzf-checkout-branch() {
-    local branches branch
-    branches=$(git branch --all | grep -v $(git rev-parse --abbrev-ref HEAD)) &&
-        branch=$(echo "$branches" |
-    fzf --height 40% --reverse -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-        git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+function fzf-branches() {
+    git branch -a --color=always | grep -v '/HEAD\s' | sort |
+        fzf --height 50% --ansi --multi
+        sed 's/^..//' | cut -d' ' -f1 |
+        sed 's#^remotes/##'
     zle accept-line
 }
-zle -N fzf-checkout-branch
+zle -N fzf-branches

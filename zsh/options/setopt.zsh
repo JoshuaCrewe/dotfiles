@@ -69,3 +69,4 @@ setopt ALWAYS_TO_END
 
 # Enable parameter expansion, command substitution, and arithmetic expansion in the prompt
 setopt PROMPT_SUBST
+

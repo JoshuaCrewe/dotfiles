@@ -1,32 +1,36 @@
 .DS_Store
-
-vim/backup/**
-vim/undo/**
-vim/swap/**
-vim/plugged/**
-vim/*.tmp
-viminfo
-viminfo.*
 .netrwhist
 .un~
+fbrun_history
 
+# Vim
+vim/vim.symlink/backup/**
+vim/vim.symlink/undo/**
+vim/vim.symlink/swap/**
+vim/vim.symlink/plugged/**
+vim/vim.symlink/*.tmp
+vim/vim.symlink/viminfo
+vim/vim.symlink/viminfo.*
+
+# Emacs
 # Ignore all of emacs.d, which is mostly compiled/downloaded scripts.
-emacs.d/*
+emacs/emacs.d.symlink/*
 *.elc
 # But don't ignore these specific locations.
-!emacs.d/snippets
-!emacs.d/init.el
-!emacs.d/custom.el
-!emacs.d/themes
-!emacs.d/lisp
+!emacs/emacs.d.symlink/snippets
+!emacs/emacs.d.symlink/init.el
+!emacs/emacs.d.symlink/custom.el
+!emacs/emacs.d.symlink/themes
+!emacs/emacs.d.symlink/lisp
 
-mutt/temp/**
-mutt/cache/**
-mutt/offlineimap.py
-mutt/offlineimap.pyc
-offlineimaprc
+# Mutt
+mutt/mutt.symlink/temp/**
+mutt/mutt.symlink/cache/**
+mutt/mutt.symlink/offlineimap.py
+mutt/mutt.symlink/offlineimap.pyc
+mutt/mutt.symlink/certificates
 
-pentadactyl/info
-/mutt/certificates
+mutt/offlineimaprc.symlink
 
-fbrun_history
+# Pentadactyl
+pentadactyl/pentadactyl.symlink/info

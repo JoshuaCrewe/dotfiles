@@ -25,4 +25,4 @@ bindkey -M menuselect '^o' accept-and-infer-next-history
 
 
 bindkey "^X^G" open-tig-status
-bindkey "^X^B" fzf-checkout-branch
+bindkey "^X^B" fzf-branches
