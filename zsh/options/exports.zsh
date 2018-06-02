@@ -37,3 +37,7 @@ export NOTES_DIRECTORY=~/Dropbox/notes/
 # Dont check internal mail.
 # This will stop the "you've got mail" message when opening a terminal
 unset MAILCHECK
+
+# Set up Go env
+export GOPATH=${HOME}/go
+export PATH=$GOPATH/bin:$PATH
