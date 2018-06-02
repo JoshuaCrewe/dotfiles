@@ -58,6 +58,7 @@ Plug 'StanAngeloff/php.vim'
 Plug 'lumiliet/vim-twig'
 Plug 'jwalton512/vim-blade'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " Wordpress
 " Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
 "Ruby
