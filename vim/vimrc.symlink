@@ -561,7 +561,7 @@ noremap g[<space> T[i<space><esc>t]a<space><esc>
 
 " Set ALE linters
 let g:ale_linters = {
-\   'scss': ['scsslint'],
+\   'scss': ['stylelint'],
 \   'javascript': ['eslint'],
 \   'html': [],
 \}
