@@ -421,9 +421,6 @@ else
     au BufWinEnter,InsertLeave * if &buftype == 'terminal' | setlocal nonu nornu | endif
 endif
 
-" Do not show numbers when writing commit messages
-au FileType gitcommit setlocal nonu nornu
-
 " K will search vim help in vimfiles
 au FileType vim setlocal keywordprg=:help
 
