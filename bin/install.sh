@@ -14,6 +14,8 @@ if [[ $(uname) = 'Darwin' ]]; then
     IS_MAC=1
 fi
 
+echo 'run main installer'
+
 # I dont want to accidentally run this yet
 exit
 
