@@ -53,7 +53,7 @@ _fail() {
 
 _link () {
 	if [ -f "$2" ] || [ -d "$2" ]; then
-        if mv "$2" "$2.bak" 2>/dev/null ; then
+        if mv "$2" "$2.bak" 2>debug.log ; then
             _backup "moved $2 to $2.bak"
         else
             _warn "Backup $2 already exists"
