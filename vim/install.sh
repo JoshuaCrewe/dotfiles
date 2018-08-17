@@ -15,11 +15,11 @@ src="$dirname/vim.symlink"
 dst="$HOME/.vim"
 _link "$src" "$dst"
 
-# if [ ! -d ~/.vim/autoload/plug.vim ]; then
-#     curl -sfLo ~/.vim/autoload/plug.vim \
-#         --create-dirs \
-#         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-#     vim +PluginInstall +qall
-# else
-#     vim +PluginInstall +qall
-# fi
+ if [ ! -d ~/.vim/autoload/plug.vim ]; then
+     curl -sfLo ~/.vim/autoload/plug.vim \
+         --create-dirs \
+         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+     vim +PluginInstall +qall
+ else
+     vim +PluginInstall +qall
+ fi
