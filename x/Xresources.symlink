@@ -3,10 +3,10 @@
 !-------------------------------------------------------------------------------
 
 Xft.dpi:                    96
-! Xft.antialias:              false
+Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
-Xft.hintstyle:              hintslight
+Xft.hintstyle:              hintsfull
 
 !-------------------------------------------------------------------------------
 ! URxvt settings
@@ -29,8 +29,8 @@ URxvt.externalBorder: 0
 
 ! Fonts
 URxvt.allow_bold:           false
-URxvt.font:                 xft:FiraMono:pixelsize=13
-URxvt*boldFont:             xft:FiraMono:pixelsize=14
+URxvt.font:                 xft:FiraCode:pixelsize=15
+URxvt*boldFont:             xft:FiraCode:pixelsize=16
 
 ! Fix font space
 ! URxvt*letterSpace: -1

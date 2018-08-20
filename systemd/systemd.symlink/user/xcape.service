@@ -1,0 +1,13 @@
+[Unit]
+Description=Xcape Daemon
+After=graphical.target
+
+[Service]
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/xcape -t 350 -e "Caps_Lock=Escape;Shift_L=Shift_L|9;Shift_R=Shift_L|0;Hyper_L=Tab"
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=default.target

@@ -39,28 +39,34 @@
 
 # Examples of commands:
 
-"win center-75"
-    control+Mod4 + k
+"run-or-raise.sh urxvt"
+    mod3 + j
 
+"run-or-raise.sh firefox"
+    mod3 + k
+
+"win center-75"
+    control+mod1 + k
+    
 "win full-screen"
-    control+Mod4 + f
+    control+mod1 + f
 
 "win left-50"
-    control+Mod4 + j
+    control+mod1 + j
 
 "win right-50"
-    control+Mod4 + l
+    control+mod1 + l
 
-"xbindkeys_show" 
-  control+shift + q
+# "xbindkeys_show" 
+  # control+shift + q
 
 # set directly keycode (here control + f with my keyboard)
-"xterm"
-  c:41 + m:0x4
+# "xterm"
+  # c:41 + m:0x4
 
 # specify a mouse button
-"xterm"
-  control + b:2
+# "xterm"
+  # control + b:2
 
 #"xterm -geom 50x20+20+20"
 #   Shift+Mod2+alt + s
