@@ -34,4 +34,4 @@ fi
 
 cd ${HOME}/dotfiles
 
-sh -c scripts/install.sh
+sh -c scripts/install
