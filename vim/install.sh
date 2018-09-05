@@ -15,12 +15,16 @@ src="$dirname/vim.symlink"
 dst="$HOME/.vim"
 _link "$src" "$dst"
 
-if [[ $is_linux == 1 ]]; then
-    _install gvim
-fi
+# if [[ $is_linux == 1 ]]; then
+    # _install gvim
+# fi
 
 if [[ $is_mac == 1 ]]; then
-    _install macvim --with-override-system-vim
+    if hash brew 2>/dev/null; then
+        if hash macvim 2>/dev/null; then
+            brew install vim --with-override-system-vi
+        fi
+    fi
 fi
 
  if [ ! -d ~/.vim/autoload/plug.vim ]; then
