@@ -3,7 +3,8 @@
 set -u # error out if variable is not set
 set -e # exit if returns non true
 
-cd "$(dirname "$0")"/..
+dirname=$(cd "$(dirname "$0")"; pwd)
+source "$dirname/_shared.sh"
 
 setup_gitconfig () {
   if ! [ -f git/gitconfig.local.symlink ]
@@ -11,7 +12,7 @@ setup_gitconfig () {
     _info 'setup gitconfig'
 
     git_credential='cache'
-    if [ $is_mac == 1]; then
+    if [ $is_mac == 1 ]; then
       git_credential='osxkeychain'
     fi
 
@@ -22,9 +23,10 @@ setup_gitconfig () {
 
     sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
 
-    _success 'gitconfig'
+    _success 'Local gitconfig'
   fi
 }
+setup_gitconfig
 
 # find the installers and run them iteratively
 git ls-tree --name-only -r HEAD | grep install.sh | while read -r installer; do
