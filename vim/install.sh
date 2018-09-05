@@ -31,7 +31,7 @@ fi
      curl -sfLo ~/.vim/autoload/plug.vim \
          --create-dirs \
          https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-     vim +PluginInstall +qall
- else
-     vim +PluginInstall +qall
+     # vim +PluginInstall +qall
+#  else
+     # vim +PluginInstall +qall
  fi
