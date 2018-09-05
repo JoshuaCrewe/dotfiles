@@ -12,6 +12,8 @@ if [[ $is_mac == 1 ]]; then
     _link "$src" "$dst"
 
     if hash brew 2>/dev/null; then
-        brew cask install hammerspoon
+        if [[ ! -d /Applications/Hammerspoon.app ]]; then
+            brew cask install hammerspoon
+        fi
     fi
 fi

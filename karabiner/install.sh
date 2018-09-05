@@ -12,6 +12,8 @@ if [[ $is_mac == 1 ]]; then
     _link "$src" "$dst"
 
     if hash brew 2>/dev/null; then
-        brew cask install karabiner-elements
+        if [[ ! -d /Applications/Karabiner-Elements.app ]]; then
+            brew cask install karabiner-elements
+        fi
     fi
 fi

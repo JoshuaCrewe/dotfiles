@@ -8,6 +8,8 @@ source "$dirname/../scripts/_shared.sh"
 
 if [[ $is_mac == 1 ]]; then
     if hash brew 2>/dev/null; then
-        brew cask install iterm2
+        if [[ ! -d /Applications/iTerm.app ]]; then
+            brew cask install iterm2
+        fi
     fi
 fi
