@@ -92,10 +92,12 @@ _install () {
     if ! hash $1 2>/dev/null; then
         if hash brew 2>/dev/null; then
             brew install "$1"
+            _success "$1 installed"
         elif hash pacman 2>/dev/null; then
             sudo pacman -S "$1"
+            _success "$1 installed"
         fi
     else
-        _info "$1 is already installed"
+        _success "$1 is already installed"
     fi
 }
