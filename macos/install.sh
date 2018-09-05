@@ -7,6 +7,6 @@ dirname=$(cd "$(dirname "$0")"; pwd)
 source "$dirname/../scripts/_shared.sh"
 
 
-if [[ $is_mac == 1 ]]; then
-    sh -c "$(dirname "$0")/install-macos.sh"
-fi
+# if [[ $is_mac == 1 ]]; then
+    # sh -c "$(dirname "$0")/install-macos.sh"
+# fi
