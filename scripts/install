@@ -5,6 +5,27 @@ set -e # exit if returns non true
 
 cd "$(dirname "$0")"/..
 
+setup_gitconfig () {
+  if ! [ -f git/gitconfig.local.symlink ]
+  then
+    _info 'setup gitconfig'
+
+    git_credential='cache'
+    if [ $is_mac == 1]; then
+      git_credential='osxkeychain'
+    fi
+
+    _user ' - What is your github author name?'
+    read -e git_authorname
+    _user ' - What is your github author email?'
+    read -e git_authoremail
+
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
+
+    _success 'gitconfig'
+  fi
+}
+
 # find the installers and run them iteratively
 git ls-tree --name-only -r HEAD | grep install.sh | while read -r installer; do
 	echo "› ${installer}..."

@@ -34,3 +34,5 @@ mutt/offlineimaprc.symlink
 
 # Pentadactyl
 pentadactyl/pentadactyl.symlink/info
+
+git/gitconfig.local.symlink
