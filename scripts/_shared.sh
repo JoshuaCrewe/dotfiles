@@ -57,11 +57,14 @@ _link () {
     fi
 
 	if [ -f "$2" ] || [ -d "$2" ]; then
-        if mv "$2" "$2.bak" 2>$HOME/dotfiles/debug.log ; then
-            _backup "moved $2 to $2.bak"
-        else
-            _warn "Backup $2 already exists"
+
+        if [ -f "$2.bak" ] || [ -d "$2.bak" ]; then
+            rm -rf "$2.bak"
         fi
+
+        mv "$2" "$2.bak"
+        _backup "moved $2 to $2.bak"
+
 	fi
 	ln -sf "$1" "$2"
 	_success "linked $1 to $2"
