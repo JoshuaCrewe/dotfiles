@@ -1,6 +1,3 @@
-[user]
-    name = Joshua Crewe
-    email = joshua@venncreative.co.uk
 [color]
     ui = true
 [push]
@@ -11,8 +8,10 @@
     ff= true
 [include]
     path = ~/dotfiles/git/git-aliases
+    path = ~/.gitconfig.local
 [core]
     editor = $(which vim)
     excludesfile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [help]
     autocorrect = -1

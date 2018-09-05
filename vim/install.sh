@@ -15,6 +15,14 @@ src="$dirname/vim.symlink"
 dst="$HOME/.vim"
 _link "$src" "$dst"
 
+if [[ $is_linux == 1 ]]; then
+    _install gvim
+fi
+
+if [[ $is_mac == 1 ]]; then
+    _install macvim --with-override-system-vim
+fi
+
  if [ ! -d ~/.vim/autoload/plug.vim ]; then
      curl -sfLo ~/.vim/autoload/plug.vim \
          --create-dirs \

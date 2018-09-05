@@ -19,4 +19,4 @@ from joshua@venncreative.co.uk
 user joshua@venncreative.co.uk
 tls on
 tls_certcheck off
-passwordeval "security find-generic-password -l msmtp -a joshuavenn -w"
+passwordeval "gpg -dq ~/dotfiles/offlineimap/work.gpg"

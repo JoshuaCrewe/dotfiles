@@ -6,8 +6,8 @@ set -e # exit if returns non true
 dirname=$(cd "$(dirname "$0")"; pwd)
 source "$dirname/../scripts/_shared.sh"
 
-_install go
+src="$dirname/nvim.symlink"
+dst="$HOME/.config/nvim"
+_link "$src" "$dst"
 
-# Set up the go path / working environment
-export GOPATH=${HOME}/go
-export PATH=$GOPATH/bin:$PATH
+_install nvim

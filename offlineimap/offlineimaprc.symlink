@@ -1,0 +1,45 @@
+[general]
+ui = ttyui
+accounts = work
+pythonfile=~/.mutt/offlineimap.py
+fsync = False
+
+[Account JoshuaCrewe]
+localrepository = JoshuaCrewe-local
+remoterepository = JoshuaCrewe-remote 
+postsynchook = notmuch new
+
+[Repository JoshuaCrewe-local]
+type = Maildir
+localfolders = ~/.mail/me-joshuacrewe.co.uk
+
+[Repository JoshuaCrewe-remote]
+maxconnections = 1
+type = IMAP 
+remotehost= mail.joshuacrewe.co.uk 
+remoteport = 993
+remoteuser = me@joshuacrewe.co.uk
+remotepasseval = get_pass("home")
+ssl = yes
+cert_fingerprint = 562da1e84d680b4ce287c3c7526d7803134a2d09
+realdelete = no
+
+[Account work]
+localrepository = work-local
+remoterepository = work-remote 
+postsynchook = notmuch new
+
+[Repository work-local]
+type = Maildir
+localfolders = ~/.mail/joshua-venncreative.co.uk
+
+[Repository work-remote]
+maxconnections = 1
+type = IMAP 
+remotehost= mail.venncreative.co.uk 
+remoteport = 993
+remoteuser = joshua@venncreative.co.uk
+remotepasseval = get_pass("work")
+ssl = yes
+cert_fingerprint = 562da1e84d680b4ce287c3c7526d7803134a2d09
+realdelete = yes

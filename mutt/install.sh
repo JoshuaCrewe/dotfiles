@@ -6,8 +6,12 @@ set -e # exit if returns non true
 dirname=$(cd "$(dirname "$0")"; pwd)
 source "$dirname/../scripts/_shared.sh"
 
-_install go
+src="$dirname/mutt.symlink"
+dst="$HOME/.mutt"
+_link "$src" "$dst"
 
-# Set up the go path / working environment
-export GOPATH=${HOME}/go
-export PATH=$GOPATH/bin:$PATH
+src="$dirname/muttrc.symlink"
+dst="$HOME/.muttrc"
+_link "$src" "$dst"
+
+_install neomutt

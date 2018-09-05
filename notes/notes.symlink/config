@@ -1,0 +1,3 @@
+EDITOR=vim
+NOTES_DIRECTORY=~/.gitshare/gitlab.com/docs/notes/
+QUICKNOTE_FORMAT="%Y-%m-%d"

@@ -6,8 +6,10 @@ set -e # exit if returns non true
 dirname=$(cd "$(dirname "$0")"; pwd)
 source "$dirname/../scripts/_shared.sh"
 
-_install go
+if [[ $is_linux == 1 ]]; then
+    src="$dirname/i3.symlink"
+    dst="$HOME/.config/i3"
+    _link "$src" "$dst"
 
-# Set up the go path / working environment
-export GOPATH=${HOME}/go
-export PATH=$GOPATH/bin:$PATH
+    _install i3
+fi

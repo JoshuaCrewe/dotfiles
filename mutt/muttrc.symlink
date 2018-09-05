@@ -8,6 +8,8 @@ set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
 set tmpdir           = ~/.mutt/temp          # where to keep temp files
 set signature        = ~/.mutt/sig           # my signature file
 
+set trash = '+joshua-venncreative.co.uk/INBOX.Trash'
+
 # Basic Options --------------------------------------
 set wait_key = no        # shut up, mutt
 set mbox_type = Maildir  # mailbox type
@@ -48,8 +50,10 @@ mailboxes +joshua-venncreative.co.uk/INBOX \
           +joshua-venncreative.co.uk/INBOX.Sent \
           +joshua-venncreative.co.uk/INBOX.Drafts \
           +joshua-venncreative.co.uk/INBOX.Spam \
+          +joshua-venncreative.co.uk/INBOX.Trash \
 # Default inbox.
 set spoolfile = +joshua-venncreative.co.uk/INBOX
+
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
@@ -166,6 +170,11 @@ source ~/.mutt/themes/seoul256.mutt
 source ~/.mutt/accounts/personal
 folder-hook me-joshuacrewe.co.uk/* source ~/.mutt/accounts/personal
 folder-hook joshua-venncreative.co.uk/*     source ~/.mutt/accounts/work
+
+# https://unix.stackexchange.com/questions/104272/mutt-trash-folder#105608
+# unset confirmappend
+# folder-hook . set trash="=trash"
+# folder-hook trash$ unset trash
 
 auto_view text/html                                      # view html automatically
 alternative_order text/plain text/enriched text/html     # save html for last

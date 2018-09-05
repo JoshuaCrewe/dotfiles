@@ -52,8 +52,12 @@ _fail() {
 }
 
 _link () {
+    if [ ! -d "$(dirname "$2")" ]; then
+        mkdir -p "$(dirname "$2")"
+    fi
+
 	if [ -f "$2" ] || [ -d "$2" ]; then
-        if mv "$2" "$2.bak" 2>debug.log ; then
+        if mv "$2" "$2.bak" 2>$HOME/dotfiles/debug.log ; then
             _backup "moved $2 to $2.bak"
         else
             _warn "Backup $2 already exists"
@@ -65,7 +69,7 @@ _link () {
 
 _sudo_link () {
 	if [ -f "$2" ] || [ -d "$2" ]; then
-        if sudo  mv "$2" "$2.bak" 2>/dev/null ; then
+        if sudo  mv "$2" "$2.bak" 2>$HOME/dotfiles/debug.log ; then
             _backup "moved $2 to $2.bak"
         else
             _warn "Backup $2 already exists"
@@ -79,4 +83,16 @@ _sudo_enable () {
     sudo systemctl enable "$1" > /dev/null
     sudo systemctl start "$1" > /dev/null
     _enable "$1"
+}
+
+_install () {
+    if ! hash $1 2>/dev/null; then
+        if hash brew 2>/dev/null; then
+            brew install "$1"
+        elif hash pacman 2>/dev/null; then
+            sudo pacman -S "$1"
+        fi
+    else
+        _info "$1 is already installed"
+    fi
 }

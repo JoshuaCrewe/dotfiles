@@ -6,8 +6,8 @@ set -e # exit if returns non true
 dirname=$(cd "$(dirname "$0")"; pwd)
 source "$dirname/../scripts/_shared.sh"
 
-_install go
+_install yarn
 
-# Set up the go path / working environment
-export GOPATH=${HOME}/go
-export PATH=$GOPATH/bin:$PATH
+if ! which yarn > /dev/null; then
+    while read in; do yarn global add "$in"; done < node-packages.txt
+fi
