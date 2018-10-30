@@ -22,7 +22,7 @@ _link "$src" "$dst"
 if [[ $is_mac == 1 ]]; then
     if hash brew 2>/dev/null; then
         if hash macvim 2>/dev/null; then
-            brew install vim --with-override-system-vi
+            brew install macvim --with-override-system-vim --without-python
         fi
     fi
 fi
