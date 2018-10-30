@@ -1,6 +1,6 @@
 # Vim {{
     if hash nvim 2>/dev/null; then
-        alias vim='nvim'
+        # alias vim='nvim'
     fi
     alias vi='vim'
     alias vimrc='vim -c e ~/dotfiles/vim/vimrc.symlink'
