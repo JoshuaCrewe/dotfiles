@@ -38,6 +38,20 @@
 #keystate_scrolllock= enable
 
 # Examples of commands:
+"run-or-raise.sh firefox"
+    Mod3 + k
+
+"run-or-raise.sh urxvt"
+    Mod3 + j
+
+"run-or-raise.sh aseprite"
+    Mod3 + p
+
+"xclip -selection primary -o | xclip -selection clipboard -i"
+    Mod4+c
+
+"xclip -selection primary -o"
+    Mod4+v
 
 "run-or-raise.sh urxvt"
     mod3 + j

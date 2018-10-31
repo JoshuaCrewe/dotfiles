@@ -2,10 +2,10 @@
 ! Xft settings
 !-------------------------------------------------------------------------------
 
-Xft.dpi:                    96
+! Xft.dpi:                    141
 Xft.antialias:              true
 Xft.rgba:                   rgb
-Xft.hinting:                false
+Xft.hinting:                true
 Xft.hintstyle:              hintnone
 
 !-------------------------------------------------------------------------------
@@ -23,14 +23,14 @@ URxvt.urgentOnBell:         false
 URxvt.visualBell:           false
 URxvt.loginShell:           true
 URxvt.saveLines:            50
-URxvt.lineSpace:            0
-URxvt.internalBorder: 1
-URxvt.externalBorder: 0
+URxvt.lineSpace:            5
+URxvt.internalBorder: 2
+URxvt.externalBorder: 2
 
 ! Fonts
-URxvt.allow_bold:           false
-URxvt.font:                 xft:FiraCode:pixelsize=15
-URxvt*boldFont:             xft:FiraCode:pixelsize=16
+URxvt.allow_bold:           true
+URxvt.font:                 xft:FiraCode-Bold:pixelsize=16
+URxvt*boldFont:             xft:FiraCode-Bold:pixelsize=16
 
 ! Fix font space
 ! URxvt*letterSpace: -1
