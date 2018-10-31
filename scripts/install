@@ -1,0 +1,133 @@
+#!/usr/bin/env bash
+
+set -u # error out if variable is not set
+set -e # exit if returns non true
+
+dirname=$(cd "$(dirname "$0")"; pwd)
+
+is_linux=0
+is_mac=0
+
+if [[ $(uname) = 'Linux' ]]; then
+    is_linux=1
+fi
+
+if [[ $(uname) = 'Darwin' ]]; then
+    is_mac=1
+fi
+
+_info() {
+	# shellcheck disable=SC2059
+	printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+_user() {
+	# shellcheck disable=SC2059
+	printf "\r  [ \033[0;33m??\033[0m ] $1\n"
+}
+
+_warn() {
+	# shellcheck disable=SC2059
+	printf "\r  [ \033[0;33mWARN\033[0m ] $1\n"
+}
+
+_success() {
+	# shellcheck disable=SC2059
+	printf "\r\033[2K  [ \033[00;32mDONE\033[0m ] $1\n"
+}
+
+_backup() {
+	# shellcheck disable=SC2059
+	printf "\r\033[2K  [ \033[00;34mBACKUP\033[0m ] $1\n"
+}
+
+_enable() {
+	# shellcheck disable=SC2059
+	printf "\r\033[2K  [ \033[00;32mENABLED\033[0m ] $1\n"
+}
+
+_fail() {
+	# shellcheck disable=SC2059
+	printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+	echo ''
+	exit
+}
+
+_link () {
+    if [ ! -d "$(dirname "$2")" ]; then
+        mkdir -p "$(dirname "$2")"
+    fi
+
+	if [ -f "$2" ] || [ -d "$2" ]; then
+
+        if [ -f "$2.bak" ] || [ -d "$2.bak" ]; then
+            rm -rf "$2.bak"
+        fi
+
+        mv "$2" "$2.bak"
+        _backup "moved $2 to $2.bak"
+
+	fi
+	ln -sf "$1" "$2"
+	_success "linked $1 to $2"
+}
+
+_sudo_link () {
+	if [ -f "$2" ] || [ -d "$2" ]; then
+        if sudo  mv "$2" "$2.bak" 2>$HOME/dotfiles/debug.log ; then
+            _backup "moved $2 to $2.bak"
+        else
+            _warn "Backup $2 already exists"
+        fi
+	fi
+	sudo ln -sf "$1" "$2"
+	_success "linked $1 to $2"
+}
+
+_sudo_enable () {
+    sudo systemctl enable "$1" > /dev/null
+    sudo systemctl start "$1" > /dev/null
+    _enable "$1"
+}
+
+_install () {
+    if ! hash $1 2>/dev/null; then
+        if hash brew 2>/dev/null; then
+            brew install "$1"
+            _success "$1 installed"
+        elif hash pacman 2>/dev/null; then
+            sudo pacman -S "$1"
+            _success "$1 installed"
+        fi
+    else
+        _success "$1 is already installed"
+    fi
+}
+
+setup_gitconfig () {
+  if ! [ -f git/gitconfig.local.symlink ]
+  then
+    _info 'setup gitconfig'
+
+    git_credential='cache'
+    if [ $is_mac == 1 ]; then
+      git_credential='osxkeychain'
+    fi
+
+    _user ' - What is your github author name?'
+    read -e git_authorname
+    _user ' - What is your github author email?'
+    read -e git_authoremail
+
+    sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
+
+    _success 'Local gitconfig'
+  fi
+}
+setup_gitconfig
+
+# find the installers and run them iteratively
+git ls-tree --name-only -r HEAD | grep install.sh | while read -r installer; do
+	echo "› ${installer}..."
+	sh -c "$installer"
+done

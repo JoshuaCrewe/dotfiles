@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Usage: git cleanup-remote
+# Delete any local branches which have been merged
+
+git branch --merged master | grep -v 'master$' | xargs git branch -d

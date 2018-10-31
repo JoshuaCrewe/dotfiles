@@ -11,7 +11,13 @@ function tmux_web {
     tmux new-window -n BUILD -t $SESSION_NAME;
 
     # Start the Gulp build process
-    tmux send-keys "gulp" C-m
+    if [[ -f gulpfile.js ]]; then
+        tmux send-keys "gulp" C-m
+    fi
+
+    if [[ -f webpack.mix.js ]]; then
+        tmux send-keys "yarn watch" C-m
+    fi
 
     # Split the window vertically
     tmux split-window -v -t $SESSION_NAME:2

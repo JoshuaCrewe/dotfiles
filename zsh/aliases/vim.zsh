@@ -1,11 +1,11 @@
 # Vim {{
     if hash nvim 2>/dev/null; then
-        alias vim='nvim'
+        # alias vim='nvim'
     fi
     alias vi='vim'
-    alias vimrc='vim -c e ~/dotfiles/vim/vimrc'
-    alias zshrc='vim -c e ~/dotfiles/zsh/zshrc'
-    alias tmuxconf='vim -c e ~/dotfiles/tmux/tmux.conf'
+    alias vimrc='vim -c e ~/dotfiles/vim/vimrc.symlink'
+    alias zshrc='vim -c e ~/dotfiles/zsh/zshrc.symlink'
+    alias tmuxconf='vim -c e ~/dotfiles/tmux/tmux.conf.symlink'
 
     alias zsh-aliases='vim -c e ~/dotfiles/zsh/aliases/init.zsh'
     alias zsh-plugins='vim -c e ~/dotfiles/zsh/plugins/init.zsh'

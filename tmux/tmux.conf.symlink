@@ -20,8 +20,11 @@ setw -g pane-base-index 1
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 # splitting panes
-bind | split-window -h
-bind - split-window -v
+bind | split-window -h -c '#{pane_current_path}'
+bind - split-window -v -c '#{pane_current_path}'
+
+# Use the current path when creating a new window
+bind c new-window -c '#{pane_current_path}'
 
 # moving between panes
 bind h select-pane -L 
@@ -51,24 +54,23 @@ bind -n C-j run "(tmux display-message -p '#{pane_title}' | grep -iq vim && tmux
 bind -n C-k run "(tmux display-message -p '#{pane_title}' | grep -iq vim && tmux send-keys C-k) || tmux select-pane -U"
 bind -n C-l run "(tmux display-message -p '#{pane_title}' | grep -iq vim && tmux send-keys C-l) || tmux select-pane -R"
 
-# bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iq emacs && tmux send-keys C-H) || tmux previous-window"
-# bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iq emacs && tmux send-keys C-L) || tmux next-window"
-# bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iq emacs && tmux send-keys C-K) || tmux select-pane -U"
-# bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iq emacs && tmux send-keys C-J) || tmux select-pane -D"
-#
+# Pass useful commands in to shell
 bind C-l send-keys 'c-l'
 bind C-f send-keys 'c-f'
 
 set-option -g allow-rename off
 
 # Fixes cursor shape issues in neovim
-# set -ga terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[2 q'
+set -ga terminal-overrides ',*:Ss=\E[%p1%d q:Se=\E[2 q'
 
 # -------------------------------------------------------------------
 # Decoration (256-color)
 # -------------------------------------------------------------------
 # 256 colors please
 set -g default-terminal "screen-256color"
+
+# This will enable True Colour support ( But it more trouble than its worth )
+# set-option -ga terminal-overrides ",xterm-256color:Tc"
 
 set-option -g status-justify centre
 set-option -g status-left '#[bg=colour72] #[bg=colour237] #[bg=colour236] #[bg=colour235]#[fg=colour185] #S #[bg=colour236] '
@@ -86,6 +88,7 @@ set-window-option -g window-status-current-format '#[bg=colour236]#[fg=colour215
 # enable vi keys.
 setw -g mode-keys vi
 
+# Qickly rename window fi you need to
 bind-key , command-prompt "rename-window '%%'"
 
 # List of plugins
@@ -94,11 +97,6 @@ set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'Morantron/tmux-fingers'
-
-# Other examples:
-# set -g @plugin 'github_username/plugin_name'
-# set -g @plugin 'git@github.com/user/plugin'
-# set -g @plugin 'git@bitbucket.com/user/plugin'
 
 if "test ! -d ~/.tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm'"

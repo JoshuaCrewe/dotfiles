@@ -2,15 +2,15 @@
 .netrwhist
 .un~
 fbrun_history
+debug.log
 
 # Vim
-vim/vim.symlink/backup/**
-vim/vim.symlink/undo/**
-vim/vim.symlink/swap/**
-vim/vim.symlink/plugged/**
-vim/vim.symlink/*.tmp
-vim/vim.symlink/viminfo
-vim/vim.symlink/viminfo.*
+vim/vim.symlink/*
+
+!vim/vim.symlink/init.vim
+!vim/vim.symlink/snippets
+!vim/vim.symlink/templates
+!vim/vim.symlink/syntax
 
 # Emacs
 # Ignore all of emacs.d, which is mostly compiled/downloaded scripts.
@@ -34,3 +34,5 @@ mutt/offlineimaprc.symlink
 
 # Pentadactyl
 pentadactyl/pentadactyl.symlink/info
+
+git/gitconfig.local.symlink

@@ -23,6 +23,7 @@ Plug 'jreybert/vimagit'
 Plug 'junegunn/vim-slash'             " For hiding highlights after searching
 Plug 'mattn/emmet-vim'                " Code writing shorthand
 Plug 'tomtom/tcomment_vim'            " Commenting out stuff
+
 Plug 'w0rp/ale'                       " Async syntax checking
 Plug 'junegunn/gv.vim'                " Requires fugitive - commit viewer
 Plug 'chip/vim-fat-finger'            " Corrects some easily made typing mistakes
@@ -33,55 +34,36 @@ Plug 'tommcdo/vim-lion'               " align stuff according to marks
 Plug 'henrik/vim-reveal-in-finder'    " Show the current file in Macos Finder
 Plug 'mileszs/ack.vim'                " Search a codebase using Ag ( saved in quick fix window )
 " Snippets
-" Plug 'SirVer/ultisnips'               " Snippet expansion
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'honza/vim-snippets'             " Snippets!
 " Colour Schemes
 Plug 'junegunn/seoul256.vim'          " A colour scheme which works
-" Plug 'altercation/vim-colors-solarized'
 " GUI
 Plug 'junegunn/goyo.vim'              " Distraction free coding
-" Plug 'junegunn/vim-peekaboo'          " Show the registers
 Plug 'ap/vim-css-color'               " show colors in a highlight
 Plug 'airblade/vim-gitgutter'         " Git marks in the gutter
 Plug 'sjl/gundo.vim'                  " Undo tree visualisation
 Plug 'wincent/terminus'               " Get a better terminal experience
 " Syntax
 Plug 'cakebaker/scss-syntax.vim' 
-Plug 'hail2u/vim-css3-syntax'
 Plug 'pangloss/vim-javascript'
-Plug 'junegunn/rainbow_parentheses.vim'
+" Plug 'hail2u/vim-css3-syntax'
+" Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'othree/html5.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'lumiliet/vim-twig'
 Plug 'jwalton512/vim-blade'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-" Wordpress
-" Plug 'dsawardekar/wordpress.vim'      " Some snippets and things
-"Ruby
-Plug 'vim-ruby/vim-ruby'
+Plug 'fatih/vim-go'
+Plug 'mxw/vim-jsx'
+Plug 'storyn26383/vim-vue'
+
 " Sessions
 Plug 'tpope/vim-obsession'            " For saving sessions
-" Documentation look up
-Plug 'rhysd/devdocs.vim'              " Look up things in DevDocs
-Plug 'keith/investigate.vim'          " An alternative documentation lookup
-
-Plug 'tpope/vim-dispatch'             " Async building
-Plug 'junegunn/vim-journal'           " Nice colours for things like lists
-Plug 'metakirby5/codi.vim'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'junegunn/vim-emoji'
-
-if has('nvim')
-    Plug 'dylanaraps/taskrunner.nvim'
-    let g:taskrunner#unlisted = 0
-endif
 
 call plug#end()
-
 
 filetype plugin on 
 filetype indent off                " Turn on indentation by filetype
@@ -166,10 +148,12 @@ else
     set viminfo+=n~/.vim/viminfo      " viminfo stores the the state of your previous editing session
 endif
 
-
+if has('nvim')
+    let g:loaded_python_provider = 1
+    let g:loaded_python3_provider = 1
+endif
 
 " Remember last cursor position
-
 augroup vimrcEx
   autocmd!
   autocmd BufReadPost *
@@ -561,10 +545,23 @@ noremap g[<space> T[i<space><esc>t]a<space><esc>
 
 " Set ALE linters
 let g:ale_linters = {
-\   'scss': ['stylelint'],
-\   'javascript': ['eslint'],
+\   'scss': ['stylelint', 'prettier'],
+\   'javascript': ['prettier', 'eslint'],
 \   'html': [],
+\   'php': ['prettier'],
+\   'markdown': ['prettier'],
 \}
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers['scss'] = ['stylelint']
+let g:ale_fixers['php'] = ['phpcbf']
+let g:ale_fixers['markdown'] = ['prettier']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
 
 " Get highlight group with F10
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
@@ -609,12 +606,12 @@ endif
 
 tnoremap <C-]> <C-\><C-n>
 
-set completefunc=emoji#complete
-augroup emoji_complete
-  autocmd!
-  autocmd FileType markdown setlocal completefunc=emoji#complete
-augroup END
-nnoremap <leader>emj :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
+" set completefunc=emoji#complete
+" augroup emoji_complete
+"   autocmd!
+"   autocmd FileType markdown setlocal completefunc=emoji#complete
+" augroup END
+" nnoremap <leader>emj :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
 
 
 " Set devdocs to open with K for certain file types
@@ -623,6 +620,7 @@ augroup plugin-devdocs
   autocmd FileType php,html,javascript,scss,python nmap <buffer>K <Plug>(devdocs-under-cursor)
 augroup END
 
+autocmd FileType,BufNewFile,BufRead nginx.conf set ft=nginx
 
 " A command for running quick commands in the terminal and looking for them
 " later

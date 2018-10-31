@@ -1,6 +1,8 @@
 # set what gets put in PATH
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:${HOME}/.local/bin:${HOME}/dotfiles/bin:$PATH"
 
+export DOTFILES="$HOME/dotfiles"
+
 # Use The Silver Searcher for fzf
 
 if [[ -x `which fzf` ]]; then
@@ -32,7 +34,7 @@ export LSCOLORS="Gxfxcxdxbxegedabagacad"
 # export GREP_OPTIONS='--color=auto'
 # export GREP_COLOR='3;33'
 
-export NOTES_DIRECTORY=~/Dropbox/notes/
+# export NOTES_DIRECTORY=~/Dropbox/notes/
 
 # Dont check internal mail.
 # This will stop the "you've got mail" message when opening a terminal
@@ -41,3 +43,5 @@ unset MAILCHECK
 # Set up Go env
 export GOPATH=${HOME}/go
 export PATH=$GOPATH/bin:$PATH
+
+export EDITOR=$(which vim)
