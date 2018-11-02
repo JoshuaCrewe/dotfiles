@@ -54,7 +54,7 @@ if ($status eq 'Discharging') {
       $full_text .= '  ';
   }
 } else {
-  $full_text .= '  ';
+  $full_text .= '  ';
 }
 
 $full_text .= "$percent%";
