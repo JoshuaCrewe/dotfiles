@@ -133,6 +133,15 @@ set $workspace1 ""
 set $workspace2 ""
 set $workspace3 ""
 
+
+set $workspace4 ""
+set $workspace5 ""
+set $workspace6 ""
+set $workspace7 ""
+set $workspace8 ""
+set $workspace9 ""
+set $workspace10 ""
+
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -216,9 +225,9 @@ bar {
               background $base01
               statusline $base05
 #                                border  background text
-              focused_workspace  $base01 $base01    $base07
-              active_workspace   $base01 $base02    $base03
-              inactive_workspace $base01 $base01    $base03
+              focused_workspace  $base01 $base01    $base03
+              active_workspace   $base01 $base02    $base07
+              inactive_workspace $base01 $base01    $base07
               urgent_workspace   $base01 $base01    $base08
         }
 }
