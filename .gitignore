@@ -32,6 +32,8 @@ mutt/mutt.symlink/certificates
 
 mutt/offlineimaprc.symlink
 
+offlineimap/*.gpg
+
 # Pentadactyl
 pentadactyl/pentadactyl.symlink/info
 
