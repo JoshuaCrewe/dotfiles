@@ -9,3 +9,5 @@ source "$dirname/../scripts/_shared.sh"
 src="$dirname/offlineimaprc.symlink"
 dst="$HOME/.offlineimaprc"
 _link "$src" "$dst"
+
+_install offlineimap

@@ -45,3 +45,5 @@ export GOPATH=${HOME}/go
 export PATH=$GOPATH/bin:$PATH
 
 export EDITOR=$(which vim)
+
+export GPG_TTY=$(tty) 

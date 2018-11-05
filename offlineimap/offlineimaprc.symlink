@@ -1,7 +1,7 @@
 [general]
 ui = ttyui
 accounts = work
-pythonfile=~/.mutt/offlineimap.py
+pythonfile=~/dotfiles/offlineimap/offlineimap.py
 fsync = False
 
 [Account JoshuaCrewe]
