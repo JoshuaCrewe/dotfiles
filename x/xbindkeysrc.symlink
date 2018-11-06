@@ -44,7 +44,7 @@
 "run-or-raise.sh urxvt"
     Mod3 + j
 
-"run-or-raise.sh aseprite"
+"run-or-raise.sh aseprite allegro"
     Mod3 + p
 
 "xclip -selection primary -o | xclip -selection clipboard -i"
@@ -52,12 +52,6 @@
 
 "xclip -selection primary -o"
     Mod4+v
-
-"run-or-raise.sh urxvt"
-    mod3 + j
-
-"run-or-raise.sh firefox"
-    mod3 + k
 
 "win center-75"
     control+mod1 + k
