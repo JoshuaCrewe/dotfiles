@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
-
-if `wmctrl -xa $1`; then
-    wmctrl -xa $1
+if [ $# -eq 2 ]; then
+    window=$2
 else
-    exec $@
+    window=$1
+fi
+
+if `wmctrl -xa $window`; then
+    wmctrl -xa $window
+    echo 'can get the window' >> ${HOME}/dotfiles/debug.log
+else
+    echo 'launched app' >> ${HOME}/dotfiles/debug.log
+    exec $1
 fi
