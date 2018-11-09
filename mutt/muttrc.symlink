@@ -54,7 +54,6 @@ mailboxes +joshua-venncreative.co.uk/INBOX \
 # Default inbox.
 set spoolfile = +joshua-venncreative.co.uk/INBOX
 
-
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
 set index_format = "[%Z]  %D  %-20.20F  %s"
@@ -112,7 +111,6 @@ set tilde                  # show tildes like in vim
 unset markers              # no ugly plus signs
 
 set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
-alternative_order text/plain text/enriched text/html
 
 # Pager Key Bindings ---------------------------------
 bind pager k  previous-line
@@ -133,7 +131,7 @@ macro pager \Cu "|urlview<enter>" "call urlview to open links"
 # Compose View Options -------------------------------
 set realname = "Joshua Crewe"        # who am i?
 set envelope_from                    # which from?
-set sig_dashes                       # dashes before sig
+set sig_dashes = no                  # dashes before sig
 set edit_headers                     # show headers when composing
 set fast_reply                       # skip to compose when replying
 set askcc                            # ask for CC:
@@ -164,7 +162,6 @@ bind pager N search-opposite
 macro index a "<limit>all\n" "show all messages (undo limit)"
 
 # Set some colours for a nice colour experience?
-# source ~/.mutt/themes/default.mutt
 source ~/.mutt/themes/seoul256.mutt
 
 source ~/.mutt/accounts/personal
@@ -179,5 +176,5 @@ folder-hook joshua-venncreative.co.uk/*     source ~/.mutt/accounts/work
 auto_view text/html                                      # view html automatically
 alternative_order text/plain text/enriched text/html     # save html for last
 
-# source ~/.mutt/colors.muttrc
-source ~/.mutt/themes/seoul256.mutt
+
+set text_flowed=yes

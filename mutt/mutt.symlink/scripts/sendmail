@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Get account name when calling script
+ACCOUNT=$1
+
+# Get the password from encrypted file
+PASSWORDEVAL="gpg -dq ~/dotfiles/offlineimap/$ACCOUNT.gpg"
+
+# Remove the account name from the positional parameters
+shift 1
+
+# Process the email and send
+${HOME}/.mutt/scripts/MIMEmbellish | msmtp -a "$ACCOUNT" --passwordeval "$PASSWORDEVAL" $@
