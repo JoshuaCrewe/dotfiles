@@ -7,6 +7,9 @@
 #   * Colour emails headers as something other than green
 #   * Change message response tree soemthing other than red
 #   * Change colour of in body email addresses
+#   * New emails should be green
+#   * Replied to emials should be less invaisive. Grey?
+#   * Status bar background should be pink, text is yellow/cream (match vim)
 #
 # If your terminal supports color, you can spice up Mutt by creating your own
 # color scheme. To define the color of an object (type of information), you

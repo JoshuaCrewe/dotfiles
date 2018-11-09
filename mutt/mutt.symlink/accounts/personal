@@ -1,6 +1,6 @@
 color status  color239 color236
 set from     = "me@joshuacrewe.co.uk"
-set sendmail = "/usr/local/bin/msmtp -a joshuacrewe"
+set sendmail = "/bin/sh $HOME/.mutt/scripts/sendmail joshuacrewe"
 
 # This is where the sent mail is stored
 unset record
