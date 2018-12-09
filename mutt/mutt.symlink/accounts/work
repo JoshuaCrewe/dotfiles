@@ -4,4 +4,8 @@ set sendmail = "/bin/sh $HOME/.mutt/scripts/sendmail work"
 
 # This is where the sent mail is stored
 unset record
-set record = '~/.mail/joshua-venncreative.co.uk/INBOX.Sent'
+set record = "+work/INBOX.Sent"
+
+set trash = '+work/INBOX.Trash'
+set spoolfile = "+work/INBOX"
+set postponed = "+work/Drafts"
