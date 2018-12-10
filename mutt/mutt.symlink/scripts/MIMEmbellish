@@ -6,6 +6,7 @@ import email
 import shlex
 import mimetypes
 import subprocess
+import os.path
 from copy import copy
 from hashlib import md5
 from email import charset
@@ -14,10 +15,14 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.nonmultipart import MIMENonMultipart
 from os.path import basename, splitext, expanduser
+from pathlib import Path
 
+# Get the account as the second argument passed
+account = str(sys.argv[1])
+# Get the path for the template file using this account name
+my_file = expanduser(Path("~/dotfiles/pandoc/templates/email-%s.html" % account))
 
 charset.add_charset('utf-8', charset.SHORTEST, '8bit')
-
 
 def pandoc(from_format, to_format='markdown', plain='markdown', title=None):
     markdown = ('markdown'
@@ -34,8 +39,10 @@ def pandoc(from_format, to_format='markdown', plain='markdown', title=None):
     if to_format in ('html', 'html5'):
         if title is not None:
             command += ' --variable=pagetitle:{}'.format(shlex.quote(title))
-        # command += ' --webtex --template={}'.format(
-                # expanduser('~/dotfiles/pandoc/templates/email.html'))
+        # Check if the template for this account exists
+        if os.access(my_file, os.R_OK):
+            # If it does then we want to use it (the work template has the email signature in it)
+            command += ' --webtex --template={}'.format( expanduser(my_file))
     return command.format(from_format, to_format)
 
 
