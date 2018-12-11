@@ -6,6 +6,6 @@ set sendmail = "/bin/sh $HOME/.mutt/scripts/sendmail joshuacrewe"
 unset record
 set record = "+JoshuaCrewe/Sent"
 
-set trash = '+JoshuaCrewe/INBOX.Trash'
+set trash = '+JoshuaCrewe/Trash'
 set spoolfile = "+JoshuaCrewe/INBOX"
 set postponed = "+JoshuaCrewe/Drafts"
