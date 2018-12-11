@@ -4,8 +4,8 @@ set alias_file       = ~/.mutt/alias         # where to store aliases
 set header_cache     = ~/.mutt/cache/headers # where to store headers
 set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
 set certificate_file = ~/.mutt/certificates  # where to store certs
-set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
-set tmpdir           = ~/.mutt/temp          # where to keep temp files
+set mailcap_path     = ~/.mutt/scripts/mailcap       # entries for filetypes
+set tmpdir           = /tmp/mutt          # where to keep temp files
 # set signature        = ~/.mutt/sig           # my signature file
 
 # Basic Options --------------------------------------
@@ -186,6 +186,5 @@ folder-hook work/*     source ~/.mutt/accounts/work
 
 auto_view text/html                                      # view html automatically
 alternative_order text/plain text/enriched text/html     # save html for last
-
 
 set text_flowed=yes

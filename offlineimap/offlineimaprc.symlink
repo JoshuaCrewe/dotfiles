@@ -43,11 +43,3 @@ remotepasseval = get_pass("work")
 ssl = yes
 cert_fingerprint = dfeebcb5e2c33a621c9913b32db776f78bbfd938bb1976e860fc082cf21b5c04
 realdelete = yes
-
-[mbnames]
-enabled = yes
-filename = ~/.mutt/mailboxes
-header = "mailboxes "
-peritem = "+%(accountname)s/%(foldername)s"
-sep = " "
-footer = "\n"

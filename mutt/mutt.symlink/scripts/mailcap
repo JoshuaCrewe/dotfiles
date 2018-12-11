@@ -1,0 +1,23 @@
+# MS Word documents
+application/msword; ~/.mutt/scripts/view_attachment.sh %s "-" '/Applications/TextEdit.app'
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; ~/.mutt/scripts/view_attachment.sh %s txt
+
+# Images
+image/jpg; ~/.mutt/scripts/view_attachment.sh %s jpg
+image/jpeg; ~/.mutt/scripts/view_attachment.sh %s jpg
+image/pjpeg; ~/.mutt/scripts/view_attachment.sh %s jpg
+image/png; ~/.mutt/scripts/view_attachment.sh %s png
+image/gif; ~/.mutt/scripts/view_attachment.sh %s gif
+
+# PDFs
+application/pdf; ~/.mutt/scripts/view_attachment.sh %s pdf
+
+# HTML
+text/html; ~/.mutt/scripts/view_attachment.sh %s html
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+# Markdown
+text/x-markdown; ~/.mutt/scripts/view_attachment.sh %s md
+
+# Unidentified files
+application/octet-stream; ~/.mutt/scripts/view_attachment.sh %s "-"
