@@ -1,0 +1,14 @@
+[retriever]
+type = SimplePOP3SSLRetriever
+server = arnie.venncreative.co.uk
+username = wp@venncreative.co.uk
+port = 995
+password_command = ("gpg", "-dq", "/Users/Joshua/.getmail/wp.gpg")
+
+[destination]
+type = Maildir
+path = ~/.mail/wp/
+
+[options]
+read_all = False
+verbose = 0

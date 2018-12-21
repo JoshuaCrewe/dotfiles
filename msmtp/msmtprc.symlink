@@ -1,5 +1,5 @@
 account joshuacrewe
-host mail.joshuacrewe.co.uk
+host smtp.zoho.eu
 port 587
 protocol smtp
 auth on
@@ -7,8 +7,7 @@ from me@joshuacrewe.co.uk
 user me@joshuacrewe.co.uk
 tls on
 tls_certcheck off
-passwordeval "security find-generic-password -l msmtp -a joshuacrewe -w"
-account default : joshuacrewe
+passwordeval "gpg -dq ~/dotfiles/offlineimap/joshuacrewe.gpg"
 
 account work
 host arnie.venncreative.co.uk
@@ -20,3 +19,5 @@ user joshua@venncreative.co.uk
 tls on
 tls_certcheck off
 passwordeval "gpg -dq ~/dotfiles/offlineimap/work.gpg"
+
+account default : joshuacrewe

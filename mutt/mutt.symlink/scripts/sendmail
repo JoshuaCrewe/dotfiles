@@ -10,4 +10,4 @@ PASSWORDEVAL="gpg -dq ~/dotfiles/offlineimap/$ACCOUNT.gpg"
 shift 1
 
 # Process the email and send
-${HOME}/.mutt/scripts/MIMEmbellish | msmtp -a "$ACCOUNT" --passwordeval "$PASSWORDEVAL" $@
+${HOME}/.mutt/scripts/MIMEmbellish $ACCOUNT | msmtp -a "$ACCOUNT" --passwordeval "$PASSWORDEVAL" $@

@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = work
+accounts = JoshuaCrewe, work
 pythonfile=~/dotfiles/offlineimap/offlineimap.py
 fsync = False
 
@@ -11,18 +11,18 @@ postsynchook = notmuch new
 
 [Repository JoshuaCrewe-local]
 type = Maildir
-localfolders = ~/.mail/me-joshuacrewe.co.uk
+localfolders = ~/.mail/JoshuaCrewe
 
 [Repository JoshuaCrewe-remote]
 maxconnections = 1
 type = IMAP 
-remotehost= mail.joshuacrewe.co.uk 
+remotehost= imap.zoho.eu 
 remoteport = 993
 remoteuser = me@joshuacrewe.co.uk
-remotepasseval = get_pass("home")
+remotepasseval = get_pass("joshuacrewe")
 ssl = yes
-cert_fingerprint = dfeebcb5e2c33a621c9913b32db776f78bbfd938bb1976e860fc082cf21b5c04
-realdelete = no
+cert_fingerprint = e87c1ff4f0b2ce134849cc873c5b9433565dd0a9feb56bed94ea27cf73f5a90b
+realdelete = yes
 
 [Account work]
 localrepository = work-local
@@ -31,12 +31,12 @@ postsynchook = notmuch new
 
 [Repository work-local]
 type = Maildir
-localfolders = ~/.mail/joshua-venncreative.co.uk
+localfolders = ~/.mail/work
 
 [Repository work-remote]
 maxconnections = 1
 type = IMAP 
-remotehost= mail.venncreative.co.uk 
+remotehost= arnie.venncreative.co.uk 
 remoteport = 993
 remoteuser = joshua@venncreative.co.uk
 remotepasseval = get_pass("work")

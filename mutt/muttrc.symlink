@@ -4,11 +4,9 @@ set alias_file       = ~/.mutt/alias         # where to store aliases
 set header_cache     = ~/.mutt/cache/headers # where to store headers
 set message_cachedir = ~/.mutt/cache/bodies  # where to store bodies
 set certificate_file = ~/.mutt/certificates  # where to store certs
-set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
-set tmpdir           = ~/.mutt/temp          # where to keep temp files
-set signature        = ~/.mutt/sig           # my signature file
-
-set trash = '+joshua-venncreative.co.uk/INBOX.Trash'
+set mailcap_path     = ~/.mutt/scripts/mailcap       # entries for filetypes
+set tmpdir           = /tmp/mutt          # where to keep temp files
+# set signature        = ~/.mutt/sig           # my signature file
 
 # Basic Options --------------------------------------
 set wait_key = no        # shut up, mutt
@@ -25,14 +23,6 @@ set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
 set beep = no
 
-# Sidebar Patch --------------------------------------
-set sidebar_delim_chars   = './'
-set sidebar_visible = yes
-set sidebar_width   = 30
-set sidebar_short_path = yes
-# https://www.neomutt.org/guide/gettingstarted.html#intro-sidebar-format
-set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
-set mail_check_stats
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
@@ -46,25 +36,50 @@ hdr_order from: to: cc: date: subject:  # and in this order
 
 # Account Settings -----------------------------------
 # Mailboxes to show in the sidebar.
-mailboxes +joshua-venncreative.co.uk/INBOX \
-          +joshua-venncreative.co.uk/INBOX.Sent \
-          +joshua-venncreative.co.uk/INBOX.Drafts \
-          +joshua-venncreative.co.uk/INBOX.Spam \
-          +joshua-venncreative.co.uk/INBOX.Trash \
-# Default inbox.
-set spoolfile = +joshua-venncreative.co.uk/INBOX
+# Automattic mailboxes from offlineimap
+# source ~/.mutt/mailboxes
+mailboxes "===== Home ====="\
+        "  "\
+        "+JoshuaCrewe/Drafts"\
+        "+JoshuaCrewe/INBOX"\
+        "+JoshuaCrewe/Sent"\
+        "+JoshuaCrewe/Spam"\
+        "+JoshuaCrewe/Templates"\
+        "+JoshuaCrewe/Trash"\
+        "+JoshuaCrewe/ZMGroup"\
+        "+JoshuaCrewe/ZMNewsLetter"\
+        "+JoshuaCrewe/ZMNotification"\
+        "+JoshuaCrewe/bots"\
+        "+JoshuaCrewe/ebay"\
+        "   "\
+        "===== Work ====="\
+        "    "\
+        "+work/INBOX"\
+        "+work/INBOX.Archive"\
+        "+work/INBOX.Drafts"\
+        "+work/INBOX.Junk"\
+        "+work/INBOX.Sent"\
+        "+work/INBOX.Trash"\
+        "+work/INBOX.heidi"\
+        "+work/INBOX.spam"\
+        "+work/INBOX.web"\
+        "     "\
+        "===== WP ====="\
+        "      "\
+        "+wp"\
+        "+wp/Trash"
+# Sidebar Patch --------------------------------------
+set sidebar_delim_chars   = './'
+set sidebar_visible = yes
+set sidebar_width   = 30
+set sidebar_short_path = yes
+# https://www.neomutt.org/guide/gettingstarted.html#intro-sidebar-format
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+# set sidebar_folder_indent = yes
 
 # Index View Options ---------------------------------
-set date_format = "%m/%d"
-set index_format = "[%Z]  %D  %-20.20F  %s"
-set sort = threads                         # like gmail
-set sort_aux = reverse-last-date-received  # like gmail
-set uncollapse_jump                        # don't collapse on an unread message
-set sort_re                                # thread based on regex
-set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
-
-# Index View Options ---------------------------------
- set date_format = "%m/%d"
+ set date_format = "%d/%m"
  set index_format = "[%Z]  %D  %-20.20F  %s"
  set sort = threads                         # like gmail
  set sort_aux = reverse-last-date-received  # like gmail
@@ -83,6 +98,7 @@ bind index <space>  collapse-thread
 
 # Ctrl-R to mark all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
 
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
@@ -127,6 +143,7 @@ bind attach <return> view-mailcap
 # Open URLs properly
 macro pager \Cu "|urlview<enter>" "call urlview to open links"
 
+
 # Writing Emails
 # Compose View Options -------------------------------
 set realname = "Joshua Crewe"        # who am i?
@@ -165,8 +182,9 @@ macro index a "<limit>all\n" "show all messages (undo limit)"
 source ~/.mutt/themes/seoul256.mutt
 
 source ~/.mutt/accounts/personal
-folder-hook me-joshuacrewe.co.uk/* source ~/.mutt/accounts/personal
-folder-hook joshua-venncreative.co.uk/*     source ~/.mutt/accounts/work
+folder-hook JoshuaCrewe/* source ~/.mutt/accounts/personal
+folder-hook work/*     source ~/.mutt/accounts/work
+folder-hook wp/*     source ~/.mutt/accounts/wp
 
 # https://unix.stackexchange.com/questions/104272/mutt-trash-folder#105608
 # unset confirmappend
@@ -176,5 +194,6 @@ folder-hook joshua-venncreative.co.uk/*     source ~/.mutt/accounts/work
 auto_view text/html                                      # view html automatically
 alternative_order text/plain text/enriched text/html     # save html for last
 
-
 set text_flowed=yes
+
+macro index ,o ":source ~/.mutt/scripts/fzffolder|<enter>"
