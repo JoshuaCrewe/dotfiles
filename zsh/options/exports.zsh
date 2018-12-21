@@ -1,6 +1,9 @@
 # set what gets put in PATH
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:${HOME}/.local/bin:${HOME}/dotfiles/bin:$PATH"
 
+# Use Brew curl
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
 export DOTFILES="$HOME/dotfiles"
 
 # Use The Silver Searcher for fzf
@@ -47,3 +50,7 @@ export PATH=$GOPATH/bin:$PATH
 export EDITOR=$(which vim)
 
 export GPG_TTY=$(tty) 
+
+if hash nnn 2>/dev/null; then
+    export NNN_USE_EDITOR=1
+fi
