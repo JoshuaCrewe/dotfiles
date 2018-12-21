@@ -62,8 +62,12 @@ mailboxes "===== Home ====="\
         "+work/INBOX.Trash"\
         "+work/INBOX.heidi"\
         "+work/INBOX.spam"\
-        "+work/INBOX.web"
-
+        "+work/INBOX.web"\
+        "     "\
+        "===== WP ====="\
+        "      "\
+        "+wp"\
+        "+wp/Trash"
 # Sidebar Patch --------------------------------------
 set sidebar_delim_chars   = './'
 set sidebar_visible = yes
@@ -178,6 +182,7 @@ source ~/.mutt/themes/seoul256.mutt
 source ~/.mutt/accounts/personal
 folder-hook JoshuaCrewe/* source ~/.mutt/accounts/personal
 folder-hook work/*     source ~/.mutt/accounts/work
+folder-hook wp/*     source ~/.mutt/accounts/wp
 
 # https://unix.stackexchange.com/questions/104272/mutt-trash-folder#105608
 # unset confirmappend
