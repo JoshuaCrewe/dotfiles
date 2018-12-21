@@ -47,9 +47,6 @@ fi
     alias psgg='ps aux | grep gulp'
 # }}
 
-# Ctags
-alias ctags='ctags -R -f .tags .'
-
 alias sz='source ~/.zshrc'
 
 # for use with notes https://github.com/pimterry/notes
