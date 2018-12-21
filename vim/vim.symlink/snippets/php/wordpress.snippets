@@ -97,3 +97,23 @@ snippet acf-flexible "an ACF flexible loop"
 
 	<?php endif; ?>
 endsnippet
+
+snippet wp-debug "Set development debugging"
+	define( 'WP_DEBUG', true );
+	define( 'WP_DEBUG_DISPLAY', false );
+	define( 'WP_DEBUG_LOG', true );
+endsnippet
+
+snippet wp-site-url "Define urls for a wordpress site"
+	/**
+	 * Custom Content Directory
+	 */
+	define('WP_CONTENT_DIR', dirname(__FILE__) . '/content');
+	define('WP_CONTENT_URL', 'http://${1:example.com}/content');
+
+	/**
+	 * URLs
+	 */
+	define('WP_HOME','http://${1}');
+	define('WP_SITEURL','http://${1}/wp');
+endsnippet
