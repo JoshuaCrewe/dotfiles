@@ -11,7 +11,11 @@
     path = ~/.gitconfig.local
 [core]
     editor = $(which vim)
-    excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [help]
     autocorrect = -1
+[init]
+	templatedir = ~/dotfiles/git/git_template
+[alias]
+	ctags = !.git/hooks/ctags

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -u # error out if variable is not set
+set -e # exit if returns non true
+
+PATH="/usr/local/bin:$PATH"
+dir="`git rev-parse --git-dir`"
+trap 'rm -f "$dir/$$.tags"' EXIT
+git ls-files | \
+  ctags --tag-relative=yes -L - -f"$dir/$$.tags" --languages=-sql
+mv "$dir/$$.tags" "$dir/tags"
