@@ -1,0 +1,11 @@
+color status  color1 color236
+set from     = "wp@venncreative.co.uk"
+set sendmail = "/bin/sh $HOME/.mutt/scripts/sendmail wp"
+
+# This is where the sent mail is stored
+unset record
+set record = "+wp/Sent"
+
+set trash = '+wp/Trash'
+set spoolfile = "+wp/INBOX"
+set postponed = "+wp/Drafts"
