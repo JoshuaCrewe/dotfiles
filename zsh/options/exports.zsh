@@ -54,3 +54,5 @@ export GPG_TTY=$(tty)
 if hash nnn 2>/dev/null; then
     export NNN_USE_EDITOR=1
 fi
+
+export HOMEBREW_GITHUB_API_TOKEN=952de1a307835afef774f165c58878f27fb52bfd
