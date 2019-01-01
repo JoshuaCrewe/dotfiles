@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-# fzf_command='fzf'
-# fd_command="fd . ${HOME}/.mail/ --type d"
-
-# You can't pass a folder name to this function to automatically change to that
-# folder Without this ability there isn't really a way to automate the action
-echo "exec change-folder"

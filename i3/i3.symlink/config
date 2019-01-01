@@ -262,3 +262,6 @@ bindsym XF86AudioMute exec amixer set Master 1+ toggle # Mute / Unmute
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# https://i3wm.org/docs/userguide.html#focus_on_window_activation
+focus_on_window_activation focus # smart is the default
