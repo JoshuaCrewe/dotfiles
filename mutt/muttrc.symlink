@@ -198,3 +198,5 @@ alternative_order text/plain text/enriched text/html     # save html for last
 set text_flowed=yes
 
 macro index <space>c ":source ~/.mutt/scripts/changefolder|<enter>"
+
+set folder_format = "%f"
