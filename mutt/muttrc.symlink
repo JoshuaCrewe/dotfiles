@@ -94,7 +94,8 @@ bind index G        last-entry
 
 bind index R        group-reply
 bind index <tab>    sync-mailbox
-bind index <space>  collapse-thread
+bind index <Space> noop
+bind index <space><space>  collapse-thread
 
 # Ctrl-R to mark all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
@@ -196,4 +197,4 @@ alternative_order text/plain text/enriched text/html     # save html for last
 
 set text_flowed=yes
 
-macro index ,o ":source ~/.mutt/scripts/fzffolder|<enter>"
+macro index <space>c ":source ~/.mutt/scripts/changefolder|<enter>"
