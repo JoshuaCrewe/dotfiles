@@ -38,3 +38,9 @@ fcs() {
     commit=$(echo "$commits" | fzf --tiebreak=index --ansi --no-sort --reverse) &&
     echo -n $(echo "$commit" | sed "s/ .*//")
 }
+
+check-mail() {
+    new="$(find $HOME/.mail/**/new -type f | wc -l | xargs)"
+
+    echo "$new new emails"
+}

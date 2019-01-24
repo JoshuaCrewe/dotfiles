@@ -1,3 +1,4 @@
+# http://sheet.shiar.nl/mutt
 # Paths ----------------------------------------------
 set folder           = ~/.mail               # mailbox location
 set alias_file       = ~/.mutt/alias         # where to store aliases
@@ -94,12 +95,13 @@ bind index G        last-entry
 
 bind index R        group-reply
 bind index <tab>    sync-mailbox
-bind index <Space> noop
+
+bind index,pager <Space> noop
 bind index <space><space>  collapse-thread
+macro index,pager <space><return> ":source ~/.mutt/scripts/changefolder|<enter>"
 
 # Ctrl-R to mark all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
-
 
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
@@ -175,8 +177,8 @@ bind editor <Tab> complete-query
 bind editor ^T    complete
 
 # Searching
-bind index N search-opposite
-bind pager N search-opposite
+# bind index N search-opposite
+# bind pager N search-opposite
 macro index a "<limit>all\n" "show all messages (undo limit)"
 
 # Set some colours for a nice colour experience?
@@ -196,7 +198,5 @@ auto_view text/html                                      # view html automatical
 alternative_order text/plain text/enriched text/html     # save html for last
 
 set text_flowed=yes
-
-macro index <space>c ":source ~/.mutt/scripts/changefolder|<enter>"
 
 set folder_format = "%f"

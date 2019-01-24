@@ -124,3 +124,9 @@ if [ -z $open_with ]; then
 else
     open -a "$open_with" $newfile
 fi
+
+# if  hash xdg-open &>/dev/null; then
+#     open_cmd='nohup xdg-open'
+# elif hash open &>/dev/null; then
+#     open_cmd='open'
+# fi
