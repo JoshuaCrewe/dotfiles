@@ -4,14 +4,5 @@ source ~/dotfiles/zsh/aliases/vim.zsh
 source ~/dotfiles/zsh/aliases/terminal.zsh 
 source ~/dotfiles/zsh/aliases/harrypotter.zsh 
 source ~/dotfiles/zsh/aliases/linux.zsh 
-
-# Vagrant Aliases
-alias vs="cd ~/vagrant && vagrant ssh"
-alias vc="cd ~/vagrant && vagrant ssh -c"
-alias vu="cd ~/vagrant && vagrant up && cd -"
-alias vh="cd ~/vagrant && vagrant halt && cd -"
-alias vp="cd ~/vagrant && vagrant provision && cd -"
-alias vrn="cd ~/vagrant && vagrant ssh -c 'sudo nginx -s reload' && cd -"
-alias vn="sudo vim -O ~/vagrant/Sites.yaml /etc/hosts"
-
-alias mutt='neomutt'
+source ~/dotfiles/zsh/aliases/vagrant.zsh 
+source ~/dotfiles/zsh/aliases/writing.zsh 
