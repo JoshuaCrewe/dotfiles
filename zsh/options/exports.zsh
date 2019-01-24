@@ -4,6 +4,9 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:${HOME
 # Use Brew curl
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
+# Use Brew php
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+
 export DOTFILES="$HOME/dotfiles"
 
 # Use The Silver Searcher for fzf
@@ -55,4 +58,4 @@ if hash nnn 2>/dev/null; then
     export NNN_USE_EDITOR=1
 fi
 
-export HOMEBREW_GITHUB_API_TOKEN=952de1a307835afef774f165c58878f27fb52bfd
+export HOMEBREW_NO_GITHUB_API=1

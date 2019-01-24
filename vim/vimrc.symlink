@@ -190,7 +190,7 @@ au FileType snippets setl foldlevel=99
 
 " File Specific
 
-au BufRead,BufNewFile *.md set wrap linebreak breakindent  | :Goyo 100 " make markdown more readable
+au BufRead,BufNewFile *.md set wrap linebreak breakindent ft=markdown  | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
 
 au BufRead,BufNewFile jrnl*.txt set wrap linebreak breakindent  | :Goyo 100 " make juornaling more readable
@@ -551,6 +551,7 @@ let g:ale_linters = {
 \   'html': [],
 \   'php': ['prettier'],
 \   'markdown': ['prettier'],
+\   'sh': ['shellcheck'],
 \}
 
 let g:ale_fixers = {}

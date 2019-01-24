@@ -20,7 +20,7 @@ zplugin light mafredri/zsh-async
 zplugin light sindresorhus/pure
 
 # zplugin load pimterry/notes
-zplugin snippet --command https://github.com/pimterry/notes/blob/master/notes
+# zplugin snippet --command https://github.com/pimterry/notes/blob/master/notes
 
 zplugin light paulirish/git-open
 

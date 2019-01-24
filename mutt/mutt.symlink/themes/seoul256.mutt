@@ -85,7 +85,7 @@ color index      blue               default    ~O  # old
 color index      brightblue         default    ~P  # mail from myself
 color index      brightblue         yellow     ~T  # tagged
 color index      magenta            default    ~F  # flagged
-color index      blue             default       ~v  # collapsed thread
+color index      black             default       ~v  # collapsed thread
 color index      magenta            black      ~k  # GPG
 color index      color10                default    ~N  # new
 
