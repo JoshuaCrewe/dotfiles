@@ -26,6 +26,7 @@ fi
 # Be able to npm install without sudo
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 
 # Unset manpath so we can inherit from /etc/manpath via the `manpath` command
 unset MANPATH # delete if you already modified MANPATH elsewhere in your config
@@ -49,6 +50,9 @@ unset MAILCHECK
 # Set up Go env
 export GOPATH=${HOME}/go
 export PATH=$GOPATH/bin:$PATH
+
+# Set up cargo/rust path
+export PATH="${HOME}/.cargo/bin:$PATH"
 
 export EDITOR=$(which vim)
 

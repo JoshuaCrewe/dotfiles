@@ -1,0 +1,14 @@
+[Unit]
+Description=Sparkleshare is a git based file syncing application to replace Dropbox
+Documentation=https://www.sparkleshare.org/
+After=display-manager.service
+
+[Service]
+ExecStart=/usr/bin/sparkleshare --status-icon=gtk
+Environment=DISPLAY=:0
+Restart=always
+User=joshua
+Group=joshua
+
+[Install]
+WantedBy=default.target

@@ -59,6 +59,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'fatih/vim-go'
 Plug 'mxw/vim-jsx'
 Plug 'storyn26383/vim-vue'
+Plug 'leafgarland/typescript-vim'
 
 " Sessions
 Plug 'tpope/vim-obsession'            " For saving sessions
