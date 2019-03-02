@@ -65,6 +65,12 @@
 "win right-50"
     control+mod1 + l
 
+"screengrab -s /home/joshua/Downloads/screenshots/"
+    Shift+Print
+
+"screengrab /home/joshua/Downloads/screenshots/"
+    Print
+
 # "xbindkeys_show" 
   # control+shift + q
 
