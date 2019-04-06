@@ -3,7 +3,10 @@ set -u # error out if variable is not set
 set -e # exit if returns non true
 
 function run_session() {
-    if [[ ! -f ${HOME}/dotfiles/tmuxs/$1.sh ]]; then
+    script=$1
+    shift 1
+
+    if [[ ! -f ${HOME}/dotfiles/tmuxs/$script.sh ]]; then
         echo 'There is no tmux session with that name.'
         return
     fi
@@ -19,13 +22,13 @@ function run_session() {
     # We will need to check if we are currently in a tmux session or not.
     # If it doesn't exist then run the command to make it
 
-    if ! tmux has-session -t "$1" &> /dev/null; then 
-        echo "Session not found. Create Session '$1'."
-        sh -c "${HOME}/dotfiles/tmuxs/$1.sh"
+    if ! tmux has-session -t "$script" &> /dev/null; then 
+        echo "Session not found. Create Session '$script'."
+        sh -c "${HOME}/dotfiles/tmuxs/$script.sh $@"
     else
-        echo "Session found. Connecting to '$1'."
+        echo "Session found. Connecting to '$script'."
         sleep .5
-        tmux switch -t "$1" || tmux attach -t "$1"
+        tmux switch -t "$script" || tmux attach -t "$script"
     fi
 
     # Run the command
@@ -33,4 +36,5 @@ function run_session() {
 
 }
 
-run_session "$1"
+
+run_session "$@"
