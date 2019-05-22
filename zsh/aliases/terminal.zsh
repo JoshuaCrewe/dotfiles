@@ -7,11 +7,26 @@
 # }}
 
 # ls {{
-    alias lsa='ls -lah'
-    alias l='ls -lah'
-    alias ll='ls -lh'
-    alias la='ls -lAh'
-    alias ls='ls -G'
+    if hash exa 2>/dev/null; then
+        alias ls='exa'
+        alias lsa='exa -lah'
+        alias l='exa -lah'
+        alias ll='exa -lh'
+        alias la='exa -lAh'
+    else
+        alias lsa='ls -lah'
+        alias l='ls -lah'
+        alias ll='ls -lh'
+        alias la='ls -lAh'
+        alias ls='ls -G'
+        if [ -x /usr/bin/dircolors ]; then
+          eval "`dircolors -b`"
+          alias ls='ls --color=auto'
+          alias grep='grep --color=auto'
+        elif [[ $IS_MAC == 1 ]]; then
+          alias ls='ls -G'
+        fi
+    fi
 # }}
 
 # I am giving up
@@ -30,16 +45,6 @@ alias m='mark'
 
 #dasht
 alias dt='dasht'
-
-# I would like to check if the OS is linux first
-### Colored ls
-if [ -x /usr/bin/dircolors ]; then
-  eval "`dircolors -b`"
-  alias ls='ls --color=auto'
-  alias grep='grep --color=auto'
-elif [[ $IS_MAC == 1 ]]; then
-  alias ls='ls -G'
-fi
 
 # PS {{
     alias psa='ps aux'
