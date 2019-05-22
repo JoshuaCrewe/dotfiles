@@ -13,7 +13,7 @@ function tmux_web {
 
     # Start the Gulp build process
     if [[ -f gulpfile.js ]]; then
-        tmux send-keys -t "$SESSION_NAME" "gulp" C-m
+        tmux send-keys -t "$SESSION_NAME" "./node_modules/gulp/bin/gulp.js" C-m
     fi
 
     if [[ -f webpack.mix.js ]]; then
