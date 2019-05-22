@@ -131,13 +131,13 @@ function jump-to-git-root {
         # If so, cd to nearest Git parent project.
         _root_dir="$(git -C $(dirname $_pwd) rev-parse --show-toplevel 2>/dev/null)"
         if [[ $? -gt 0 ]]; then
-            echo "Already at Git repo root."
+            printf "\r\033[2K  [ \033[00;32mDONE\033[0m ] Already at Git repo root\n"
             return 0
         fi
     fi
     # Make `cd -` work.
     OLDPWD=$_pwd
-    echo "Git repo root: $_root_dir"
+	printf "\r\033[2K  [ \033[00;32mDONE\033[0m ] Moved to $_root_dir\n"
     cd $_root_dir
 }
 
