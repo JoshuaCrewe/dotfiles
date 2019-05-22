@@ -39,11 +39,9 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "tab",
-                                        "modifiers": {
-                                            "optional": [
+                                        "modifiers": [
                                                 "any"
-                                            ]
-                                        }
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -66,11 +64,9 @@
                                 "to_if_alone": [
                                     {
                                         "key_code": "escape",
-                                        "modifiers": {
-                                            "optional": [
+                                        "modifiers": [
                                                 "any"
                                             ]
-                                        }
                                     }
                                 ],
                                 "type": "basic"
