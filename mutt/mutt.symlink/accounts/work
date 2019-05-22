@@ -9,3 +9,5 @@ set record = "+work/INBOX.Sent"
 set trash = '+work/INBOX.Trash'
 set spoolfile = "+work/INBOX"
 set postponed = "+work/Drafts"
+
+macro index o "<shell-escape>offlineimap -a work -qf INBOX<enter>" "run offlineimap to sync inbox"
