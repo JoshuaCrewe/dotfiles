@@ -64,3 +64,5 @@ fi
 
 # Stop homebrew trying to access Github
 export HOMEBREW_NO_GITHUB_API=1
+
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
