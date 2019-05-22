@@ -53,6 +53,7 @@ if hash xbindkeys 2>/dev/null; then
     xbindkeys
 fi
 
+
 xsetroot -solid "#3a3a3a"
 
 urxvt &
