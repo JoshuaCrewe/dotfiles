@@ -44,3 +44,9 @@ check-mail() {
 
     echo "$new new emails"
 }
+
+git_files_deleted_from_dir() {
+    # example
+    # git_files_deleted_from_dir <directory path>
+    git log --all --pretty=format:'%h %ar' --name-only --diff-filter=D -- $1
+}
