@@ -21,7 +21,7 @@ remoteport = 993
 remoteuser = me@joshuacrewe.co.uk
 remotepasseval = get_pass("joshuacrewe")
 ssl = yes
-cert_fingerprint = e87c1ff4f0b2ce134849cc873c5b9433565dd0a9feb56bed94ea27cf73f5a90b
+cert_fingerprint = 64461a7f8a67763e61353b57270129f63958d65ff44198ac4fc5fee082929f1c
 realdelete = yes
 
 [Account work]
@@ -41,5 +41,5 @@ remoteport = 993
 remoteuser = joshua@venncreative.co.uk
 remotepasseval = get_pass("work")
 ssl = yes
-cert_fingerprint = dfeebcb5e2c33a621c9913b32db776f78bbfd938bb1976e860fc082cf21b5c04
+cert_fingerprint = 7b5edc6e6ae2de599a4ccf301f489ce971388171c35ca500c65bec0960c34d0d
 realdelete = yes

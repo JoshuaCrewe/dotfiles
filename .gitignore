@@ -40,3 +40,5 @@ offlineimap/*.gpg
 pentadactyl/pentadactyl.symlink/info
 
 git/gitconfig.local.symlink
+
+karabiner/karabiner.symlink/automatic_backups

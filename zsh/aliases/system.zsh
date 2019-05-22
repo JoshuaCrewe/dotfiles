@@ -30,4 +30,5 @@
     if [[ $IS_MAC == 1 ]]; then
         alias trash='gomi -s'
     fi
+
 # }}
