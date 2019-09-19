@@ -23,10 +23,4 @@ if [[ $is_linux == 1 ]]; then
     src="$dirname/xinitrc.symlink"
     dst="$HOME/.xinitrc"
     _link "$src" "$dst"
-
-    src="$dirname/xautolock.service"
-    dst="/etc/systemd/system/xautolock.service"
-    chmod 644 "$src"
-    _sudo_link "$src" "$dst"
-    _sudo_enable 'xautolock.service'
 fi

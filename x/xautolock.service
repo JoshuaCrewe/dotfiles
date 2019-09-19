@@ -1,11 +1,9 @@
 [Unit]
 Description=Starts an autolocking program on startup
-After=display-manager.service
+After=graphical.service
 
 [Service]
-ExecStart=/usr/bin/xautolock -locker slock -time 15
-User=joshua
-Group=joshua
+ExecStart=/usr/bin/xautolock -locker slock -time 3
 Type=forking
 Restart=always
 Environment=DISPLAY=:0

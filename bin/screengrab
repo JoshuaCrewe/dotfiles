@@ -35,6 +35,6 @@ else
     params="-window root"
 fi  
 
-file_path=${base_folder}$( date '+%Y-%m-%d_%H-%M-%S' )_screenshot.png
+file_path=${base_folder}$( date '+%Y-%m-%d_%H-%M-%S' )_screenshot.jpg
 import ${params} ${file_path}
-xclip -selection clipboard -target image/png -i < ${file_path}
+xclip -selection clipboard -target image/jpg -i < ${file_path}
