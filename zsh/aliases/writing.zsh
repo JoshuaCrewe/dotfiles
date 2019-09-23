@@ -20,3 +20,5 @@ if hash pen 2>/dev/null; then
     fi
 
 fi
+
+alias jrnl=" jrnl"
