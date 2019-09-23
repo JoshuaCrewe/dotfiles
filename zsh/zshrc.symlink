@@ -31,3 +31,4 @@ stty -ixon
 
 # Added by fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/curl/bin:$PATH"
