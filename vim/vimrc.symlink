@@ -197,7 +197,13 @@ au BufRead,BufNewFile *.md set wrap linebreak breakindent ft=markdown  | :Goyo 1
 au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
 au FileType markdown setl makeprg=pen\ %
 
-au BufRead,BufNewFile jrnl*.txt set wrap linebreak breakindent  | :Goyo 100 " make juornaling more readable
+" au BufRead,BufNewFile *jrnl*\.txt set wrap linebreak breakindent  | :Goyo 100 " make juornaling more readable
+augroup vimrc
+  autocmd!
+
+  " jrnl entries as markdown
+  autocmd BufRead *jrnl*\.txt setlocal wrap linebreak breakindent filetype=markdown | :Goyo
+augroup END
 
 " au BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['css', 'scss', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
