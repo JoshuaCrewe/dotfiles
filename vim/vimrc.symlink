@@ -60,6 +60,7 @@ Plug 'fatih/vim-go'
 Plug 'mxw/vim-jsx'
 Plug 'storyn26383/vim-vue'
 Plug 'leafgarland/typescript-vim'
+Plug 'evanleck/vim-svelte'
 
 " Sessions
 Plug 'tpope/vim-obsession'            " For saving sessions
