@@ -91,15 +91,11 @@ hs.hotkey.bind(mash_shift, '/', hs.hints.windowHints)
 -- App Launching
 hs.hotkey.bind(mash_app, 'J', function () hs.application.launchOrFocus("iTerm") end)
 hs.hotkey.bind(mash_app, 'K', function () hs.application.launchOrFocus("Firefox") end)
-hs.hotkey.bind(mash_app, 'S', function () hs.application.launchOrFocus("Firefox") end) -- Using browser slack at work
 hs.hotkey.bind(mash_app, 'T', function () hs.application.launchOrFocus("Transmit") end)
-hs.hotkey.bind(mash_app, 'L', function () hs.application.launchOrFocus("Messages") end)
-hs.hotkey.bind(mash_app, 'M', function () hs.application.launchOrFocus("Mail") end)
-hs.hotkey.bind(mash_app, 'I', function () hs.application.launchOrFocus("Adobe Illustrator") end)
+hs.hotkey.bind(mash_app, 'M', function () hs.application.launchOrFocus("Thunderbird") end)
 hs.hotkey.bind(mash_app, 'G', function () hs.application.launchOrFocus("Tower") end)
 hs.hotkey.bind(mash_app, 'P', function () hs.application.launchOrFocus("Spotify") end)
 hs.hotkey.bind(mash_app, 'H', function () hs.application.launchOrFocus("Harvest") end)
-hs.hotkey.bind(mash_app, 'C', function () hs.application.launchOrFocus("Google Chrome") end)
 
 --Layouts
 hs.hotkey.bind(mash_shift, 'j', function()
