@@ -19,6 +19,7 @@ Plug 'tpope/vim-unimpaired'           " Some extra shortcuts for useful tasks
 Plug 'tpope/vim-ragtag'               " Some extra mappings
 Plug 'tpope/vim-repeat'               " Dot command with plugins
 Plug 'tpope/vim-fugitive'             " A Git wrapper
+Plug 'tpope/vim-dispatch'
 Plug 'jreybert/vimagit'
 Plug 'junegunn/vim-slash'             " For hiding highlights after searching
 Plug 'mattn/emmet-vim'                " Code writing shorthand
@@ -60,6 +61,7 @@ Plug 'fatih/vim-go'
 Plug 'mxw/vim-jsx'
 Plug 'storyn26383/vim-vue'
 Plug 'leafgarland/typescript-vim'
+Plug 'evanleck/vim-svelte'
 
 " Sessions
 Plug 'tpope/vim-obsession'            " For saving sessions
@@ -193,8 +195,15 @@ au FileType snippets setl foldlevel=99
 
 au BufRead,BufNewFile *.md set wrap linebreak breakindent ft=markdown  | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
+au FileType markdown setl makeprg=pen\ %
 
-au BufRead,BufNewFile jrnl*.txt set wrap linebreak breakindent  | :Goyo 100 " make juornaling more readable
+" au BufRead,BufNewFile *jrnl*\.txt set wrap linebreak breakindent  | :Goyo 100 " make juornaling more readable
+augroup vimrc
+  autocmd!
+
+  " jrnl entries as markdown
+  autocmd BufRead *jrnl*\.txt setlocal wrap linebreak breakindent filetype=markdown | :Goyo
+augroup END
 
 " au BufNewFile,BufReadPost *.md set filetype=markdown
 let g:markdown_fenced_languages = ['css', 'scss', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
@@ -559,7 +568,7 @@ let g:ale_linters = {
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fixers['scss'] = ['prettier']
-let g:ale_fixers['php'] = ['phpcbf']
+" let g:ale_fixers['php'] = ['phpcbf']
 let g:ale_fixers['markdown'] = ['prettier']
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1

@@ -124,9 +124,9 @@ if hash xdg-open 2>/dev/null; then
     nohup xdg-open $newfile
 else
     if [ -z $open_with ]; then
-        o $newfile
+        open $newfile
     else
-        o -a "$open_with" $newfile
+        open -a "$open_with" $newfile
     fi
 fi
 

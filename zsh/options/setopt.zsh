@@ -57,6 +57,8 @@ setopt HIST_REDUCE_BLANKS
 # Include more information about when the command was executed, etc
 setopt EXTENDED_HISTORY
 
+setopt HIST_IGNORE_SPACE
+
 # ===== Completion 
 
 # Allow completion from within a word/phrase

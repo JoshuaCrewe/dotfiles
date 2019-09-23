@@ -40,7 +40,7 @@ function system-update() {
 
 # fkill - kill process
 function fkill() {
-    pid=$(ps -o command,pid | fzf -m --height 10% --reverse | awk '{print $NF}')
+    pid=$(ps -e | awk -F ' ' '{$2=$3=""; print $0}' | fzf -m --height 10% --reverse | awk '{print $1}')
 
     if [ "x$pid" != "x" ]
     then

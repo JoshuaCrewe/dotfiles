@@ -13,11 +13,19 @@ function tmux_mail {
 
     sleep .3
 
-    # Split the window vertically
+    # Split the window horizontally
     tmux split-window -t $SESSION_NAME -h
 
     # Check RSS
     tmux send-keys -t $SESSION_NAME "pocket" C-m
+
+    # Split the window vertically
+    tmux split-window -v -t "$SESSION_NAME"
+
+
+    if [[ !  -x "$(cd ~/vagrant && vagrant ssh -c pwd)" ]]; then
+        tmux send-keys -t "$SESSION_NAME" "cd ~/vagrant && vagrant up --provision" C-m
+    fi
 
     # Focus the pane with mail in it
     tmux select-pane -t ${SESSION_NAME}:1.1
