@@ -31,4 +31,9 @@ stty -ixon
 
 # Added by fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/curl/bin:$PATH"
+
+### Added by Zplugin's installer
+source '/home/joshua/.zplugin/bin/zplugin.zsh'
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin installer's chunk
