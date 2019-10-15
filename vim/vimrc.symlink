@@ -536,7 +536,7 @@ vnoremap > >gv
 noremap gV `[v`]
 
 " Copy the selected text into the clipboard.
-noremap <Leader>y "+y
+noremap <Leader>y "+yy
 
 " Cut the selected text into the clipboard.
 noremap <Leader>d "+d
