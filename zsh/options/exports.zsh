@@ -66,3 +66,5 @@ fi
 export HOMEBREW_NO_GITHUB_API=1
 
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+export NOTES_DIRECTORY="$HOME/.docs/notes/"
