@@ -8,6 +8,6 @@ source "$dirname/../scripts/_shared.sh"
 
 src="$dirname/emacs.d.symlink"
 dst="$HOME/.emacs.d"
-_link "$src" "$dst"
+# _link "$src" "$dst"
 
-_install emacs
+# _install emacs

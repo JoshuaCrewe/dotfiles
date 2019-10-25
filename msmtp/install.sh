@@ -8,6 +8,6 @@ source "$dirname/../scripts/_shared.sh"
 
 src="$dirname/msmtprc.symlink"
 dst="$HOME/.msmtprc"
-_link "$src" "$dst"
+# _link "$src" "$dst"
 
-_install msmtp
+# _install msmtp

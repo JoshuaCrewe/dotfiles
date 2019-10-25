@@ -15,6 +15,6 @@ if [[ $is_mac == 1 ]]; then
         cd -
     fi
 
-	echo "› set up mac defaults..."
+#	echo "› set up mac defaults..."
     sh -c "macos"
 fi

@@ -20,8 +20,8 @@ function notes-fzf {
 
 # lh - cd to a project in localhost
 function c() {
-    DIR=`ls ${HOME}/localhost | fzf --height 40% --reverse` \
-    && cd "${HOME}/localhost/$DIR"
+    DIR=`ls ${HOME}/code | fzf --height 40% --reverse` \
+    && cd "${HOME}/code/$DIR"
 }
 
 # fda - including hidden directories
