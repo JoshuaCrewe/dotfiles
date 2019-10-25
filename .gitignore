@@ -42,3 +42,6 @@ pentadactyl/pentadactyl.symlink/info
 git/gitconfig.local.symlink
 
 karabiner/karabiner.symlink/automatic_backups
+
+hammerspoon/hammerspoon.symlink/Spoons/*.spoon
+!hammerspoon/hammerspoon.symlink/Spoons/SpoonInstall.spoon
