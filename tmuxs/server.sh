@@ -3,15 +3,10 @@ set -u # error out if variable is not set
 set -e # exit if returns non true
 
 function tmux_mail {
-    SESSION_NAME="mail"
+    SESSION_NAME="server"
 
     # Start a new session with the name as the project and cal the window 'CODE'
-    tmux new-session -s $SESSION_NAME -n "MAIL" -d
-
-    # open mail
-    tmux send-keys -t $SESSION_NAME "mutt" C-m
-
-    sleep .3
+    tmux new-session -s $SESSION_NAME -n "SERVER" -d
 
     # Split the window horizontally
     tmux split-window -t $SESSION_NAME -h
