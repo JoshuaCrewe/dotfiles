@@ -26,5 +26,18 @@ zplugin light paulirish/git-open
 
 zplugin light zdharma/fast-syntax-highlighting
 
+# https://github.com/zplugin/z-a-bin-gem-node
+zplugin light zplugin/z-a-bin-gem-node
+
+# https://zdharma.org/2019-10-27/Installing-Gems-And-Node-Modules-With-Zplugin
+# zplugin ice node'!pen' sbin'node_modules/.bin/pen'
+# zplugin load zdharma/null
+
+
+zplugin id-as'node-modules' node'pen;heroku;pnpm;' \
+       sbin'node_modules/.bin/{pen,heroku,pnpm}' for \
+          zdharma/null
+zplugin load zdharma/null
+
 autoload -Uz compinit && compinit                                                                                       
 zplugin cdreplay -q
