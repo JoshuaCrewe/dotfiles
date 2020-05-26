@@ -6,8 +6,10 @@ set -e # exit if returns non true
 dirname=$(cd "$(dirname "$0")"; pwd)
 source "$dirname/../scripts/_shared.sh"
 
-src="$dirname/emacs.d.symlink"
-dst="$HOME/.emacs.d"
+src="$dirname/scripts.symlink"
+dst="$HOME/.wp-cli/scripts"
 _link "$src" "$dst"
 
-_install emacs
+src="$dirname/config.yml.symlink"
+dst="$HOME/.wp-cli/config.yml"
+_link "$src" "$dst"

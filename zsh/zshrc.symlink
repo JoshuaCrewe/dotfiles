@@ -5,6 +5,10 @@
 #  /____|___/_| |_|_|  \___|
 #                           
 
+# source ~/dotfiles/zsh/prompt/instant.zsh
+# instant-zsh-pre "%B%39F${${(V)${(%):-%~}//\%/%%}//\//%b%31F/%B%{blue}F}%f"$'\n'"%005F❯%f "
+# instant-zsh-pre "%B%39F${${(V)${(%):-%~}//\%/%%}//\//%b%31F/%B%39F}%f"$'\n'"%F{cyan}❯%f "
+
 source ~/dotfiles/zsh/widgets/init.zsh
 
 source ~/dotfiles/zsh/options/init.zsh
@@ -31,3 +35,19 @@ stty -ixon
 
 # Added by fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# instant-zsh-post
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk

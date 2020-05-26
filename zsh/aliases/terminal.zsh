@@ -61,3 +61,5 @@ alias fnotes="notes-fzf"
 # https://github.com/FraGag/feeds-to-pocket
 alias pocket="feeds-to-pocket ~/SparkleShare/gitlab.com/docs/config/feeds-to-pocket.yaml"
 alias getpocket="o https://getpocket.com"
+
+alias rsync="rsync -vzcrSLh"

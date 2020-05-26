@@ -35,14 +35,16 @@
 (eval-when-compile
    (require 'use-package))
 
-(use-package doom-themes
-  :ensure t
-  :config
-  (load-theme 'doom-one t)
-  )
+;; (use-package doom-themes
+  ;; :ensure t
+  ;; :config
+  ;; (load-theme 'doom-one t)
+  ;; )
 
-;; (use-package seoul256-theme
- ;; :ensure t)
+(use-package seoul256-theme
+  :config
+  (setq seoul256-background 236)
+  :ensure t)
 
 (use-package helm
   :ensure t)

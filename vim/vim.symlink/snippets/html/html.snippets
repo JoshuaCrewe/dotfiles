@@ -1,3 +1,9 @@
 snippet jq "Include jQuery script"
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 endsnippet
+
+snippet icon "Add an SVG icon"
+	<svg class="icon">
+		<use xlink:href="#icon--${1:filename}"></use>
+	</svg>
+endsnippet

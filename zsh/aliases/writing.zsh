@@ -21,4 +21,4 @@ if hash pen 2>/dev/null; then
 
 fi
 
-alias jrnl=" jrnl"
+# alias jrnl=" jrnl"

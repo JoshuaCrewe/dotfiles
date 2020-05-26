@@ -1,0 +1,3 @@
+require:
+    scripts/subcommand-users.php
+    scripts/login-kwicke.php

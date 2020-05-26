@@ -62,6 +62,10 @@ Plug 'mxw/vim-jsx'
 Plug 'storyn26383/vim-vue'
 Plug 'leafgarland/typescript-vim'
 Plug 'evanleck/vim-svelte'
+Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
+
+Plug 'jceb/vim-orgmode', { 'for': 'org' }
+Plug 'tpope/vim-speeddating', { 'for': 'org' }
 
 " Sessions
 Plug 'tpope/vim-obsession'            " For saving sessions
@@ -271,6 +275,7 @@ imap <C-s> <esc>:w<CR>
 
 " Mappings
 let mapleader = ' ' " Set space to be the leader
+let maplocalleader = ' ' " Set space to be the local leader
 
 " Move lines up and down with arrow keys
 nnoremap <up> ddkP
@@ -556,18 +561,21 @@ noremap g[<space> T[i<space><esc>t]a<space><esc>
 
 " Set ALE linters
 let g:ale_linters = {
-\   'scss': ['stylelint', 'prettier'],
 \   'vue': ['vue-prettier', 'vls'],
 \   'javascript': ['prettier', 'eslint'],
+\   'svelte': ['prettier', 'eslint'],
 \   'html': [],
 \   'php': ['prettier'],
 \   'markdown': ['prettier'],
 \   'sh': ['shellcheck'],
 \}
 
+let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
+
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fixers['scss'] = ['prettier']
+" let g:ale_fixers['svelte'] = ['eslint', 'prettier', 'prettier_standard']
 " let g:ale_fixers['php'] = ['phpcbf']
 let g:ale_fixers['markdown'] = ['prettier']
 let g:ale_fix_on_save = 1
