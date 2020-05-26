@@ -24,11 +24,13 @@
     fi
 
     # Homebrew
-    alias brewu='brew update && brew upgrade && brew cleanup && brew doctor'
+    alias brewu='brew update && brew upgrade && brew cask upgrade && brew cleanup && brew doctor'
 
     # Gomi
     if [[ $IS_MAC == 1 ]]; then
         alias trash='gomi -s'
     fi
+
+    alias ssh-key='cat ~/.ssh/id_rsa.pub | pbcopy'
 
 # }}

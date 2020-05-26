@@ -68,3 +68,5 @@ export HOMEBREW_NO_GITHUB_API=1
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 export NOTES_DIRECTORY="$HOME/.docs/notes/"
+
+export PATH="$HOME/.zplugin/plugins/zdharma--null/node_modules/.bin:$PATH"

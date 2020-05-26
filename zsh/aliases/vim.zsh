@@ -15,5 +15,6 @@
     alias vimagit='vim -c Magit -c only'
 
     # Shhh dont tell anyone
-    alias ed='emacs'
+    alias ed='emacsclient'
+    # alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient "$@"'
 # }}

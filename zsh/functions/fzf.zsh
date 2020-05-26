@@ -24,6 +24,11 @@ function c() {
     && cd "${HOME}/code/$DIR"
 }
 
+function q() {
+    DIR=`ls ${HOME}/Downloads/quotes | fzf --height 40% --reverse` \
+    && cd "${HOME}/Downloads/quotes/$DIR"
+}
+
 # fda - including hidden directories
 function fda() {
     DIR=`find ${1:-.} -type d 2> /dev/null | fzf --height 40% --reverse` && cd "$DIR"
