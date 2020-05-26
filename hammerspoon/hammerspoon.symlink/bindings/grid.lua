@@ -90,6 +90,21 @@ module.start = function()
     --     {"iTerm2",   nil, screen, positions.center, nil, nil}
     --   })
     -- end)
+
+    local function testing(app, eventType, state) 
+        -- hs.alert(app)
+        if app == 'iTerm' then
+            local maximized ={x=0, y=0, w=1, h=1}
+            local windowGeo = window:frame()
+            local screen = hs.screen.mainScreen()
+            local geo = hs.geometry.new(maximized):fromUnitRect(screen:frame()):floor()
+            return windowGeo:equals(geo)
+        end
+    end
+    
+    local setItermSize = hs.application.watcher.new(testing)
+    setItermSize:start()
+
 end
 
 return module
