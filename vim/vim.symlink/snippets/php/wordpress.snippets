@@ -20,13 +20,19 @@ snippet wp-excerpt-more "WP excerpt More"
 endsnippet
 
 snippet wp-q "WP custom query"
-	\$args = [
-		${5}
-	];
+	<?php
+		\$args = [
+			${5}
+		];
 
-	\$${1:q} = new WP_Query(\$args);
-	if(\$${2:$1}->have_posts()) : while(\$${3:$1}->have_posts()) : \$${4:$1}->the_post();
-	endwhile; endif;
+		\$${1:q} = new WP_Query(\$args);
+	?>
+	<?php if(\$${2:$1}->have_posts()) : ?>
+		<?php while(\$${3:$1}->have_posts()) : \$${4:$1}->the_post(); ?>
+		 
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
+	<?php endif; ?>
 endsnippet
 
 snippet the-loop "WP the whole loop"
@@ -61,40 +67,18 @@ endsnippet
 snippet acf-relationship "an ACF relationship loop"
 	<?php 
 
-	$posts = get_field('${1:relationship_field_name}');
+	\$posts = get_field('${1:relationship_field_name}');
 
-	if( $posts ): ?>
+	if( \$posts ): ?>
 
-			<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-			<?php setup_postdata($post); ?>
+			<?php foreach( \$posts as \$post): // variable must be called $post (IMPORTANT) ?>
+			<?php setup_postdata(\$post); ?>
 
 				${2:// Content goes here}
 
 			<?php endforeach; ?>
 
 	<?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-	<?php endif; ?>
-endsnippet
-
-snippet acf-flexible "an ACF flexible loop"
-	<?php // check if the flexible content field has rows of data ?>
-	<?php if( have_rows('${1:felexible_content_field_name}') ): ?>
-
-		<?php // loop through the rows of data ?>
-		<?php while ( have_rows('${2:$1}') ) : the_row(); ?>
-
-			<?php if( get_row_layout() == '${3:paragraph}' ): ?>
-
-				<?php the_sub_field('text'); ?>
-
-			<?php elseif( get_row_layout() == '${4:download'} ):  ?>
-
-				<?php $file = get_sub_field('file'); ?>
-
-			<?php endif; ?>
-
-		<?php	endwhile; ?>
-
 	<?php endif; ?>
 endsnippet
 
