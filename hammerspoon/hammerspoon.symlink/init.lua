@@ -1,11 +1,20 @@
 -- Load in config as modules
 wm         = require('wm');
 plugins    = require('plugins');
-grid       = require('grid');
-hotkeys    = require('hotkeys');
+bindings   = require('bindings');
+
+
+-- hide window shadows (doesn't work)
+hs.window.setShadows(false)
+
+-- Load hs on the command line
+hs.ipc.cliInstall()
+
+-- bindings
+bindings.enabled = { 'grid', 'hotkeys', 'tiling' }
 
 -- start/stop modules
-local modules = { plugins, grid, hotkeys, wm }
+local modules = {wm, plugins, bindings}
 
 hs.fnutils.each(modules, function(module)
   if module then module.start() end
@@ -30,6 +39,7 @@ function reloadConfig(files)
         hs.reload()
     end
 end
+
 
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 hs.notify.new({title="hammerspoon", informativeText="Config reloaded"}):send()
