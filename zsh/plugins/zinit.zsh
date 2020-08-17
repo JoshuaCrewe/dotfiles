@@ -15,6 +15,7 @@ fi
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
