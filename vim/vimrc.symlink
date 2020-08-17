@@ -25,7 +25,7 @@ Plug 'junegunn/vim-slash'             " For hiding highlights after searching
 Plug 'mattn/emmet-vim'                " Code writing shorthand
 Plug 'tomtom/tcomment_vim'            " Commenting out stuff
 
-Plug 'w0rp/ale'                       " Async syntax checking
+Plug 'dense-analysis/ale'             " Async syntax checking
 Plug 'junegunn/gv.vim'                " Requires fugitive - commit viewer
 Plug 'chip/vim-fat-finger'            " Corrects some easily made typing mistakes
 Plug 'vim-scripts/camelcasemotion'    " Treat cammel case as words
@@ -65,6 +65,7 @@ Plug 'evanleck/vim-svelte'
 Plug 'yardnsm/vim-import-cost', { 'do': 'npm install' }
 
 Plug 'jceb/vim-orgmode', { 'for': 'org' }
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'tpope/vim-speeddating', { 'for': 'org' }
 
 " Sessions
@@ -568,6 +569,7 @@ let g:ale_linters = {
 \   'php': ['prettier'],
 \   'markdown': ['prettier'],
 \   'sh': ['shellcheck'],
+\   'css': ['prettier'],
 \}
 
 let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
@@ -575,6 +577,7 @@ let g:ale_linter_aliases = {'svelte': ['css', 'javascript']}
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fixers['scss'] = ['prettier']
+let g:ale_fixers['css'] = ['prettier']
 " let g:ale_fixers['svelte'] = ['eslint', 'prettier', 'prettier_standard']
 " let g:ale_fixers['php'] = ['phpcbf']
 let g:ale_fixers['markdown'] = ['prettier']
