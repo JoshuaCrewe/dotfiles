@@ -5,7 +5,7 @@
 [merge]
     ff = false
 [pull]
-    ff= true
+    ff = only
 [include]
     path = ~/dotfiles/git/git-aliases
     path = ~/.gitconfig.local
