@@ -1,5 +1,5 @@
 local module = { cache = cache }
-local hyper   = {"cmd", "alt", "ctrl", "shift"}
+local hyper   = {"cmd", "ctrl", "shift"}
 
 module.start = function()
     hs.loadSpoon("SpoonInstall")
