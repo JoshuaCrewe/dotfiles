@@ -5,7 +5,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:${HOME
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # Use Brew php
-export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
 
 # Load dotfile development Environment
 export DOTFILES="$HOME/dotfiles"
