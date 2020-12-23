@@ -1,11 +1,13 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR OS:Linux
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__3A_q:exit
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_j:fzm
 SETUVAR _fish_abbr_m:mark
 SETUVAR _fish_abbr_ssh_2D_key:cat\x20\x24HOME/\x2essh/id_rsa\x2epub\x20\x7c\x20pbcopy
+SETUVAR _fish_abbr_testing:huh
 SETUVAR _fish_abbr_vd:cd\x20\x24HOME/vagrant\x20\x26\x26\x20vagrant\x20destroy\x20\x26\x26\x20prevd
 SETUVAR _fish_abbr_vh:cd\x20\x24HOME/vagrant\x20\x26\x26\x20vagrant\x20halt\x20\x26\x26\x20prevd
 SETUVAR _fish_abbr_vhosts:sudo\x20vim\x20/etc/hosts
