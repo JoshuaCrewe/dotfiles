@@ -6,7 +6,7 @@ module.start = function()
     -- App Hotkeys
     ---------------------------------------------------------
 
-    hs.hotkey.bind(hyper, 'J', function () hs.application.launchOrFocus("iTerm") end)
+    hs.hotkey.bind(hyper, 'J', function () hs.application.launchOrFocus("Alacritty") end)
     hs.hotkey.bind(hyper, 'K', function () hs.application.launchOrFocus("Firefox") end)
     hs.hotkey.bind(hyper, 'T', function () hs.application.launchOrFocus("Transmit") end)
     hs.hotkey.bind(hyper, 'M', function () hs.application.launchOrFocus("Mail") end)
