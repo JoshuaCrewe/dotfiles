@@ -111,7 +111,7 @@ font:
     family: Fira Code
 
     # The `style` can be specified to pick a specific face.
-    # style: Bold
+    # style: Regular
 
   # Bold font face
   #bold:
@@ -175,7 +175,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#3a3a3a'
+    background: '#303030'
     foreground: '#d0d0d0'
 
   cursor:
@@ -328,7 +328,7 @@ cursor:
 #winpty_backend: false
 
 # Send ESC (\x1b) before characters when alt is pressed.
-#alt_send_esc: true
+alt_send_esc: true
 
 #mouse:
   # Click settings

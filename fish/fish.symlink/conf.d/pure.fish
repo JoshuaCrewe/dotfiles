@@ -1,4 +1,4 @@
-set --global pure_version 3.4.2 # used for bug report
+set --global pure_version 3.5.0 # used for bug report
 
 # Base colors
 _pure_set_default pure_color_primary blue
@@ -79,3 +79,6 @@ _pure_set_default pure_check_for_new_release false
 _pure_set_default pure_show_prefix_root_prompt false
 _pure_set_default pure_symbol_prefix_root_prompt "#"
 _pure_set_default pure_color_prefix_root_prompt pure_color_danger
+
+# Compact mode
+_pure_set_default pure_enable_single_line_prompt false

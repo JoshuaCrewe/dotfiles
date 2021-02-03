@@ -32,4 +32,5 @@ set -U fish_color_command $green0 # cat
 set -U fish_color_quote $yellow0 # 'this is a quote'
 set -U fish_color_operator $blue0 # && $HOME
 set -U fish_color_comment $black1
+set -U fish_color_error $red0
 
