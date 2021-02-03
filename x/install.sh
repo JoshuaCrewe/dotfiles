@@ -12,15 +12,15 @@ if [[ $is_linux == 1 ]]; then
     dst="$HOME/.Xmodmap"
     _link "$src" "$dst"
 
-    src="$dirname/Xresources.symlink"
-    dst="$HOME/.Xresources"
-    _link "$src" "$dst"
+    # src="$dirname/Xresources.symlink"
+    # dst="$HOME/.Xresources"
+    # _link "$src" "$dst"
 
-    src="$dirname/xbindkeysrc.symlink"
-    dst="$HOME/.xbindkeysrc"
-    _link "$src" "$dst"
+    # src="$dirname/xbindkeysrc.symlink"
+    # dst="$HOME/.xbindkeysrc"
+    # _link "$src" "$dst"
 
-    src="$dirname/xinitrc.symlink"
-    dst="$HOME/.xinitrc"
-    _link "$src" "$dst"
+    # src="$dirname/xinitrc.symlink"
+    # dst="$HOME/.xinitrc"
+    # _link "$src" "$dst"
 fi

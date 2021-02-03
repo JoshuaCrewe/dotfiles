@@ -1,44 +1,39 @@
-"rofi -show run"
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.7
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+"dmenu_run"
     Mod4 + space
-
-"rofi -show window"
-    Mod4 + Tab
-
-"run-or-raise.sh firefox"
-    Mod3 + k
-
-"run-or-raise.sh urxvt"
-    Mod3 + j
-
-"run-or-raise.sh aseprite allegro"
-    Mod3 + p
-
-"run-or-raise.sh thunderbird"
-    Mod3 + m
-
-"xautolock -locknow"
-    Mod1 + l
-
-"xautolock -toggle"
-    Mod1 + Shift + l
-
-"xclip -selection primary -o | xclip -selection clipboard -i"
-    Mod4+c
-
-"xclip -selection primary -o"
-    Mod4+v
-
-"win center-75"
-    control+mod1 + k
-    
-"win full-screen"
-    control+mod1 + f
-
-"win left-50"
-    control+mod1 + j
-
-"win right-50"
-    control+mod1 + l
 
 "screengrab -s /home/joshua/Downloads/screenshots/"
     Shift+Print
