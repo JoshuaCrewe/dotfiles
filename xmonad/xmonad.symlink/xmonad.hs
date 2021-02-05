@@ -146,7 +146,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask .|. controlMask               , xK_j     ), spawn "run-or-raise.sh alacritty")
     , ((modm .|. shiftMask .|. controlMask               , xK_k     ), spawn "run-or-raise.sh firefox")
     , ((modm .|. shiftMask .|. controlMask               , xK_m     ), spawn "run-or-raise.sh thunderbird")
-    , ((modm               , xK_space     ), spawn "dmenu_run")
+    , ((modm               , xK_space     ), spawn "dmenu_run -nb '#3a3a3a' -nf '#626262' -sb '#626262' -sf '#3a3a3a' -fn 'FiraCode-Bold:pixelsize=18:antialias=true:autohint=true' ")
     ]
     ++
 
