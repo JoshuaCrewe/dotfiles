@@ -11,7 +11,7 @@ set -U HOMEBREW_NO_GITHUB_API true
 abbr :q exit
 abbr vi vim
 
-set PATH $HOME/dotfiles/bin /usr/local/opt/php@7.3/bin /usr/local/opt/curl/bin $HOME/.cargo/bin $HOME/.composer/vendor/bin $PATH
+set PATH $HOME/dotfiles/bin /usr/local/opt/php@7.3/bin /usr/local/opt/curl/bin $HOME/.cargo/bin $HOME/.composer/vendor/bin $HOME/.yarn/bin $PATH
 
 bind -M insert \cp history-search-backward
 bind -M insert \cn history-search-forward
