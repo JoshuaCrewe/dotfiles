@@ -2,7 +2,7 @@
 ! Xft settings
 !-------------------------------------------------------------------------------
 
-! Xft.dpi:                    141
+! Xft.dpi:                    90
 Xft.antialias:              true
 Xft.rgba:                   rgb
 Xft.hinting:                true
@@ -27,10 +27,13 @@ URxvt.lineSpace:            5
 URxvt.internalBorder: 2
 URxvt.externalBorder: 2
 
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 ! Fonts
 URxvt.allow_bold:           true
-URxvt.font:                 xft:FiraCode-Bold:pixelsize=16
-URxvt*boldFont:             xft:FiraCode-Bold:pixelsize=16
+URxvt.font:                 xft:FiraCode-Bold:pixelsize=14
+URxvt*boldFont:             xft:FiraCode-Bold:pixelsize=14
 
 ! Fix font space
 ! URxvt*letterSpace: -1

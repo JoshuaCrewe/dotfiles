@@ -45,3 +45,8 @@ karabiner/karabiner.symlink/automatic_backups
 
 hammerspoon/hammerspoon.symlink/Spoons/*.spoon
 !hammerspoon/hammerspoon.symlink/Spoons/SpoonInstall.spoon
+
+xmonad/xmonad.symlink/xmonad-x86_64-linux
+xmonad/xmonad.symlink/xmonad.errors
+xmonad/xmonad.symlink/xmonad.o
+xmonad/xmonad.symlink/xmonad.hi
