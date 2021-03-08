@@ -7,11 +7,13 @@ set -U  BAT_THEME 'base16'
 
 set -U HOMEBREW_NO_GITHUB_API true
 
+# WP CLI doesn't like PHP 8 yet ...
+export WP_CLI_PHP=/usr/bin/php7
 
 abbr :q exit
 abbr vi vim
 
-set PATH $HOME/dotfiles/bin /usr/local/opt/php@7.3/bin /usr/local/opt/curl/bin $HOME/.cargo/bin $HOME/.composer/vendor/bin $HOME/.yarn/bin $PATH
+set PATH $HOME/dotfiles/bin $HOME/Downloads/build/wp-cli/bin /usr/local/opt/php@7.3/bin /usr/local/opt/curl/bin $HOME/.cargo/bin $HOME/.composer/vendor/bin $HOME/.yarn/bin $PATH
 
 bind -M insert \cp history-search-backward
 bind -M insert \cn history-search-forward
@@ -41,6 +43,7 @@ set -U OS (uname)
 if test $OS = 'Darwin'
     alias o='open'
 else if test $OS = 'Linux'
+    alias open='xdg-open'
     alias o='xdg-open'
 
     alias pbcopy='xclip -selection clipboard -in'

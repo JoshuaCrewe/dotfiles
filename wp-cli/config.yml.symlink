@@ -1,3 +1,7 @@
+core install:
+  admin_user: Joshua
+  admin_email: joshua@venncreative.co.uk
+
 require:
     scripts/subcommand-users.php
     scripts/login-kwicke.php

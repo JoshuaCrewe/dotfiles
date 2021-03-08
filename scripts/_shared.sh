@@ -101,3 +101,14 @@ _install () {
         _success "$1 is already installed"
     fi
 }
+
+_aur () {
+    if ! hash $1 2>/dev/null; then
+        if hash paru 2>/dev/null; then
+            paru -S "$1"
+            _success "$1 installed"
+        fi
+    else
+        _success "$1 is already installed"
+    fi
+}
