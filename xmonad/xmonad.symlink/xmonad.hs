@@ -7,21 +7,29 @@
 -- Normally, you'd only override those defaults you care about.
 --
 
+    -- Base
 import XMonad
-import Data.Monoid
 import System.Exit
-import XMonad.Hooks.EwmhDesktops
-import XMonad.Hooks.ManageDocks
-import XMonad.Util.Run
-import Graphics.X11.ExtraTypes.XF86
-import XMonad.Util.EZConfig
+import qualified XMonad.StackSet as W
+
+    -- Data
+import Data.Monoid
+import qualified Data.Map        as M
+
+    -- Actions
 import XMonad.Actions.GridSelect
 
+    -- Utilities
+import XMonad.Util.EZConfig
+import XMonad.Util.Run
+
 import XMonad.Hooks.DynamicLog (dynamicLogWithPP, wrap, xmobarPP, xmobarColor, shorten, PP(..))
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.WorkspaceHistory
 
-import qualified XMonad.StackSet as W
-import qualified Data.Map        as M
+import XMonad.Prompt.Unicode
+
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -314,6 +322,8 @@ main = do
 			,("<XF86AudioRaiseVolume>", spawn "amixer set Master 5%+ unmute")
 			,("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
 			,("<XF86AudioMute>", spawn "pactl set-sink-mute 0 toggle")
+			,("<XF86AudioMute>", spawn "pactl set-sink-mute 0 toggle")
+			,("<Print>", spawn "flameshot gui -p /home/joshua/Downloads/screenshots/")
 		]
 
 
