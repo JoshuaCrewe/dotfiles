@@ -2,4 +2,8 @@
 set -u # error out if variable is not set
 set -e # exit if returns non true
 
-wp login kwicke | grep -Eoh '(http|https)://.*' | xargs open
+if [[ $(uname) = 'Linux' ]]; then
+    wpd login kwicke | grep -Eoh '(http|https)://.*' | xargs xdg-open
+else
+    wpd login kwicke | grep -Eoh '(http|https)://.*' | xargs open
+fi
