@@ -18,7 +18,8 @@ status_symbols = {
 level_colors = {
   'red'         => (0..9),
   'yellow'      => (10..19),
-  'green'       => (20..100)
+  'mid'         => (50..100),
+  'green'       => (20..50)
 }
 
 output_percentage = acpi_output[3]
@@ -27,7 +28,9 @@ battery_level = case output_percentage.delete('%').to_i
                 when level_colors['red']
                   "<fc=#d68787><fn=1></fn>"
                 when level_colors['yellow']
-                  "<fc=#d8af5f><fn=1></fn>"
+                  "<fc=#d8af5f><fn=1></fn>"
+                when level_colors['mid']
+                  "<fc=#5f865f><fn=1></fn>"
                 when level_colors['green']
                   "<fc=#5f865f><fn=1></fn>"
                 else
