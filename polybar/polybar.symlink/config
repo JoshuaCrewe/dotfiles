@@ -1,0 +1,227 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+background = ${xrdb:background}
+background-alt = ${xrdb:color8}
+foreground = ${xrdb:foreground}
+foreground-alt = ${xrdb:color15}
+
+primary = ${xrdb:color2}
+secondary = ${xrdb:color4}
+
+alert = ${xrdb:color1}
+
+red = ${xrdb:color1}
+yellow = ${xrdb:color3}
+blue = ${xrdb:color4}
+green = ${xrdb:color2}
+
+[bar/example]
+width = 100%
+height = 22
+radius = 0
+fixed-center = true
+bottom = false
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+
+line-size = 4
+line-color = #f00
+
+border-top-size = 6
+border-color = ${colors.background}
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Fira Code:weight=bold:pixelsize=11;1
+font-1 = Mononoki Nerd Font:hinting=true:size=11:antialias=true;0
+font-2 = ubuntu:weight=bold:pixelsize=10;1
+
+modules-left = bspwm xwindow
+modules-right = battery battery-time date time
+
+tray-position = right
+tray-padding = 0
+;tray-background = #0063ff
+
+wm-restack = bspwm
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+cursor-click = default
+cursor-scroll = default
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+format-background = #626262
+format-foreground = #3a3a3a
+label-maxlen = 100
+format-padding = 02
+format-underline = ${colors.background}
+
+[module/bspwm]
+type = internal/bspwm
+
+;label-focused = %index%
+;label-focused-background = ${colors.background-alt}
+;label-focused-underline= ${colors.primary}
+;label-focused-padding = 2
+
+;label-occupied = %index%
+;label-occupied-padding = 2
+
+;label-urgent = %index%!
+;label-urgent-background = ${colors.alert}
+;label-urgent-padding = 2
+
+;label-empty = %index%
+;label-empty-foreground = ${colors.foreground-alt}
+;label-empty-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+ws-icon-0=Terminal;I
+ws-icon-1=Sublime;II
+ws-icon-2=Firefox;III
+ws-icon-3=Thunar;IV
+ws-icon-4=Evince;V
+ 
+;NOTE: YOU CANNOT HAVE NAME AND ICON
+;TOGETHER ONLY ONE OR THE OTHER!!
+ 
+label-focused = %icon%
+label-focused-foreground = ${colors.blue} 
+label-focused-padding = 1
+ 
+label-occupied = %icon%
+label-occupied-foreground = ${colors.red}
+label-occupied-padding = 1
+ 
+label-empty = %icon%
+label-empty-foreground = ${colors.green}
+label-empty-padding = 1
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = BL
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 500
+date = " %a %d %b"
+format-foreground = ${colors.blue}
+
+[module/time]
+type = internal/date
+interval = 5
+time = "{ %H:%M }"
+
+label = %date% %time%
+format-foreground = ${colors.secondary}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+label-volume =  %percentage%%
+label-volume-foreground = ${colors.background}
+label-volume-background = ${colors.background-alt}
+label-volume-padding = 1
+
+label-muted =  
+label-muted-foreground = ${colors.background}
+label-muted-background = ${colors.background-alt}
+format-volume-underline = ${colors.background}
+label-muted-padding = 1
+
+[module/battery-time]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 99
+
+time-format = (%H:%M)
+label-discharging = %time%
+label-discharging-foreground = ${colors.background}
+label-discharging-background = ${colors.background-alt}
+label-discharging-padding = 1
+format-discharging-underline = ${colors.background}
+
+format-discharging-margin = 1
+label-full =
+label-charging =
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 99
+format-discharging-margin-right = 0
+
+time-format = %H:%M
+
+format-charging = <label-charging> 
+label-charging =  %percentage%% 
+
+format-discharging = <ramp-capacity> <label-discharging>
+label-discharging = %percentage%% 
+
+label-full =  %percentage%%
+label-full-foreground = ${colors.green}
+
+label-charging-foreground = ${colors.green}
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = %{F#d68787} 
+ramp-capacity-1 = %{F#d8af5f}
+ramp-capacity-2 = %{F#5f865f}  
+ramp-capacity-3 = %{F#5f865f}  
+ramp-capacity-4 = %{F#5f865f}
+ramp-capacity-5 = %{F#5f865f}
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini
