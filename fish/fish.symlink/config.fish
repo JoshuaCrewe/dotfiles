@@ -13,7 +13,7 @@ export WP_CLI_PHP=/usr/bin/php7
 abbr :q exit
 abbr vi vim
 
-set PATH $HOME/dotfiles/bin $HOME/Downloads/build/wp-cli/bin /usr/local/opt/php@7.3/bin /usr/local/opt/curl/bin $HOME/.cargo/bin $HOME/.composer/vendor/bin $HOME/.yarn/bin $PATH
+set PATH $HOME/dotfiles/bin $HOME/dotfiles/bin/launchers $HOME/Downloads/build/wp-cli/bin /usr/local/opt/php@7.3/bin /usr/local/opt/curl/bin $HOME/.cargo/bin $HOME/.composer/vendor/bin $HOME/.yarn/bin $PATH
 
 bind -M insert \cp history-search-backward
 bind -M insert \cn history-search-forward
@@ -58,3 +58,12 @@ alias tmux='tmux -2'
 set -U fish_escape_delay_ms 80
 
 set -U FZF_CD_COMMAND "fd --hidden -i -E 'node_modules' -E '.git' --type directory" 
+
+abbr trash gio trash 
+
+alias adestart="WINEPREFIX=$HOME/.adewine/ wine $HOME/.adewine/drive_c/Program\\ Files/Adobe/Adobe\\ Digital\\ Editions\\ 2.0/DigitalEditions.exe\ >\ /dev/null\ 2\>\&1\ \&"
+abbr adestart-overdrive WINEPREFIX=$HOME/.adewine-overdrive/ wine $HOME/.adewine-overdrive/drive_c/Program\\ Files/Adobe/Adobe\\ Digital\\ Editions\\ 2.0/DigitalEditions.exe
+
+abbr rsync rsync -vzcaSlh
+
+set -U SXHKD_SHELL sh

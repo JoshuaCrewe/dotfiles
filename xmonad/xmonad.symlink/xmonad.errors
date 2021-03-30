@@ -7,9 +7,9 @@ xmonad.hs:86:35: warning: [-Wdeprecations]
 86 |     , ((modm, xK_g), goToSelected defaultGSConfig)
    |                                   ^^^^^^^^^^^^^^^
 
-xmonad.hs:304:1: warning: [-Wtabs]
+xmonad.hs:302:1: warning: [-Wtabs]
     Tab character found here, and in 60 further locations.
     Please use spaces instead.
     |
-304 |                 handleEventHook    = myEventHook,
+302 |                 handleEventHook    = myEventHook,
     | ^^^^^^^^

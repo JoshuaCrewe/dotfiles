@@ -11,8 +11,8 @@ if [[ $is_linux == 1 ]]; then
     _aur interception-dual-function-keys
 
     src="$dirname/dual-function-keys.yaml.symlink"
-    dst="$HOME/.config/dual-function-keys/dual-function-keys.yaml"
-    _link "$src" "$dst"
+    dst="/etc/interception/dual-function-keys.yaml"
+    _sudo_link "$src" "$dst"
 
     src="$dirname/udevmon.yaml.symlink"
     dst="/etc/interception/udevmon.yaml"
