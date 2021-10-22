@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# https://gitlab.com/uoou/dotfiles/-/blob/master/stow/bin/home/drew/.local/bin/decency
+# apps=$(echo -n "$PATH" | xargs -d: -I{} -r -- find -L {} -maxdepth 1 -mindepth 1 -type f -executable -printf '%P \n' 2>/dev/null)
+
+apps=$($HOME/dotfiles/fmenu/fmenu_path)
+
+selected="$( $HOME/dotfiles/fmenu/fmenu_path | $HOME/dotfiles/fmenu/fmenu)"
+
+[ -z "$selected" ] && exit
+
+echo "$selected" | while read -r line ; do
+    eval "nohup ${line} > /dev/null 2>&1" & sleep 0.1;
+    # setsid $line &
+done

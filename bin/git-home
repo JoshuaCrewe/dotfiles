@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+_home=$(git branch | grep -i "main")
+if [[ ! "$_home" ]]; then
+    _home=$(git branch | grep -i "master" )
+fi
+echo "$_home" | tr -cd '[:alnum:]._-' | xargs git checkout

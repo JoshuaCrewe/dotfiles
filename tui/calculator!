@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rofi -show calc
+# bspc rule -a \* -o state=floating & alacritty --class calculator -e bc

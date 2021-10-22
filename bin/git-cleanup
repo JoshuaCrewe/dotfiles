@@ -2,5 +2,12 @@
 
 # Usage: git cleanup-remote
 # Delete any local branches which have been merged
+_main=$(git branch --show-current)
 
-git branch --merged master | grep -v 'master$' | xargs git branch -d
+_branches=$(git branch --merged ${_main} | grep -v $_main )
+
+if [[ $_branches ]]; then
+    echo $_branches | xargs git branch -d
+else
+    echo 'nothing to do';
+fi

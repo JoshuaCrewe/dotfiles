@@ -50,9 +50,14 @@ create_variables() {
 }
 
 function run() {
-    create_variables ./wp-cli.docker.yml
-    echo "$@"
-    sudo docker-compose -f ~/docker/docker-compose.yaml run --rm wp-cli php -d memory_limit=512M /usr/local/bin/wp --path="$path" "$@"
+    create_variables ./wp-cli.yml
+
+    # Get the project name
+    _pwd=${PWD##*/} 
+
+    # echo "$@"
+
+    sudo docker compose -f ~/docker/docker-compose.yaml run --rm wp-cli php -d memory_limit=512M /usr/local/bin/wp --quiet  --path="/srv/www/$_pwd/$path" "$@" 
 }
 
 run "$@"

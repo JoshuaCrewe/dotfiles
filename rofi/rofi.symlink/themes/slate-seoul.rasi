@@ -1,0 +1,47 @@
+/* https://github.com/davatorium/rofi/blob/next/doc/rofi-theme.5.markdown#name-1 */
+* {
+  background-color: #3a3a3a;
+  border-color: #4e4e4e;
+  text-color: #85add4;
+  spacing: 0;
+  width: 40%;
+}
+
+mainbox {
+    /* border: 3px 3px 3px 3px; */
+    /* border-color: #d75f87; */
+}
+
+inputbar {
+  border: 0 0 1px 0;
+  children: [prompt,entry];
+}
+
+prompt {
+  padding: 16px;
+  border: 0 1px 0 0;
+}
+
+entry {
+  padding: 16px;
+}
+
+listview {
+  cycle: false;
+  margin: 0 0 -1px 0;
+  scrollbar: false;
+  lines: 5;
+}
+
+element {
+  border: 0 0 1px 0;
+  padding: 16px;
+}
+
+element selected {
+  background-color: #4e4e4e;
+}
+
+element-text selected {
+  background-color: #4e4e4e;
+}
