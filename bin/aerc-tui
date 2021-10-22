@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-bspc rule -a \* -o state=tiled desktop="^3" follow=on & alacritty -e aerc

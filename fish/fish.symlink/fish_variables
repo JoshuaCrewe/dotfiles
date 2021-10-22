@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR BAT_THEME:base16
+SETUVAR BROWSER:firefox
 SETUVAR FZF_CD_COMMAND:fd\x20\x2d\x2dhidden\x20\x2di\x20\x2dE\x20\x27node_modules\x27\x20\x2dE\x20\x27\x2egit\x27\x20\x2d\x2dtype\x20directory
 SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dheight\x2040\x25
 SETUVAR FZF_DISABLE_KEYBINDINGS:0
@@ -11,7 +12,7 @@ SETUVAR FZF_PREVIEW_FILE_CMD:head\x20\x2dn\x2010
 SETUVAR FZF_TMUX_HEIGHT:40\x25
 SETUVAR HOMEBREW_NO_GITHUB_API:true
 SETUVAR OS:Linux
-SETUVAR SXHKD_SHELL:sh
+SETUVAR SXHKD_SHELL:/bin/bash
 SETUVAR WP_CLI_PHP:/usr/bin/php7
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr__3A_q:exit
@@ -20,6 +21,7 @@ SETUVAR _fish_abbr_adestart_2D_overdrive:WINEPREFIX\x3d/home/joshua/\x2eadewine\
 SETUVAR _fish_abbr_g:git
 SETUVAR _fish_abbr_j:fzm
 SETUVAR _fish_abbr_m:mark
+SETUVAR _fish_abbr_photobooth:mplayer\x20\x2dvo\x20jpg\x20\x2dframes\x201\x20tv\x3a//
 SETUVAR _fish_abbr_rsync:rsync\x20\x2dvzcaSlh
 SETUVAR _fish_abbr_ssh_2D_key:cat\x20\x24HOME/\x2essh/id_rsa\x2epub\x20\x7c\x20pbcopy
 SETUVAR _fish_abbr_testing:huh
@@ -78,7 +80,7 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/Users/joshua/\x2efzf/bin\x1e/home/joshua/\x2efzf/bin
+SETUVAR fish_user_paths:/home/joshua/\x2econfig/netlify/helper/bin\x1e/Users/joshua/\x2efzf/bin\x1e/home/joshua/\x2efzf/bin
 SETUVAR foreground:d0d0d0
 SETUVAR green0:5f865f
 SETUVAR green1:87af87

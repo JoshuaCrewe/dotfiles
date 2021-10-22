@@ -1,0 +1,145 @@
+#!/usr/bin/env bash
+
+# forked from https://gitlab.com/uoou/dotfiles/-/tree/master/stow/bin/home/drew/.local/bin/lace
+# https://raw.githubusercontent.com/frrobert2/lace/main/lace
+# Shows both how many days ago and date
+# Modified to work with Debian running Sed 3.7
+# connectto is a timeout variable in seconds 
+# it is the time lace will wait to connect to a site before it stops the connection
+#  default is 30 seconds you can change it what you want
+connectto=30
+set -o pipefail
+if [ -z "$XDG_CONFIG_HOME" ];then
+	config_place="$HOME/.config/lace"
+else
+	config_place="$XDG_CONFIG_HOME/lace"
+fi
+[[ ! -d "$config_place" ]] && mkdir -p $config_place
+subsfile="$config_place/subs"
+
+red="[31m"
+blue="[34m"
+nc="[m"
+esc=$(echo -e "\033")
+tmpfile=$(mktemp /tmp/lace.XXXXXX)
+tmpfile2=$(mktemp /tmp/lace.XXXXXX)
+function reldate() {
+# stolen from https://unix.stackexchange.com/a/451216
+    local SEC_PER_MINUTE=$((60))
+    local   SEC_PER_HOUR=$((60*60))
+    local    SEC_PER_DAY=$((60*60*24))
+    local  SEC_PER_MONTH=$((60*60*24*30))
+    local   SEC_PER_YEAR=$((60*60*24*365))
+
+    local last_unix="$(date --date="@$1" +%s)"    # convert date to unix timestamp
+	local now_unix="$2"
+    local delta_s=$(( now_unix - last_unix ))
+
+    if (( delta_s <  SEC_PER_MINUTE * 2))
+    then
+        echo ""$((delta_s))" seconds ago"
+    elif (( delta_s <  SEC_PER_HOUR * 2))
+    then
+        echo ""$((delta_s / SEC_PER_MINUTE))" minutes ago"
+    elif (( delta_s <  SEC_PER_DAY * 2))
+    then
+        echo ""$((delta_s / SEC_PER_HOUR))" hours ago"
+    elif (( delta_s <  SEC_PER_MONTH * 2))
+    then
+        echo ""$((delta_s / SEC_PER_DAY))" days ago"
+    elif (( delta_s <  SEC_PER_YEAR * 2))
+    then
+        echo ""$((delta_s / SEC_PER_MONTH))" months ago"
+    else
+        echo ""$((delta_s / SEC_PER_YEAR))" years ago"
+    fi
+}
+#export -f reldate
+
+function dohelp() {
+	echo -e "\nUsage:\n"
+	echo -e "\t$(basename "$0") - read subscriptions\n"
+	echo -e "\t$(basename "$0") nope - read subscriptions without pager\n"
+	echo -e "\t$(basename "$0") subs - list subscriptions\n"
+	echo -e "\t$(basename "$0") sub nickname url - add subscription, e.g.:"
+	echo -e "\t$(basename "$0") sub Drew gemini://friendo.monster/tiny.gmi\n"
+	echo -e "\t$(basename "$0") unsub nickname - remove subscription, e.g.:"
+	echo -e "\t$(basename "$0") unsub Drew\n"
+	echo -e "\t$(basename "$0") update - redownload script to location of current script (might need sudo, depending on location)\n"
+	exit
+}
+
+function timeline() {
+	while read f;do
+		local user=$(awk '{print $2}' <<< "$f")
+		local url=$(awk '{print $1}' <<< "$f")
+		if [[ "$url" != *://* ]];then
+			domain="$url"
+			url="gemini://$url"
+		else
+				domain=$(sed 's/gemini:\/\///' <<< "$url")
+			fi
+			if [[ "$url" != *.*/*.* ]] && [[ $url != */ ]];then
+				url="$url/"
+			fi
+			domain=$(sed 's/\/.*$//' <<< "$domain")
+			fav=$(timeout $connectto openssl s_client -crlf -quiet -connect "$domain:1965" <<<"gemini://$domain/favicon.txt" 2>/dev/null | sed -e '1d')
+			timeoutstatus=${PIPESTATUS[0]}
+			if [ $timeoutstatus -ne 124 ];then
+			if [ ! -z "$fav" ];then
+				user="$fav $user"
+			fi
+			timeout $connectto openssl s_client -crlf -quiet -connect "$domain:1965" <<<"$url" 2>/dev/null | sed -e '1d' | sed -n '/##/,$p' | sed -e "s/^\(## .*\)$/\1\n${esc}$red$user${esc}$nc ($domain)/g" >> $tmpfile
+			[[ ! -z $(sed -n '$p' $tmpfile) ]] && echo "" >> $tmpfile
+			fi
+		done <"$subsfile"
+		cat $tmpfile | sed -r ':r;/(^|\n)$/!{$!{N;br}};s/\n/\v/g' | sed -rn '/^## .*/p' | sed -e 's/\v/\n/g' | sed -e "s/^## \(.*\)/date -d '\1' +%s/e" | sed -r ':r;/(^|\n)$/!{$!{N;br}};s/\n/\v/g' | sort -r | sed -e 's/\v/\n/g'  > $tmpfile
+
+
+	# removed segment of code	| sed "s/^\([0-9]\+\)$/{reldate \1 $now_unix;}/e" | sed "s/^\([0-9]* [a-z]* ago\)$/${esc}$blue\1${esc}$nc/g"
+
+	while read line; do
+	if [[ "$line" =~ ^[0-9]{10,}$ ]]; then
+		reldate "$line" "$(date +%s)" >> $tmpfile2
+		
+		echo "$(date -d @$line)" >> $tmpfile2
+	else
+	   echo "$line" >> $tmpfile2
+	fi
+	done<$tmpfile
+
+	cat $tmpfile2 | sed "s/^\([0-9]* [a-z]* ago\)$/${esc}$blue\1${esc}$nc/g" >$tmpfile
+        
+
+		if [[ "$1" == "nope" ]];then
+			cat $tmpfile && rm -f $tmpfile $tmpfile2
+		else
+			less -RisW $tmpfile && rm -f $tmpfile $tmpfile2
+		fi
+	}
+
+	if [[ "$1" == "help" ]] || [[ "$1" == "--help" ]] || [[ "$1" == "-help" ]] || [[ "$1" == "-h" ]];then
+		dohelp
+	elif [[ "$1" == "sub" ]];then
+		[[ "$#" -ne 3 ]] && dohelp
+		echo "$3 $2" >> $subsfile && echo "added $2 to subscriptions"
+elif [[ "$1" == "unsub" ]];then
+	[[ "$#" -ne 2 ]] && dohelp
+	if grep " $2$" $subsfile 1>/dev/null;then
+		sed -i "/ $2$/d" $subsfile &&
+		echo "removed subscription to $2"
+	else
+		echo "subscription \"$2\" does not exist"
+	fi
+elif [[ "$1" == "subs" ]];then
+	awk '{print $2" ("$1")"}' $subsfile 
+elif [[ "$1" == "update" ]];then
+	curl https://raw.githubusercontent.com/frrobert2/lace/main/lace > "${BASH_SOURCE[0]}"
+else
+	now_unix="$(date +'%s')"
+	if [[ "$1" == "nope" ]];then
+		timeline nope
+	else
+		timeline
+	fi
+fi

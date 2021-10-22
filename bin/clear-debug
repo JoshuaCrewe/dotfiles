@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+_debugfile=$PWD/public/content/debug.log
+
+if [[ -e $_debugfile ]]; then
+    gio trash $_debugfile
+    touch $_debugfile
+fi

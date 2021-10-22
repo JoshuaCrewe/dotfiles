@@ -198,7 +198,7 @@ au FileType snippets setl foldlevel=99
 
 " File Specific
 
-au BufRead,BufNewFile *.md set wrap linebreak breakindent ft=markdown  | :Goyo 100 " make markdown more readable
+au BufRead,BufNewFile *.md,*.gmi set wrap linebreak breakindent ft=markdown  | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
 au FileType markdown setl makeprg=pen\ %
 
@@ -430,15 +430,15 @@ au FileType vim setlocal keywordprg=:help
 
 "Fugitive 
 " Shamelessly stolen shortcuts taken from the authors dotfiles
-nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gw :Gwrite<cr>
-nnoremap <leader>ga :Gadd<cr>
-nnoremap <leader>gb :Gblame<cr>
-nnoremap <leader>gco :Gcheckout<cr>
-nnoremap <leader>gci :Gcommit<cr>
-nnoremap <leader>gm :Gmove<cr>
-nnoremap <leader>gr :Gremove<cr>
+nnoremap <leader>gd :Git diff<cr>
+nnoremap <leader>gs :Git status<cr>
+nnoremap <leader>gw :Git write<cr>
+nnoremap <leader>ga :Git add<cr>
+nnoremap <leader>gb :Git blame<cr>
+nnoremap <leader>gco :Git checkout<cr>
+nnoremap <leader>gci :Git commit<cr>
+nnoremap <leader>gm :Git move<cr>
+nnoremap <leader>gr :Git remove<cr>
 nnoremap <leader>gl :Shell git gl -18<cr>:wincmd \|<cr>
 " A special one for gv plugin
 nnoremap <leader>gh :GV<cr>

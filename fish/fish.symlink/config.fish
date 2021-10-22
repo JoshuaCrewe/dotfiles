@@ -13,7 +13,7 @@ export WP_CLI_PHP=/usr/bin/php7
 abbr :q exit
 abbr vi vim
 
-set PATH $HOME/dotfiles/bin $HOME/dotfiles/bin/launchers $HOME/Downloads/build/wp-cli/bin /usr/local/opt/php@7.3/bin /usr/local/opt/curl/bin $HOME/.cargo/bin $HOME/.composer/vendor/bin $HOME/.yarn/bin $PATH
+set PATH $HOME/dotfiles/tui $HOME/dotfiles/bin $HOME/dotfiles/bin/launchers /usr/local/opt/php@7.3/bin /usr/local/opt/curl/bin $HOME/.cargo/bin $HOME/.composer/vendor/bin $HOME/.yarn/bin $PATH
 
 bind -M insert \cp history-search-backward
 bind -M insert \cn history-search-forward
@@ -66,4 +66,13 @@ abbr adestart-overdrive WINEPREFIX=$HOME/.adewine-overdrive/ wine $HOME/.adewine
 
 abbr rsync rsync -vzcaSlh
 
-set -U SXHKD_SHELL sh
+abbr photobooth mplayer -vo jpg -frames 1 tv://
+
+set -U SXHKD_SHELL /bin/bash
+set -U BROWSER firefox
+
+alias mbsync="mbsync -c \"$HOME/.config/isync/mbsyncrc\""
+
+
+# The next line updates PATH for Netlify's Git Credential Helper.
+test -f '/home/joshua/.config/netlify/helper/path.fish.inc' && source '/home/joshua/.config/netlify/helper/path.fish.inc'

@@ -6,7 +6,8 @@ super + Escape
 
 # Switch between active windows in dmenu
 alt + Tab
-    $HOME/dotfiles/bin/switch
+# $HOME/dotfiles/bin/switch
+    rofi -show window
 
 # Get some screenshots
 Print
@@ -14,11 +15,15 @@ Print
 
 # Application launcher
 mod4 + @space
-    dmenu_run -nb '#3a3a3a' -nf '#626262' -sb '#626262' -sf '#3a3a3a' -fn 'Fira Code:style=Bold:pixelsize=18:antialias=true:autohint=true'
+    $HOME/dotfiles/fmenu/fmenu_run
+
+mod1 + @space
+# dmenu_run  -h 34 -nb '#3a3a3a' -nf '#626262' -sb '#626262' -sf '#3a3a3a' -fn 'Fira Code:style=Bold:pixelsize=16:antialias=true:autohint=true'
+    rofi -show run -modi "run,calc" -run-shell-command "alacritty -e {cmd}"
 
 # Quick applucation launchers/switchers
 mod4 + shift + control + m
-    $HOME/dotfiles/bin/run-or-raise.sh thunderbird
+    $HOME/dotfiles/bin/run-or-raise.sh mailspring
 
 mod4 + shift + control + k
     $HOME/dotfiles/bin/run-or-raise.sh firefox
@@ -26,18 +31,27 @@ mod4 + shift + control + k
 mod4 + shift + control + j
     $HOME/dotfiles/bin/run-or-raise.sh alacritty
 
+mod4 + shift + control + c
+    $HOME/dotfiles/bin/run-or-raise.sh brave
+
+mod4 + shift + control + n
+    xdotool keyup Down
+
+mod4 + shift + control + p
+    xdotool keyup Up
+
 # Media keys
 XF86MonBrightnessUp
-    xbacklight +20
+    xbacklight +10
 
 XF86MonBrightnessDown
-    xbacklight -20
+    xbacklight -10
 
 XF86AudioRaiseVolume
-    amixer -q set Master 5%+ unmute
+    amixer -q set Master 2%+ unmute
 
 XF86AudioLowerVolume
-    amixer -q set Master 5%- unmute
+    amixer -q set Master 2%- unmute
 
 XF86AudioMute
     pactl set-sink-mute 0 toggle

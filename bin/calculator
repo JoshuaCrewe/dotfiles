@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-bspc rule -a \* -o state=floating & alacritty --class calculator -e bc
-

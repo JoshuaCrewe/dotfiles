@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if hash slock 2>/dev/null; then
+    xset dpms force off && slock
+else
+    xset dpms force off
+fi

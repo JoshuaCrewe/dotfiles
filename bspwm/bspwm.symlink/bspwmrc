@@ -9,6 +9,7 @@ bspc monitor -d I II III IV V VI VII VIII IX X
 
 bspc config border_width         4
 bspc config window_gap           0
+bspc config top_padding          33 # Polybar height needed for toggle script
 
 bspc config normal_border_color			$unfocused
 bspc config active_border_color			$unfocused
@@ -23,9 +24,15 @@ bspc config paddingless_monocle			true
 
 bspc config focus_follows_pointer		true
 
+bspc config external_rules_command "$(which ~/.config/bspwm/external-rules.sh)"
+
 bspc rule -a Thunderbird desktop='^3' follow=on
-bspc rule -a Filezilla desktop='^4'
-bspc rule -a firefox     desktop='^2'
+bspc rule -a Mailspring desktop='^3' follow=on
+bspc rule -a Filezilla   desktop='^4'
+bspc rule -a firefox desktop='^2'
+
+bspc desktop ^2 -l monocle
+bspc desktop ^1 -l monocle
 
 $HOME/.config/polybar/launch.sh
 $HOME/.config/flameshot/launch.sh

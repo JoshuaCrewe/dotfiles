@@ -11,7 +11,8 @@ windows=$(echo "$windows" | \
                     $1 = ""; printf "%s\n", $0}')
 
 
-target=$(echo "$windows" | dmenu  -nb '#3a3a3a' -nf '#626262' -sb '#626262' -sf '#3a3a3a' -fn 'Fira Code:style=Bold:pixelsize=18:antialias=true:autohint=true' -l 10 -i -p switch: | tr -s '[:blank:]' | cut -d ' ' -f 2-)
+# target=$(echo "$windows" | dmenu  -nb '#3a3a3a' -nf '#626262' -sb '#626262' -sf '#3a3a3a' -fn 'Fira Code:style=Bold:pixelsize=18:antialias=true:autohint=true' -l 10 -i -p switch: | tr -s '[:blank:]' | cut -d ' ' -f 2-)
+target=$(echo "$windows" | $HOME/dotfiles/fmenu/fmenu | tr -s '[:blank:]' | cut -d ' ' -f 2-)
 
 if [[ -n $target ]]; then
     wmctrl -a "$target"
