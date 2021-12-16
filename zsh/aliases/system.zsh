@@ -31,6 +31,6 @@
         alias trash='gomi -s'
     fi
 
-    alias ssh-key='cat ~/.ssh/id_rsa.pub | pbcopy'
+    # alias ssh-key='cat ~/.ssh/id_rsa.pub | pbcopy'
 
 # }}

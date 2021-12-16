@@ -1,43 +1,3 @@
-function system-update() {
-
-    printf "update homebrew ? [y/N]  "
-    read response
-    if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
-    then
-        brew=true
-    fi
-
-    printf "update npm ? [y/N]  "
-    read response
-    if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
-    then
-        npm=true
-    fi
-
-    printf "update zplug ? [y/N]  "
-    read response
-    if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
-    then
-        zplug=true
-    fi
-
-
-    if [[ ($brew == true) ]]; then
-        printf 'updating homebrew ...'
-        brew update && brew upgrade && brew cleanup && brew prune && brew doctor
-    fi
-
-    if [[ ($brew == true) ]]; then
-        printf 'updating npm ...'
-        npm update -g
-    fi
-
-    if [[ ($brew == true) ]]; then
-        printf 'updating zplug ...'
-        zplug update
-    fi
-}
-
 # fkill - kill process
 function fkill() {
     pid=$(ps -e | awk -F ' ' '{$2=$3=""; print $0}' | fzf -m --height 10% --reverse | awk '{print $1}')
@@ -80,18 +40,6 @@ function cdls {
   builtin cd "$argv[-1]" && ls "${(@)argv[1,-2]}"
 }
 
-# List directories as a tree
-function tree() {
-  Tree -C --noreport -L 5 
-}
-
-# Use <c-z> to restore a suspended vim
-function foreground-vi() {
-  fg %vi
-}
-zle -N foreground-vi
-bindkey '^Z' foreground-vi
-
 # Get some colour in Man pages
 function man() {
 	env \
@@ -106,16 +54,6 @@ function man() {
 		_NROFF_U=1 \
 		PATH="$HOME/bin:$PATH" \
 			man "$@"
-}
-
-# Change file extensions recursively in current directory
-#
-#   change-extension erb haml
-
-function change-extension() {
-  foreach f (**/*.$1)
-    mv $f $f:r.$2
-  end
 }
 
 function jump-to-git-root {
@@ -143,3 +81,10 @@ function jump-to-git-root {
 
 # Make short alias
 alias gr=jump-to-git-root
+
+
+function setup-nodenv {
+    if which nodenv >/dev/null 2>&1; then
+        eval "$(nodenv init -)"
+    fi
+}
