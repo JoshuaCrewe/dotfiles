@@ -32,7 +32,7 @@ Plug 'vim-scripts/camelcasemotion'    " Treat cammel case as words
 Plug 'simeji/winresizer'              " Easily resize windows with <c-e>
 Plug 'phongvcao/vim-stardict'         " Lok up words in the dictionary
 Plug 'tommcdo/vim-lion'               " align stuff according to marks
-Plug 'henrik/vim-reveal-in-finder'    " Show the current file in Macos Finder
+" Plug 'henrik/vim-reveal-in-finder'    " Show the current file in Macos Finder
 Plug 'mileszs/ack.vim'                " Search a codebase using Ag ( saved in quick fix window )
 " Snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -237,6 +237,13 @@ imap <C-k> <C-y>,
 nnoremap <silent> <Leader>P :set paste<CR>"+]P:set nopaste<CR>
 nnoremap <silent> <Leader>p :set paste<CR>"+]p:set nopaste<CR>
 vnoremap          <Leader>p "+p
+
+if has('clipboard')
+    " Make Ctrl C and Ctrl V work on system clipboard
+    " if in visual or insert mode respectively
+    vnoremap <C-c> "+y
+    inoremap <C-v> <Esc>"+pa
+endif
 
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode?utm_content=buffer73792&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
 function! WrapForTmux(s)

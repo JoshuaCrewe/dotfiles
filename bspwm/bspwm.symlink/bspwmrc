@@ -30,6 +30,7 @@ bspc rule -a Thunderbird desktop='^3' follow=on
 bspc rule -a Mailspring desktop='^3' follow=on
 bspc rule -a Filezilla   desktop='^4'
 bspc rule -a firefox desktop='^2'
+bspc rule -a quemu-system-x86_64 desktop='^9'
 
 bspc desktop ^2 -l monocle
 bspc desktop ^1 -l monocle

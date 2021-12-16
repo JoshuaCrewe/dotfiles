@@ -17,7 +17,7 @@ function tmux_web {
     fi
 
     if [[ -f webpack.mix.js ]]; then
-        tmux send-keys -t "$SESSION_NAME" "yarn watch" C-m
+        tmux send-keys -t "$SESSION_NAME" "npx mix watch" C-m
     fi
 
     # Split the window vertically

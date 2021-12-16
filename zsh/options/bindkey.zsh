@@ -39,5 +39,5 @@ bindkey "^I" expand-or-complete-with-dots
 bindkey -M menuselect '^o' accept-and-infer-next-history
 
 
-bindkey "^X^G" open-tig-status
-bindkey "^X^B" fzf-branches
+# bindkey "^X^G" open-tig-status
+# bindkey "^X^B" fzf-branches

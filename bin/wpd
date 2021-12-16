@@ -55,9 +55,12 @@ function run() {
     # Get the project name
     _pwd=${PWD##*/} 
 
-    # echo "$@"
-
-    sudo docker compose -f ~/docker/docker-compose.yaml run --rm wp-cli php -d memory_limit=512M /usr/local/bin/wp --quiet  --path="/srv/www/$_pwd/$path" "$@" 
+    _args=();
+    for i in "$@"; do
+        _args+=("${i/$HOME/\/tmp}")
+    done
+    
+     docker compose -f ~/docker/docker-compose.yaml run --rm wp-cli php -d memory_limit=512M /usr/local/bin/wp  --quiet  --path="/srv/www/$_pwd/$path" "${_args[@]}"
 }
 
 run "$@"
