@@ -23,7 +23,7 @@ mod1 + @space
 
 # Quick applucation launchers/switchers
 mod4 + shift + control + m
-    $HOME/dotfiles/bin/run-or-raise.sh mailspring
+    $HOME/dotfiles/bin/run-or-raise.sh mail!
 
 mod4 + shift + control + k
     $HOME/dotfiles/bin/run-or-raise.sh firefox

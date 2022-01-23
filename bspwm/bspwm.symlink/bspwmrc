@@ -28,6 +28,7 @@ bspc config external_rules_command "$(which ~/.config/bspwm/external-rules.sh)"
 
 bspc rule -a Thunderbird desktop='^3' follow=on
 bspc rule -a Mailspring desktop='^3' follow=on
+bspc rule -a mail! desktop='^3' follow=on
 bspc rule -a Filezilla   desktop='^4'
 bspc rule -a firefox desktop='^2'
 bspc rule -a quemu-system-x86_64 desktop='^9'
