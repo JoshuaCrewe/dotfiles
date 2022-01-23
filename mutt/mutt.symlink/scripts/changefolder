@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 fzf_command='fzf'
-fd_command="fd . ${HOME}/.mail/ --type d -d 2"
+fd_command="fd . ${HOME}/.local/share/mail/joshua@venncreative.co.uk --type d -d 1"
 
 folder="$($fd_command | $fzf_command)"
 

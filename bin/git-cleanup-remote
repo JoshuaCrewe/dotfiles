@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
 
+set -u # error out if variable is not set
+set -e # exit if returns non true
+
 # Usage: git cleanup-remote
 # Delete any local branches whose remote has been deleted
 git remote prune origin
-git branch -vv | grep "origin/.*: gone]" | awk '{print $1}' | xargs git branch -D
+_main=$(git branch --show-current)
+
+git branch --remote --merged ${_main} | grep -v $_main | while read branch; do
+    remote=${branch/origin\//}
+    git push origin :${remote}
+done
