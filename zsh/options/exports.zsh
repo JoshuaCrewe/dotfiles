@@ -54,7 +54,7 @@ export PATH=$GOPATH/bin:$PATH
 export PATH="${HOME}/.cargo/bin:$PATH"
 
 # Always choose vim to edit with
-export EDITOR=$(which vim)
+export EDITOR=$(which nvim)
 
 export GPG_TTY=$(tty) 
 
