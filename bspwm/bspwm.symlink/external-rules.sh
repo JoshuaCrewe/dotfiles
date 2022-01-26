@@ -9,7 +9,7 @@ title=$(xprop -id $wid | grep "^WM_NAME" | awk -F " = " '{print $2}')
 if [[ "$title" = '"launcher"' ]]; then
     echo 'state=floating'
     echo 'center=on'
-    echo 'rectangle=800x200+0+0'
+    echo 'rectangle=1600x400+0+0'
     echo 'desktop=5'
     echo 'sticky=on'
 fi

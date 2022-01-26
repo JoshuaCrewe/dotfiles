@@ -60,7 +60,7 @@ function run() {
         _args+=("${i/$HOME/\/tmp}")
     done
     
-     docker compose -f ~/docker/docker-compose.yaml run --rm wp-cli php -d memory_limit=512M /usr/local/bin/wp  --quiet  --path="/srv/www/$_pwd/$path" "${_args[@]}"
+     docker compose -f ~/mentat/docker-compose.yaml run --rm wp-cli php -d memory_limit=512M /usr/local/bin/wp  --quiet  --path="/srv/www/$_pwd/$path" "${_args[@]}"
 }
 
 run "$@"

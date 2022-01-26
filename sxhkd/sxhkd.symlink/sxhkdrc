@@ -7,7 +7,7 @@ super + Escape
 # Switch between active windows in dmenu
 alt + Tab
 # $HOME/dotfiles/bin/switch
-    rofi -show window
+    rofi -show window -dpi 192
 
 # Get some screenshots
 Print
@@ -19,7 +19,7 @@ mod4 + @space
 
 mod1 + @space
 # dmenu_run  -h 34 -nb '#3a3a3a' -nf '#626262' -sb '#626262' -sf '#3a3a3a' -fn 'Fira Code:style=Bold:pixelsize=16:antialias=true:autohint=true'
-    rofi -show run -modi "run,calc" -run-shell-command "alacritty -e {cmd}"
+    rofi -show run -dpi 192 -modi "run,calc" -run-shell-command "alacritty -e {cmd}"
 
 # Quick applucation launchers/switchers
 mod4 + shift + control + m

@@ -20,7 +20,7 @@ fi
 
 
 if [[ $is_linux == 1 ]]; then
-    src="$dirname/alacritty.symlink"
+    src="$dirname/alacritty.linux.symlink"
     dst="$HOME/.config/alacritty"
     _link "$src" "$dst"
 
