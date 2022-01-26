@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+source $HOME/dotfiles/zsh/options/nnn.zsh
+
+alacritty -t Files -e nnn -cd ~/Downloads
