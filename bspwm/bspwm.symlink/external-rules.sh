@@ -13,3 +13,11 @@ if [[ "$title" = '"launcher"' ]]; then
     echo 'desktop=5'
     echo 'sticky=on'
 fi
+
+if [[ "$title" = '"calculator"' ]]; then
+    echo 'state=floating'
+    echo 'center=on'
+    echo 'rectangle=1600x400+0+0'
+    echo 'desktop=5'
+    echo 'sticky=on'
+fi

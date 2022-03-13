@@ -1,5 +1,5 @@
 super + Return
-    alacritty
+    kitty
 
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -11,7 +11,7 @@ alt + Tab
 
 # Get some screenshots
 Print
-   flameshot gui -p $HOME/Downloads/screenshots/ 
+   flameshot gui -p $HOME/docs/screenshots/ 
 
 # Application launcher
 mod4 + @space
@@ -19,7 +19,7 @@ mod4 + @space
 
 mod1 + @space
 # dmenu_run  -h 34 -nb '#3a3a3a' -nf '#626262' -sb '#626262' -sf '#3a3a3a' -fn 'Fira Code:style=Bold:pixelsize=16:antialias=true:autohint=true'
-    rofi -show run -dpi 192 -modi "run,calc" -run-shell-command "alacritty -e {cmd}"
+    rofi -show run -dpi 192 -modi "run,calc" -run-shell-command "kitty -e {cmd}"
 
 # Quick applucation launchers/switchers
 mod4 + shift + control + m
@@ -29,7 +29,7 @@ mod4 + shift + control + k
     $HOME/dotfiles/bin/run-or-raise.sh firefox
 
 mod4 + shift + control + j
-    $HOME/dotfiles/bin/run-or-raise.sh alacritty
+    $HOME/dotfiles/bin/run-or-raise.sh kitty
 
 mod4 + shift + control + c
     $HOME/dotfiles/bin/run-or-raise.sh brave
@@ -48,10 +48,10 @@ XF86MonBrightnessDown
     xbacklight -10
 
 XF86AudioRaiseVolume
-    amixer -q set Master 2%+ unmute
+    pactl set-sink-volume @DEFAULT_SINK@ +2%
 
 XF86AudioLowerVolume
-    amixer -q set Master 2%- unmute
+    pactl set-sink-volume @DEFAULT_SINK@ -2%
 
 XF86AudioMute
     pactl set-sink-mute 0 toggle
