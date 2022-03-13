@@ -15,3 +15,5 @@ abbr rsync="rsync -vzcaSlh"
 abbr photobooth="mplayer -vo jpg -frames 1 tv://"
 
 abbr ssh-key="cat $HOME/.ssh/id_rsa.pub | pbcopy"
+
+abbr lk="login-kwicke"

@@ -321,7 +321,7 @@ main = do
 			,("<XF86AudioLowerVolume>", spawn "amixer set Master 5%- unmute")
 			,("<XF86AudioMute>", spawn "pactl set-sink-mute 0 toggle")
 			,("<XF86AudioMute>", spawn "pactl set-sink-mute 0 toggle")
-			,("<Print>", spawn "flameshot gui -p /home/joshua/Downloads/screenshots/")
+			,("<Print>", spawn "flameshot gui -p /home/joshua/docs/screenshots/")
 		]
 
 

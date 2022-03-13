@@ -1,19 +1,25 @@
 #!/bin/sh
+# /usr/bin/prime-offload &
 xset -b
 
+xrdb -merge $HOME/.Xresources
+
 export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 # This is needed to have mailspring work with libsecret
-dbus-update-activation-environment --systemd DISPLAY
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+# dbus-update-activation-environment --systemd DISPLAY
+# eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+# export SSH_AUTH_SOCK
 
 xsetroot -solid "#3a3a3a"
 # xsetroot -solid "#CA0066"
 
-xbanish &
+# xbanish &
 
-thunar --daemon &
+# thunar --daemon &
 
 exec bspwm
+
+# sudo /usr/bin/prime-switch

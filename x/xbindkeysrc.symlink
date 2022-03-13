@@ -35,10 +35,10 @@
 "dmenu_run"
     Mod4 + space
 
-"screengrab -s /home/joshua/Downloads/screenshots/"
+"screengrab -s /home/joshua/docs/screenshots/"
     Shift+Print
 
-"screengrab /home/joshua/Downloads/screenshots/"
+"screengrab /home/joshua/docs/screenshots/"
     Print
 
 "xkill"

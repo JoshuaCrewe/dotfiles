@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-alacritty --class mail! -t mail! -e neomutt
+export BROWSER=firefox
+
+kitty --class mail! --title mail! -e neomutt

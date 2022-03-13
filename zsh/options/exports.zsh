@@ -75,6 +75,8 @@ if [[ $IS_MAC == 1 ]]; then
     export BROWSER="open"
 fi
 
+export BROWSER="xdg-open"
+
 export PURE_PROMPT_SYMBOL='$'
 export PURE_PROMPT_VICMD_SYMBOL='λ'
 

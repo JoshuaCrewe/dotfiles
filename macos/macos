@@ -61,8 +61,8 @@ defaults write com.apple.finder ShowPathbar -bool true
 # Completely Disable Dashboard
 defaults write com.apple.dashboard mcx-disabled -bool true
 
-# Save screenshots to the Downloads
-defaults write com.apple.screencapture location -string "${HOME}/Downloads"
+# Save screenshots to the docs folder
+defaults write com.apple.screencapture location -string "${HOME}/docs/screenshots"
 
 # Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
 defaults write com.apple.screencapture type -string "jpg"

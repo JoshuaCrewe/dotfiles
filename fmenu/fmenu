@@ -15,7 +15,7 @@ chmod 600 $input $output
 # sadly we can't use "$@" here directly because we are inside sh -c "..." call
 # already.
 # you can also set window dimensions via -g '=COLSxROWS', see man st.
-alacritty -t launcher -o font.size=13 -e sh -c "cat $input | fzf -e -i --reverse --delimiter / $(printf -- " '%s'" "$@" | sed "s/^ ''$//") | tee $output" & disown
+kitty --title launcher -o font_size=13 -e sh -c "cat $input | fzf -e -i --reverse --delimiter / $(printf -- " '%s'" "$@" | sed "s/^ ''$//") | tee $output" & disown
 
 # handle ctrl+c outside child terminal window
 trap "kill $! 2>/dev/null; rm -f $input $output" EXIT
