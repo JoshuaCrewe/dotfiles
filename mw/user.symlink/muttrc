@@ -1,0 +1,45 @@
+bind index,pager \Co sidebar-open
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+
+set sort = threads
+bind index,pager <Space> noop
+bind index <space><space>  collapse-thread
+macro index,pager <space><return> ":source ~/dotfiles/mutt/mutt.symlink/scripts/changefolder|<enter>"
+
+set date_format = "%d/%m"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort_aux = reverse-last-date-received  # like gmail
+set uncollapse_jump                        # don't collapse on an unread message
+set sort_re                                # thread based on regex
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+set signature = ~/.config/mutt/user/.signature
+set sig_on_top = yes
+set sig_dashes = no
+
+# Header Options -------------------------------------
+ignore *                                # ignore all headers
+unignore from: to: cc: date: subject:   # show only these
+unhdr_order *                           # some distros order things by default
+hdr_order from: to: cc: date: subject:  # and in this order
+
+set text_flowed=yes
+set editor = "nvim -u ~/.config/nvim/init.vim +':set textwidth=0' +/^$ +nohlsearch" # https://neomutt.org/guide/reference#editor
+
+set attribution = "On %d, %n wrote:\n"
+
+macro compose Y "<first-entry><enter-command>set wait_key=no<enter>\
+<enter-command>set pipe_decode<enter>\
+<pipe-entry>pandoc --lua-filter ~/.local/share/pandoc/templates/filter-html.lua --template email.html --metadata title='Email Message' -o /tmp/neomutt-alternative.html<enter>\
+<pipe-entry>pandoc --lua-filter ~/.local/share/pandoc/templates/filter-plain.lua --template plain.txt -o /tmp/neomutt-plain.txt<enter>\
+<enter-command>unset pipe_decode<enter>\
+<attach-file>/tmp/neomutt-plain.txt<enter>\
+<toggle-unlink><toggle-disposition>\
+<attach-file>/tmp/neomutt-alternative.html<enter>\
+<toggle-unlink><toggle-disposition>\
+<last-entry><tag-entry><previous-entry><tag-entry>\
+<group-alternatives><enter>\
+# <first-entry><detach-file>\
+# <send-message>" \
+"send the message as 'multipart/alternative'"
