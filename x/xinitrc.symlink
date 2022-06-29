@@ -15,7 +15,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 # export SSH_AUTH_SOCK
 
-xsetroot -solid "#3a3a3a"
+xsetroot -solid "#1c1c1c"
 # xsetroot -solid "#CA0066"
 
 # xbanish &
