@@ -111,11 +111,11 @@ autocmd FileType,BufNewFile,BufRead *.php set nocindent nosmartindent inde= " Wh
 set t_Co=256                      " Set colours to 256
 set background=dark               " Use a dark background
 
-let g:seoul256_background = 236   " Seoul can tweak the background a bit
+let g:seoul256_background = 234   " Seoul can tweak the background a bit
 colo seoul256                     " Set the colour scheme
 
 if has("unix")
-    hi VertSplit ctermbg=236
+    hi VertSplit ctermbg=233
 endif
 
 " Numbering
@@ -202,6 +202,7 @@ au FileType snippets setl foldlevel=99
 au BufRead,BufNewFile *.md,*.gmi set wrap linebreak breakindent ft=markdown  | :Goyo 100 " make markdown more readable
 au BufRead,BufNewFile *.list set wrap linebreak ft=journal | :Goyo 100 " make lists more readable
 au FileType markdown setl makeprg=pen\ %
+autocmd FileType php setlocal commentstring=//%s
 
 " au BufRead,BufNewFile *jrnl*\.txt set wrap linebreak breakindent  | :Goyo 100 " make juornaling more readable
 augroup vimrc
@@ -324,7 +325,7 @@ onoremap av :<C-u>normal! 0f:lvt;<CR><space>
 
 au BufNewFile,BufRead *.scss,*.css,*.js nnoremap <buffer> <leader>= gg=G``
 
-autocmd BufNewFile,BufRead ~/dotfiles/mutt/temp/neomutt* set filetype=mail
+autocmd BufNewFile,BufRead /temp/neomutt* set filetype=mail
 autocmd FileType mail setlocal formatoptions+=aw
 
 " Load Vimrc for editing

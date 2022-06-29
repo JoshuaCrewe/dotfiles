@@ -1,0 +1,25 @@
+#   _____    _              
+#  |__  /___| |__  _ __ ___ 
+#    / // __| '_ \| '__/ __|
+#   / /_\__ \ | | | | | (__ 
+#  /____|___/_| |_|_|  \___|
+#                           
+
+autoload -Uz compinit && compinit
+
+source $HOME/dotfiles/shells/zsh/options/init.zsh
+
+source $HOME/dotfiles/shells/zsh/functions/init.zsh
+
+source $HOME/dotfiles/shells/zsh/aliases/init.zsh
+
+source $HOME/dotfiles/shells/zsh/plugins/init.zsh
+
+source $HOME/dotfiles/shells/shared/init.sh
+
+# Turn off flow control so <c-s> can save in vim
+# Dont know why this works
+stty -ixon
+
+# Added by fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

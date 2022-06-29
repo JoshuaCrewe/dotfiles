@@ -66,12 +66,12 @@ URxvt.pointerBlank: true
 ! Seoul256
 ! special
 *.foreground:   #d0d0d0
-*.background:   #3a3a3a
+*.background:   #1c1c1c
 *.cursorColor:  #d0d0d0
-*.cursorColor2: #3a3a3a
+*.cursorColor2: #1c1c1c
 
 ! black
-*.color0:       #4e4e4e
+*.color0:       #1c1c1c
 *.color8:       #626262
 
 ! red
@@ -101,4 +101,3 @@ URxvt.pointerBlank: true
 ! white
 *.color7:       #d0d0d0
 *.color15:      #e4e4e4
-

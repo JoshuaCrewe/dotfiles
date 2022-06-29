@@ -7,7 +7,7 @@ dirname=$(cd "$(dirname "$0")"; pwd)
 source "$dirname/../scripts/_shared.sh"
 
 src="$dirname/nvim.symlink"
-dst="$HOME/.config/nvim"
+dst="$HOME/.config/vimx"
 _link "$src" "$dst"
 
 _install nvim

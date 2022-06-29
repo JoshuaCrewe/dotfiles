@@ -8,14 +8,12 @@
     ff = only
 [include]
     path = ~/dotfiles/git/git-aliases
-    path = ~/.gitconfig.local
+    path = ~/.config/git/config.local
 [core]
-    editor = $(which nvim)
+    editor = $(which nvim) -u ~/.config/nvim/init.vim
 	excludesfile = ~/.gitignore
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	; pager =  git diff --name-only --relative --diff-filter=d | xargs bat --diff
 [help]
     autocorrect = -1
 [init]
-	templatedir = ~/dotfiles/git/git_template
-[alias]
-	ctags = !.git/hooks/ctags
+	defaultBranch = main
