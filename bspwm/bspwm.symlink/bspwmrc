@@ -5,11 +5,12 @@ focused=#85add4
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d I II III IV V VI VII VIII IX
+bspc monitor DPI2 -d X
 
 bspc config border_width         4
 bspc config window_gap           0
-bspc config top_padding          66 # Polybar height needed for toggle script
+bspc config top_padding          55 # Polybar height needed for toggle script
 
 bspc config normal_border_color			$unfocused
 bspc config active_border_color			$unfocused
