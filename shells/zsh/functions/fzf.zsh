@@ -20,7 +20,7 @@ function notes-fzf {
 
 # lh - cd to a project in localhost
 function c() {
-    DIR=`ls ${HOME}/code | fzf --height 40% --reverse` \
+    DIR=`ls ${HOME}/code | fzf --height 40% --reverse --color 'bg:#1c1c1c'` \
     && cd "${HOME}/code/$DIR"
 }
 

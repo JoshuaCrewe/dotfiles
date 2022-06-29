@@ -13,9 +13,11 @@ export PATH="${HOME}/dotfiles/bin:$PATH"
 
 # Use The Silver Searcher for fzf
 if [[ -x `which fzf` ]]; then
+
+    export FZF_DEFAULT_OPTS="--height 40% --color bg+:#121212"
+
     if [[ -x `which fd` ]]; then
         export FZF_DEFAULT_COMMAND='fd --hidden -i -E "node_modules"'
-        export FZF_DEFAULT_OPTS="--height 40%"
 
         export FZF_ALT_C_COMMAND='fd --hidden -i -E "node_modules" -E ".git" --type directory'
         export FZF_CTRL_T_COMMAND='fd --hidden -i -E "node_modules" -E ".git" --type file'
@@ -80,6 +82,11 @@ export BROWSER="xdg-open"
 export PURE_PROMPT_SYMBOL='$'
 export PURE_PROMPT_VICMD_SYMBOL='λ'
 
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+export HISTFILE=$HOME/.histfile
+export HISTSIZE=10000
+export SAVEHIST=10000
+
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_CACHE_HOME=$HOME/.cache

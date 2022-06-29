@@ -7,14 +7,15 @@
 
 autoload -Uz compinit && compinit
 
-source ~/dotfiles/zsh/options/init.zsh
+source $HOME/dotfiles/shells/zsh/options/init.zsh
 
-source ~/dotfiles/zsh/functions/init.zsh
+source $HOME/dotfiles/shells/zsh/functions/init.zsh
 
-source ~/dotfiles/zsh/aliases/init.zsh
+source $HOME/dotfiles/shells/zsh/aliases/init.zsh
 
-source ~/dotfiles/zsh/plugins/init.zsh
+source $HOME/dotfiles/shells/zsh/plugins/init.zsh
 
+source $HOME/dotfiles/shells/shared/init.sh
 
 # Turn off flow control so <c-s> can save in vim
 # Dont know why this works

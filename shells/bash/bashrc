@@ -1,0 +1,19 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source ~/dotfiles/shells/bash/bash_profile.bash
+source ~/dotfiles/shells/bash/bash_prompt.bash
+source ~/dotfiles/shells/shared/init.sh
+
+
+if [[ ! -d $HOME/.local/share/bash ]]; then
+    mkdir -p "$HOME/.local/share/bash"
+fi
+
+if [[ ! -d $HOME/.local/share/bash/ble.sh/ ]]; then
+    git clone --recursive https://github.com/akinomyoga/ble.sh.git $HOME/.local/share/bash/ble.sh/
+    make -C $HOME/.local/share/bash/ble.sh install PREFIX=~/.local
+fi
+source ~/.local/share/blesh/ble.sh
