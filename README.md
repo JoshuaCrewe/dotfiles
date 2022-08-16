@@ -1,3 +1,3 @@
 # My Dotfiles
 
-These are the dot files I have hobbled together for vim and zsh use.
+This repo has been moved to https://codeberg.org/JoshuaCrewe/dotfiles
